@@ -167,6 +167,8 @@ let $LANG='en_US.UTF-8'
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 set encoding=UTF-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
 
 nnoremap <C-b> :NERDTreeToggle<CR>`
 
