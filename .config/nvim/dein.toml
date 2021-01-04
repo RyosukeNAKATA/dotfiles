@@ -1,0 +1,47 @@
+[[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+hook_add = 'source ~/.vim/plugins/vim-lsp-settings.vim'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+hook_add = 'source ~/.vim/plugins/rust.vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = 'source ~/.vim/plugins/vim-quickrun.vim'
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+
+[[plugins]]
+repo = 'preservim/nerdtree'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build_on = '''
+./install -all
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+
+[[plugins]]
+repo = 'vim-scripts/vim-auto-save'
