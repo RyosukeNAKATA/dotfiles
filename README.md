@@ -1,1 +1,1 @@
-# 設定ファイル管理用リポジトリ
+# This repository exists to manage config files.
