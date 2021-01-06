@@ -19,6 +19,9 @@ syntax enable
 syntax on
 set t_Co=256
 
+set background=dark
+:colorscheme hybrid 
+
 set autoindent
 set smartindent
 set expandtab
@@ -43,7 +46,8 @@ set conceallevel=0
 " htmlのマッチするタグに%でジャンプ
 source $VIMRUNTIME/macros/matchit.vim
 
-hi Comment ctermfg=gray
+hi 
+" Comment ctermfg=gray
 
 if has('mouse')
   set mouse=a
@@ -174,3 +178,5 @@ nnoremap <C-b> :NERDTreeToggle<CR>`
 
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
+
+

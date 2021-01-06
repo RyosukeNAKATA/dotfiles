@@ -45,3 +45,6 @@ repo = 'junegunn/fzf.vim'
 
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
