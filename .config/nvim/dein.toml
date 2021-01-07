@@ -47,4 +47,10 @@ repo = 'junegunn/fzf.vim'
 repo = 'vim-scripts/vim-auto-save'
 
 [[plugins]]
+repo = 'safv12/andromeda.vim'
+
+[[plugins]]
 repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 'jonathanfilip/lucius'

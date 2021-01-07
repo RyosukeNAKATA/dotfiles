@@ -77,3 +77,5 @@ alias lt='exa --tree --level=2'                                         # tree
 
 # pip-upgrade-allで更新可能なパッケージを一括アップデート
 alias pip-upgrade-all="pip list -o | tail -n +3 | awk '{ print \$1 }' | xargs pip install -U"
+
+fpath+=${ZDOTDIR:-~}/.zsh_functions

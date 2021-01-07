@@ -20,7 +20,8 @@ syntax on
 set t_Co=256
 
 set background=dark
-:colorscheme hybrid 
+:colorscheme hybrid
+" colorscheme andromeda
 
 set autoindent
 set smartindent
@@ -46,7 +47,7 @@ set conceallevel=0
 " htmlのマッチするタグに%でジャンプ
 source $VIMRUNTIME/macros/matchit.vim
 
-hi 
+" hi
 " Comment ctermfg=gray
 
 if has('mouse')
@@ -179,4 +180,12 @@ nnoremap <C-b> :NERDTreeToggle<CR>`
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 
+if has('vim_starting')
+    " 挿入モード時に非点滅の縦棒タイプのカーソル
+    let &t_SI .= "\e[6 q"
+    " ノーマルモード時に非点滅のブロックタイプのカーソル
+    let &t_EI .= "\e[2 q"
+    " 置換モード時に非点滅の下線タイプのカーソル
+    let &t_SR .= "\e[4 q"
+endif
 
