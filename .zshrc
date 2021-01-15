@@ -99,8 +99,4 @@ if [[ ! -n $TMUX ]]; then
   fi
 fi
 
-# prezto用
-setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
-done
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
