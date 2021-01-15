@@ -80,6 +80,7 @@ alias pip-upgrade-all="pip list -o | tail -n +3 | awk '{ print \$1 }' | xargs pi
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
+# 端末起動時にtmuxを起動するためのもの
 if [[ ! -n $TMUX ]]; then
   # get the IDs
   ID="`tmux list-sessions`"
@@ -98,3 +99,8 @@ if [[ ! -n $TMUX ]]; then
   fi
 fi
 
+# prezto用
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
