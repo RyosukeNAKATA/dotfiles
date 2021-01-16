@@ -1,111 +1,157 @@
-# Indent Guides
-Indent Guides is a plugin for visually displaying indent levels in Vim.
+The NERDTree [![Vint](https://github.com/preservim/nerdtree/workflows/Vint/badge.svg)](https://github.com/preservim/nerdtree/actions?workflow=Vint)
+=============
 
-<img src="http://i.imgur.com/ONgoj.png" width="448" height="448" alt="" />
+Introduction
+------------
 
-## Features:
-* Can detect both tab and space indent styles.
-* Automatically inspects your colorscheme and picks appropriate colors (gVim only).
-* Will highlight indent levels with alternating colors.
-* Full support for gVim and basic support for Terminal Vim.
-* Seems to work on Windows gVim 7.3 (haven't done any extensive tests though).
-* Customizable size for indent guides, eg. skinny guides (soft-tabs only).
-* Customizable start indent level.
-* Highlight support for files with a mixture of tab and space indent styles.
+The NERDTree is a file system explorer for the Vim editor. Using this plugin,
+users can visually browse complex directory hierarchies, quickly open files for
+reading or editing, and perform basic file system operations.
 
-## Requirements
-* Vim 7.2+
+This plugin can also be extended with custom mappings using a special API. The
+details of this API and of other NERDTree features are described in the
+included documentation.
 
-## Installation
-To install the plugin copy `autoload`, `plugin`, `doc` directories into your `.vim` directory.
+![NERDTree Screenshot](https://github.com/preservim/nerdtree/raw/master/screenshot.png)
 
-### Pathogen
-If you have [Pathogen](http://www.vim.org/scripts/script.php?script_id=2332) installed, clone this repo into a subdirectory of your `.vim/bundle` directory like so:
+Installation
+------------
+
+Below are just some of the methods for installing NERDTree. Do not follow all of these instructions; just pick your favorite one. Other plugin managers exist, and NERDTree should install just fine with any of them.
+
+#### Vim 8+ packages
+
+If you are using VIM version 8 or higher you can use its built-in package management; see `:help packages` for more information. Just run these commands in your terminal:
 
 ```bash
-cd ~/.vim/bundle
-git clone git://github.com/nathanaelkane/vim-indent-guides.git
+git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+vim -u NONE -c "helptags ~/.vim/pack/vendor/start/nerdtree/doc" -c q
 ```
 
-### Vundle
-If you have [Vundle](https://github.com/VundleVim/Vundle.vim) installed, add the following line to your `~/.vimrc` in the appropriate spot (see the Vundle.vim README for help):
+Otherwise, these are some of the several 3rd-party plugin managers you can choose from. Be sure you read the instructions for your chosen plugin, as there typically are additional steps you need to take.
 
+#### [pathogen.vim](https://github.com/tpope/vim-pathogen)
+
+In the terminal,
+```bash
+git clone https://github.com/preservim/nerdtree.git ~/.vim/bundle/nerdtree
+```
+In your vimrc,
 ```vim
-Plugin 'nathanaelkane/vim-indent-guides'
+call pathogen#infect()
+syntax on
+filetype plugin indent on
 ```
 
-and then run the following command from inside Vim:
+Then reload vim, run `:helptags ~/.vim/bundle/nerdtree/doc/` or `:Helptags`.
 
+#### [Vundle.vim](https://github.com/VundleVim/Vundle.vim)
 ```vim
-:PluginInstall
+call vundle#begin()
+Plugin 'preservim/nerdtree'
+call vundle#end()
 ```
 
-## Usage
-The default mapping to toggle the plugin is `<Leader>ig`.
-
-You can also use the following commands inside Vim:
-
+#### [vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
-:IndentGuidesEnable
-:IndentGuidesDisable
-:IndentGuidesToggle
+call plug#begin()
+Plug 'preservim/nerdtree'
+call plug#end()
 ```
 
-If you would like to have indent guides enabled by default, you can add the following to your `~/.vimrc`:
-
+#### [dein.vim](https://github.com/Shougo/dein.vim)
 ```vim
-let g:indent_guides_enable_on_vim_startup = 1
+call dein#begin()
+call dein#add('preservim/nerdtree')
+call dein#end()
 ```
 
-### gVim
-**This plugin should work with gVim out of the box, no configuration needed.** It will automatically inspect your colorscheme and pick appropriate colors.
+#### [apt-vim](https://github.com/egalpin/apt-vim)
+```bash
+apt-vim install -y https://github.com/preservim/nerdtree.git
+```
 
-### Setting custom indent colors
-Here's an example of how to define custom colors instead of using the ones the plugin automatically generates for you. Add this to your `.vimrc` file:
+F.A.Q. (here, and in the [Wiki](https://github.com/preservim/nerdtree/wiki))
+------
 
+#### Is there any support for `git` flags?
+
+Yes, install [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin).
+
+---
+#### Can I have the nerdtree on every tab automatically?
+
+Nope. If this is something you want then chances are you aren't using tabs and
+buffers as they were intended to be used. Read this
+http://stackoverflow.com/questions/102384/using-vims-tabs-like-buffers
+
+If you are interested in this behaviour then consider [vim-nerdtree-tabs](https://github.com/jistr/vim-nerdtree-tabs)
+
+---
+#### How can I open a NERDTree automatically when vim starts up?
+
+Stick this in your vimrc: `autocmd vimenter * NERDTree`
+
+---
+#### How can I open a NERDTree automatically when vim starts up if no files were specified?
+
+Stick this in your vimrc:
 ```vim
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 ```
 
-Alternatively you can add the following lines to your colorscheme file.
+Note: Now start vim with plain `vim`, not `vim .`
 
+---
+#### What if I'm also opening a saved session, for example `vim -S session_file.vim`? I don't want NERDTree to open in that scenario.
 ```vim
-hi IndentGuidesOdd  guibg=red   ctermbg=3
-hi IndentGuidesEven guibg=green ctermbg=4
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") && v:this_session == "" | NERDTree | endif
 ```
 
-### Terminal Vim
-At the moment Terminal Vim only has basic support. This means is that colors won't be automatically calculated based on your colorscheme. Instead, some preset colors are used depending on whether `background` is set to `dark` or `light`.
-
-When `set background=dark` is used, the following highlight colors will be defined:
-
+---
+#### How can I open NERDTree automatically when vim starts up on opening a directory?
 ```vim
-hi IndentGuidesOdd  ctermbg=black
-hi IndentGuidesEven ctermbg=darkgrey
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 ```
 
-Alternatively, when `set background=light` is used, the following highlight colors will be defined:
+This window is tab-specific, meaning it's used by all windows in the tab. This trick also prevents NERDTree from hiding when first selecting a file.
 
+Note: Executing `vim ~/some-directory` will open NERDTree and a new edit window. `exe 'cd '.argv()[0]` sets the `pwd` of the new edit window to `~/some-directory`
+
+---
+#### How can I map a specific key or shortcut to open NERDTree?
+
+Stick this in your vimrc to open NERDTree with `Ctrl+n` (you can set whatever key you want):
 ```vim
-hi IndentGuidesOdd  ctermbg=white
-hi IndentGuidesEven ctermbg=lightgrey
+map <C-n> :NERDTreeToggle<CR>
 ```
 
-If for some reason it's incorrectly defining light highlight colors instead of dark ones or vice versa, the first thing you should check is that the `background` value is being set correctly for your colorscheme. Sometimes it's best to manually set the `background` value in your `.vimrc`, for example:
+---
+#### How can I close vim if the only window left open is a NERDTree?
 
+Stick this in your vimrc:
 ```vim
-colorscheme desert256
-set background=dark
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 ```
 
-Alternatively you can manually setup the highlight colors yourself, see `:help indent_guides_auto_colors` for an example.
+---
+#### Can I have different highlighting for different file extensions?
 
-## Help
-`:help indent-guides`
+See here: https://github.com/preservim/nerdtree/issues/433#issuecomment-92590696
 
-## Screenshots
-<img src="http://i.imgur.com/7tMBl.png" width="448" height="448" alt="" />
-<img src="http://i.imgur.com/EvrqK.png" width="448" height="448" alt="" />
-<img src="http://i.imgur.com/hHqp2.png" width="448" height="448" alt="" />
+---
+#### How can I change default arrows?
+
+Use these variables in your vimrc. Note that below are default arrow symbols
+```vim
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+```
+You can remove the arrows altogether by setting these variables to empty strings, as shown below. This will remove not only the arrows, but a single space following them, shifting the whole tree two character positions to the left.
+```vim
+let g:NERDTreeDirArrowExpandable = ''
+let g:NERDTreeDirArrowCollapsible = ''
+```

@@ -20,8 +20,8 @@ syntax on
 set t_Co=256
 
 set background=dark
-:colorscheme hybrid
-" colorscheme andromeda
+" :colorscheme hybrid
+:colorscheme iceberg
 
 set autoindent
 set smartindent

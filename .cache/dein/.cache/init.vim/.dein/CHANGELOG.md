@@ -1,249 +1,287 @@
+# NERDTree Change Log
+<!-- Introduce a new MAJOR or MINOR version with a 4-hash header.
+     PATCH versions are listed from newest to oldest under their respective MAJOR.MINOR
+     version in an unordered list.  The format is:
+        - **.PATCH**: Pull Request Title (PR Author) [PR Number](Link to PR)
+-->
+#### 6.9
+- **.10**: Open a mirrored NERDTree with correct width (PhilRunninger) [#1177](https://github.com/preservim/nerdtree/pull/1177)
+- **.9**: Updated Readme, removed typo (H3RSKO) [#1167](https://github.com/preservim/nerdtree/pull/1167)
+- **.8**: Refactor sort comparison functions, removing redundancy (PhilRunninger) [#1166](https://github.com/preservim/nerdtree/pull/1166)
+- **.7**: Fix argument of `exists()` function calls checking for autocommands. (PhilRunninger) [#1165](https://github.com/preservim/nerdtree/pull/1165)
+- **.6**: Don't use silent when raising User events (PhilRunninger) [#1164](https://github.com/preservim/nerdtree/pull/1164)
+- **.5**: Fix highlight for file node.  (pirey) [#1157](https://github.com/preservim/nerdtree/pull/1157)
+- **.4**: Make sure symbolic links' flags are highlighted correctly.  (PhilRunninger) [#1156](https://github.com/preservim/nerdtree/pull/1156)
+- **.3**: Fix new NERDTrees' width when previous one was in the only window. (PhilRunninger) [#1153](https://github.com/preservim/nerdtree/pull/1153)
+- **.2**: Fix the scope of several key mappings (lifecrisis, PhilRunninger) [#1151](https://github.com/preservim/nerdtree/pull/1151)
+- **.1**: Respect user's `&shellslash` setting in CopyNode and RemoveNode functions (PhilRunninger) [#1150](https://github.com/preservim/nerdtree/pull/1150)
+- **.0**: Enable opening bookmarks in split windows. (PhilRunninger) [#1144](https://github.com/preservim/nerdtree/pull/1144)
+#### 6.8
+- **.0**: Allow concealed characters to show another character. (PhilRunninger) [#1138](https://github.com/preservim/nerdtree/pull/1138)
+#### 6.7
+- **.15**: Add curly braces to the list of characters to be escaped. (PhilRunninger) [#1128](https://github.com/preservim/nerdtree/pull/1128)
+- **.14**: Use backward-compatible `nerdtree#and()` in one place that was missed. (PhilRunninger) [#1134](https://github.com/preservim/nerdtree/pull/1134)
+- **.13**: `cmd.exe /c start "" <filename>` for windows default viewer support. (J. Altayó) [#1130](https://github.com/preservim/nerdtree/pull/1130)
+- **.12**: Fixed a bug that caused the file-tree construction to slow down significantly. (Eugenij-W) [#1126](https://github.com/preservim/nerdtree/pull/1126)
+- **.11**: Fix exception in NERDTreeFind (on windows OS and If the file is located in the root directory of the disk) (Eugenij-W) [#1122](https://github.com/preservim/nerdtree/pull/1122)
+- **.10**: Do not consider the tree root to be "cascadable". (lifecrisis) [#1120](https://github.com/preservim/nerdtree/pull/1120)
+- **.9**: Force `:NERDTreeFocus` to allow events to be fired when switching windows. (PhilRunninger) [#1118](https://github.com/preservim/nerdtree/pull/1118)
+- **.8**: Fix example code for the `NERDTreeAddKeyMap()` function. (PhilRunninger) [#1116](https://github.com/preservim/nerdtree/pull/1116)
+- **.7**: Put `'%'` argument in `bufname()` for backwards compatibility. (PhilRunninger) [#1105](https://github.com/preservim/nerdtree/pull/1105)
+- **.6**: If a file's already open in the window, don't edit it again. (PhilRunninger) [#1103](https://github.com/preservim/nerdtree/pull/1103)
+- **.5**: Prevent unneeded tree creation in `:NERDTreeToggle[VCS] <path>` (PhilRunninger) [#1101](https://github.com/preservim/nerdtree/pull/1101)
+- **.4**: Add missing calls to the `shellescape()` function (lifecrisis) [#1099](https://github.com/preservim/nerdtree/pull/1099)
+- **.3**: Fix vsplit to not open empty buffers when opening previously closed file (AwkwardKore) [#1098](https://github.com/preservim/nerdtree/pull/1098)
+- **.2**: Fix infinity loop (on winvim) in FindParentVCSRoot (Eugenij-W) [#1095](https://github.com/preservim/nerdtree/pull/1095)
+- **.1**: File Move: Escape existing directory name when looking for open files. (PhilRunninger) [#1094](https://github.com/preservim/nerdtree/pull/1094)
+- **.0**: Open the parent directory when revealing a non-existent file with :NERDTreeFind (bouk) [#1090](https://github.com/preservim/nerdtree/pull/1090)
+#### 6.6
+- **.1**: [add] How to install using dein.vim (kazukazuinaina) [#1087](https://github.com/preservim/nerdtree/pull/1087)
+- **.0**: Add the ability to turn off directory arrows (PhilRunninger) [#1085](https://github.com/preservim/nerdtree/pull/1085)
+#### 6.5
+- **.0**: `NERDTreeToggle <start-directory>` always sets NERDTree root. (PhilRunninger) [#1083](https://github.com/preservim/nerdtree/pull/1083)
+#### 6.4
+- **.6**: NERDTreeFind shows expected message if file doesn't exist e.g. with vim-startify (andys8). [#1081](https://github.com/preservim/nerdtree/pull/1081)
+- **.5**: Ensure events are (or aren't) being ignored correctly. (PhilRunninger) [#1080](https://github.com/preservim/nerdtree/pull/1080)
+- **.4**: Prevent overwriting existing files/dirs on node move. (PhilRunninger) [#1079](https://github.com/preservim/nerdtree/pull/1079)
+- **.3**: Fix regex that finds keyword for minimal menu. (PhilRunninger) [#1075](https://github.com/preservim/nerdtree/pull/1075)
+- **.2**: Lint vimscript, fix errors and warnings, add CI job to review PRs (Caleb Maclennan) [#1071](https://github.com/preservim/nerdtree/pull/1071)
+- **.1**: Ensure backward compatibility. v:t_func is not available before Vim 8.0 (Phil Runninger)
+- **.0**: Allow use of function references as callbacks (HiPhish) [#1067](https://github.com/preservim/nerdtree/pull/1067)
+#### 6.3
+- **.0**: Add new command that behaves like NERDTreeToggle but defaults to the root of a VCS repository. (willfindlay) [#1060](https://github.com/preservim/nerdtree/pull/1060)
+#### 6.2
+- **.1**: Menu option, 'copy path to clipboard' is aware of VIM clipboard option (jhzn) [#1056](https://github.com/preservim/nerdtree/pull/1056)
+- **.0**: Support tab-specific CWDs (PhilRunninger) [#1032](https://github.com/preservim/nerdtree/pull/1032)
+#### 6.1
+- **.4**: Add VIM built-in package management to read me file. (pesarkhobeee) [#1049](https://github.com/preservim/nerdtree/pull/1049)
+- **.3**: Save/Set screen state also on WinLeave and WinEnter. (PhilRunninger) [#1048](https://github.com/preservim/nerdtree/pull/1048)
+- **.2**: Wrap saveScreenState's statements in a try-catch block. (PhilRunninger) [#1047](https://github.com/preservim/nerdtree/pull/1047)
+- **.1**: Catch errors when trying to read CHANGELOG.md. (PhilRunninger) [#1045](https://github.com/preservim/nerdtree/pull/1045)
+- **.0**: If file path doesn't exist, :NERDTreeFind its parent directory instead. (PhilRunninger) [#1043](https://github.com/preservim/nerdtree/pull/1043)
+#### 6.0
+- **.1**: Reintroduce necessary variable mistakenly removed. (PhilRunninger) [#1040](https://github.com/preservim/nerdtree/pull/1040)
+- **.0**: Make the behavior of window splits consistent (dragonxlwang, PhilRunninger) [#1035](https://github.com/preservim/nerdtree/pull/1035)
+#### 5.3
+- **.3**: Fix (p)ath not displaying in the minimal menu (tuzz) [#1038](https://github.com/preservim/nerdtree/pull/1038)
+- **.2**: Enable events when closing NerdTree window. (PhilRunninger) [#1037](https://github.com/preservim/nerdtree/pull/1037)
+- **.1**: Fix the `e` key mapping to use netrw if desired (PhilRunninger) [#1031](https://github.com/preservim/nerdtree/pull/1031)
+- **.0**: Add file extension and size to sorting capabilities (PhilRunninger) [#1029](https://github.com/preservim/nerdtree/pull/1029)
+#### 5.2
+- **.9**: Suppress events for intermediate window/tab/buffer changes (PhilRunninger) [#1026](https://github.com/preservim/nerdtree/pull/1026)
+- **.8**: Revert [#1019](https://github.com/preservim/nerdtree/pull/1019) to fix nvim artifacts and flickering. (PhilRunninger) [#1021](https://github.com/preservim/nerdtree/pull/1021)
+- **.7**: Use :mode only in neovim. MacVim still needs to use :redraw! (PhilRunninger) [#1019](https://github.com/preservim/nerdtree/pull/1019)
+- **.6**: In CHANGELOG.md and PR template, make reference to PR a true HTML link. (PhilRunninger) [#1017](https://github.com/preservim/nerdtree/pull/1017)
+- **.5**: Use `:mode` instead of `:redraw!` when updating menu. (PhilRunninger) [#1016](https://github.com/preservim/nerdtree/pull/1016)
+- **.4**: When searching for root line num, stop at end of file. (PhilRunninger) [#1015](https://github.com/preservim/nerdtree/pull/1015)
+- **.3**: Fix `<CR>` key map on the bookmark (lkebin) [#1014](https://github.com/preservim/nerdtree/pull/1014)
+- **.2**: Make Enter work on the `.. ( up a dir )` line (PhilRunninger) [#1013](https://github.com/preservim/nerdtree/pull/1013)
+- **.1**: Fix nerdtree#version() on Windows. (PhilRunninger)
+- **.0**: Expand functionality of `<CR>` mapping. (PhilRunninger) [#1011](https://github.com/preservim/nerdtree/pull/1011)
+#### 5.1
+- **.3**: Remove @mentions from PR template and change log. They weren't working. (PhilRunninger) [#1009](https://github.com/preservim/nerdtree/pull/1009)
+- **.2**: Fix NERDTree opening with the wrong size. (PhilRunninger) [#1008](https://github.com/preservim/nerdtree/pull/1008)
+- **.1**: Update Changelog and create PR Template (PhilRunninger) [#1007](https://github.com/preservim/nerdtree/pull/1007)
+- **.0**: Too many changes for one patch...
+    - Refresh a dir_node if the file wasn't found in it, and look once more. (PhilRunninger) [#1005](https://github.com/preservim/nerdtree/pull/1005)
+    - Add a "copy path to clipboard" menu option (PhilRunninger) [#1002](https://github.com/preservim/nerdtree/pull/1002)
+    - Enable root refresh on "vim ." a different way than [#999](https://github.com/preservim/nerdtree/pull/999). (PhilRunninger) [#1001](https://github.com/preservim/nerdtree/pull/1001)
+    - Fix refreshroot (PhilRunninger) [#999](https://github.com/preservim/nerdtree/pull/999)
+    - Change version check to look for 703 not 730 (vhalis) [#994](https://github.com/preservim/nerdtree/pull/994)
+    - Change minimum vim (PhilRunninger) [#991](https://github.com/preservim/nerdtree/pull/991)
+    - Allow multi-character DirArrows (PhilRunninger) [#985](https://github.com/preservim/nerdtree/pull/985)
+    - Remove redraw! while still clearing last message empty string. (PhilRunninger) [#979](https://github.com/preservim/nerdtree/pull/979)
+    - fix `_initChildren` function value set to numChildrenCached error (terryding77) [#969](https://github.com/preservim/nerdtree/pull/969)
+    - On Windows, do a case-insensitive comparison of paths. (PhilRunninger) [#967](https://github.com/preservim/nerdtree/pull/967)
+    - Remove the **Please wait... DONE** messages. (PhilRunninger) [#966](https://github.com/preservim/nerdtree/pull/966)
+    - Smarter delimiter default (PhilRunninger) [#963](https://github.com/preservim/nerdtree/pull/963)
+    - Update directory .vimdc readme example (spencerdcarlson) [#961](https://github.com/preservim/nerdtree/pull/961)
+    - Preview bookmarks (PhilRunninger) [#956](https://github.com/preservim/nerdtree/pull/956)
+    - Add new value to NERDTreeQuitOnOpen to close bookmark table (PhilRunninger) [#955](https://github.com/preservim/nerdtree/pull/955)
+    - Add an :EditBookmarks command to edit the bookmarks file (PhilRunninger) [#954](https://github.com/preservim/nerdtree/pull/954)
+    - Before copying, turn off &shellslash. Restore after copy is finished. (PhilRunninger) [#952](https://github.com/preservim/nerdtree/pull/952)
+    - Set a maximum window size when zooming. (PhilRunninger) [#950](https://github.com/preservim/nerdtree/pull/950)
+    - Confirm the wipeout of a unsaved buffer whose file has been renamed. (PhilRunninger) [#949](https://github.com/preservim/nerdtree/pull/949)
+    - Escape a backslash so it can be used in a key mapping. (PhilRunninger) [#948](https://github.com/preservim/nerdtree/pull/948)
+    - Add a NERDTreeMinimalMenu feature (tuzz) [#938](https://github.com/preservim/nerdtree/pull/938)
+    - fixed root path error for windows (zcodes) [#935](https://github.com/preservim/nerdtree/pull/935)
+    - Restore getDirChildren for use in nerdtree-project-plugin. (PhilRunninger) [#929](https://github.com/preservim/nerdtree/pull/929)
+    - Document NERDTreeNodeDelimiter [#912](https://github.com/preservim/nerdtree/pull/912) (PhilRunninger) [#926](https://github.com/preservim/nerdtree/pull/926)
+    - Allow modification of menu keybindings (Leandros) [#923](https://github.com/preservim/nerdtree/pull/923)
+    - Add two more disqualifications for isCascadable(). (PhilRunninger) [#914](https://github.com/preservim/nerdtree/pull/914)
+    - Allow highlighting more than one flag. (kristijanhusak) [#908](https://github.com/preservim/nerdtree/pull/908)
+    - Support sorting files and directories by modification time. (PhilRunninger) [#901](https://github.com/preservim/nerdtree/pull/901)
+    - Parse . and .. from path string with trailing slash. (PhilRunninger) [#899](https://github.com/preservim/nerdtree/pull/899)
+    - Force sort to recalculate the cached sortKey. (PhilRunninger) [#898](https://github.com/preservim/nerdtree/pull/898)
+    - Add NERDTreeRefreshRoot command (wgfm) [#897](https://github.com/preservim/nerdtree/pull/897)
+    - Call Resolve on the file's path when calling :NERDTreeFind. (PhilRunninger) [#896](https://github.com/preservim/nerdtree/pull/896)
+    - Catch all errors, not just NERDTree errors. (PhilRunninger) [#894](https://github.com/preservim/nerdtree/pull/894)
+    - Fix typo in help file (lvoisin) [#892](https://github.com/preservim/nerdtree/pull/892)
+    - Make NERDTreeCreator set the `'nolist'` option (lifecrisis) [#889](https://github.com/preservim/nerdtree/pull/889)
+    - Refresh buffers after `m`, `m` operation on a folder (PhilRunninger) [#888](https://github.com/preservim/nerdtree/pull/888)
+    - Use a better arg for FINDSTR when using the m,l command in Windows. (PhilRunninger) [#887](https://github.com/preservim/nerdtree/pull/887)
+    - Fix the <C-J>/<C-K> motions, which currently fail with cascades (lifecrisis) [#886](https://github.com/preservim/nerdtree/pull/886)
+    - Function "s:UI.getLineNum()" doesn't always work on cascades. (lifecrisis) [#882](https://github.com/preservim/nerdtree/pull/882)
+    - NERDTreeCWD: reset CWD if changed by NERDTreeFocus (PhilRunninger) [#878](https://github.com/preservim/nerdtree/pull/878)
+    - Use <count>tabnext instead of <count>gt to allow users to remap gt. (PhilRunninger) [#877](https://github.com/preservim/nerdtree/pull/877)
+    - Do a case sensitive comparison of new/existing buffers. (PhilRunninger) [#875](https://github.com/preservim/nerdtree/pull/875)
+    - Fix opening sub-directories that have commas in their name. (PhilRunninger) [#873](https://github.com/preservim/nerdtree/pull/873)
+    - Add new command to open NERDTree in the root of a VCS repository. (PhilRunninger) [#872](https://github.com/preservim/nerdtree/pull/872)
+    - Make sure the path to the bookmarks file exists before writing it. (PhilRunninger) [#871](https://github.com/preservim/nerdtree/pull/871)
+    - Unzoom NERDTree when opening a file (PhilRunninger) [#870](https://github.com/preservim/nerdtree/pull/870)
+    - Support unusual characters in file and directory names (PhilRunninger) [#868](https://github.com/preservim/nerdtree/pull/868)
+    - Reword renamed-buffer prompt to be more clear (aflock) [#867](https://github.com/preservim/nerdtree/pull/867)
+    - Default to placing cursor on root when closing bookmark table (lifecrisis) [#866](https://github.com/preservim/nerdtree/pull/866)
+    - Fix issues with sorting of nodes (PhilRunninger) [#856](https://github.com/preservim/nerdtree/pull/856)
+    - Better OSX detection (bubba-h57) [#853](https://github.com/preservim/nerdtree/pull/853)
+    - Bugfix - ensure keymaps dictionary exists before using it (mnussbaum) [#852](https://github.com/preservim/nerdtree/pull/852)
+    - Decrease startup-time by avoiding linear-time iteration over key mappings (mnussbaum) [#851](https://github.com/preservim/nerdtree/pull/851)
+    - Add code to sort mappings in quickhelp (lifecrisis) [#849](https://github.com/preservim/nerdtree/pull/849)
+    - Use ":clearjumps" in new NERDTree windows (lifecrisis) [#844](https://github.com/preservim/nerdtree/pull/844)
+    - Like m-c did before, create parent directories if needed on m-m. (PhilRunninger) [#840](https://github.com/preservim/nerdtree/pull/840)
+    - BUGFIX: Repair a problem with the `'u'` mapping. (lifecrisis) [#838](https://github.com/preservim/nerdtree/pull/838)
+    - Make the NERDTree buffer writable when rendering it. (PhilRunninger) [#837](https://github.com/preservim/nerdtree/pull/837)
+    - Code cleanup: Remove unsupported bookmark table mappings (lifecrisis) [#835](https://github.com/preservim/nerdtree/pull/835)
+    - Replace strcharpart() with substitute() for backward compatibility (bravestarr) [#834](https://github.com/preservim/nerdtree/pull/834)
+    - Fixed error `unknown function strcharpart` for older versions of Vim (hav4ik) [#833](https://github.com/preservim/nerdtree/pull/833)
+    - Clear output when NERDTree menu is aborted (lifecrisis) [#832](https://github.com/preservim/nerdtree/pull/832)
+    - Display a path with multi-byte characters correctly when it is truncated (bravestarr) [#830](https://github.com/preservim/nerdtree/pull/830)
+    - Support revealing file and executing file with xdg-open for Linux (ngnmhieu) [#824](https://github.com/preservim/nerdtree/pull/824)
+    - If node isn't open, count children on disk before deleting. (PhilRunninger) [#822](https://github.com/preservim/nerdtree/pull/822)
+    - Add new variable g:NERDTreeRemoveFileCmd (kutsan) [#816](https://github.com/preservim/nerdtree/pull/816)
+    - Use a better check for existence of the NERDTree buffer. (PhilRunninger) [#814](https://github.com/preservim/nerdtree/pull/814)
+    - Fix focussing previous buffer when closing NERDTree (mrubli) [#801](https://github.com/preservim/nerdtree/pull/801)
+    - Update the docs for "NERDTreeStatusline" (lifecrisis) [#796](https://github.com/preservim/nerdtree/pull/796)
+    - BUGFIX: Unstable behavior in the "getPath()" method (lifecrisis) [#795](https://github.com/preservim/nerdtree/pull/795)
+    - Revert the bugfix from pull request [#785](https://github.com/preservim/nerdtree/pull/785) (lifecrisis) [#794](https://github.com/preservim/nerdtree/pull/794)
+    - BUGFIX: Allow ":NERDTreeFind" to discover hidden files (lifecrisis) [#786](https://github.com/preservim/nerdtree/pull/786)
+    - BUGFIX: Allow ":NERDTreeFind" to reveal new files (lifecrisis) [#785](https://github.com/preservim/nerdtree/pull/785)
+    - Add modelines (lifecrisis) [#782](https://github.com/preservim/nerdtree/pull/782)
+    - Change the type of completion used by NERDTreeFind (lifecrisis) [#781](https://github.com/preservim/nerdtree/pull/781)
+    - change NERDTreeFind with args (zhenyangze) [#778](https://github.com/preservim/nerdtree/pull/778)
+    - Style Choice: Using confirm() when deleting a bookmark (lifecrisis) [#777](https://github.com/preservim/nerdtree/pull/777)
+    - remove useless substitute when `file =~# "/$"` (skyblueee) [#773](https://github.com/preservim/nerdtree/pull/773)
+    - remove useless removeLeadingSpaces in _stripMarkup (skyblueee) [#772](https://github.com/preservim/nerdtree/pull/772)
+    - Make the "o" mapping consistent with "x" (lifecrisis) [#769](https://github.com/preservim/nerdtree/pull/769)
+    - Fix a problem with the "x" handler (lifecrisis) [#768](https://github.com/preservim/nerdtree/pull/768)
+    - Clean up the handler for the "x" mapping (lifecrisis) [#767](https://github.com/preservim/nerdtree/pull/767)
+    - Revert change to tab opening method (lifecrisis) [#766](https://github.com/preservim/nerdtree/pull/766)
+    - BUGFIX: Add back support for "b:NERDTreeRoot" (lifecrisis) [#765](https://github.com/preservim/nerdtree/pull/765)
+    - Fix broken "t" and "T" mappings, tabs now open at end (lifecrisis) [#759](https://github.com/preservim/nerdtree/pull/759)
+    - Update doc with already existing mapping variables (asnr) [#699](https://github.com/preservim/nerdtree/pull/699)
+    - Fix the broken g:NERDTreeBookmarksSort setting (lifecrisis) [#696](https://github.com/preservim/nerdtree/pull/696)
+    - Correct NERDTreeIgnore pattern in doc (cntoplolicon) [#648](https://github.com/preservim/nerdtree/pull/648)
+    - Remove empty segments when splitting path (sooth-sayer) [#574](https://github.com/preservim/nerdtree/pull/574)
+    - Suppress autocmds less agressively (wincent) [#578](https://github.com/preservim/nerdtree/pull/578) [#691](https://github.com/preservim/nerdtree/pull/691)
+    - Add an Issues template to ask for more info initially.
+    - Fix markdown headers in readme (josephfrazier) [#676](https://github.com/preservim/nerdtree/pull/676)
+    - Don't touch `@o` and `@h` registers when rendering
+    - Fix bug with files and directories with dollar signs (alegen) [#649](https://github.com/preservim/nerdtree/pull/649)
+    - Reuse/reopen existing window trees where possible [#244](https://github.com/preservim/nerdtree/pull/244)
+    - Remove NERDTree.previousBuf()
+    - Change color of arrow (Leeiio) [#630](https://github.com/preservim/nerdtree/pull/630)
+    - Improved a tip in README.markdown (ggicci) [#628](https://github.com/preservim/nerdtree/pull/628)
+    - Shorten delete confimration of empty directory to `y` (mikeperri) [#530](https://github.com/preservim/nerdtree/pull/530)
+    - Fix API call to open directory tree in window (devm33) [#533](https://github.com/preservim/nerdtree/pull/533)
+    - Change default arrows on non-Windows platforms (gwilk) [#546](https://github.com/preservim/nerdtree/pull/546)
+    - Update to README - combine cd and git clone (zwhitchcox) [#584](https://github.com/preservim/nerdtree/pull/584)
+    - Update to README - Tip: start NERDTree when vim starts (therealplato) [#593](https://github.com/preservim/nerdtree/pull/593)
+    - Escape filename when moving an open buffer (zacharyvoase) [#595](https://github.com/preservim/nerdtree/pull/595)
+    - Fixed incorrect :helptags command in README (curran) [#619](https://github.com/preservim/nerdtree/pull/619)
+    - Fixed incomplete escaping of folder arrows (adityanatraj) [#548](https://github.com/preservim/nerdtree/pull/548)
+    - Added NERDTreeCascadeSingleChildDir option (juanibiapina) [#558](https://github.com/preservim/nerdtree/pull/558)
+    - Replace strchars() with backward compatible workaround.
+    - Add support for copy command in Windows (SkylerLipthay) [#231](https://github.com/preservim/nerdtree/pull/231)
+    - Fixed typo in README.markdown - :Helptags -> :helptags
+    - Rename "primary" and "secondary" trees to "tab" and "window" trees.
+    - Move a bunch of buffer level variables into the NERDTree and UI classes.
+    - Display cascading dirs on one line to save vertical/horizontal space (matt-gardner: brainstorming/testing)
+    - Remove the old style UI - Remove `NERDTreeDirArrows` option.
+    - On windows default to + and ~ for expand/collapse directory symbols.
+    - Lots more refactoring. Move a bunch of b: level vars into b:NERDTree and friends.
 
-CHANGELOG
-================================================================================
-This project is using [Semantic Versioning 2.0.0](http://semver.org/)
+#### 5.0.0
+- Refactor the code significantly:
+    * Break the classes out into their own files.
+    * Make the majority of the code OO - previously large parts were effectively a tangle of "global" methods.
+- Add an API to assign flags to nodes. This allows VCS plugins like https://github.com/Xuyuanp/nerdtree-git-plugin to exist. Thanks to **Xuyuanp** for helping design/test/build said API.
+- add `scope` argument to the key map API see :help NERDTreeAddKeyMap()
+- add magic [[dir]] and [[file]] flags to NERDTreeIgnore
+- add support for custom path filters. See :help NERDTreeAddPathFilter()
+- add path listener API. See :help NERDTreePathListenerAPI.
+- expand the fs menu functionality to list file properties (PhilRunninger, apbarrero, JESii)
+- make bookmarks work with `~` home shortcuts (hiberabyss)
+- show OSX specific fsmenu options in regular vim on mac (evindor)
+- make dir arrow icons configurable (PickRelated)
+- optimise node sorting performance when opening large dirs (vtsang)
+- make the root note render prettier by truncating it at a path slash (gcmt)
+- remove NERDChristmasTree option - its always christmas now
+- add "cascade" open and closing for dirs containing only another single dir. See :help NERDTreeCascadeOpenSingleChildDir (pendulm)
+- Many other fixes, doc updates and contributions from: **actionshrimp**, **agrussellknives**, **alvan**, **AndrewRadev**, **cperl82** (*many small fixes*), **devmanhinton**, **egalpin**, **franksort**, **gastropoda**, **handcraftedbits**, **kelaban**, **lucascaton**, **mixvin**, **pendulm**, **SchDen**, **shanesmith**, **staeff**, **stephenprater**, **toiffel**, **Twinside**, **WoLpH**, **xiaodili**, **zhangoose**
 
-- v0.11.0
-  - Added Docker filetypes support (PR #228) (@IngoHeimbach)
-  - Added Swift filetypes support (PR #252) (@motform)
-  - Added Elixir filetypes support (PR #244) (@akoutmos)
-  - Added configuration for 'prePadding' (fixes #231)
-  - Added support for `vue` filetype extensions out-of-the-box (fixes #235)
-  - Added configuration for 'DevIconsArtifactFix' (#225)
-  - Added leftrelease override to work on single mouse click (PR #246) (@Matrix86)
-  - Added Travis CI with vim linting (PR #236) (@kutsan)
-  - Fixed Vim-Startify no longer working "out of the box" (#233)
-  - Fixed Denite information being discarded (fixes #216) (PR #229 @carlitux)
-  - Fixed inconsistent spacing between folder and file glyphs (fixes #213)
-  - Updated variable declarations and refactored into set function (PR #237) (@kutsan)
-  - Updated plugin initialization functions to autoload on demand (PR #238) (@kutsan)
-  - Updated documentation and refactored massively to Wiki (PR #232) (@kutsan)
-  - Updated `vim` glyph to better glyph (fixes #234)
-  - Updated Readme screenshots and badges
-- v0.10.0
-  - Added support for symlink directories (PR #221) (@mhartington)
-  - Added missing Denite config in readme (PR #217, fixes #205) (@mohamadLy)
-  - Fixed NERDTree folder open bug with cascade setting (fixes #194)
-  - Fixed potential issue with Vim-Airline (PR #219) (@chrisbra)
-  - Fixed readme.md (removed duplicate section) (PR #222) (@thehappydinoa)
-  - Updated Vim-Airline Repo link in readme (PR #220) (@chrisbra)
-- v0.9.3
-  - Added `tsx` filetype (PR #210) (@dustinblackman)
-  - Updated links of [deprecated kien/ctrlp](https://github.com/kien/ctrlp.vim) to [active ctrlp fork](https://github.com/ctrlpvim/ctrlp.vim) (PR #211) (@haxorjim)
-  - Updated MacOS and Windows `guifont` examples with alternate format (fixes #208)
-- v0.9.2
-  - Added `yaml` filetype (PR #207) (@jpoppe)
-  - Added mention of `vim-workspace` as an integrated plugin (PR #206) (@bagrat)
-  - Fixed NERDTree keymap `U` open folder icon bug (fixes #189)
-- v0.9.1
-  - Added `sass` filetype (PR #202) (@toastal)
-  - Fixed NERDTree open/close folder icon bugs (fixes #194)
-  - Fixed airline conflict with file enconding `skip_expected_string` feature (fixes #203)
-  - Fixed possible glyph artifacts on open/close folder glyphs
-- v0.9.0
-  - Added support for [Denite](https://github.com/Shougo/denite.nvim) (PR #191) (@0phoff)
-  - Added symbol for byte order marker (BOM) (utf-8) (PR #199) (@Snaptags)
-  - Added support for `.zshrc`, `.vimrc`, `pp` (Puppet classes extensions), and `Vagrantfile` filetypes (enhancement #200) (@kiyanwang)
-  - Added support for `h`, `hpp`, `hxx` (C/C++ header filetype extensions) (enhancement #190)
-  - Added support for `bash`, `zsh`, `ksh`, `csh`, `awk`, `ps1` (script extensions) (enhancement #196)
-  - Added support for `rmd` (R Markdown) (partially fixes #195)
-  - Fixes opened folders titles padding/spacing offset (fixes #197)
-- v0.8.6
-  - Added support for vimfiler explorer mode (fixes #171)
-  - Added `doc/tags` to `.gitignore` (PR #182) (@doronbehar)
-  - Added warning to readme pertaining to old versions of NERDTree and CtrlP (PR #177, fixes #174) (@Melon-Bread)
-  - Fixes CtrlP buffer names (PR #185) (@HerringtonDarkholme)
-  - Fixes character encoding issue in vim doc (PR #178) (@mhartington)
-  - Fixes extraneous space after glyph in airline (PR #184) (@tbodt)
-  - Fixes errors when NERDTree not present (PR #187) (@blueyed)
-  - Updated Contributor Covenant to `v1.4`
-  - Updated API examples
-- v0.8.5
-  - Fixed errors in neovim (E670) (PR #163, fixes #162) (@mhartington)
-  - Fixed issue of updating NERDTree window via `CursorHoldUpdate` (PR #166) (@svanharmelen)
-    - Fixes updating of special buffer when selected
-    - Fixes potential issues CtrlP opening in wrong buffer when NERDTree is opened
-  - Fixed issue with CtrlP `:CtrlPMRU` always defaulting to current buffer (fixes #88)
-    - Also adds glyphs to other CtrlP modes besides MRU as a side effect
-  - Fixed documentation discrepency on pluging load order (PR #169) (@F1LT3R)
-  - Fixed documentation related to CtrlP MRU mode (PR #170, fixes #168) (@F1LT3R)
-- v0.8.4
-  - Fixed always warning about deprecated CtrlP version (fixes #137)
-  - Fixed missing configuration info about pattern based symbols (fixes #152)
-  - Fixed `WebDevIconsGetFileTypeSymbol` method iterator missing `break` (PR #156) (@blueyed)
-  - Fixed a typo in the readme (PR #159) (@SSARCandy)
-  - Added reference to [tiagofumo/vim-nerdtree-syntax-highlight](https://github.com/tiagofumo/vim-nerdtree-syntax-highlight) in readme (PR #161) (@tiagofumo)
-    - However, the [FAQ](https://github.com/ryanoasis/vim-devicons/wiki/FAQ) has been moved to the [Wiki](https://github.com/ryanoasis/vim-devicons/wiki) in this release
-- v0.8.3
-  - Fixed NERDTree not displaying glyph (icon) for newly created files (fixes #153)
-    - Also adds info to readme about `updatetime`
-  - Fixed resourcing `vimrc` not maintaining current NERDTree state (fixes #154)
-    - Adds new public methods `webdevicons#hardRefresh()` and `webdevicons#softRefresh()`
-    - Makes public method `webdevicons#refresh()` do a 'soft' refresh
-  - Fixed various source formatting and implemented most of vim lint ([vint](https://github.com/Kuniwak/vint)) recommendations
-  - Added public methods available to readme
-- v0.8.2
-  - Updated `jsx` filetype (using React glyph) (enhancement PR #148) (@alpertuna)
-  - Added issue and pull request templates
-- v0.8.1
-  - Fixed Unite display issues (absolute paths and/or duplicate paths) (fixes #140)
-  - Fixed custom CtrlP open function causing 'E16' (fixes #115)
-  - Fixed typo in readme for setting default folder glyph (PR #143)
-  - Added documentation for highlighting icon/glyphs only (not just entire lines) in NERDTree (fixes #142)
-- v0.8.0
-  - Added support for more [unite](https://github.com/Shougo/unite.vim) actions: `file_rec/async`, `file_rec/neovim`, `file_rec/neovim2`, `file_rec/git` (enhancement PR #132, fixes #131) (@mhartington)
-  - Improved Darwin detection by using a lighter method/logic (#135) (@delphinus35)
-  - Fixes `NERDTree-C` (fix PR #139) (@endenwer)
-  - Fixes error using open/close symbols for folder (fixes #130)
-- v0.7.1
-  - Misc readme updates
-  - Fixed performance issues and odd graphical artifacts in v0.7.0 (fixes #127)
-  - Improved installation instructions and re-organized some items to [Nerd Fonts repo](https://github.com/ryanoasis/nerd-fonts) (PR #129, fixes #125, #128) (@her)
-- v0.7.0
-  - Deprecated support for [kien/ctrlp](https://github.com/kien/ctrlp.vim) and only support [active ctrlp fork](https://github.com/ctrlpvim/ctrlp.vim) going forward (fixes #117)
-  - Added information to readme about [vim-startify](https://github.com/mhinz/vim-startify) support (enhancement #94)
-  - Added information to readme with possible fix to 'Dots after icons' (fixes #110) (@KabbAmine)
-  - Added support for 'cljc' (Clojure) filetypes (fix PR #120) (@spacepluk)
-  - Fixed certain folders in NERDTree showing file glyphs (based on pattern matching) (fixes #112)
-  - Fixed OS icon being display with as Linux Tux on Mac (fixes #118,fix PR #121) (@trodrigu)
-  - Fixed deprecated Linux font path in readme (fix PR #123) (@jrobeson)
-- v0.6.1
-  - Fixed likely breaking bug: undefined variable g:DevIconsEnableFoldersOpenClose (fixes #109)
-  - Fixed up the changelog details
-- v0.6.0
-  - Added support for [Powerline](https://github.com/powerline/powerline) (enhancement PR #74) (@delphinus35)
-  - Added support for 'ts' (TypeScript) filetypes (enhancement #79)
-  - Added support for 'jl' (Julia) filetypes
-  - Added support for 'bat' (batch) filetypes
-  - Added support for 'ejs' (Embedded JavaScript Templates) filetypes (enhancement #105) (@lerrua)
-  - Added support for 'react.jsx' filetype
-  - Added support for 'procfile' filetype
-  - Changed default 'go' filetype glyph to a better one
-  - Added open & close folder glyphs (icons) (enhancement #104)
-  - Fixed new files not having icons until refreshing NERDTree (fixes #33)
-    - Solution very similar to [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin)
-- v0.5.4
-  - Misc readme updates
-  - Add support for ocaml 'ml', 'mli' filetypes (enhancement PR #99) (@CharlieMartell)
-  - Add support for 'sql' and 'dump' filetypes (enhancement PR #100) (@lerrua)
-  - Add support for 'ico' filetypes (enhancement PR #101) (@lerrua)
-  - Add support for 'markdown' filetypes (enhancement PR #102) (@lerrua)
-  - Improved install fonts instructions on Mac (enhancement PR #103) (@lerrua)
-- v0.5.3
-  - Add 'slim' filetype support (same icon as 'html') (enhancement PR #98) (@lerrua)
-  - Add 'fish' filetype support (same icon as 'sh') (enhancement #93) (@michaelmrose)
-  - Updated old link references (enhancement PR #87) (@lerrua)
-  - Improved default Ruby icon (uses 'glyph set 2') (enhancement PR #97) (@lerrua)
-  - Prevent destorying user's conceal settings (Use setlocal) (enhancement PR #96) (@shawncplus)
-  - Fixes filenames of buffers getting lost in unite filter (fixes #86) (@ahrse)
-  - Various readme updates and fixes
-- v0.5.2
-  - Various readme updates and fixes
-  - Various file clean-up (.gitignore removed)
-  - Fixed link to install fonts (PR #83 fixes #81) (@theRemix)
-  - Fixed glyph used for Go (PR #82) (@hoop33)
-  - Added Code of Conduct
-- v0.5.1
-  - Fixed [CtrlP](https://github.com/ctrlpvim/ctrlp.vim) integration bugs (truncating 6 characters is unreliable) and only add glyphs for MRU File Mode (Fixes #80)
-  - Readme updates and improvements
-- v0.5.0
-  - Readme updates (removed polls sections, v0.5.0 specific changes)
-  - Misc code formatting fixes (tabs to spaces, modeline additions, reorganization)
-  - Update API: make WebDevIconsGetFileFormatSymbol return only fenc (fixes #73)
-  - Added Perl support (enhancement #60)
-  - Added support for some (mostly frontend) frameworks (enhancement #61)
-  - Added basic support for vim-flagship (enhancement #70)
-  - Added support for Unite and Vimfiler (enhancement #54)
-  - Added support for CtrlP (enhancement #56)
-  - Rebranding part 1: title and image (vim-devicons) (enhancement #76)
-- v0.4.4
-  - Lots of readme updates and tweaks
-  - Changelog semver details
-  - Spelling / confusing grammar corrections (PR #68) (@adelarsq)
-  - Fixed default folder/directory glyph (PR Fixes #72) (@cj)
-  - Mac OS X screenshot (Fixes #32) (@RageZBla)
-  - Fixed misalignment when used with  [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) (Fixes #71)
-  - Fixed re-sourcing bug (Fixes #71)
-  - Fixed directory node user settings being overwritten (Fixes #59)
-  - Fixed minor screenshot issues and clean-up
-- v0.4.3
-  - Prevent error 'Unknown function' when opening Vim without airline plugin (Fixes #67)
-  - Temporary fix for gvim glyph artifact issues (particuarly NERDTree) (Fixes #58)
-  - Support file format symbols (glyphs) in vim-airline (Enhancement #66)
-  - Add vimrc setup example to readme (Documentation #65)
-  - Fixes Conceal highlighting issues (Fixes #53, #52)
-  - Make sure plugin plays nice with [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-git-plugin) (Enhancement #62)
-  - general readme updates and improvements
-  - changelog format fixes
-- v0.4.2
-  - Updated vim doc with latest readme updates (html2vimdoc)
-  - Fixes #7 update readme for font and vim setup on osx and win platforms
-  - Fixes #49 with a FAQ update
-  - Fixes #41 No such event: nerdtree syntax match (@nbicalcarata)
-  - Removed test files from the repo and added folders to git-ignore
-  - Warn about loading vim-webdevicons before nerdtree plugin
-  - fix lazy NERDTree (@blueyed)
-  - Improve conceiling with NERDTree (@blueyed)
-  - add instructions to readme for vim setup on os x (@alfredbez)
-- v0.4.1
-  - Fixes #39 - updated screenshots (particularly nerdtree)
-  - Fixes #37 - g:webdevicons_conceal_nerdtree_brackets applying global config
-  - Add instructions to readme for adding icon to lightline (@hoop33)
-  - Updated vim doc with latest readme updates (sync'd with html2vimdoc)
-  - Added TL;DR section to readme
-  - Add a note to readme to load NERDTree before vim-webdevicons (@hoop33)
-  - Fix: Automatically turning off NERDTree support (@hoop33)
-  - general readme updates
-- v0.4.0
-  - #27 Remove [ ] wrapping icons
-  - #26 Add detection and warning on unsupported (old) NERDTree versions
-  - updated readme with more links and new details on new features and conifgs
-  - #30 Improve vim standard plugin conventions and tips
-  - #30 work on sections and standard plugin conventions part 1
-  - #30 clean-up of unused (for now) autoload file
-  - #28 setting global options broken part 1
-  - #29 Add vimdoc, more updates
-  - autogenerating vimdoc using html2vimdoc
-  - readme updates
-- v0.3.4
-  - Adds basic support for directory/folder glyphs - fixes #22
-  - optimize icon lookup - WebDevIconsGetFileTypeSymbol: use if/else (@blueyed)
-  - Do not clobber the default or customized airline formatter (@blueyed)
-  - fixed a bug related to the latest airline updates (Ali Aliev)
-  - various readme updates
-  - more sample usage images
-- v0.3.3
-  - Load the plugin once only (@blueyed)
-  - Add font installation instructions, fixes #5 (@wikimatze)
-  - added plugin install instructions
-  - slight readme re-ordering
-  - moved contributing section near bottom
-  - added additional screenshots
-  - added more thanks to those whose some more of the glyphs came from
-- v0.3.2
-  - moved screenshots into the wiki (wiki.vim-webdevicons) to reduce unnecessary project size of cloning repo
-- v0.3.1
-  - readme updates (with references to new font-patcher repo)
-  - readme updates screenshots reference wiki
-- v0.3.0
-  - moved font-patcher and patched fonts into a separate repo (nerd-filetype-glyphs-fonts-patcher)
-  - adds twigg file type support for #10 (@wikimatze)
-  - adds cpp file type support
-  - updated utf8 test file with glyphs
-  - readme fixes (@wikimatze, @blueyed)
-  - readme updates
-- v0.2.1
-  - readme updates
-- v0.2.0
-  - Script for patching any font: Initial cleaned up work for issue (feature enhancement) for #1
-  - added python font patcher and readme updates
-- v0.1.4
-  - readme updates
-- v0.1.3
-  - fixes #3 make matches case insensitive (ignore case)
-- v0.1.2
-  - fixes lookup for exact file notes (@johngeorgewright)
-- v0.1.1
-  - updated readme substantially
-- v0.1.0
-  - release
+#### 4.2.0
+- Add NERDTreeDirArrows option to make the UI use pretty arrow chars instead of the old +~| chars to define the tree structure (sickill)
+- shift the syntax highlighting out into its own syntax file (gnap)
+- add some mac specific options to the filesystem menu - for macvim only (andersonfreitas)
+- Add NERDTreeMinimalUI option to remove some non functional parts of the nerdtree ui (camthompson)
+- tweak the behaviour of :NERDTreeFind - see :help :NERDTreeFind for the new behaviour (benjamingeiger)
+- if no name is given to :Bookmark, make it default to the name of the target file/dir (minyoung)
+- use `file` completion when doing copying, create, and move operations (EvanDotPro)
+- lots of misc bug fixes from: **AndrewRadev**, **Bogdanov**, **camthompson**, **kml**, **mathias**, **paddyoloughlin**, **scottstvnsn**, **sdewald**, **Vitaly**, **wycats**, me RAWR!
+
+#### 4.1.0
+- features:
+    - NERDTreeFind to reveal the node for the current buffer in the tree, see `|NERDTreeFind|`. This effectively merges the FindInNERDTree plugin (by **Doug McInnes**) into the script.
+    - make NERDTreeQuitOnOpen apply to the t/T keymaps too. Thanks to **Stefan Ritter** and **Rémi Prévost**.
+    - truncate the root node if wider than the tree window. Thanks to **Victor Gonzalez**.
+
+- bugfixes:
+    - really fix window state restoring
+    - fix some win32 path escaping issues. Thanks to **Stephan Baumeister**, **Ricky**, **jfilip1024**, and **Chris Chambers**.
+
+#### 4.0.0
+- add a new programmable menu system (see `:help NERDTreeMenu`).
+- add new APIs to add menus/menu-items to the menu system as well as custom key mappings to the NERD tree buffer (see `:help NERDTreeAPI`).
+- removed the old API functions
+- added a mapping to maximize/restore the size of nerd tree window, thanks to Guillaume Duranceau for the patch. See :help NERDTree-A for details.
+- fix a bug where secondary nerd trees (netrw hijacked trees) and NERDTreeQuitOnOpen didnt play nicely, thanks to **Curtis Harvey**.
+- fix a bug where the script ignored directories whose name ended in a dot, thanks to **Aggelos Orfanakos** for the patch.
+- fix a bug when using the x mapping on the tree root, thanks to **Bryan Venteicher** for the patch.
+- fix a bug where the cursor position/window size of the nerd tree buffer wasnt being stored on closing the window, thanks to **Richard Hart**.
+- fix a bug where NERDTreeMirror would mirror the wrong tree
+
+#### 3.1.1
+- fix a bug where a non-listed no-name buffer was getting created every time the tree windows was created, thanks to **Derek Wyatt** and **owen1**
+- make `<CR>` behave the same as the `o` mapping
+- some helptag fixes in the doc, thanks **strull**.
+- fix a bug when using `:set nohidden` and opening a file where the previous buf was modified. Thanks **iElectric**.
+- other minor fixes
+
+#### 3.1.0
+- New features:
+    - add mappings to open files in a vsplit, see `:help NERDTree-s` and `:help NERDTree-gs`
+    - make the statusline for the nerd tree window default to something hopefully more useful. See `:help 'NERDTreeStatusline'`
+- Bugfixes:
+    - make the hijack netrw functionality work when vim is started with `vim <some dir>` (thanks to **Alf Mikula** for the patch).
+    - fix a bug where the CWD wasnt being changed for some operations even when NERDTreeChDirMode==2 (thanks to **Lucas S. Buchala**)
+    - add -bar to all the nerd tree :commands so they can chain with other :commands (thanks to **tpope**)
+    - fix bugs when ignorecase was set (thanks to **nach**)
+    - fix a bug with the relative path code (thanks to **nach**)
+    - fix a bug where doing a `:cd` would cause `:NERDTreeToggle` to fail (thanks **nach**)
+
+
+#### 3.0.1
+- Bugfixes:
+    - fix bugs with :NERDTreeToggle and :NERDTreeMirror when `'hidden'` was not set
+    - fix a bug where `:NERDTree <path>` would fail if `<path>` was relative and didnt start with a `./` or `../`  Thanks to **James Kanze**.
+    - make the `q` mapping work with secondary (`:e <dir>`  style) trees, thanks to **jamessan**
+    - fix a bunch of small bugs with secondary trees
+- More insane refactoring.
+
+#### 3.0.0
+- hijack netrw so that doing an `:edit <directory>`  will put a NERD tree in the window rather than a netrw browser. See :help 'NERDTreeHijackNetrw'
+- allow sharing of trees across tabs, see `:help :NERDTreeMirror`
+- remove "top" and "bottom" as valid settings for NERDTreeWinPos
+- change the `'<tab>'` mapping to `'i'`
+- change the `'H'` mapping to `'I'`
+- lots of refactoring

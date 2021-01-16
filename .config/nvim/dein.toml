@@ -54,3 +54,6 @@ repo = 'w0ng/vim-hybrid'
 
 [[plugins]]
 repo = 'jonathanfilip/lucius'
+
+[[plugins]]
+repo = 'cocopon/iceberg.vim'

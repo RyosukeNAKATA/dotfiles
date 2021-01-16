@@ -1,135 +1,72 @@
-# rust.vim
+# Vim Racer Plugin
 
-## Description
-
-This is a Vim plugin that provides [Rust][r] file detection, syntax highlighting, formatting,
-[Syntastic][syn] integration, and more. It requires Vim 8 or higher for full functionality.
-Some things may not work on earlier versions. 
+This plugin allows vim to use [Racer](http://github.com/phildawes/racer) for Rust code completion and navigation.
 
 ## Installation
 
-For activating the full functionality, this plugin requires either the plugin
-manager or the `.vimrc` to have the following:
+1. Build / Install [Racer](http://github.com/phildawes/racer)
 
-```vim
-syntax enable
-filetype plugin indent on
+2. Install using Pathogen, Vundle or NeoBundle. Or, copy `ftplugin/rust_racer.vim` into your `~/.vim/plugin` directory.
+
+  Vundle users:
+  ```
+  Plugin 'racer-rust/vim-racer'
+  ```
+
+  NeoBundle users:
+  ```
+  NeoBundle 'racer-rust/vim-racer'
+  ```
+
+  vim-plug users:
+  ```
+  Plug 'racer-rust/vim-racer'
+  ```
+
+  Pathogen users:
+  ```
+  git clone --depth=1 https://github.com/racer-rust/vim-racer.git ~/.vim/bundle/vim-racer
+  ```
+
+3. Add `g:racer_cmd` to your `.vimrc`. It contains full path to `racer` executable file.
+Variable `g:racer_cmd` is optional. You do not need to use this variable if the executable file is in a directory that is specified in `$PATH`, else you should specified full path to `racer` executable binary file in this `g:racer_cmd`. Also it's worth turning on 'hidden' mode for buffers otherwise you need to save the current buffer every time you do a goto-definition. E.g.:
+
+  ```
+  set hidden
+  let g:racer_cmd = "/home/user/.cargo/bin/racer"
+  ```
+
+4. If you want completions to show the complete function definition (e.g. its arguments and return type), enable the experimental completer:
+
+  ```
+  let g:racer_experimental_completer = 1
+  ```
+
+5. If you want to insert the parenthesis in the completion:
+
+  ```
+  let g:racer_insert_paren = 1
+  ```
+
+## Example Mappings
+
+vim-racer enables `C-x-C-o` to search for completions and provides several
+`<Plug>` mappings for source code navigation. These mappings are not enabled by
+default but you can easily use them by adding the following lines to your
+`.vimrc` (Or `init.vim` in case of Neovim). 
+
+For example, with the following mappings you can navigate to the identifier under
+the cursor and open it on the current buffer, on an horizontal or vertical split, on a new tab,
+or go straight to the documentation:
+
 ```
-
-Most plugin managers don't do this automatically, so these statements are
-usually added by users in their `vimrc` _right after_ the plugin manager load
-section.
-
-### [Vim8 packages][vim8pack]
-
-```sh
-git clone https://github.com/rust-lang/rust.vim ~/.vim/pack/plugins/start/rust.vim
+augroup Racer
+    autocmd!
+    autocmd FileType rust nmap <buffer> gd         <Plug>(rust-def)
+    autocmd FileType rust nmap <buffer> gs         <Plug>(rust-def-split)
+    autocmd FileType rust nmap <buffer> gx         <Plug>(rust-def-vertical)
+    autocmd FileType rust nmap <buffer> gt         <Plug>(rust-def-tab)
+    autocmd FileType rust nmap <buffer> <leader>gd <Plug>(rust-doc)
+    autocmd FileType rust nmap <buffer> <leader>gD <Plug>(rust-doc-tab)
+augroup END
 ```
-
-### [Vundle][v]
-
-```vim
-Plugin 'rust-lang/rust.vim'
-```
-
-### [Pathogen][p]
-
-```sh
-git clone --depth=1 https://github.com/rust-lang/rust.vim.git ~/.vim/bundle/rust.vim
-```
-
-### [vim-plug][vp]
-
-```vim
-Plug 'rust-lang/rust.vim'
-```
-
-### [dein.vim][d]
-
-```vim
-call dein#add('rust-lang/rust.vim')
-```
-
-### [NeoBundle][nb]
-
-```vim
-NeoBundle 'rust-lang/rust.vim'
-```
-
-## Features
-
-### Error checking with [Syntastic][syn]
-
-`rust.vim` automatically registers `cargo` as a syntax checker with
-[Syntastic][syn], if nothing else is specified. See `:help rust-syntastic`
-for more details.
-
-### Source browsing with [Tagbar][tgbr]
-
-The installation of Tagbar along with [Universal Ctags][uctags] is recommended
-for a good Tagbar experience. For other kinds of setups, `rust.vim` tries to
-configure Tagbar to some degree.
-
-### Formatting with [rustfmt][rfmt]
-
-The `:RustFmt` command will format your code with
-[rustfmt][rfmt] if installed. `rustfmt` can be installed
-via `rustup component add rustfmt`.
-
-Placing `let g:rustfmt_autosave = 1` in your `~/.vimrc` will
-enable automatic running of `:RustFmt` when you save a buffer.
-
-Do `:help :RustFmt` for further formatting help and customization
-options.
-
-### [Playpen][pp] integration
-
-*Note:* This feature requires [webapi-vim][wav] to be installed.
-
-The `:RustPlay` command will send the current selection, or if
-nothing is selected the current buffer, to the [Rust playpen][pp].
-
-If you set g:rust_clip_command RustPlay will copy the url to the clipboard.
-
-- Mac:
-
-      let g:rust_clip_command = 'pbcopy'
-
-- Linux:
-
-      let g:rust_clip_command = 'xclip -selection clipboard'
-
-### Running a test under cursor
-
-In a Cargo project, the `:RustTest` command will run the test that is under the cursor.
-This is useful when your project is big and running all of the tests takes a long time.
-
-## Help
-
-Further help can be found in the documentation with `:Helptags` then `:help rust`.
-
-Detailed help can be found in the documentation with `:help rust`.
-Helptags (`:help helptags`) need to be generated for this plugin
-in order to navigate the help. Most plugin managers will do this
-automatically, but check their documentation if that is not the case.
-
-## License
-
-Like Rust, rust.vim is primarily distributed under the terms of both the MIT
-license and the Apache License (Version 2.0). See LICENSE-APACHE and
-LICENSE-MIT for details.
-
-[r]: https://www.rust-lang.org
-[v]: https://github.com/gmarik/vundle
-[vqs]: https://github.com/gmarik/vundle#quick-start
-[p]: https://github.com/tpope/vim-pathogen
-[nb]: https://github.com/Shougo/neobundle.vim
-[vp]: https://github.com/junegunn/vim-plug
-[d]: https://github.com/Shougo/dein.vim
-[rfmt]: https://github.com/rust-lang-nursery/rustfmt
-[syn]: https://github.com/scrooloose/syntastic
-[tgbr]: https://github.com/majutsushi/tagbar
-[uctags]: https://ctags.io
-[wav]: https://github.com/mattn/webapi-vim
-[pp]: https://play.rust-lang.org/
-[vim8pack]: http://vimhelp.appspot.com/repeat.txt.html#packages
