@@ -100,8 +100,10 @@ if [[ ! -n $TMUX ]]; then
 fi
 
 # prezto用
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
-autoload -Uz promptinit
-promptinit
-prompt peepcode $
+# autoload -Uz promptinit
+# promptinit
+# prompt peepcode $
+
+eval "$(starship init zsh)"
