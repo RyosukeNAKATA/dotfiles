@@ -1,0 +1,12 @@
+[cmd_duration]
+min_time = 500
+format = "underwent [$duration](bold yellow)"
+
+[python]
+symbol = "👾 "
+pyenv_version_name = true
+# Only use the `python3` binary to get the version.
+python_binary = "python3"
+
+[rust]
+format = "via [⚙️ $version](red bold)"
