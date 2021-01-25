@@ -106,4 +106,10 @@ fi
 # promptinit
 # prompt peepcode $
 
+# starshipのPATH
 eval "$(starship init zsh)"
+
+# zsh-autosuggest用
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+export PATH=/Applications/Julia-1.5.3-1.app/Contents/Resources/julia/bin:$PATH
