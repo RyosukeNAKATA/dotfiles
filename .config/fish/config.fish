@@ -2,8 +2,11 @@ starship init fish | source
 
 pyenv init - | source
 
+set -x PATH $HOME/.nodebrew/current/bin $PATH
+
 # general use
 alias ls='exa'                                                          # ls
+alias lla='exa -la'
 alias l='exa -lbF --git'                                                # list, size, type, git
 alias ll='exa -lbGF --git'                                             # long list
 alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
