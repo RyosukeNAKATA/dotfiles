@@ -99,12 +99,6 @@ if [[ ! -n $TMUX ]]; then
   fi
 fi
 
-# prezto用
-# source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-
-# autoload -Uz promptinit
-# promptinit
-# prompt peepcode $
 
 # starshipのPATH
 eval "$(starship init zsh)"
