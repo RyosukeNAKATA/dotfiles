@@ -9,7 +9,7 @@ set runtimepath+=/Users/ryosuke/.cache/dein/repos/github.com/Shougo/dein.vim
 " Required:
 if dein#load_state('/Users/ryosuke/.cache/dein')
   call dein#begin('/Users/ryosuke/.cache/dein')
-  call dein#load_toml('Users/ryosuke/.config/nvim/dein.toml')
+  call dein#load_toml('/Users/ryosuke/dotfiles/.config/nvim/dein.toml')
 
   " Let dein manage dein
   " Required:
@@ -39,10 +39,10 @@ syntax on
 set t_Co=256
 
 set background=dark
-" :colorscheme hybrid
-:colorscheme iceberg
+colorscheme iceberg
 
 set autoindent
+set clipboard=unnamed,unnamedplus
 set smartindent
 set expandtab
 set encoding=utf-8
@@ -65,9 +65,6 @@ set conceallevel=0
 
 " htmlのマッチするタグに%でジャンプ
 source $VIMRUNTIME/macros/matchit.vim
-
-" hi
-" Comment ctermfg=gray
 
 if has('mouse')
   set mouse=a
@@ -93,8 +90,6 @@ set autoindent
 set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
 set encoding=utf-8
 set scrolloff=2
-" set noshowmode
-" set hidden
 set nowrap
 set nojoinspaces
 let g:sneak#s_next = 1

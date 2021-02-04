@@ -1,4 +1,7 @@
 [[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 
 [[plugins]]
@@ -36,24 +39,13 @@ repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
 repo = 'junegunn/fzf'
-build_on = '''
-./install -all
-'''
+build_on = './install -all'
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
-
-[[plugins]]
-repo = 'safv12/andromeda.vim'
-
-[[plugins]]
-repo = 'w0ng/vim-hybrid'
-
-[[plugins]]
-repo = 'jonathanfilip/lucius'
 
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
