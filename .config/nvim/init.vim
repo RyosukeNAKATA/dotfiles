@@ -1,20 +1,39 @@
+"dein Scripts-----------------------------
 if &compatible
-  set nocompatible
+  set nocompatible               " Be iMproved
 endif
-  set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-if dein#load_state('~/.cache/dein')
-  call dein#begin('~/.cache/dein')
-  call dein#load_toml('~/.config/nvim/dein.toml')
+
+" Required:
+set runtimepath+=/Users/ryosuke/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/Users/ryosuke/.cache/dein')
+  call dein#begin('/Users/ryosuke/.cache/dein')
+  call dein#load_toml('Users/ryosuke/.config/nvim/dein.toml')
+
+  " Let dein manage dein
+  " Required:
+  " call dein#add('/Users/ryosuke/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here like this:
+  "call dein#add('Shougo/neosnippet.vim')
+  "call dein#add('Shougo/neosnippet-snippets')
+
+  " Required:
   call dein#end()
   call dein#save_state()
 endif
 
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
 endif
 
-filetype plugin indent on
-syntax enable
+"End dein Scripts-------------------------
 
 syntax on
 set t_Co=256
@@ -189,3 +208,4 @@ if has('vim_starting')
     let &t_SR .= "\e[4 q"
 endif
 
+set rtp+=/usr/local/opt/fzf

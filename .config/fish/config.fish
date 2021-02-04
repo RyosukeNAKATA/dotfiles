@@ -48,3 +48,4 @@ if test -z $TMUX && status --is-login
 end
 
 set -U fish_user_paths $fish_user_paths $HOME/.cargo/bin
+set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
