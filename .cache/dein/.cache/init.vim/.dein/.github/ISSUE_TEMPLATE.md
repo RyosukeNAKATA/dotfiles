@@ -1,25 +1,28 @@
-<!-- ISSUES NOT FOLLOWING THIS TEMPLATE WILL BE CLOSED AND DELETED -->
+#### Requirements
 
-<!-- Check all that apply [x] -->
+If you are **not** sure whether or not what you are reporting is actually an issue **or** you have a general question please message in the [Gitter Chat Room](https://gitter.im/ryanoasis/vim-devicons)
 
-- [ ] I have fzf 0.23.0 or above
-- [ ] I have read through https://github.com/junegunn/fzf.vim/blob/master/README.md
-- [ ] I have read through https://github.com/junegunn/fzf/blob/master/README-VIM.md
-- [ ] I have read through the manual page of fzf (`man fzf`)
-- [ ] I have searched through the existing issues
+These items you must provide answers to. Make sure to add **all the information needed to understand the bug** so that someone can help. If the info is missing we'll add the 'Needs more information' label and _may_ choose to close the issue until there is enough information.
 
-<!--
+Please acknowledge that you understand by marking off the following list items below with an 'x'
 
-Before submitting
-=================
 
-- Make sure that you have the latest version of fzf and fzf.vim
-- Check if your problem is reproducible with a minimal configuration
+_--- ✂ snip ✂ --- Delete this line and all of the ^above^ after reading and before submitting your issue please --- ✂ snip ✂ ---_
 
-Start Vim with a minimal configuration
-======================================
 
-vim -Nu <(curl https://gist.githubusercontent.com/junegunn/6936bf79fedd3a079aeb1dd2f3c81ef5/raw)
+#### Required Info
 
--->
+- [ ] I have searched the [issues](https://github.com/ryanoasis/vim-devicons/issues) for my issue and found nothing related and/or helpful
+- [ ] I have read or at least glanced at the [FAQ](https://github.com/ryanoasis/vim-devicons/wiki/FAQ-&-Troubleshooting)
+- [ ] I have read or at least glanced at the [Wiki](https://github.com/ryanoasis/vim-devicons/wiki)
+- [ ] `VimDevIcons` is the last loaded vim plugin?
+- [ ] What **version** of vim are you using?
+  - hint: `vim --version`
+- [ ] What **version** of vim-devicons are you using?
+  - hint: `:echo webdevicons#version()`
+- [ ] Are you using vim from the terminal or a GUI vim?
+- [ ] Are you using Mac, Linux or Windows?
 
+#### Optional Info
+
+- [ ] Provide **screenshots** where appropriate

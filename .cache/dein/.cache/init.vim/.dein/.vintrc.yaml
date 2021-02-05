@@ -1,10 +1,5 @@
 cmdargs:
   severity: style_problem
-
-policies:
-  ProhibitUnusedVariable:
-    enabled: false
-  ProhibitImplicitScopeVariable:
-    enabled: true
-  ProhibitNoAbortFunction:
-    enabled: true
+  color: true
+  env:
+    neovim: false

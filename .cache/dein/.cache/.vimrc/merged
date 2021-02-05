@@ -1,3 +1,0 @@
-{'repo': v:val.repo, 'rev': get(v:val, 'rev', '')}
-0
-[{'rev': '', 'repo': 'Yggdroot/indentLine'}, {'rev': '', 'repo': 'itchyny/lightline.vim'}, {'rev': '', 'repo': 'mattn/vim-lsp-settings'}, {'rev': '', 'repo': 'nathanaelkane/vim-indent-guides'}, {'rev': '', 'repo': 'prabirshrestha/vim-lsp'}, {'rev': '', 'repo': 'preservim/nerdtree'}, {'rev': '', 'repo': 'racer-rust/vim-racer'}, {'rev': '', 'repo': 'rust-lang/rust.vim'}, {'rev': '', 'repo': 'ryanoasis/vim-devicons'}, {'rev': '', 'repo': 'thinca/vim-quickrun'}, {'rev': '', 'repo': 'tomtom/tcomment_vim'}]
