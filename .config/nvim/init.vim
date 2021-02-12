@@ -205,3 +205,6 @@ endif
 
 set rtp+=/usr/local/opt/fzf
 
+" nerd-tree用設定
+map <C-l> gt
+map <C-h> gT
