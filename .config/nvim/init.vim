@@ -204,3 +204,4 @@ if has('vim_starting')
 endif
 
 set rtp+=/usr/local/opt/fzf
+
