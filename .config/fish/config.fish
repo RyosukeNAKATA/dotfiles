@@ -6,7 +6,7 @@ pyenv init - | source
 
 set -x PATH $HOME/.nodebrew/current/bin $PATH
 
-set -x PATH $HOME/.jlenv/bin $PATH
+# set -x PATH $HOME/.jlenv/bin $PATH
 
 # general use
 alias ls='exa'                                                          # ls
@@ -51,3 +51,4 @@ end
 
 set -U fish_user_paths $fish_user_paths $HOME/.cargo/bin
 set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
+set -Ux fish_user_paths $HOME/.anyenv/bin $fish_user_paths
