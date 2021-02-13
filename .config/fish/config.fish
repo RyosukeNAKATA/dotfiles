@@ -2,9 +2,9 @@ starship init fish | source
 
 set -U FZF_LEGACY_KEYBINDINGS 0
 
-pyenv init - | source
+# pyenv init - | source
 
-set -x PATH $HOME/.nodebrew/current/bin $PATH
+# set -x PATH $HOME/.nodebrew/current/bin $PATH
 
 # set -x PATH $HOME/.jlenv/bin $PATH
 
