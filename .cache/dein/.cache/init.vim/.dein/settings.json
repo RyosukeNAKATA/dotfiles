@@ -302,6 +302,28 @@
   ],
   "graphql": [
     {
+      "command": "graphql-language-server",
+      "requires": [
+        "npm"
+      ],
+      "root_uri_patterns": [
+        ".graphqlrc",
+        ".graphqlrc.json",
+        ".graphqlrc.yml",
+        ".graphqlrc.yaml",
+        ".graphql.config.js",
+        ".graphqlrc.js",
+        "package.json",
+        "tsconfig.json"
+      ],
+      "vim_plugin": {
+        "extensions": [
+          "graphql"
+        ],
+        "name": "jparise/vim-graphql"
+      }
+    },
+    {
       "command": "gql-language-server",
       "requires": [
         "npm",
@@ -430,6 +452,10 @@
       ]
     },
     {
+      "command": "deno",
+      "requires": []
+    },
+    {
       "command": "rslint-lsp",
       "requires": [
         "cargo"
@@ -466,6 +492,10 @@
       "requires": [
         "npm"
       ]
+    },
+    {
+      "command": "deno",
+      "requires": []
     }
   ],
   "json": [
@@ -965,6 +995,10 @@
       "requires": [
         "npm"
       ]
+    },
+    {
+      "command": "deno",
+      "requires": []
     }
   ],
   "typescriptreact": [
@@ -993,6 +1027,10 @@
       "requires": [
         "npm"
       ]
+    },
+    {
+      "command": "deno",
+      "requires": []
     }
   ],
   "vala": [
