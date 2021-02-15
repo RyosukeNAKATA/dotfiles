@@ -52,6 +52,7 @@ if test -z $TMUX && status --is-login
     attach_tmux_session_if_needed
 end
 
-
+# Created by `userpath` on 2021-02-15 13:14:49
+set PATH $PATH /Users/ryosuke/.local/bin
 
 set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)
