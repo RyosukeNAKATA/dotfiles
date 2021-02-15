@@ -48,7 +48,3 @@ end
 if test -z $TMUX && status --is-login
     attach_tmux_session_if_needed
 end
-
-set -U fish_user_paths $fish_user_paths $HOME/.cargo/bin
-set -g fish_user_paths "/usr/local/opt/curl/bin" $fish_user_paths
-set -Ux fish_user_paths $HOME/.anyenv/bin $fish_user_paths
