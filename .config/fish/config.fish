@@ -1,3 +1,5 @@
+set -gx PATH "$HOME/.cargo/bin" $PATH;
+
 starship init fish | source
 
 set -U FZF_LEGACY_KEYBINDINGS 0
