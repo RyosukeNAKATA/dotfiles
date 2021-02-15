@@ -1,10 +1,11 @@
-set -gx PATH "$HOME/.cargo/bin" $PATH;
+# set -gx PATH "$HOME/.cargo/bin" $PATH;
 
 starship init fish | source
 
 set -U FZF_LEGACY_KEYBINDINGS 0
 
-# pyenv init - | source
+set -x PATH $HOME/.anyenv/bin $PATH
+eval (anyenv init - | source)
 
 # set -x PATH $HOME/.nodebrew/current/bin $PATH
 
@@ -50,3 +51,7 @@ end
 if test -z $TMUX && status --is-login
     attach_tmux_session_if_needed
 end
+
+
+
+set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)
