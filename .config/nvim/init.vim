@@ -189,7 +189,7 @@ set encoding=UTF-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
 
-nnoremap <C-b> :NERDTreeToggle<CR>`
+nnoremap <C-b> :NERDTreeToggle<CR>
 
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
