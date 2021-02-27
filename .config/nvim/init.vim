@@ -228,3 +228,6 @@ inoremap < <><ESC>i
 "インサートモードのままカーソル移動
 inoremap <C-f> <C-g>U<Right>
 inoremap <C-f><C-f> <C-g>U<ESC><S-a>
+"Ctrl+h/lで行頭/末に移動
+noremap H ^ 
+noremap L $
