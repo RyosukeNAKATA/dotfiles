@@ -1,5 +1,3 @@
-# set -gx PATH "$HOME/.cargo/bin" $PATH;
-
 starship init fish | source
 
 set -U FZF_LEGACY_KEYBINDINGS 0
@@ -28,29 +26,8 @@ alias lt='exa --tree --level=2'                                         # tree
 abbr vim 'nvim'
 abbr vi 'nvim'
 
-# pip-upgrade-allで更新可能なパッケージを一括アップデート
-alias pip-upgrade-all="pip list -o | tail -n +3 | awk '{ print \$1 }' | xargs pip install -U"
-
-# 端末起動時にtmuセッション起動
-function attach_tmux_session_if_needed
-    set ID (tmux list-sessions)
-    if test -z "$ID"
-        tmux new-session
-        return
-    end
-
-    set new_session "Create New Session" 
-    set ID (echo $ID\n$new_session | peco --on-cancel=error | cut -d: -f1)
-    if test "$ID" = "$new_session"
-        tmux new-session
-    else if test -n "$ID"
-        tmux attach-session -t "$ID"
-    end
-end
-
-if test -z $TMUX && status --is-login
-    attach_tmux_session_if_needed
-end
+# pipx-upgrade-all
+alias pipx-upgrade-all="pip list -o | tail -n +3 | awk '{ print \$1 }' | xargs pipx install -U"
 
 # Created by `userpath` on 2021-02-15 13:14:49
 set PATH $PATH /Users/ryosuke/.local/bin
