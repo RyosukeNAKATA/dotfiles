@@ -4827,10 +4827,12 @@ git-add(1)               - Add file contents to the index
 git-am(1)                - Apply a series of patches from a mailbox
 git-annotate(1)          - Annotate file lines with commit information
 git-apply(1)             - Apply a patch to files and/or to the index
+git-archimport(1)        - Import a GNU Arch repository into Git
 git-archive(1)           - Create an archive of files from a named tree
 git-bisect(1)            - Use binary search to find the commit that introduced a bug
 git-blame(1)             - Show what revision and author last modified each line of a file
 git-branch(1)            - List, create, or delete branches
+git-bugreport(1)         - Collect information for user to file a bug report
 git-bundle(1)            - Move objects and refs by archive
 git-cat-file(1)          - Provide content or type and size information for repository objects
 git-check-attr(1)        - Display gitattributes information
@@ -4854,6 +4856,9 @@ git-credential(1)        - Retrieve and store user credentials
 git-credential-cache(1)  - Helper to temporarily store passwords in memory
 git-credential-cache--daemon(1) - Temporarily store user credentials in memory
 git-credential-store(1)  - Helper to store credentials on disk
+git-cvsexportcommit(1)   - Export a single commit to a CVS checkout
+git-cvsimport(1)         - Salvage your data out of another SCM people love to hate
+git-cvsserver(1)         - A CVS server emulator for Git
 git-daemon(1)            - A really simple server for Git repositories
 git-describe(1)          - Give an object a human readable name based on an available ref
 git-diff(1)              - Show changes between commits, commit and working tree, etc
@@ -4868,12 +4873,14 @@ git-fetch-pack(1)        - Receive missing objects from another repository
 git-filter-branch(1)     - Rewrite branches
 git-fmt-merge-msg(1)     - Produce a merge commit message
 git-for-each-ref(1)      - Output information on each ref
+git-for-each-repo(1)     - Run a Git command on a list of repositories
 git-format-patch(1)      - Prepare patches for e-mail submission
 git-fsck(1)              - Verifies the connectivity and validity of the objects in the database
 git-fsck-objects(1)      - Verifies the connectivity and validity of the objects in the database
 git-gc(1)                - Cleanup unnecessary files and optimize the local repository
 git-get-tar-commit-id(1) - Extract commit ID from an archive created using git-archive
 git-grep(1)              - Print lines matching a pattern
+git-gui(1)               - A portable graphical interface to Git
 git-hash-object(1)       - Compute object ID and optionally creates a blob from a file
 git-help(1)              - Display help information about Git
 git-http-backend(1)      - Server side implementation of Git over HTTP
@@ -4891,6 +4898,7 @@ git-ls-remote(1)         - List references in a remote repository
 git-ls-tree(1)           - List the contents of a tree object
 git-mailinfo(1)          - Extracts patch and authorship from a single e-mail message
 git-mailsplit(1)         - Simple UNIX mbox splitter program
+git-maintenance(1)       - Run tasks to optimize Git repository data
 git-merge(1)             - Join two or more development histories together
 git-merge-base(1)        - Find as good common ancestors as possible for a merge
 git-merge-file(1)        - Run a three-way file merge
@@ -4900,6 +4908,7 @@ git-merge-tree(1)        - Show three-way merge without touching index
 git-mergetool(1)         - Run merge conflict resolution tools to resolve merge conflicts
 git-mergetool--lib(1)    - Common Git merge tool shell scriptlets
 git-mktag(1)             - Creates a tag object
+git-mktag(1)             - Creates a tag object with extra validation
 git-mktree(1)            - Build a tree-object from ls-tree formatted text
 git-multi-pack-index(1)  - Write and verify multi-pack-indexes
 git-mv(1)                - Move or rename a file, a directory, or a symlink
@@ -4937,14 +4946,18 @@ git-rm(1)                - Remove files from the working tree and from the index
 git-send-email(1)        - Send a collection of patches as emails
 git-send-pack(1)         - Push objects over Git protocol to another repository
 git-sh-i18n(1)           - Git(aqs i18n setup code for shell scripts
+git-sh-i18n(1)           - Gits i18n setup code for shell scripts
 git-sh-i18n--envsubst(1) - Git(aqs own envsubst(1) for i18n fallbacks
+git-sh-i18n--envsubst(1) - Gits own envsubst(1) for i18n fallbacks
 git-sh-setup(1)          - Common Git shell script setup code
 git-shell(1)             - Restricted login shell for Git-only SSH access
 git-shortlog(1)          - Summarize (aqgit log(aq output
+git-shortlog(1)          - Summarize git log output
 git-show(1)              - Show various types of objects
 git-show-branch(1)       - Show branches and their commits
 git-show-index(1)        - Show packed archive index
 git-show-ref(1)          - List references in a local repository
+git-sparse-checkout(1)   - Initialize and modify the sparse-checkout configuration, which reduces the checkout to a set of paths given by a list of patterns
 git-stage(1)             - Add file contents to the staging area
 git-stash(1)             - Stash the changes in a dirty working directory away
 git-status(1)            - Show the working tree status
@@ -4955,6 +4968,7 @@ git-switch(1)            - Switch branches
 git-symbolic-ref(1)      - Read, modify and delete symbolic refs
 git-tag(1)               - Create, list, delete or verify a tag object signed with GPG
 git-unpack-file(1)       - Creates a temporary file with a blob(aqs contents
+git-unpack-file(1)       - Creates a temporary file with a blobs contents
 git-unpack-objects(1)    - Unpack objects from a packed archive
 git-update-index(1)      - Register file contents in the working tree to the index
 git-update-ref(1)        - Update the object name stored in a ref safely
@@ -4972,17 +4986,23 @@ git-write-tree(1)        - Create a tree object from the current index
 gitattributes(5)         - Defining attributes per path
 gitcli(7)                - Git command-line interface and conventions
 gitcore-tutorial(7)      - A Git core tutorial for developers
+gitcredentials(7)        - Providing usernames and passwords to Git
 gitcredentials(7)        - providing usernames and passwords to Git
+gitcvs-migration(7)      - Git for CVS users
 gitdiffcore(7)           - Tweaking diff output
 giteveryday(7)           - A useful minimum set of commands for Everyday Git
+gitfaq(7)                - Frequently asked questions about using Git
 gitglossary(7)           - A Git Glossary
 githooks(5)              - Hooks used by Git
 gitignore(5)             - Specifies intentionally untracked files to ignore
+gitk(1)                  - The Git repository browser
+gitmailmap(5)            - Map author/committer names and/or E-Mail addresses
 gitmodules(5)            - Defining submodule properties
 gitnamespaces(7)         - Git namespaces
 gitremote-helpers(7)     - Helper programs to interact with remote repositories
 gitrepository-layout(5)  - Git Repository Layout
 gitrevisions(7)          - Specifying revisions and ranges for Git
+gitsubmodules(7)         - Mounting one repository inside another
 gitsubmodules(7)         - mounting one repository inside another
 gittutorial(7)           - A tutorial introduction to Git
 gittutorial-2(7)         - A tutorial introduction to Git: part two

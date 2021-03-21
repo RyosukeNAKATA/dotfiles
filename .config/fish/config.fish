@@ -5,10 +5,6 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 set -x PATH $HOME/.anyenv/bin $PATH
 eval (anyenv init - | source)
 
-# set -x PATH $HOME/.nodebrew/current/bin $PATH
-
-# set -x PATH $HOME/.jlenv/bin $PATH
-
 # general use
 alias ls='exa'                                                          # ls
 alias lla='exa -la'
