@@ -29,3 +29,4 @@ alias pipx-upgrade-all="pip list -o | tail -n +3 | awk '{ print \$1 }' | xargs p
 set PATH $PATH /Users/ryosuke/.local/bin
 
 set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)
+
