@@ -2,10 +2,8 @@ starship init fish | source
 
 set -U FZF_LEGACY_KEYBINDINGS 0
 
-# set PATH="$HOME/.pyenv/bin:$PATH"
-set -U fish_user_paths $HOME/.pyenv/bin $fish_user_paths
-# set PATH="/usr/local/bin:$PATH"
-set -U fish_user_paths /usr/local/bin $fish_user_paths
+set -x PATH $HOME/.pyenv/bin $PATH
+. (pyenv init - | psub)
 
 # general use
 alias ls='exa'                                                          # ls
