@@ -4,6 +4,7 @@ set -U FZF_LEGACY_KEYBINDINGS 0
 
 set -x PATH $HOME/.pyenv/bin $PATH
 . (pyenv init - | psub)
+eval (nodenv init - | source)
 
 # general use
 alias ls='exa'                                                          # ls
