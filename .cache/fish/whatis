@@ -29,6 +29,7 @@ APR::URI(3pm)            - Perl API for URI manipulations
 APR::UUID(3pm)           - Perl API for manipulating APR UUIDs
 APR::Util(3pm)           - Perl API for Various APR Utilities
 ARDAgent(8)              - Apple Remote Desktop Agent
+ASPCarryLog(8)           - Daemon to collect NAND IO pattern on selected devices
 ATOMIC_VAR_INIT(3), atomic_init(3), atomic_load(3), atomic_store(3), atomic_exchange(3), atomic_compare_exchange_strong(3), atomic_compare_exchange_weak(3), atomic_fetch_add(3), atomic_fetch_and(3), atomic_fetch_or(3), atomic_fetch_sub(3), atomic_fetch_xor(3), atomic_is_lock_free(3) - type-generic atomic operations
 AVCAssistant(8)          - CoreMediaIO DAL Assistant Process
 AccessibilityVisualsAgent(8) - Accessibility Visuals Launch Agent
@@ -37,6 +38,7 @@ Algorithm::Annotate(3pm) - represent a series of changes in annotate form
 Algorithm::C3(3pm)       - A module for merging hierarchies using the C3 algorithm
 Algorithm::Diff(3pm)     - Compute `intelligent' differences between two files / lists
 Algorithm::DiffOld(3pm)  - Compute `intelligent' differences between two files / lists but use the old (<=0.59) interface
+AllPlanes(3), BlackPixel(3), WhitePixel(3), ConnectionNumber(3), DefaultColormap(3), DefaultDepth(3), XListDepths(3), DefaultGC(3), DefaultRootWindow(3), DefaultScreenOfDisplay(3), DefaultScreen(3), DefaultVisual(3), DisplayCells(3), DisplayPlanes(3), DisplayString(3), XMaxRequestSize(3), XExtendedMaxRequestSize(3), LastKnownRequestProcessed(3), NextRequest(3), ProtocolVersion(3), ProtocolRevision(3), QLength(3), RootWindow(3), ScreenCount(3), ScreenOfDisplay(3), ServerVendor(3), VendorRelease(3) - Display macros and functions
 AnyDBM_File(3pm)         - provide framework for multiple DBMs NDBM_File, DB_File, GDBM_File, SDBM_File, ODBM_File - various DBM implementations
 Apache2::Access(3pm)     - A Perl API for Apache request object: Access, Authentication and Authorization
 Apache2::Build(3pm)      - Methods for locating and parsing bits of Apache source code
@@ -93,9 +95,11 @@ App::CLI::Command::Version(3pm) - Print a preformatted version string
 App::Cpan(3pm)           - easily interact with CPAN from the command line
 App::Packer::PAR(3pm)    - Pack applications in a single executable file
 App::Prove(3pm)          - Implements the "prove" command
+App::Prove::Plugin::ShareDirDist(3pm) - A prove plugin that works with File::ShareDir::Dist
 App::Prove::State(3pm)   - State storage for the "prove" command
 App::Prove::State::Result(3pm) - Individual test suite results
 App::Prove::State::Result::Test(3pm) - Individual test results
+App::Yath::Plugin::ShareDirDist(3pm) - A prove plugin that works with File::ShareDir::Dist
 AppleCameraAssistant(8)  - CoreMediaIO DAL Assistant Process
 AppleQEMUGuestAgent(8)   - implements support for QMP commands and events
 AppleVNCServer(8)        - listens for VNC connections from clients
@@ -122,6 +126,7 @@ Authen::SASL::Perl::PLAIN(3pm) - Plain Login Authentication class
 AutoLoader(3pm)          - load subroutines only on demand
 AutoSplit(3pm)           - split a package for autoloading
 B(3pm)                   - The Perl Compiler Backend
+B::COW(3pm)              - B::COW additional B helpers to check COW status
 B::Concise(3pm)          - Walk Perl syntax tree, printing concise info about ops
 B::Debug(3pm)            - Walk Perl syntax tree, printing debug info about ops
 B::Deparse(3pm)          - Perl compiler backend to produce perl code
@@ -140,6 +145,7 @@ BerkeleyDB(3pm)          - Perl extension for Berkeley DB version 2, 3, 4 or 5
 Bit::Vector(3pm)         - Efficient bit vector, set of integers and "big int" math library
 Bit::Vector::Overload(3pm) - Overloaded operators add-on for Bit::Vector
 Bit::Vector::String(3pm) - Generic string import/export for Bit::Vector
+BlackPixelOfScreen(3), WhitePixelOfScreen(3), CellsOfScreen(3), DefaultColormapOfScreen(3), DefaultDepthOfScreen(3), DefaultGCOfScreen(3), DefaultVisualOfScreen(3), DoesBackingStore(3), DoesSaveUnders(3), DisplayOfScreen(3), XScreenNumberOfScreen(3), EventMaskOfScreen(3), HeightOfScreen(3), HeightMMOfScreen(3), MaxCmapsOfScreen(3), MinCmapsOfScreen(3), PlanesOfScreen(3), RootWindowOfScreen(3), WidthOfScreen(3), WidthMMOfScreen(3) - screen information functions and macros
 BluetoothReporter(8)     - gathers Bluetooth specific diagnostic information helpful in investigating system Bluetooth issues
 BootCacheControl(8)      - provides control of caches used during startup
 BridgeSupport(5)         - Scripting bridges support file
@@ -165,6 +171,10 @@ CGI::Util(3pm)           - Internal utilities used by CGI module
 CORE(3pm)                - Namespace for Perl's core routines
 CPAN(3pm)                - query, download and build perl modules from CPAN sites
 CPAN::API::HOWTO(3pm)    - a recipe book for programming with CPAN.pm
+CPAN::Changes(3pm)       - Read and write Changes files
+CPAN::Changes::Group(3pm) - A group of related change information within a release
+CPAN::Changes::Release(3pm) - Information about a particular release
+CPAN::Changes::Spec(3pm) - Specification for CPAN Changes files
 CPAN::Debug(3pm)         - internal debugging for CPAN.pm
 CPAN::Distroprefs(3pm)   - -- read and match distroprefs
 CPAN::FirstTime(3pm)     - Utility for CPAN::Config file Initialization
@@ -553,7 +563,6 @@ Carp::Clan(3pm)          - Report errors from perspective of caller of a "clan" 
 Class::Accessor(3pm),   Class::Accessor(3pm) - Automated accessor generation
 Class::Accessor5.18(3pm),   Class::Accessor(3pm) - Automated accessor generation
 Class::Accessor5.28(3pm),   Class::Accessor(3pm) - Automated accessor generation
-Class::Accessor5.30(3pm),   Class::Accessor(3pm) - Automated accessor generation
 Class::Accessor::Chained(3pm) - make chained accessors
 Class::Accessor::Chained::Fast(3pm) - Faster, but less expandable, chained accessors
 Class::Accessor::Fast(3pm) - Faster, but less expandable, accessors
@@ -608,6 +617,7 @@ CloudKeychainProxy(8)    - part of iCloud keychain syncing
 CommCenter(8)            - Provides functionality to allow the Mac to make and receive phone calls
 CommCenterRootHelper(8)  - Helper to CommCenter(8)
 Common Crypto(3cc)       - libSystem digest library
+Compose(5)               - X client mappings for multi-key input sequences
 Compress::Bzip2(3pm)     - Interface to Bzip2 compression library
 Compress::Raw::Bzip2(3pm) - Low-Level Interface to bzip2 compression library
 Compress::Raw::Zlib(3pm) - Low-Level Interface to zlib compression library
@@ -633,7 +643,6 @@ Convert::BinHex(3pm)     - extract data from Macintosh BinHex files ALPHA WARNIN
 Convert::TNEF(3pm),  Convert::TNEF(3pm) - Perl module to read TNEF files
 Convert::TNEF5.18(3pm),  Convert::TNEF(3pm) - Perl module to read TNEF files
 Convert::TNEF5.28(3pm),  Convert::TNEF(3pm) - Perl module to read TNEF files
-Convert::TNEF5.30(3pm),  Convert::TNEF(3pm) - Perl module to read TNEF files
 Convert::UUlib(3pm)      - Perl interface to the uulib library (a.k.a. uudeview/uuenview)
 CoreLocationAgent(8)     - manages location authorization prompts
 CrashReporterSupportHelper(8) - Provides functionality in support of CrashReporterSupport
@@ -668,6 +677,7 @@ DBD::SQLite::VirtualTable(3pm) - -- SQLite virtual tables implemented in Perl
 DBD::SQLite::VirtualTable::FileContent(3pm) - -- virtual table for viewing file contents
 DBD::SQLite::VirtualTable::PerlData(3pm) - -- virtual table hooked to Perl data
 DBD::Sponge(3pm)         - Create a DBI statement handle from Perl data
+DBE(3)                   - Double Buffer Extension
 DBI(3pm)                 - Database independent interface for Perl
 DBI::Const::GetInfo::ANSI(3pm) - ISO/IEC SQL/CLI Constants for GetInfo
 DBI::Const::GetInfo::ODBC(3pm) - ODBC Constants for GetInfo
@@ -750,7 +760,6 @@ DBIx::Class::ResultSet(3pm) - Represents a query used for fetching a set of resu
 DBIx::Class::ResultSetColumn(3pm),   DBIx::Class::ResultSetColumn(3pm) - helpful methods for messing   with a single column of the resultset
 DBIx::Class::ResultSetColumn5.18(3pm),   DBIx::Class::ResultSetColumn(3pm) - helpful methods for messing   with a single column of the resultset
 DBIx::Class::ResultSetColumn5.28(3pm),   DBIx::Class::ResultSetColumn(3pm) - helpful methods for messing   with a single column of the resultset
-DBIx::Class::ResultSetColumn5.30(3pm),   DBIx::Class::ResultSetColumn(3pm) - helpful methods for messing   with a single column of the resultset
 DBIx::Class::ResultSetManager(3pm) - scheduled for deletion in 09000
 DBIx::Class::ResultSource(3pm) - Result source object
 DBIx::Class::ResultSource::Table(3pm) - Table object
@@ -828,6 +837,15 @@ DBM_Filter::int32(3pm)   - filter for DBM_Filter
 DBM_Filter::null(3pm)    - filter for DBM_Filter
 DBM_Filter::utf8(3pm)    - filter for DBM_Filter
 DB_File(3pm)             - Perl5 access to Berkeley DB version 1.x
+DPMSCapable(3)           - returns the DPMS capability of the X server
+DPMSDisable(3)           - disables DPMS on the specified display
+DPMSEnable(3)            - enables DPMS on the specified display
+DPMSForceLevel(3)        - forces a DPMS capable display into the specified power level
+DPMSGetTimeouts(3)       - retrieves the timeout values used by the X server for DPMS timings
+DPMSGetVersion(3)        - returns the version of the DPMS extension implemented by the X server
+DPMSInfo(3)              - returns information about the current DPMS state
+DPMSQueryExtension(3)    - queries the X server to determine the availability of the DPMS Extension
+DPMSSetTimeouts(3)       - permits applications to set the timeout values used by the X server for DPMS timings
 Data::Compare(3pm)       - compare perl data structures
 Data::Compare::Plugins(3pm) - how to extend Data::Compare
 Data::Compare::Plugins::Scalar::Properties(3pm), Data::Compare::Plugin::Scalar::Properties(3pm) - plugin for Data::Compare to handle Scalar::Properties objects
@@ -843,6 +861,26 @@ Data::Dumper::Concise::Sugar(3pm) - return Dwarn @return_value
 Data::Hierarchy(3pm)     - Handle data in a hierarchical structure
 Data::OptList(3pm)       - parse and validate simple name/value option pairs
 Data::Page(3pm)          - help when paging through sets of results
+Data::Perl(3pm)          - Base classes wrapping fundamental Perl data types
+Data::Perl::Bool(3pm)    - Wrapping class for boolean values
+Data::Perl::Bool::MooseLike(3pm) - data::Perl::Bool subclass that simulates Moose's native traits
+Data::Perl::Code(3pm)    - Wrapping class for Perl coderefs
+Data::Perl::Collection::Array(3pm) - Wrapping class for Perl's built in array structure
+Data::Perl::Collection::Array::MooseLike(3pm) - Collection::Array subclass that simulates Moose's native traits
+Data::Perl::Collection::Hash(3pm) - Wrapping class for Perl's built in hash structure
+Data::Perl::Collection::Hash::MooseLike(3pm) - Collection::Hash subclass that simulates Moose's native traits
+Data::Perl::Counter(3pm) - Wrapping class for a simple numeric counter
+Data::Perl::Number(3pm)  - Wrapping class for Perl scalar numbers
+Data::Perl::Number::MooseLike(3pm) - data::Perl::Number subclass that simulates Moose's native traits
+Data::Perl::Role::Bool(3pm) - Wrapping class for boolean values
+Data::Perl::Role::Code(3pm) - Wrapping class for Perl coderefs
+Data::Perl::Role::Collection::Array(3pm) - Wrapping class for Perl's built in array structure
+Data::Perl::Role::Collection::Hash(3pm) - Wrapping class for Perl's built in hash structure
+Data::Perl::Role::Counter(3pm) - Wrapping class for a simple numeric counter
+Data::Perl::Role::Number(3pm) - Wrapping class for Perl scalar numbers
+Data::Perl::Role::String(3pm) - Wrapping class for Perl scalar strings
+Data::Perl::String(3pm)  - Wrapping class for Perl scalar strings
+Data::Perl::String::MooseLike(3pm) - data::Perl::String subclass that simulates Moose's native traits
 DataDetectorsLocalSources(8) - DataDetectors user source content manager
 DataDetectorsSourceAccess(8) - DataDetectors sources utility
 Date::Calc(3pm)          - Gregorian calendar date calculations
@@ -1657,6 +1695,8 @@ Devel::Peek(3pm)         - A data debugging tool for the XS programmer
 Devel::SelfStubber(3pm)  - generate stubs for a SelfLoading module
 Devel::StackTrace(3pm)   - An object representing a stack trace
 Devel::StackTrace::Frame(3pm) - A single frame in a stack trace
+Devel::TypeTiny::Perl56Compat(3pm) - shims to allow Type::Tiny to run on Perl 5.6.x
+Devel::TypeTiny::Perl58Compat(3pm) - shims to allow Type::Tiny to run on Perl 5.8.x
 DictationIM(8)           - Implements system-wide Dictation and command & control
 Digest(3pm)              - Modules that calculate message digests
 Digest::CRC(3pm)         - Generic CRC functions
@@ -1671,6 +1711,7 @@ Digest::file(3pm)        - Calculate digests of files
 DirHandle(3pm)           - (obsolete) supply object methods for directory handles
 DirHandle(3pm)           - supply object methods for directory handles
 DiskUnmountWatcher(8)    - watches for disk unmount and remove cached credentials
+DisplayOfCCC(3), VisualOfCCC(3), ScreenNumberOfCCC(3), ScreenWhitePointOfCCC(3), ClientWhitePointOfCCC(3) - Color Conversion Context macros
 Dist::CheckConflicts(3pm) - declare version conflicts for your dist
 Dock(8)                  - Provides the Dock interface for the system
 Dumpvalue(3pm)           - provides screen dump of Perl data
@@ -1682,7 +1723,6 @@ Encode::Byte(3pm)        - Single Byte Encodings
 Encode::CJKConstants(3pm), Encode::CJKConstants.pm(3pm) - -- Internally used by Encode::??::ISO_2022_*
 Encode::CJKConstants5.18(3pm), Encode::CJKConstants.pm(3pm) - -- Internally used by Encode::??::ISO_2022_*
 Encode::CJKConstants5.28(3pm), Encode::CJKConstants.pm(3pm) - -- Internally used by Encode::??::ISO_2022_*
-Encode::CJKConstants5.30(3pm), Encode::CJKConstants.pm(3pm) - -- Internally used by Encode::??::ISO_2022_*
 Encode::CN(3pm)          - China-based Chinese Encodings
 Encode::CN::HZ(3pm)      - -- internally used by Encode::CN
 Encode::Config(3pm)      - -- internally used by Encode
@@ -1714,7 +1754,12 @@ Env(3pm)                 - perl module that imports environment variables as sca
 Errno(3pm)               - System errno constants
 Error(3pm)               - Error/exception handling in an OO-ish way
 Error::Simple(3pm)       - the simple error sub-class of Error
+Error::TypeTiny(3pm)     - exceptions for Type::Tiny and friends
+Error::TypeTiny::Assertion(3pm) - exception when a value fails a type constraint
+Error::TypeTiny::Compilation(3pm) - exception for Eval::TypeTiny
+Error::TypeTiny::WrongNumberOfParameters(3pm) - exception for Type::Params
 Eval::Closure(3pm)       - safely and cleanly create closures via string eval
+Eval::TypeTiny(3pm)      - utility to evaluate a string of Perl code in a clean environment
 Exception::Class(3pm)    - A module that allows you to declare real exception classes in Perl
 Exception::Class::Base(3pm) - A base class for exception objects
 Expect(3pm)              - automate interactions with command line programs that expose a text terminal interface
@@ -1791,11 +1836,227 @@ FDERecoveryAgent(8)      - Full Disk Encryption Key Recovery Transmission Agent
 FD_CLR(2), FD_COPY(2), FD_ISSET(2), FD_SET(2), FD_ZERO(2), select(2) - synchronous I/O multiplexing
 FFI(3)                   - Foreign Function Interface
 Fatal(3pm)               - Replace functions with equivalents which succeed or die
+FcAtomicCreate(3)        - create an FcAtomic object
+FcAtomicDeleteNew(3)     - delete new file
+FcAtomicDestroy(3)       - destroy an FcAtomic object
+FcAtomicLock(3)          - lock a file
+FcAtomicNewFile(3)       - return new temporary file name
+FcAtomicOrigFile(3)      - return original file name
+FcAtomicReplaceOrig(3)   - replace original with new
+FcAtomicUnlock(3)        - unlock a file
+FcBlanksAdd(3)           - Add a character to an FcBlanks
+FcBlanksCreate(3)        - Create an FcBlanks
+FcBlanksDestroy(3)       - Destroy and FcBlanks
+FcBlanksIsMember(3)      - Query membership in an FcBlanks
+FcCacheCopySet(3)        - Returns a copy of the fontset from cache
+FcCacheCreateTagFile(3)  - Create CACHEDIR.TAG at cache directory
+FcCacheDir(3)            - Return directory of cache
+FcCacheNumFont(3)        - Returns the number of fonts in cache
+FcCacheNumSubdir(3)      - Return the number of subdirectories in cache
+FcCacheSubdir(3)         - Return the i'th subdirectory
+FcCharSetAddChar(3)      - Add a character to a charset
+FcCharSetCopy(3)         - Copy a charset
+FcCharSetCount(3)        - Count entries in a charset
+FcCharSetCoverage(3)     - DEPRECATED return coverage for a Unicode page
+FcCharSetCreate(3)       - Create an empty character set
+FcCharSetDelChar(3)      - Add a character to a charset
+FcCharSetDestroy(3)      - Destroy a character set
+FcCharSetEqual(3)        - Compare two charsets
+FcCharSetFirstPage(3)    - Start enumerating charset contents
+FcCharSetHasChar(3)      - Check a charset for a char
+FcCharSetIntersect(3)    - Intersect charsets
+FcCharSetIntersectCount(3) - Intersect and count charsets
+FcCharSetIsSubset(3)     - Test for charset inclusion
+FcCharSetMerge(3)        - Merge charsets
+FcCharSetNew(3)          - DEPRECATED alias for FcCharSetCreate
+FcCharSetNextPage(3)     - Continue enumerating charset contents
+FcCharSetSubtract(3)     - Subtract charsets
+FcCharSetSubtractCount(3) - Subtract and count charsets
+FcCharSetUnion(3)        - Add charsets
+FcConfigAppFontAddDir(3) - Add fonts from directory to font database
+FcConfigAppFontAddFile(3) - Add font file to font database
+FcConfigAppFontClear(3)  - Remove all app fonts from font database
+FcConfigBuildFonts(3)    - Build font database
+FcConfigCreate(3)        - Create a configuration
+FcConfigDestroy(3)       - Destroy a configuration
+FcConfigEnableHome(3)    - controls use of the home directory
+FcConfigFileInfoIterGet(3) - Obtain the configuration file information
+FcConfigFileInfoIterInit(3) - Initialize the iterator
+FcConfigFileInfoIterNext(3) - Set the iterator to point to the next list
+FcConfigFilename(3)      - Find a config file
+FcConfigGetBlanks(3)     - Get config blanks
+FcConfigGetCache(3)      - DEPRECATED used to return per-user cache filename
+FcConfigGetCacheDirs(3)  - return the list of directories searched for cache files
+FcConfigGetConfigDirs(3) - Get config directories
+FcConfigGetConfigFiles(3) - Get config files
+FcConfigGetCurrent(3)    - Return current configuration
+FcConfigGetFontDirs(3)   - Get font directories
+FcConfigGetFonts(3)      - Get config font set
+FcConfigGetRescanInterval(3) - Get config rescan interval
+FcConfigGetSysRoot(3)    - Obtain the system root directory
+FcConfigHome(3)          - return the current home directory
+FcConfigParseAndLoad(3)  - load a configuration file
+FcConfigParseAndLoadFromMemory(3) - load a configuration from memory
+FcConfigReference(3)     - Increment config reference count
+FcConfigSetCurrent(3)    - Set configuration as default
+FcConfigSetRescanInterval(3) - Set config rescan interval
+FcConfigSetSysRoot(3)    - Set the system root directory
+FcConfigSubstitute(3)    - Execute substitutions
+FcConfigSubstituteWithPat(3) - Execute substitutions
+FcConfigUptoDate(3)      - Check timestamps on config files
+FcDefaultSubstitute(3)   - Perform default substitutions in a pattern
+FcDirCacheClean(3)       - Clean up a cache directory
+FcDirCacheCreateUUID(3)  - Create .uuid file at a directory
+FcDirCacheDeleteUUID(3)  - Delete .uuid file
+FcDirCacheLoad(3)        - load a directory cache
+FcDirCacheLoadFile(3)    - load a cache file
+FcDirCacheRead(3)        - read or construct a directory cache
+FcDirCacheRescan(3)      - Re-scan a directory cache
+FcDirCacheUnlink(3)      - Remove all caches related to dir
+FcDirCacheUnload(3)      - unload a cache file
+FcDirCacheValid(3)       - check directory cache
+FcDirSave(3)             - DEPRECATED: formerly used to save a directory cache
+FcDirScan(3)             - scan a font directory without caching it
+FcFileIsDir(3)           - check whether a file is a directory
+FcFileScan(3)            - scan a font file
+FcFini(3)                - finalize fontconfig library
+FcFontList(3)            - List fonts
+FcFontMatch(3)           - Return best font
+FcFontRenderPrepare(3)   - Prepare pattern for loading font file
+FcFontSetAdd(3)          - Add to a font set
+FcFontSetCreate(3)       - Create a font set
+FcFontSetDestroy(3)      - Destroy a font set
+FcFontSetList(3)         - List fonts from a set of font sets
+FcFontSetMatch(3)        - Return the best font from a set of font sets
+FcFontSetPrint(3)        - Print a set of patterns to stdout
+FcFontSetSort(3)         - Add to a font set
+FcFontSetSortDestroy(3)  - DEPRECATED destroy a font set
+FcFontSort(3)            - Return list of matching fonts
+FcFreeTypeCharIndex(3)   - map Unicode to glyph id
+FcFreeTypeCharSet(3)     - compute Unicode coverage
+FcFreeTypeCharSetAndSpacing(3) - compute Unicode coverage and spacing type
+FcFreeTypeQuery(3)       - compute pattern from font file (and index)
+FcFreeTypeQueryAll(3)    - compute all patterns from font file (and index)
+FcFreeTypeQueryFace(3)   - compute pattern from FT_Face
+FcGetDefaultLangs(3)     - Get the default languages list
+FcGetLangs(3)            - Get list of languages
+FcGetVersion(3)          - library version number
+FcInit(3)                - initialize fontconfig library
+FcInitBringUptoDate(3)   - reload configuration files if needed
+FcInitLoadConfig(3)      - load configuration
+FcInitLoadConfigAndFonts(3) - load configuration and font data
+FcInitReinitialize(3)    - re-initialize library
+FcIsLower(3)             - check for lower case ASCII character
+FcIsUpper(3)             - check for upper case ASCII character
+FcLangGetCharSet(3)      - Get character map for a language
+FcLangNormalize(3)       - Normalize the language string
+FcLangSetAdd(3)          - add a language to a langset
+FcLangSetCompare(3)      - compare language sets
+FcLangSetContains(3)     - check langset subset relation
+FcLangSetCopy(3)         - copy a langset object
+FcLangSetCreate(3)       - create a langset object
+FcLangSetDel(3)          - delete a language from a langset
+FcLangSetDestroy(3)      - destroy a langset object
+FcLangSetEqual(3)        - test for matching langsets
+FcLangSetGetLangs(3)     - get the list of languages in the langset
+FcLangSetHasLang(3)      - test langset for language support
+FcLangSetHash(3)         - return a hash value for a langset
+FcLangSetSubtract(3)     - Subtract langsets
+FcLangSetUnion(3)        - Add langsets
+FcMatrixCopy(3)          - Copy a matrix
+FcMatrixEqual(3)         - Compare two matrices
+FcMatrixInit(3)          - initialize an FcMatrix structure
+FcMatrixMultiply(3)      - Multiply matrices
+FcMatrixRotate(3)        - Rotate a matrix
+FcMatrixScale(3)         - Scale a matrix
+FcMatrixShear(3)         - Shear a matrix
+FcNameConstant(3)        - Get the value for a symbolic constant
+FcNameGetConstant(3)     - Lookup symbolic constant
+FcNameGetObjectType(3)   - Lookup an object type
+FcNameParse(3)           - Parse a pattern string
+FcNameRegisterConstants(3) - Register symbolic constants
+FcNameRegisterObjectTypes(3) - Register object types
+FcNameUnparse(3)         - Convert a pattern back into a string that can be parsed
+FcNameUnregisterConstants(3) - Unregister symbolic constants
+FcNameUnregisterObjectTypes(3) - Unregister object types
+FcObjectSetAdd(3)        - Add to an object set
+FcObjectSetBuild(3), FcObjectSetVaBuild(3), FcObjectSetVapBuild(3) - Build object set from args
+FcObjectSetCreate(3)     - Create an object set
+FcObjectSetDestroy(3)    - Destroy an object set
+FcPatternAdd(3)          - Add a value to a pattern
+FcPatternAdd-Type(3), FcPatternAddInteger(3), FcPatternAddDouble(3), FcPatternAddString(3), FcPatternAddMatrix(3), FcPatternAddCharSet(3), FcPatternAddBool(3), FcPatternAddFTFace(3), FcPatternAddLangSet(3), FcPatternAddRange(3) - Add a typed value to a pattern
+FcPatternAddWeak(3)      - Add a value to a pattern with weak binding
+FcPatternBuild(3), FcPatternVaBuild(3), FcPatternVapBuild(3) - Create patterns from arguments
+FcPatternCreate(3)       - Create a pattern
+FcPatternDel(3)          - Delete a property from a pattern
+FcPatternDestroy(3)      - Destroy a pattern
+FcPatternDuplicate(3)    - Copy a pattern
+FcPatternEqual(3)        - Compare patterns
+FcPatternEqualSubset(3)  - Compare portions of patterns
+FcPatternFilter(3)       - Filter the objects of pattern
+FcPatternFindIter(3)     - Set the iterator to point to the object in the pattern
+FcPatternFormat(3)       - Format a pattern into a string according to a format specifier
+FcPatternGet(3)          - Return a value from a pattern
+FcPatternGet-Type(3), FcPatternGetInteger(3), FcPatternGetDouble(3), FcPatternGetString(3), FcPatternGetMatrix(3), FcPatternGetCharSet(3), FcPatternGetBool(3), FcPatternGetFTFace(3), FcPatternGetLangSet(3), FcPatternGetRange(3) - Return a typed value from a pattern
+FcPatternGetWithBinding(3) - Return a value with binding from a pattern
+FcPatternHash(3)         - Compute a pattern hash value
+FcPatternIterEqual(3)    - Compare iterators
+FcPatternIterGetObject(3) - Returns an object name which the iterator point to
+FcPatternIterGetValue(3) - Returns a value which the iterator point to
+FcPatternIterIsValid(3)  - Check whether the iterator is valid or not
+FcPatternIterStart(3)    - Initialize the iterator with the first iterator in the pattern
+FcPatternIterValueCount(3) - Returns the number of the values which the iterator point to
+FcPatternObjectCount(3)  - Returns the number of the object
+FcPatternPrint(3)        - Print a pattern for debugging
+FcPatternReference(3)    - Increment pattern reference count
+FcPatternRemove(3)       - Remove one object of the specified type from the pattern
+FcRangeCopy(3)           - Copy a range object
+FcRangeCreateDouble(3)   - create a range object for double
+FcRangeCreateInteger(3)  - create a range object for integer
+FcRangeDestroy(3)        - destroy a range object
+FcRangeGetDouble(3)      - Get the range in double
+FcStrBasename(3)         - last component of filename
+FcStrCmp(3)              - compare UTF-8 strings
+FcStrCmpIgnoreCase(3)    - compare UTF-8 strings ignoring case
+FcStrCopy(3)             - duplicate a string
+FcStrCopyFilename(3)     - create a complete path from a filename
+FcStrDirname(3)          - directory part of filename
+FcStrDowncase(3)         - create a lower case translation of a string
+FcStrFree(3)             - free a string
+FcStrListCreate(3)       - create a string iterator
+FcStrListDone(3)         - destroy a string iterator
+FcStrListFirst(3)        - get first string in iteration
+FcStrListNext(3)         - get next string in iteration
+FcStrPlus(3)             - concatenate two strings
+FcStrSetAdd(3)           - add to a string set
+FcStrSetAddFilename(3)   - add a filename to a string set
+FcStrSetCreate(3)        - create a string set
+FcStrSetDel(3)           - delete from a string set
+FcStrSetDestroy(3)       - destroy a string set
+FcStrSetEqual(3)         - check sets for equality
+FcStrSetMember(3)        - check set for membership
+FcStrStr(3)              - locate UTF-8 substring
+FcStrStrIgnoreCase(3)    - locate UTF-8 substring ignoring ASCII case
+FcToLower(3)             - convert upper case ASCII to lower case
+FcUcs4ToUtf8(3)          - convert UCS4 to UTF-8
+FcUtf16Len(3)            - count UTF-16 encoded chars
+FcUtf16ToUcs4(3)         - convert UTF-16 to UCS4
+FcUtf8Len(3)             - count UTF-8 encoded chars
+FcUtf8ToUcs4(3)          - convert UTF-8 to UCS4
+FcValueDestroy(3)        - Free a value
+FcValueEqual(3)          - Test two values for equality
+FcValuePrint(3)          - Print a value to stdout
+FcValueSave(3)           - Copy a value
+FcWeightFromOpenType(3)  - Convert from OpenType weight values to fontconfig ones
+FcWeightFromOpenTypeDouble(3) - Convert from OpenType weight values to fontconfig ones
+FcWeightToOpenType(3)    - Convert from fontconfig weight values to OpenType ones
+FcWeightToOpenTypeDouble(3) - Convert from fontconfig weight values to OpenType ones
 Fcntl(3pm)               - load the C Fcntl.h defines
 File::Basename(3pm)      - Parse file paths into directory, filename and suffix
 File::CheckTree(3pm)     - run many filetest checks on a tree
 File::Compare(3pm)       - Compare files or filehandles
 File::Copy(3pm)          - Copy files or filehandles
+File::Copy::Recursive(3pm) - Perl extension for recursively copying files and directories
 File::DosGlob(3pm)       - DOS like globbing and then some
 File::Fetch(3pm)         - A generic file fetching mechanism
 File::Find(3pm)          - Traverse a directory tree
@@ -1808,8 +2069,11 @@ File::Listing(3pm)       - parse directory listing
 File::Path(3pm)          - Create or remove directory trees
 File::Remove(3pm)        - Remove files and directories
 File::ShareDir(3pm)      - Locate per-dist and per-module shared files
+File::ShareDir::Dist(3pm) - Locate per-dist shared files
+File::ShareDir::Dist::Install(3pm) - Install per-dist shared files
 File::ShareDir::Install(3pm) - Install shared files
 File::Slurp(3pm)         - Simple and Efficient Reading/Writing/Modifying of Complete Files
+File::Slurp::Tiny(3pm)   - A simple, sane and efficient file slurper [DISCOURAGED]
 File::Spec(3pm)          - portably perform operations on file names
 File::Spec::AmigaOS(3pm) - File::Spec for AmigaOS
 File::Spec::Cygwin(3pm)  - methods for Cygwin file specs
@@ -1824,6 +2088,7 @@ File::Temp(3pm)          - return name and handle of a temporary file safely
 File::Which(3pm)         - Perl implementation of the which utility as an API
 File::Which(3pm)         - Portable implementation of the `which' utility
 File::chdir(3pm)         - a more sensible way to change directories
+File::pushd(3pm)         - change directory temporarily for a limited scope
 File::stat(3pm)          - by-name interface to Perl's built-in stat() functions
 FileCache(3pm)           - keep more files open than the system permits
 FileHandle(3pm)          - supply object methods for filehandles
@@ -1902,6 +2167,18 @@ I18N::LangTags::List(3pm) - -- tags and names for human languages
 I18N::Langinfo(3pm)      - query locale information
 IIDCVideoAssistant(8)    - CoreMediaIO DAL Assistant Process
 IO(3pm)                  - load various IO modules
+IO::All(3pm)             - IO::All to Larry Wall!
+IO::All::DBM(3pm)        - DBM Support for IO::All
+IO::All::Dir(3pm)        - Directory Support for IO::All
+IO::All::File(3pm)       - File Support for IO::All
+IO::All::Filesys(3pm)    - File System Methods Mixin for IO::All
+IO::All::Link(3pm)       - Link Support for IO::All
+IO::All::MLDBM(3pm)      - MLDBM Support for IO::All
+IO::All::Pipe(3pm)       - Pipe Support for IO::All
+IO::All::STDIO(3pm)      - STDIO Support for IO::All
+IO::All::Socket(3pm)     - Socket Support for IO::All
+IO::All::String(3pm)     - String Support for IO::All
+IO::All::Temp(3pm)       - Temporary File Support for IO::All
 IO::AtomicFile(3pm)      - write a file which is updated atomically
 IO::Compress::Base(3pm)  - Base Class for IO::Compress modules
 IO::Compress::Bzip2(3pm) - Write bzip2 files/buffers
@@ -1935,7 +2212,6 @@ IO::Socket::INET(3pm)    - Object interface for AF_INET domain sockets
 IO::Socket::INET6(3pm)   - Object interface for AF_INET/AF_INET6 domain sockets
 IO::Socket::IP(3pm), IO::Socket::IP"(3pm) - Family-neutral IP socket supporting both IPv4 and IPv6
 IO::Socket::IP5.28(3pm), IO::Socket::IP"(3pm) - Family-neutral IP socket supporting both IPv4 and IPv6
-IO::Socket::IP5.30(3pm), IO::Socket::IP"(3pm) - Family-neutral IP socket supporting both IPv4 and IPv6
 IO::Socket::SSL(3pm)     - SSL sockets with IO::Socket interface
 IO::Socket::SSL::Intercept(3pm) - -- SSL interception (man in the middle)
 IO::Socket::SSL::PublicSuffix(3pm) - provide access to Mozilla's list of effective TLD names
@@ -1945,7 +2221,6 @@ IO::String(3pm)          - Emulate file interface for in-core strings
 IO::Stringy(3pm), IO-stringy(3pm) - I/O on in-core objects like strings and arrays
 IO::Stringy5.18(3pm), IO-stringy(3pm) - I/O on in-core objects like strings and arrays
 IO::Stringy5.28(3pm), IO-stringy(3pm) - I/O on in-core objects like strings and arrays
-IO::Stringy5.30(3pm), IO-stringy(3pm) - I/O on in-core objects like strings and arrays
 IO::Stty(3pm)            - Change and print terminal line settings
 IO::Stty5.18(3pm), Change(3pm) - and print terminal line settings
 IO::Tty(3pm)             - Low-level allocate a pseudo-Tty, import constants
@@ -1982,15 +2257,20 @@ IPC::Semaphore(3pm)      - SysV Semaphore IPC object class
 IPC::SharedMem(3pm)      - SysV Shared Memory IPC object class
 IPC::SysV(3pm)           - System V IPC constants and system calls
 IPC::System::Simple(3pm) - Run commands simply, with detailed diagnostics
+ImageByteOrder(3), BitmapBitOrder(3), BitmapPad(3), BitmapUnit(3), DisplayHeight(3), DisplayHeightMM(3), DisplayWidth(3), DisplayWidthMM(3), XListPixmapFormats(3), XPixmapFormatValues(3) - image format functions and macros
 Import::Into(3pm)        - Import packages into other packages
 Import::Into(3pm)        - import packages into other packages
+Importer(3pm)            - Alternative but compatible interface to modules that export symbols
 Inline(3pm)              - Write Perl Subroutines in Other Programming Languages
 Inline(3pm)              - Write Perl subroutines in other programming languages
 Inline-API(3pm)          - How to bind a programming language to Perl using Inline.pm
 Inline-FAQ(3pm)          - The Inline FAQ
 Inline-Support(3pm)      - Support Information for Inline.pm and related modules
+Inline::C(3pm)           - C Language Support for Inline
 Inline::C(3pm)           - Write Perl Subroutines in C
 Inline::C-Cookbook(3pm)  - A Cornucopia of Inline C Recipes
+Inline::C::Cookbook(3pm) - A Cornucopia of Inline C Recipes
+Inline::C::ParsePegex(3pm) - Yet Another Inline::C Parser
 Inline::C::ParseRecDescent(3pm) - The Classic Inline::C Parser
 Inline::C::ParseRegExp(3pm) - The New and Improved Inline::C Parser
 Inline::Python(3pm)      - Write Perl subs and classes in Python
@@ -1998,11 +2278,18 @@ Inline::Struct(3pm)      - -- Manipulate C structures directly from Perl
 Inline::Wrapper(3pm)     - Convenient module wrapper/loader routines for Inline.pm
 Inline::Wrapper::Module(3pm) - Internal object wrapper for individual Inline modules
 InternetSharing(8)       - daemon for Internet Sharing
+IsCursorKey(3), IsFunctionKey(3), IsKeypadKey(3), IsMiscFunctionKey(3), IsModifierKey(3), IsPFKey(3), IsPrivateKeypadKey(3) - keysym classification macros
+JSON(3pm)                - JSON (JavaScript Object Notation) encoder/decoder
+JSON::MaybeXS(3pm)       - Use Cpanel::JSON::XS with a fallback to JSON::XS and JSON::PP
 JSON::PP(3pm)            - JSON::XS compatible pure-Perl module
 JSON::PP::Boolean(3pm)   - dummy module providing JSON::PP::Boolean
 JSON::Syck(3pm)          - JSON is YAML (but consider using JSON::XS instead!)
 JSON::XS(3pm)            - JSON serialising/deserialising, done correctly and fast JSON::XS - 正しくて高速な JSON シリアライザ/デシリアライザ (http://fleur.hio.jp/perldoc/mix/lib/JSON/XS.html)
 JSON::XS::Boolean(3pm)   - dummy module providing JSON::XS::Boolean
+JSON::backportPP::Compat5005(3pm), JSON::PP5005(3pm) - Helper module in using JSON::PP in Perl 5.005
+JSON::backportPP::Compat50055.30(3pm), JSON::PP5005(3pm) - Helper module in using JSON::PP in Perl 5.005
+JSON::backportPP::Compat5006(3pm), JSON::PP56(3pm) - Helper module in using JSON::PP in Perl 5.6
+JSON::backportPP::Compat50065.30(3pm), JSON::PP56(3pm) - Helper module in using JSON::PP in Perl 5.6
 KernelEventAgent(8)      - utility to provide user interface on behalf of the kernel
 KeyboardAccessAgent(8)   - Keyboard Access Launch Agent
 Keychain Circle Notification(8) - Part of iCloud Keychain syncing
@@ -2122,7 +2409,6 @@ MIME::QuotedPrint(3pm)   - Encoding and decoding of quoted-printable strings
 MIME::Tools(3pm), MIME-tools(3pm) - modules for parsing (and creating!) MIME entities
 MIME::Tools5.18(3pm), MIME-tools(3pm) - modules for parsing (and creating!) MIME entities
 MIME::Tools5.28(3pm), MIME-tools(3pm) - modules for parsing (and creating!) MIME entities
-MIME::Tools5.30(3pm), MIME-tools(3pm) - modules for parsing (and creating!) MIME entities
 MIME::WordDecoder(3pm)   - decode RFC 2047 encoded words to a local representation WARNING: Most of this module is deprecated and may disappear.  The only function you should use for MIME decoding is "mime_to_perl_string"
 MIME::Words(3pm)         - deal with RFC 2047 encoded words
 MLDBM(3pm)               - store multi-level Perl hash structure in single level tied hash
@@ -2154,12 +2440,29 @@ Mac::Errors(3pm)         - constants for Mac error codes
 Mach-O(5)                - Mach-O assembler and link editor output
 Mail::Address(3pm)       - Parse mail addresses
 Mail::Address(3pm)       - parse mail addresses
+Mail::AuthenticationResults(3pm) - Object Oriented Authentication-Results Headers
+Mail::AuthenticationResults::FoldableHeader(3pm) - Class for modelling a foldable header string
+Mail::AuthenticationResults::Header(3pm) - Class modelling the Entire Authentication Results Header set
+Mail::AuthenticationResults::Header::AuthServID(3pm) - Class modelling the AuthServID part of the Authentication Results Headerr
+Mail::AuthenticationResults::Header::Base(3pm) - Base class for modelling parts of the Authentication Results Header
+Mail::AuthenticationResults::Header::Comment(3pm) - Class modelling Comment parts of the Authentication Results Header
+Mail::AuthenticationResults::Header::Entry(3pm) - Class modelling Main Entry parts of the Authentication Results Header
+Mail::AuthenticationResults::Header::Group(3pm) - Class modelling Groups of Authentication Results Header parts
+Mail::AuthenticationResults::Header::SubEntry(3pm) - Class modelling Sub Entry parts of the Authentication Results Header
+Mail::AuthenticationResults::Header::Version(3pm) - Class modelling the AuthServID part of the Authentication Results Header
+Mail::AuthenticationResults::Parser(3pm) - Class for parsing Authentication Results Headers
+Mail::AuthenticationResults::Token(3pm) - Base class for modelling AuthenticationResults Header parts
+Mail::AuthenticationResults::Token::Assignment(3pm) - Class for modelling AuthenticationResults Header parts detected as assignments
+Mail::AuthenticationResults::Token::Comment(3pm) - Class for modelling AuthenticationResults Header parts detected as comments
+Mail::AuthenticationResults::Token::QuotedString(3pm) - Class for modelling AuthenticationResults Header parts detected as quoted strings
+Mail::AuthenticationResults::Token::Separator(3pm) - Class for modelling AuthenticationResults Header parts detected as separators
+Mail::AuthenticationResults::Token::Space(3pm) - Class for modelling AuthenticationResults Header parts detected as spaces
+Mail::AuthenticationResults::Token::String(3pm) - Class for modelling AuthenticationResults Header parts detected as strings
 Mail::Cap(3pm)           - Parse mailcap files
 Mail::Cap(3pm)           - understand mailcap files
 Mail::DKIM(3pm)          - Signs/verifies Internet mail with DKIM/DomainKey signatures
 Mail::DKIM::ARC::MessageSignature(3pm), Mail::DKIM::ARC::Signature(3pm) - represents a ARC-Message-Signature header This is a subclass of Mail::DKIM::Signature
 Mail::DKIM::ARC::MessageSignature5.28(3pm), Mail::DKIM::ARC::Signature(3pm) - represents a ARC-Message-Signature header This is a subclass of Mail::DKIM::Signature
-Mail::DKIM::ARC::MessageSignature5.30(3pm), Mail::DKIM::ARC::Signature(3pm) - represents a ARC-Message-Signature header This is a subclass of Mail::DKIM::Signature
 Mail::DKIM::ARC::Seal(3pm) - represents a ARC-Seal header
 Mail::DKIM::ARC::Signer(3pm) - generates a DKIM signature for a message
 Mail::DKIM::ARC::Verifier(3pm) - verifies an ARC-Sealed message
@@ -2290,6 +2593,7 @@ Module::Install(3pm)     - Standalone, extensible Perl module installer
 Module::Install::API(3pm) - Command Reference for Module::Install
 Module::Install::Admin(3pm) - Author-side manager for Module::Install
 Module::Install::Admin::Include(3pm) - include methods for Module::Install
+Module::Install::AuthorRequires(3pm) - declare author-only dependencies
 Module::Install::Base(3pm) - Base class for Module::Install extensions
 Module::Install::Bundle(3pm) - Bundle distributions along with your distribution
 Module::Install::Can(3pm) - Utility functions for capability detection
@@ -2299,7 +2603,7 @@ Module::Install::External(3pm) - Specify dependencies on external non-Perl thing
 Module::Install::FAQ(3pm) - Frequently Asked Questions for Module::Install
 Module::Install::Makefile(3pm), Module::Install::MakeMaker(3pm) - Extension Rules for ExtUtils::MakeMaker
 Module::Install::Makefile5.28(3pm), Module::Install::MakeMaker(3pm) - Extension Rules for ExtUtils::MakeMaker
-Module::Install::Makefile5.30(3pm), Module::Install::MakeMaker(3pm) - Extension Rules for ExtUtils::MakeMaker
+Module::Install::ManifestSkip(3pm) - Generate a MANIFEST.SKIP file
 Module::Install::PAR(3pm) - Module::Install Support for PAR::Dist packages
 Module::Install::Philosophy(3pm) - The concepts behind Module::Install
 Module::Install::Share(3pm) - Install non-code files for use during run-time
@@ -2307,14 +2611,19 @@ Module::Install::With(3pm) - find environnement for Module::Install
 Module::Load(3pm)        - runtime require of both modules and files
 Module::Load::Conditional(3pm) - Looking up module information / loading at runtime
 Module::Loaded(3pm)      - mark modules as loaded or unloaded
+Module::Manifest::Skip(3pm) - MANIFEST.SKIP Manangement for Modules
 Module::Metadata(3pm)    - Gather package and POD information from perl module files
 Module::Package::Tutorial(3pm) - A Hands on Guide
 Module::Pluggable(3pm)   - automatically give your module the ability to have plugins
 Module::Pluggable::Object(3pm) - automatically give your module the ability to have plugins
 Module::Runtime(3pm)     - runtime module handling
+Module::Runtime::Conflicts(3pm) - Provide information on conflicts for Module::Runtime
 Module::ScanDeps(3pm)    - Recursively scan Perl code for dependencies
 Moo(3pm)                 - Minimalist Object Orientation (with Moose compatibility)
 Moo::Role(3pm)           - Minimal Object Orientation support for Roles
+MooX::HandlesVia(3pm)    - NativeTrait-like behavior for Moo
+MooX::Types::MooseLike(3pm) - some Moosish types and a type builder
+MooX::Types::MooseLike::Base(3pm) - A set of basic Moose-like types for Moo
 Moose(3pm)               - A postmodern object system for Perl 5
 Moose::Autobox(3pm)      - Autoboxed wrappers for Native Perl datatypes
 Moose::Autobox::Array(3pm) - the Array role
@@ -2634,6 +2943,7 @@ Net::DNS::RR::X25(3pm)   - DNS X25 resource record
 Net::DNS::Resolver(3pm)  - DNS resolver class
 Net::DNS::Resolver::Base(3pm) - Common Resolver Class
 Net::DNS::Resolver::MSWin32(3pm) - MS Windows Resolver Class
+Net::DNS::Resolver::Mock(3pm) - Mock a DNS Resolver object for testing
 Net::DNS::Resolver::Programmable(3pm) - programmable DNS resolver class for offline emulation of DNS
 Net::DNS::Resolver::Recurse(3pm) - Perform recursive dns lookups
 Net::DNS::Resolver::UNIX(3pm) - UNIX Resolver Class
@@ -2721,7 +3031,6 @@ Net::Server::Proto::SSLEAY(3pm) - Custom Net::Server SSL protocol handler based 
 Net::Server::Proto::TCP(3pm),   Net::Server::Proto::TCP(3pm) - Net::Server TCP protocol
 Net::Server::Proto::TCP5.18(3pm),   Net::Server::Proto::TCP(3pm) - Net::Server TCP protocol
 Net::Server::Proto::TCP5.28(3pm),   Net::Server::Proto::TCP(3pm) - Net::Server TCP protocol
-Net::Server::Proto::TCP5.30(3pm),   Net::Server::Proto::TCP(3pm) - Net::Server TCP protocol
 Net::Server::Proto::UDP(3pm) - Net::Server UDP protocol
 Net::Server::Proto::UNIX(3pm) - Net::Server UNIX protocol
 Net::Server::Proto::UNIXDGRAM(3pm) - Net::Server UNIXDGRAM protocol
@@ -2732,7 +3041,6 @@ Net::hostent(3pm)        - by-name interface to Perl's built-in gethost*() funct
 Net::libnetFAQ(3pm), libnetFAQ(3pm) - libnet Frequently Asked Questions
 Net::libnetFAQ5.18(3pm), libnetFAQ(3pm) - libnet Frequently Asked Questions
 Net::libnetFAQ5.28(3pm), libnetFAQ(3pm) - libnet Frequently Asked Questions
-Net::libnetFAQ5.30(3pm), libnetFAQ(3pm) - libnet Frequently Asked Questions
 Net::netent(3pm)         - by-name interface to Perl's built-in getnet*() functions
 Net::protoent(3pm)       - by-name interface to Perl's built-in getproto*() functions
 Net::servent(3pm)        - by-name interface to Perl's built-in getserv*() functions
@@ -2768,6 +3076,10 @@ PAR::SetupProgname(3pm)  - Setup $ENV{PAR_PROGNAME}
 PAR::SetupTemp(3pm)      - Setup $ENV{PAR_TEMP}
 PAR::StrippedPARL::Base(3pm) - Base class for the PARL data packages
 PAR::Tutorial(3pm)       - Cross-Platform Packaging and Deployment with PAR
+PCRE(3)                  - Perl-compatible regular expressions
+PCRE(3)                  - Perl-compatible regular expressions #include <pcre.h>
+PCRE(3)                  - Perl-compatible regular expressions (original API)
+PCRE(3)                  - Perl-compatible regular expressions (revised API)
 PCRE2(3)                 - Perl-compatible regular expressions
 PCRE2(3)                 - Perl-compatible regular expressions (revised API)
 PCRE2(3)                 - Perl-compatible regular expressions (revised API) #include <pcre2.h> PCRE2 is a new API for PCRE, starting at release 10.0. This document contains a description of all its native functions. See the pcre2 document for an overview of all the PCRE2 documentation
@@ -2882,7 +3194,6 @@ Parse::Eyapp(3pm)        - Bottom up parser generator
 Parse::Eyapp::Base(3pm)  - Miscellaneous support functions for Parse::Eyapp
 Parse::Eyapp::Driver(3pm) - The LR parser
 Parse::Eyapp::MatchingTrees(3pm), Parse::Eyapp::treematchingtut(3pm) - Tree Matching and Tree substitution: an introduction
-Parse::Eyapp::MatchingTrees5.18(3pm), Parse::Eyapp::treematchingtut(3pm) - Tree Matching and Tree substitution: an introduction
 Parse::Eyapp::Node(3pm)  - The nodes of the Syntax Trees
 Parse::Eyapp::Parse(3pm) - The parser of Eyapp grammars
 Parse::Eyapp::Scope(3pm) - Support for Scope Analysis
@@ -2901,12 +3212,27 @@ Parse::Method::Signatures::Param(3pm) - a parsed parameter from a signature
 Parse::Method::Signatures::Sig(3pm) - Method Signature
 Parse::Method::Signatures::TypeConstraint(3pm) - turn parsed TC data into Moose TC object
 Parse::RecDescent(3pm)   - Generate Recursive-Descent Parsers
+Parse::Yapp(3)           - Perl extension for generating and using LALR parsers
 PasswordBreachAgent(8)   - Leaked Password Warning Agent
 PasswordService(8)       - Mac OS X Server Password Server daemon
 Path::Class(3pm)         - Cross-platform path specification manipulation
 Path::Class::Dir(3pm)    - Objects representing directories
 Path::Class::Entity(3pm) - Base class for files and directories
 Path::Class::File(3pm)   - Objects representing files
+Path::Tiny(3pm)          - File path utility
+Pegex(3pm)               - Acmeist PEG Parser Framework
+Pegex::Bootstrap(3pm)    - Bootstrapping Compiler for a Pegex Grammar
+Pegex::Compiler(3pm)     - Pegex Compiler
+Pegex::Grammar(3pm)      - Pegex Grammar Base Class
+Pegex::Grammar::Atoms(3pm) - Pegex Regex Atoms
+Pegex::Input(3pm)        - Pegex Parser Input Abstraction
+Pegex::Module(3pm)       - Base Class for Pegex Grammar Interface Modules
+Pegex::Parser(3pm)       - Pegex Parser Runtime
+Pegex::Pegex::Grammar(3pm) - Pegex Grammar for the Pegex Grammar Language
+Pegex::Receiver(3pm)     - Base Class for All Pegex Receivers
+Pegex::Regex(3pm)        - Use Pegex Like a Regex
+Pegex::Tree(3pm)         - Pegex Parse Tree Receiver
+Pegex::Tree::Wrap(3pm)   - Pegex Wrapper Parse Tree Receiver
 PerfPowerServices(8)     - manages structured log archives that enable retrieval of system power and performance data
 PerfPowerServicesExtended(8) - manages structured log archives that enable retrieval of system power and performance data
 Perl6::Junction(3pm)     - Perl6 style Junction operators in Perl5
@@ -2992,6 +3318,11 @@ Pod::Usage(3pm)          - print a usage message from embedded pod documentation
 Pod::Usage(3pm), pod2usage()(3pm) - print a usage message from embedded pod documentation
 PrintUITool(8)           - a tool to perform privileged ui based operations on the printing system
 Probe::Perl(3pm)         - Information about the currently running perl
+Proc::Killall(3pm), killall(3pm) - Kill all instances of a process by pattern matching the command-line
+Proc::Killall5.30(3pm), killall(3pm) - Kill all instances of a process by pattern matching the command-line
+Proc::Killfam(3pm)       - kill a list of pids, and all their sub-children
+Proc::ProcessTable(3pm)  - Perl extension to access the unix process table
+Proc::ProcessTable::Process(3pm) - Perl process objects
 Proc::Reliable(3pm)      - -- Run external processes reliably with many options
 ProtectedCloudKeySyncing(8) - part of ProtectedCloudKey subsystem
 RFBEventHelperd(8)       - Screen Sharing app helper daemon
@@ -3033,6 +3364,7 @@ Regexp::Common::profanity(3pm) - -- provide regexes for profanity
 Regexp::Common::whitespace(3pm) - -- provides a regex for leading or trailing whitescape
 Regexp::Common::zip(3pm) - -- provide regexes for postal codes
 RemoteManagementAgent(8) - Remote Management protocol agent
+Reply::Plugin::TypeTiny(3pm) - improved type constraint exceptions in Reply
 ReportMemoryException(8) - generates memory usage diagnostic logs
 ReportPanic(8)           - Facilitates filing Radars for panics
 Rez(1)                   - compiles resources (DEPRECATED)
@@ -3076,7 +3408,6 @@ SmartCardServices(7)     - overview of SmartCard support
 Socket(3pm), Socket"(3pm) - networking constants and support functions
 Socket5.18(3pm), Socket"(3pm) - networking constants and support functions
 Socket5.28(3pm), Socket"(3pm) - networking constants and support functions
-Socket5.30(3pm), Socket"(3pm) - networking constants and support functions
 Socket6(3pm)             - IPv6 related part of the C socket.h defines and structure manipulators
 SoftwareUpdateNotificationManager(8) - macOS software update
 Specio(3pm)              - Type constraints and coercions for Perl
@@ -3120,11 +3451,13 @@ Specio::Subs(3pm)        - Make validation and coercion subs from Specio types
 Specio::TypeChecks(3pm)  - Type checks used internally for Specio classes (it's not self-bootstrapping (yet?))
 SpeechDataInstallerd(8)  - Manages downloading of speech-related assets
 SpeechSynthesisServer(8) - Implements speaking hotkey and time announcements text-to-speech features
+Spiffy(3pm)              - Spiffy Perl Interface Framework For You
 SplitForks(1), /usr/bin/SplitForks(1) - Divide a two-fork HFS file into AppleDouble format resource and data files. (DEPRECATED)
 Storable(3pm)            - persistence for Perl data structures
 String::RewritePrefix(3pm) - rewrite strings based on a set of known prefixes
 Sub::Defer(3pm)          - Defer generation of subroutines until they are first called
 Sub::Defer(3pm)          - defer generation of subroutines until they are first called
+Sub::Delete(3pm)         - Perl module enabling one to delete subroutines
 Sub::Exporter(3pm)       - a sophisticated exporter for custom-built routines
 Sub::Exporter::Cookbook(3pm) - useful, demonstrative, or stupid Sub::Exporter tricks
 Sub::Exporter::ForMethods(3pm) - helper routines for using Sub::Exporter to build methods
@@ -3132,6 +3465,7 @@ Sub::Exporter::Progressive(3pm) - Only use Sub::Exporter if you need it
 Sub::Exporter::Tutorial(3pm) - a friendly guide to exporting with Sub::Exporter
 Sub::Exporter::Util(3pm) - utilities to make Sub::Exporter easier
 Sub::Identify(3pm)       - Retrieve names of code references
+Sub::Info(3pm)           - Tool for inspecting subroutines
 Sub::Install(3pm)        - install subroutines into packages easily
 Sub::Name(3pm)           - (Re)name a sub
 Sub::Name(3pm)           - (re)name a sub
@@ -3158,7 +3492,6 @@ TAP::Formatter::Session(3pm) - Abstract base class for harness output delegate
 TAP::Harness(3pm)        - Run test scripts with statistics
 TAP::Harness::Beyond(3pm), Test::Harness::Beyond(3pm) - Beyond make test
 TAP::Harness::Beyond5.28(3pm), Test::Harness::Beyond(3pm) - Beyond make test
-TAP::Harness::Beyond5.30(3pm), Test::Harness::Beyond(3pm) - Beyond make test
 TAP::Harness::Env(3pm)   - Parsing harness related environmental variables where appropriate
 TAP::Object(3pm)         - Base class that provides common functionality to all "TAP::*" modules
 TAP::Parser(3pm)         - Parse TAP output
@@ -3301,6 +3634,12 @@ Term::Cap(3pm)           - Perl termcap interface
 Term::Complete(3pm)      - Perl word completion module
 Term::ReadKey(3pm)       - A perl module for simple terminal control
 Term::ReadLine(3pm)      - Perl interface to various "readline" packages. If no real package is found, substitutes stubs instead of basic functions
+Term::Table(3pm)         - Format a header and rows into a table
+Term::Table::Cell(3pm)   - Representation of a cell in a table
+Term::Table::CellStack(3pm) - Combine several cells into one (vertical)
+Term::Table::HashBase(3pm) - Build hash based classes
+Term::Table::LineBreak(3pm) - Break up lines for use in tables
+Term::Table::Util(3pm)   - Utilities for Term::Table
 Term::UI(3pm)            - Term::ReadLine UI made easy
 Term::UI::History(3pm)   - history function
 Test(3pm)                - provides a simple framework for writing test scripts
@@ -3309,7 +3648,44 @@ Test2::API(3pm)          - Primary interface for writing Test2 based testing too
 Test2::API::Breakage(3pm) - What breaks at what version
 Test2::API::Context(3pm) - Object to represent a testing context
 Test2::API::Instance(3pm) - Object used by Test2::API under the hood
+Test2::API::InterceptResult(3pm) - Representation of a list of events
+Test2::API::InterceptResult::Event(3pm) - Representation of an event for use in testing other test tools
+Test2::API::InterceptResult::Hub(3pm) - Hub used by InterceptResult
+Test2::API::InterceptResult::Squasher(3pm) - Encapsulation of the algorithm that squashes diags into assertions
 Test2::API::Stack(3pm)   - Object to manage a stack of Test2::Hub instances
+Test2::AsyncSubtest(3pm) - Object representing an async subtest
+Test2::AsyncSubtest::Event::Attach(3pm) - Event to attach a subtest to the parent
+Test2::AsyncSubtest::Event::Detach(3pm) - Event to detach a subtest from the parent
+Test2::AsyncSubtest::Hub(3pm) - Hub used by async subtests
+Test2::Bundle(3pm)       - Documentation for bundles
+Test2::Bundle::Extended(3pm) - Old name for Test2::V0
+Test2::Bundle::More(3pm) - ALMOST a drop-in replacement for Test::More
+Test2::Bundle::Simple(3pm) - ALMOST a drop-in replacement for Test::Simple
+Test2::Compare(3pm)      - Test2 extension for writing deep comparison tools
+Test2::Compare::Array(3pm) - Internal representation of an array comparison
+Test2::Compare::Bag(3pm) - Internal representation of a bag comparison
+Test2::Compare::Base(3pm) - Base class for comparison classes
+Test2::Compare::Bool(3pm) - Compare two values as booleans
+Test2::Compare::Custom(3pm) - Custom field check for comparisons
+Test2::Compare::DeepRef(3pm) - Ref comparison
+Test2::Compare::Delta(3pm) - Representation of differences between nested data structures
+Test2::Compare::Event(3pm) - Event specific Object subclass
+Test2::Compare::EventMeta(3pm) - Meta class for events in deep comparisons
+Test2::Compare::Float(3pm) - Compare two values as numbers with tolerance
+Test2::Compare::Hash(3pm) - Representation of a hash in a deep comparison
+Test2::Compare::Meta(3pm) - Check library for meta-checks
+Test2::Compare::Negatable(3pm) - Poor mans 'role' for compare objects that can be negated
+Test2::Compare::Number(3pm) - Compare two values as numbers
+Test2::Compare::Object(3pm) - Representation of an object during deep comparison
+Test2::Compare::OrderedSubset(3pm) - Internal representation of an ordered subset
+Test2::Compare::Pattern(3pm) - Use a pattern to validate values in a deep comparison
+Test2::Compare::Ref(3pm) - Ref comparison
+Test2::Compare::Regex(3pm) - Regex direct comparison
+Test2::Compare::Scalar(3pm) - Representation of a Scalar Ref in deep comparisons
+Test2::Compare::Set(3pm) - Allows a field to be matched against a set of checks
+Test2::Compare::String(3pm) - Compare two values as strings
+Test2::Compare::Undef(3pm) - Check that something is undefined
+Test2::Compare::Wildcard(3pm) - Placeholder check
 Test2::Event(3pm)        - Base class for events
 Test2::Event::Bail(3pm)  - Bailout!
 Test2::Event::Diag(3pm)  - Diag event type
@@ -3326,6 +3702,7 @@ Test2::Event::Subtest(3pm) - Event for subtest types
 Test2::Event::TAP::Version(3pm) - Event for TAP version
 Test2::Event::V2(3pm)    - Second generation event
 Test2::Event::Waiting(3pm) - Tell all procs/threads it is time to be done
+Test2::Event::Warning(3pm) - A Test2 event for warnings
 Test2::EventFacet(3pm)   - Base class for all event facets
 Test2::EventFacet::About(3pm) - Facet with event details
 Test2::EventFacet::Amnesty(3pm) - Facet for assertion amnesty
@@ -3350,13 +3727,96 @@ Test2::Hub::Subtest(3pm) - Hub used by subtests
 Test2::IPC(3pm)          - Turn on IPC for threading or forking support
 Test2::IPC::Driver(3pm)  - Base class for Test2 IPC drivers
 Test2::IPC::Driver::Files(3pm) - Temp dir + Files concurrency model
+Test2::Manual(3pm)       - Documentation hub for Test2 and Test2-Suite
+Test2::Manual::Anatomy(3pm) - The hub for documentation of the inner workings of Test2 components
+Test2::Manual::Anatomy::API(3pm) - Internals documentation for the API
+Test2::Manual::Anatomy::Context(3pm) - Internals documentation for the Context objects
+Test2::Manual::Anatomy::EndToEnd(3pm), Test2::Manual::EndToEnd(3pm) - Overview of Test2 from load to finish
+Test2::Manual::Anatomy::Event(3pm) - The internals of events
+Test2::Manual::Anatomy::Hubs(3pm) - Internals documentation for the hub stack, and hubs
+Test2::Manual::Anatomy::IPC(3pm) - Manual for the IPC system
+Test2::Manual::Anatomy::Utilities(3pm) - Overview of utilities for Test2
+Test2::Manual::Concurrency(3pm) - Documentation for Concurrency support
+Test2::Manual::Contributing(3pm) - How to contribute to the Test2 project
+Test2::Manual::Testing(3pm) - Hub for documentation about writing tests with Test2
+Test2::Manual::Testing::Introduction(3pm) - Introduction to testing with Test2
+Test2::Manual::Testing::Migrating(3pm) - How to migrate existing tests from Test::More to Test2
+Test2::Manual::Testing::Planning(3pm) - The many ways to set a plan
+Test2::Manual::Testing::Todo(3pm) - Tutorial for marking tests as TODO
+Test2::Manual::Tooling(3pm) - Manual page for tool authors
+Test2::Manual::Tooling::FirstTool(3pm) - Write your first tool with Test2
+Test2::Manual::Tooling::Formatter(3pm) - How to write a custom formatter, in our case a JSONL formatter
+Test2::Manual::Tooling::Nesting(3pm) - Tutorial for using other tools within your own
+Test2::Manual::Tooling::Plugin::TestExit(3pm) - How to safely add pre-exit behaviors
+Test2::Manual::Tooling::Plugin::TestingDone(3pm) - Run code when the test file is finished, or when done_testing is called
+Test2::Manual::Tooling::Plugin::ToolCompletes(3pm) - How to add behaviors that occur when a tool completes work
+Test2::Manual::Tooling::Plugin::ToolStarts(3pm) - How to add behaviors that occur when a tool starts work
+Test2::Manual::Tooling::Subtest(3pm) - How to implement a tool that makes use of subtests
+Test2::Manual::Tooling::TestBuilder(3pm) - This section maps Test::Builder methods to Test2 concepts
+Test2::Manual::Tooling::Testing(3pm) - Tutorial on how to test your testing tools
+Test2::Mock(3pm)         - Module for managing mocked classes and instances
+Test2::Plugin(3pm)       - Documentation for plugins
+Test2::Plugin::BailOnFail(3pm) - Automatically bail out of testing on the first test failure
+Test2::Plugin::DieOnFail(3pm) - Automatically die on the first test failure
+Test2::Plugin::ExitSummary(3pm) - Add extra diagnostics on failure at the end of the test
+Test2::Plugin::NoWarnings(3pm) - Fail if tests warn
+Test2::Plugin::SRand(3pm) - Control the random seed for more controlled test environments
+Test2::Plugin::Times(3pm) - Output timing data at the end of the test
+Test2::Plugin::UTF8(3pm) - Test2 plugin to test with utf8
+Test2::Require(3pm)      - Base class and documentation for skip-unless type test packages
+Test2::Require::AuthorTesting(3pm) - Only run a test when the AUTHOR_TESTING environment variable is set
+Test2::Require::EnvVar(3pm) - Only run a test when a specific environment variable is set
+Test2::Require::Fork(3pm) - Skip a test file unless the system supports forking
+Test2::Require::Module(3pm) - Skip tests if certain packages are not installed, or insufficient versions
+Test2::Require::Perl(3pm) - Skip the test unless the necessary version of Perl is installed
+Test2::Require::RealFork(3pm) - Skip a test file unless the system supports true forking
+Test2::Require::Threads(3pm) - Skip a test file unless the system supports threading
+Test2::Suite(3pm)        - Distribution with a rich set of tools built upon the Test2 framework
+Test2::Todo(3pm)         - TODO extension for Test2
+Test2::Tools(3pm)        - Documentation for Tools
+Test2::Tools::AsyncSubtest(3pm) - Tools for writing async subtests
+Test2::Tools::Basic(3pm) - Test2 implementation of the basic testing tools
+Test2::Tools::Class(3pm) - Test2 implementation of the tools for testing classes
+Test2::Tools::ClassicCompare(3pm) - Classic (Test::More style) comparison tools
+Test2::Tools::Compare(3pm) - Tools for comparing deep data structures
+Test2::Tools::Defer(3pm) - Write tests that get executed at a later time
+Test2::Tools::Encoding(3pm) - Tools for managing the encoding of Test2 based tests
+Test2::Tools::Event(3pm) - Tools for generating test events
+Test2::Tools::Exception(3pm) - Test2 based tools for checking exceptions
+Test2::Tools::Exports(3pm) - Tools for validating exporters
+Test2::Tools::GenTemp(3pm) - Tool for generating a populated temp directory
+Test2::Tools::Grab(3pm)  - Temporarily intercept all events without adding a scope level
+Test2::Tools::Mock(3pm)  - Class/Instance mocking for Test2
+Test2::Tools::Ref(3pm)   - Tools for validating references
+Test2::Tools::Spec(3pm)  - RSPEC implementation on top of Test2::Workflow
+Test2::Tools::Subtest(3pm) - Tools for writing subtests
+Test2::Tools::Target(3pm) - Alias the testing target package
+Test2::Tools::Tester(3pm) - Tools to help you test other testing tools
 Test2::Tools::Tiny(3pm)  - Tiny set of tools for unfortunate souls who cannot use Test2::Suite
+Test2::Tools::Warnings(3pm) - Tools to verify warnings
 Test2::Transition(3pm)   - Transition notes when upgrading to Test2
 Test2::Util(3pm)         - Tools used by Test2 and friends
 Test2::Util::ExternalMeta(3pm) - Allow third party tools to safely attach meta-data to your instances
 Test2::Util::Facets2Legacy(3pm) - Convert facet data to the legacy event API
+Test2::Util::Grabber(3pm) - Object used to temporarily intercept all events
 Test2::Util::HashBase(3pm) - Build hash based classes
+Test2::Util::Ref(3pm)    - Tools for inspecting or manipulating references
+Test2::Util::Stash(3pm)  - Utilities for manipulating stashes and globs
+Test2::Util::Sub(3pm)    - Tools for inspecting and manipulating subs
+Test2::Util::Table(3pm)  - Format a header and rows into a table
+Test2::Util::Table::LineBreak(3pm) - Break up lines for use in tables
+Test2::Util::Times(3pm)  - Format timing/benchmark information
 Test2::Util::Trace(3pm)  - Legacy wrapper fro Test2::EventFacet::Trace
+Test2::V0(3pm)           - 0Th edition of the Test2 recommended bundle
+Test2::Workflow(3pm)     - A test workflow is a way of structuring tests using composable units
+Test2::Workflow::BlockBase(3pm) - Base class for all workflow blocks
+Test2::Workflow::Build(3pm) - Represents a build in progress
+Test2::Workflow::Runner(3pm) - Runs the workflows
+Test2::Workflow::Task(3pm) - Encapsulation of a Task
+Test2::Workflow::Task::Action(3pm) - Encapsulation of an action
+Test2::Workflow::Task::Group(3pm) - Encapsulation of a group (describe)
+Test::Base(3pm)          - A Data Driven Testing Framework
+Test::Base::Filter(3pm)  - Default Filter Class for Test::Base
 Test::Builder(3pm)       - Backend for building test libraries
 Test::Builder::Formatter(3pm) - Test::Builder subclass of Test2::Formatter::TAP
 Test::Builder::IO::Scalar(3pm) - A copy of IO::Scalar for Test::Builder
@@ -3364,20 +3824,39 @@ Test::Builder::Module(3pm) - Base class for test modules
 Test::Builder::Tester(3pm) - test testsuites that have been built with Test::Builder
 Test::Builder::Tester::Color(3pm) - turn on colour in Test::Builder::Tester
 Test::Builder::TodoDiag(3pm) - Test::Builder subclass of Test2::Event::Diag
+Test::CPAN::Changes(3pm) - Validation of the Changes file in a CPAN distribution
 Test::CheckDeps(3pm)     - Check for presence of dependencies
+Test::CleanNamespaces(3pm) - Check for uncleaned imports
 Test::Deep(3pm)          - Extremely flexible deep comparison
+Test::Deep::JSON(3pm)    - Compare JSON with Test::Deep
 Test::Deep::NoTest(3pm)  - Use Test::Deep outside of the testing framework
+Test::Deep::Type(3pm)    - A Test::Deep plugin for validating type constraints
 Test::Differences(3pm)   - Test strings and data structures and show differences if not ok
 Test::Exception(3pm)     - Test exception based code
 Test::Exception(3pm)     - Test exception-based code
 Test::Fatal(3pm)         - incredibly simple helpers for testing code with exceptions
+Test::File(3pm)          - -- test file attributes
+Test::File::ShareDir(3pm) - Create a Fake ShareDir for your modules for testing
+Test::File::ShareDir::Dist(3pm) - Simplified dist oriented ShareDir tester
+Test::File::ShareDir::Module(3pm) - Simplified module oriented ShareDir tester
+Test::File::ShareDir::Object::Dist(3pm) - Object Oriented ShareDir creation for distributions
+Test::File::ShareDir::Object::Inc(3pm) - Shared tempdir object code to inject into @INC
+Test::File::ShareDir::Object::Module(3pm) - Object Oriented ShareDir creation for modules
+Test::File::ShareDir::TempDirObject(3pm) - Internal Object to make code simpler
+Test::File::ShareDir::Utils(3pm) - Simple utilities for File::ShareDir testing
 Test::Harness(3pm)       - Run Perl standard test scripts with statistics
+Test::Kit(3pm)           - Build custom test packages with only the features you want
 Test::Moose(3pm)         - Test functions for Moose specific features
 Test::More(3pm)          - yet another framework for writing test scripts
+Test::Most(3pm)          - Most commonly needed test functions and features
+Test::Most::Exception(3pm) - Internal exception class
+Test::Needs(3pm)         - Skip tests when modules not available
+Test::Number::Delta(3pm) - Compare the difference between numbers against a given tolerance
 Test::Object(3pm)        - Thoroughly testing objects via registered handlers
 Test::Output(3pm)        - Utilities to test STDOUT and STDERR messages
 Test::Pod(3pm)           - check for POD errors in files
 Test::Requires(3pm)      - Checks to see if the module can be loaded
+Test::RequiresInternet(3pm) - Easily test network connectivity
 Test::Script(3pm)        - Basic cross-platform tests for scripts
 Test::Simple(3pm)        - Basic utilities for writing tests
 Test::Specio(3pm)        - Test helpers for Specio
@@ -3391,7 +3870,12 @@ Test::Trap::Builder::SystemSafe(3pm) - "Safe" output layer backend using File::T
 Test::Trap::Builder::TempFile(3pm) - Capture strategies using File::Temp
 Test::Trap::Builder::TempFile(3pm) - Output layer backend using File::Temp
 Test::Tutorial(3pm)      - A tutorial about writing really basic tests
+Test::TypeTiny(3pm)      - useful functions for testing the efficacy of type constraints
 Test::Warn(3pm)          - Perl extension to test methods for warnings
+Test::Warnings(3pm)      - Test for warnings and the lack of them
+Test::Without::Module(3pm) - Test fallback behaviour in absence of modules
+Test::YAML(3pm)          - Testing Module for YAML Implementations
+Test::utf8(3pm)          - handy utf8 tests
 Text::Abbrev(3pm)        - abbrev - create an abbreviation table from a list
 Text::Balanced(3pm)      - Extract delimited text sequences from strings
 Text::Diff(3pm)          - Perform diffs on files and record sets
@@ -3399,7 +3883,6 @@ Text::Diff::Config(3pm)  - global configuration for Text::Diff (as a separate mo
 Text::Diff::Table(3pm),   Text::Diff::Table(3pm) - Text::Diff plugin to generate "table" format output
 Text::Diff::Table5.18(3pm),   Text::Diff::Table(3pm) - Text::Diff plugin to generate "table" format output
 Text::Diff::Table5.28(3pm),   Text::Diff::Table(3pm) - Text::Diff plugin to generate "table" format output
-Text::Diff::Table5.30(3pm),   Text::Diff::Table(3pm) - Text::Diff plugin to generate "table" format output
 Text::Glob(3pm)          - match globbing patterns against text
 Text::ParseWords(3pm)    - parse text into an array of tokens or array of arrays
 Text::Soundex(3pm)       - Implementation of the soundex algorithm
@@ -3414,6 +3897,7 @@ Tie::File(3pm)           - Access the lines of a disk file via a Perl array
 Tie::Handle(3pm)         - base class definitions for tied handles
 Tie::Hash(3pm), Tie::StdHash(3pm), Tie::ExtraHash(3pm) - base class definitions for tied hashes
 Tie::Hash::NamedCapture(3pm) - Named regexp capture buffers
+Tie::IxHash(3pm)         - ordered associative arrays for Perl
 Tie::Memoize(3pm)        - add data to hash when needed
 Tie::RefHash(3pm)        - use references as hash keys
 Tie::Scalar(3pm), Tie::StdScalar(3pm) - base class definitions for tied scalars
@@ -3522,6 +4006,56 @@ Try::Tiny(3pm)           - Minimal try/catch with proper preservation of $@
 Try::Tiny(3pm)           - minimal try/catch with proper preservation of $@
 Ttk_CreateTheme(3tcl), Ttk_GetTheme(3tcl), Ttk_GetDefaultTheme(3tcl), Ttk_GetCurrentTheme(3tcl) - create and use Tk themes
 Ttk_MakeBox(3tcl), Ttk_PadBox(3tcl), Ttk_ExpandBox(3tcl), Ttk_PackBox(3tcl), Ttk_StickBox(3tcl), Ttk_PlaceBox(3tcl), Ttk_BoxContains(3tcl), Ttk_MakePadding(3tcl), Ttk_UniformPadding(3tcl), Ttk_AddPadding(3tcl), Ttk_RelievePadding(3tcl), Ttk_GetPaddingFromObj(3tcl), Ttk_GetBorderFromObj(3tcl), Ttk_GetStickyFromObj(3tcl) - Tk themed geometry utilities
+Type::Coercion(3pm)      - a set of coercions to a particular target type constraint
+Type::Coercion::FromMoose(3pm) - a set of coercions borrowed from Moose
+Type::Coercion::Union(3pm) - a set of coercions to a union type constraint
+Type::Library(3pm)       - tiny, yet Moo(se)-compatible type libraries
+Type::Params(3pm)        - Params::Validate-like parameter validation using Type::Tiny type constraints and coercions
+Type::Parser(3pm)        - parse type constraint strings
+Type::Registry(3pm)      - a glorified hashref for looking up type constraints
+Type::Tiny(3pm)          - tiny, yet Moo(se)-compatible type constraint
+Type::Tiny::Class(3pm)   - type constraints based on the "isa" method
+Type::Tiny::ConstrainedObject(3pm) - shared behavour for Type::Tiny::Class, etc
+Type::Tiny::Duck(3pm)    - type constraints based on the "can" method
+Type::Tiny::Enum(3pm)    - string enum type constraints
+Type::Tiny::Intersection(3pm) - intersection type constraints
+Type::Tiny::Manual(3pm)  - an overview of Type::Tiny
+Type::Tiny::Manual::AllTypes(3pm) - alphabetical list of all type constraints bundled with Type::Tiny
+Type::Tiny::Manual::Coercions(3pm) - advanced information on coercions
+Type::Tiny::Manual::Contributing(3pm) - contributing to Type::Tiny development
+Type::Tiny::Manual::Installation(3pm) - how to install Type::Tiny
+Type::Tiny::Manual::Libraries(3pm) - defining your own type libraries
+Type::Tiny::Manual::NonOO(3pm) - Type::Tiny in non-object-oriented code
+Type::Tiny::Manual::Optimization(3pm) - squeeze the most out of your CPU
+Type::Tiny::Manual::Params(3pm) - advanced information on Type::Params
+Type::Tiny::Manual::Policies(3pm) - Type::Tiny policies
+Type::Tiny::Manual::UsingWithClassTiny(3pm) - use of Type::Tiny with Class::Tiny
+Type::Tiny::Manual::UsingWithMoo(3pm) - basic use of Type::Tiny with Moo
+Type::Tiny::Manual::UsingWithMoo2(3pm) - advanced use of Type::Tiny with Moo
+Type::Tiny::Manual::UsingWithMoo3(3pm) - alternative use of Type::Tiny with Moo
+Type::Tiny::Manual::UsingWithMoose(3pm) - how to use Type::Tiny with Moose
+Type::Tiny::Manual::UsingWithMouse(3pm) - how to use Type::Tiny with Mouse
+Type::Tiny::Manual::UsingWithOther(3pm) - using Type::Tiny with Class::InsideOut, Params::Check, and Object::Accessor
+Type::Tiny::Manual::UsingWithTestMore(3pm) - Type::Tiny for test suites
+Type::Tiny::Role(3pm)    - type constraints based on the "DOES" method
+Type::Tiny::Union(3pm)   - union type constraints
+Type::Tiny::_HalfOp(3pm) - half-completed overloaded operation
+Type::Utils(3pm)         - utility functions to make defining and using type constraints a little easier
+Types::Common::Numeric(3pm) - drop-in replacement for MooseX::Types::Common::Numeric
+Types::Common::String(3pm) - drop-in replacement for MooseX::Types::Common::String
+Types::Serialiser(3pm)   - simple data types for common serialisation formats
+Types::Serialiser::Error(3pm) - dummy module for Types::Serialiser
+Types::Standard(3pm)     - bundled set of built-in types for Type::Tiny
+Types::Standard::ArrayRef(3pm) - internals for the Types::Standard ArrayRef type constraint
+Types::Standard::CycleTuple(3pm) - internals for the Types::Standard CycleTuple type constraint
+Types::Standard::Dict(3pm) - internals for the Types::Standard Dict type constraint
+Types::Standard::HashRef(3pm) - internals for the Types::Standard HashRef type constraint
+Types::Standard::Map(3pm) - internals for the Types::Standard Map type constraint
+Types::Standard::ScalarRef(3pm) - internals for the Types::Standard ScalarRef type constraint
+Types::Standard::StrMatch(3pm) - internals for the Types::Standard StrMatch type constraint
+Types::Standard::Tied(3pm) - internals for the Types::Standard Tied type constraint
+Types::Standard::Tuple(3pm) - internals for the Types::Standard Tuple type constraint
+Types::TypeTiny(3pm)     - type constraints used internally by Type::Tiny
 UASharedPasteboardProgressUI(8) - Progress UI Service for Universal Clipboard
 UASysAgent(8)            - A tool used by UnmountAssistant
 UNIVERSAL(3pm)           - base class for ALL classes (blessed references)
@@ -3567,6 +4101,86 @@ Widget(n)                - base class for mega-widgets within a frame
 Win32::DBIODBC(3pm)      - Win32::ODBC emulation layer for the DBI
 WindowServer(8)          - Window management, compositing, and event routing daemon
 WirelessRadioManagerd(8) - Wireless Radio Manager daemon
+XAddConnectionWatch(3), XRemoveConnectionWatch(3), XProcessInternalConnection(3), XInternalConnectionNumbers(3) - handle Xlib internal connections
+XAddHost(3), XAddHosts(3), XListHosts(3), XRemoveHost(3), XRemoveHosts(3), XSetAccessControl(3), XEnableAccessControl(3), XDisableAccessControl(3), XHostAddress(3), XServerInterpretedAddress(3) - control host access and host control structure
+XAllocClassHint(3), XSetClassHint(3), XGetClassHint(3), XClassHint(3) - allocate class hints structure and set or read a window's WM_CLASS property
+XAllocColor(3), XAllocNamedColor(3), XAllocColorCells(3), XAllocColorPlanes(3), XFreeColors(3) - allocate and free colors
+XAllocIconSize(3), XSetIconSizes(3), XGetIconSizes(3), XIconSize(3) - allocate icon size structure and set or read a window's WM_ICON_SIZES property
+XAllocSizeHints(3), XSetWMNormalHints(3), XGetWMNormalHints(3), XSetWMSizeHints(3), XGetWMSizeHints(3), XSizeHints(3) - allocate size hints structure and set or read a window's WM_NORMAL_HINTS property
+XAllocStandardColormap(3), XSetRGBColormaps(3), XGetRGBColormaps(3), XStandardColormap(3) - allocate, set, or read a standard colormap structure
+XAllocWMHints(3), XSetWMHints(3), XGetWMHints(3), XWMHints(3) - allocate window manager hints structure and set or read a window's WM_HINTS property
+XAllowEvents(3)          - release queued events
+XAnyEvent(3), XEvent(3)  - generic X event structures
+XButtonEvent(3), XKeyEvent(3), XMotionEvent(3) - KeyPress, KeyRelease, ButtonPress, ButtonRelease, and MotionNotify event structures
+XChangeKeyboardControl(3), XGetKeyboardControl(3), XAutoRepeatOn(3), XAutoRepeatOff(3), XBell(3), XQueryKeymap(3), XKeyboardControl(3) - manipulate keyboard settings and keyboard control structure
+XChangeKeyboardMapping(3), XGetKeyboardMapping(3), XDisplayKeycodes(3), XSetModifierMapping(3), XGetModifierMapping(3), XNewModifiermap(3), XInsertModifiermapEntry(3), XDeleteModifiermapEntry(3), XFreeModifiermap(3), XModifierKeymap(3) - manipulate keyboard encoding and keyboard encoding structure
+XChangePointerControl(3), XGetPointerControl(3) - control pointer
+XChangeSaveSet(3), XAddToSaveSet(3), XRemoveFromSaveSet(3) - change a client's save set
+XChangeWindowAttributes(3), XSetWindowBackground(3), XSetWindowBackgroundPixmap(3), XSetWindowBorder(3), XSetWindowBorderPixmap(3), XSetWindowColormap(3) - change window attributes
+XCirculateEvent(3)       - CirculateNotify event structure
+XCirculateRequestEvent(3) - CirculateRequest event structure
+XClearArea(3), XClearWindow(3) - clear area or window
+XClientMessageEvent(3)   - ClientMessage event structure
+XColormapEvent(3)        - ColormapNotify event structure
+XConfigureEvent(3)       - ConfigureNotify event structure
+XConfigureRequestEvent(3) - ConfigureRequest event structure
+XConfigureWindow(3), XMoveWindow(3), XResizeWindow(3), XMoveResizeWindow(3), XSetWindowBorderWidth(3), XWindowChanges(3) - configure windows and window changes structure
+XCopyArea(3), XCopyPlane(3) - copy areas
+XCreateColormap(3), XCopyColormapAndFree(3), XFreeColormap(3), XColor(3) - create, copy, or destroy colormaps and color structure
+XCreateFontCursor(3), XCreatePixmapCursor(3), XCreateGlyphCursor(3) - create cursors
+XCreateFontSet(3), XFreeFontSet(3) - create and free an international text drawing font set
+XCreateGC(3), XCopyGC(3), XChangeGC(3), XGetGCValues(3), XFreeGC(3), XGContextFromGC(3), XGCValues(3) - create or free graphics contexts and graphics context structure
+XCreateIC(3), XDestroyIC(3), XIMOfIC(3) - create, destroy, and obtain the input method of an input context
+XCreateOC(3), XDestroyOC(3), XSetOCValues(3), XGetOCValues(3), XOMOfOC(3) - create output contexts
+XCreatePixmap(3), XFreePixmap(3) - create or destroy pixmaps
+XCreateRegion(3), XSetRegion(3), XDestroyRegion(3) - create or destroy regions
+XCreateWindow(3), XCreateSimpleWindow(3), XSetWindowAttributes(3) - create windows and window attributes structure
+XCreateWindowEvent(3)    - CreateNotify event structure
+XCrossingEvent(3)        - EnterNotify and LeaveNotify event structure
+XDefineCursor(3), XUndefineCursor(3) - define cursors
+XDestroyWindow(3), XDestroySubwindows(3) - destroy windows
+XDestroyWindowEvent(3)   - DestroyNotify event structure
+XDrawArc(3), XDrawArcs(3), XArc(3) - draw arcs and arc structure
+XDrawImageString(3), XDrawImageString16(3) - draw image text
+XDrawLine(3), XDrawLines(3), XDrawSegments(3), XSegment(3) - draw lines, polygons, and line structure
+XDrawPoint(3), XDrawPoints(3), XPoint(3) - draw points and points structure
+XDrawRectangle(3), XDrawRectangles(3), XRectangle(3) - draw rectangles and rectangles structure
+XDrawString(3), XDrawString16(3) - draw text characters
+XDrawText(3), XDrawText16(3), XTextItem(3), XTextItem16(3) - draw polytext text and text drawing structures
+XEmptyRegion(3), XEqualRegion(3), XPointInRegion(3), XRectInRegion(3) - determine if regions are empty or equal
+XErrorEvent(3)           - X error event structure
+XExposeEvent(3)          - Expose event structure
+XExtentsOfFontSet(3)     - obtain the maximum extents structure for a font set
+XFillRectangle(3), XFillRectangles(3), XFillPolygon(3), XFillArc(3), XFillArcs(3) - fill rectangles, polygons, or arcs
+XFilterEvent(3)          - filter X events for an input method
+XFlush(3), XSync(3), XEventsQueued(3), XPending(3) - handle output buffer or event queue
+XFocusChangeEvent(3)     - FocusIn and FocusOut event structure
+XFontSetExtents(3)       - XFontSetExtents structure
+XFontsOfFontSet(3), XBaseFontNameListOfFontSet(3), XLocaleOfFontSet(3), XContextDependentDrawing(3), XContextualDrawing(3), XDirectionalDependentDrawing(3) - obtain fontset information
+XFree(3)                 - free client data
+XGetEventData(3), XFreeEventData(3), XGenericEventCookie(3) - retrieve and free additional event data through cookies
+XGetVisualInfo(3), XMatchVisualInfo(3), XVisualIDFromVisual(3), XVisualInfo(3) - obtain visual information and visual structure
+XGetWindowAttributes(3), XGetGeometry(3), XWindowAttributes(3) - get current window attribute or geometry and current window attributes structure
+XGetWindowProperty(3), XListProperties(3), XChangeProperty(3), XRotateWindowProperties(3), XDeleteProperty(3) - obtain and change window properties
+XGetXCBConnection(3)     - get the XCB connection for an Xlib Display
+XGrabButton(3), XUngrabButton(3) - grab pointer buttons
+XGrabKey(3), XUngrabKey(3) - grab keyboard keys
+XGrabKeyboard(3), XUngrabKeyboard(3) - grab the keyboard
+XGrabPointer(3), XUngrabPointer(3), XChangeActivePointerGrab(3) - grab the pointer
+XGrabServer(3), XUngrabServer(3) - grab the server
+XGraphicsExposeEvent(3), XNoExposeEvent(3) - GraphicsExpose and NoExpose event structures
+XGravityEvent(3)         - GravityNotify event structure
+XIconifyWindow(3), XWithdrawWindow(3), XReconfigureWMWindow(3) - manipulate top-level windows
+XIfEvent(3), XCheckIfEvent(3), XPeekIfEvent(3) - check the event queue with a predicate procedure
+XInitImage(3), XCreateImage(3), XGetPixel(3), XPutPixel(3), XSubImage(3), XAddPixel(3), XDestroyImage(3) - image utilities
+XInitThreads(3), XLockDisplay(3), XUnlockDisplay(3) - multi-threading support
+XInstallColormap(3), XUninstallColormap(3), XListInstalledColormaps(3) - control colormaps
+XInternAtom(3), XInternAtoms(3), XGetAtomName(3), XGetAtomNames(3) - create or return atom names
+XIntersectRegion(3), XUnionRegion(3), XUnionRectWithRegion(3), XSubtractRegion(3), XXorRegion(3), XOffsetRegion(3), XShrinkRegion(3) - region arithmetic
+XKeymapEvent(3)          - KeymapNotify event structure
+XListFonts(3), XFreeFontNames(3), XListFontsWithInfo(3), XFreeFontInfo(3) - obtain or free font names and information
+XLoadFont(3), XQueryFont(3), XLoadQueryFont(3), XFreeFont(3), XGetFontProperty(3), XUnloadFont(3), XCharStruct(3), XFontProp(3), XChar2b(3), XFontStruct(3) - load or unload fonts and font metric structures
+XLookupKeysym(3), XRefreshKeyboardMapping(3), XLookupString(3), XRebindKeysym(3) - handle keyboard input events in Latin-1
 XML::LibXML(3pm)         - Perl Binding for libxml2
 XML::LibXML::Attr(3pm)   - XML::LibXML Attribute Class
 XML::LibXML::AttributeHash(3pm) - tie an XML::LibXML::Element to a hash to access its attributes
@@ -3643,7 +4257,6 @@ XML::XPath::Node::Comment5.30(3pm), Comment(3pm) - an XML comment: <!--comment--
 XML::XPath::Node::Element(3pm), Element(3pm) - an <element>
 XML::XPath::Node::Element5.18(3pm), Element(3pm) - an <element>
 XML::XPath::Node::Element5.28(3pm), Element(3pm) - an <element>
-XML::XPath::Node::Element5.30(3pm), Element(3pm) - an <element>
 XML::XPath::Node::Namespace(3pm), Namespace(3pm) - an XML namespace node
 XML::XPath::Node::Namespace5.18(3pm), Namespace(3pm) - an XML namespace node
 XML::XPath::Node::Namespace5.28(3pm), Namespace(3pm) - an XML namespace node
@@ -3661,9 +4274,362 @@ XML::XPath::Number(3pm)  - Simple numeric values
 XML::XPath::PerlSAX(3pm) - A PerlSAX event generator for my weird node structure
 XML::XPath::PerlSAX(3pm) - A PerlSAX event generator for my wierd node structure
 XML::XPath::XMLParser(3pm) - The default XML parsing class that produces a node tree
+XMapEvent(3), XMappingEvent(3) - MapNotify and MappingNotify event structures
+XMapRequestEvent(3)      - MapRequest event structure
+XMapWindow(3), XMapRaised(3), XMapSubwindows(3) - map windows
+XNextEvent(3), XPeekEvent(3), XWindowEvent(3), XCheckWindowEvent(3), XMaskEvent(3), XCheckMaskEvent(3), XCheckTypedEvent(3), XCheckTypedWindowEvent(3) - select events by type
+XNoOp(3)                 - No Operation
+XOpenDisplay(3), XCloseDisplay(3) - connect or disconnect to X server
+XOpenIM(3), XCloseIM(3), XSetIMValues(3), XGetIMValues(3), XDisplayOfIM(3), XLocaleOfIM(3), XRegisterIMInstantiateCallback(3), XUnregisterIMInstantiateCallback(3) - open, close, and obtain input method information
+XOpenOM(3), XCloseOM(3), XSetOMValues(3), XGetOMValues(3), XDisplayOfOM(3), XLocaleOfOM(3) - open output methods
+XParseGeometry(3), XWMGeometry(3) - parse window geometry
+XPolygonRegion(3), XClipBox(3) - generate regions
+XPropertyEvent(3)        - PropertyNotify event structure
+XPutBackEvent(3)         - put events back on the queue
+XPutImage(3), XGetImage(3), XGetSubImage(3) - transfer images
+XQueryBestSize(3), XQueryBestTile(3), XQueryBestStipple(3) - determine efficient sizes
+XQueryColor(3), XQueryColors(3), XLookupColor(3), XParseColor(3) - obtain color values
+XQueryExtension(3), XListExtensions(3), XFreeExtensionList(3) - list available extensions
+XQueryPointer(3)         - get pointer coordinates
+XQueryTree(3)            - query window tree information
+XRaiseWindow(3), XLowerWindow(3), XCirculateSubwindows(3), XCirculateSubwindowsUp(3), XCirculateSubwindowsDown(3), XRestackWindows(3) - change window stacking order
+XReadBitmapFile(3), XReadBitmapFileData(3), XWriteBitmapFile(3), XCreatePixmapFromBitmapData(3), XCreateBitmapFromData(3) - manipulate bitmaps
+XRecolorCursor(3), XFreeCursor(3), XQueryBestCursor(3) - manipulate cursors
+XReparentEvent(3)        - ReparentNotify event structure
+XReparentWindow(3)       - reparent windows
+XResizeRequestEvent(3)   - ResizeRequest event structure
+XResourceManagerString(3), XScreenResourceString(3) - obtain server resource properties
 XSLoader(3pm)            - Dynamically load C libraries into Perl code
+XSaveContext(3), XFindContext(3), XDeleteContext(3), XUniqueContext(3) - associative look-up routines
+XSelectInput(3)          - select input events
+XSelectionClearEvent(3)  - SelectionClear event structure
+XSelectionEvent(3)       - SelectionNotify event structure
+XSelectionRequestEvent(3) - SelectionRequest event structure
+XSendEvent(3), XDisplayMotionBufferSize(3), XGetMotionEvents(3), XTimeCoord(3) - send events and pointer motion history structure
+XSetArcMode(3), XSetSubwindowMode(3), XSetGraphicsExposure(3) - GC convenience routines
+XSetClipOrigin(3), XSetClipMask(3), XSetClipRectangles(3) - GC convenience routines
+XSetCloseDownMode(3), XKillClient(3) - control clients
+XSetCommand(3), XGetCommand(3) - set or read a window's WM_COMMAND property
+XSetErrorHandler(3), XGetErrorText(3), XDisplayName(3), XSetIOErrorHandler(3), XSetIOErrorExitHandler(3), XGetErrorDatabaseText(3) - default error handlers
+XSetEventQueueOwner(3)   - set event queue owner on a shared Xlib/XCB connection
+XSetFillStyle(3), XSetFillRule(3) - GC convenience routines
+XSetFont(3)              - GC convenience routines
+XSetFontPath(3), XGetFontPath(3), XFreeFontPath(3) - set, get, or free the font search path
+XSetICFocus(3), XUnsetICFocus(3) - set and unset input context focus
+XSetICValues(3), XGetICValues(3) - set and obtain XIC values
+XSetInputFocus(3), XGetInputFocus(3) - control input focus
+XSetLineAttributes(3), XSetDashes(3) - GC convenience routines
+XSetPointerMapping(3), XGetPointerMapping(3) - manipulate pointer settings
+XSetScreenSaver(3), XForceScreenSaver(3), XActivateScreenSaver(3), XResetScreenSaver(3), XGetScreenSaver(3) - manipulate the screen saver
+XSetSelectionOwner(3), XGetSelectionOwner(3), XConvertSelection(3) - manipulate window selection
+XSetState(3), XSetFunction(3), XSetPlaneMask(3), XSetForeground(3), XSetBackground(3) - GC convenience routines
+XSetTextProperty(3), XGetTextProperty(3) - set and read text properties
+XSetTile(3), XSetStipple(3), XSetTSOrigin(3) - GC convenience routines
+XSetTransientForHint(3), XGetTransientForHint(3) - set or read a window's WM_TRANSIENT_FOR property
+XSetWMClientMachine(3), XGetWMClientMachine(3) - set or read a window's WM_CLIENT_MACHINE property
+XSetWMColormapWindows(3), XGetWMColormapWindows(3) - set or read a window's WM_COLORMAP_WINDOWS property
+XSetWMIconName(3), XGetWMIconName(3), XSetIconName(3), XGetIconName(3) - set or read a window's WM_ICON_NAME property
+XSetWMName(3), XGetWMName(3), XStoreName(3), XFetchName(3) - set or read a window's WM_NAME property
+XSetWMProperties(3), XmbSetWMProperties(3), Xutf8SetWMProperties(3) - set standard window properties
+XSetWMProtocols(3), XGetWMProtocols(3) - set or read a window's WM_PROTOCOLS property
+XShapeQueryExtension(3), XShapeQueryVersion(3), XShapeCombineRegion(3), XShapeCombineRectangles(3), XShapeCombineMask(3), XShapeCombineShape(3), XShapeOffsetShape(3), XShapeQueryExtents(3), XShapeSelectInput(3), XShapeInputSelected(3), XShapeGetRectangles(3) - X nonrectangular shape functions
+XShmQueryExtension(3), XShmQueryVersion(3), XShmPixmapFormat(3), XShmAttach(3), XShmDetach XShmCreateImage(3), XShmPutImage(3), XShmGetImage(3), XShmCreatePixmap(3), XShmGetEventBase(3) - X Shared Memory extension functions
+XStoreBytes(3), XStoreBuffer(3), XFetchBytes(3), XFetchBuffer(3), XRotateBuffers(3) - manipulate cut and paste buffers
+XStoreColors(3), XStoreColor(3), XStoreNamedColor(3) - set colors
+XString(3pm)             - Isolated String helpers from B
+XStringListToTextProperty(3), XTextPropertyToStringList(3), XFreeStringList(3), XTextProperty(3) - convert string lists and text property structure
+XStringToKeysym(3), XKeysymToString(3), XKeycodeToKeysym(3), XKeysymToKeycode(3), XConvertCase(3) - convert keysyms
+XSupportsLocale(3), XSetLocaleModifiers(3) - determine locale support and configure locale modifiers
+XSynchronize(3), XSetAfterFunction(3) - enable or disable synchronization
+XTextExtents(3), XTextExtents16(3), XQueryTextExtents(3), XQueryTextExtents16(3) - compute or query text extents
+XTextWidth(3), XTextWidth16(3) - compute text width
+XTranslateCoordinates(3) - translate window coordinates
+XUnmapEvent(3)           - UnmapNotify event structure
+XUnmapWindow(3), XUnmapSubwindows(3) - unmap windows
+XVaCreateNestedList(3)   - allocate a nested variable argument list
+XVisibilityEvent(3)      - VisibilityNotify event structure
+XWarpPointer(3)          - move pointer
+XXX(3pm)                 - See Your Data in the Nude
+Xau library: XauFileName(3), XauReadAuth(3), XauLockAuth(3), XauUnlockAuth(3), XauWriteAuth(3), XauDisposeAuth(3), XauGetAuthByAddr(3), XauGetBestAuthByAddr(3) - X authority database routines
+XcmsAllocColor(3), XcmsAllocNamedColor(3) - allocate colors
+XcmsCCCOfColormap(3), XcmsSetCCCOfColormap(3) - query and modify CCC of a colormap
+XcmsCIELabQueryMaxC(3), XcmsCIELabQueryMaxL(3), XcmsCIELabQueryMaxLC(3), XcmsCIELabQueryMinL(3) - obtain the CIE L*a*b* coordinates
+XcmsCIELuvQueryMaxC(3), XcmsCIELuvQueryMaxL(3), XcmsCIELuvQueryMaxLC(3), XcmsCIELuvQueryMinL(3) - obtain the CIE L*u*v* coordinates
+XcmsColor(3), XcmsRGB(3), XcmsRGBi(3), XcmsCIEXYZ(3), XcmsCIEuvY(3), XcmsCIExyY(3), XcmsCIELab(3), XcmsCIELuv(3), XcmsTekHVC(3), XcmsPad(3) - Xcms color structure
+XcmsConvertColors(3)     - convert CCC color specifications
+XcmsCreateCCC(3), XcmsFreeCCC(3) - creating and destroying CCCs
+XcmsDefaultCCC(3)        - obtain the default CCC for a screen
+XcmsQueryBlack(3), XcmsQueryBlue(3), XcmsQueryGreen(3), XcmsQueryRed(3), XcmsQueryWhite(3) - obtain black, blue, green, red, and white CCC color specifications
+XcmsQueryColor(3), XcmsQueryColors(3), XcmsLookupColor(3) - obtain color values
+XcmsSetWhitePoint(3), XcmsSetWhiteAdjustProc(3) - modifying CCC attributes
+XcmsStoreColor(3), XcmsStoreColors(3) - set colors
+XcmsTekHVCQueryMaxC(3), XcmsTekHVCQueryMaxV(3), XcmsTekHVCQueryMaxVC(3), XcmsTekHVCQueryMaxVSamples(3), XcmsTekHVCQueryMinV(3) - obtain the TekHVC coordinates
+XcupGetReservedColormapEntries(3) - list colormap entries reserved by the system
+XcupQueryVersion(3)      - Returns TOG-CUP protocol version supported by the X server
+XcupStoreColors(3)       - initialize shareable colormap entries at specific locations
+XdbeAllocateBackBufferName(3) - allocates a DBE buffer
+XdbeBeginIdiom(3)        - marks the beginning of a DBE idiom sequence
+XdbeDeallocateBackBufferName(3) - frees a DBE buffer
+XdbeEndIdiom(3)          - marks the end of a DBE idiom sequence
+XdbeFreeVisualInfo(3)    - frees information returned by XdbeGetVisualInfo()
+XdbeGetBackBufferAttributes(3) - returns attributes of a DBE buffer
+XdbeGetVisualInfo(3)     - Get dbe Visual Informations
+XdbeQueryExtension(3)    - returns the version of DBE supported by the server
+XdbeSwapBuffers(3)       - swaps front and back DBE buffers
+XeviQueryExtension(3), XeviQueryVersion(3), XeviGetVisualInfo(3) - X Extended Visual Information functions
+XkbActionCtrls(3)        - Returns the ctrls fields of act converted to an unsigned int
+XkbAddDeviceLedInfo(3)   - Initialize an XkbDeviceLedInfoRec structure
+XkbAddGeomColor(3)       - Add one color name to an existing keyboard geometry description
+XkbAddGeomDoodad(3)      - Add one doodad to a section of a keyboard geometry or to the top-level geometry
+XkbAddGeomKey(3)         - Add one key at the end of an existing row of keys
+XkbAddGeomKeyAlias(3)    - Add one key alias to an existing keyboard geometry description
+XkbAddGeomOutline(3)     - Add one outline to an existing shape
+XkbAddGeomOverlay(3)     - Add one overlay to a section
+XkbAddGeomOverlayKey(3)  - Add a key to an existing overlay row
+XkbAddGeomOverlayRow(3)  - Add a row to an existing overlay
+XkbAddGeomProperty(3)    - Add one property to an existing keyboard geometry description
+XkbAddGeomRow(3)         - Add a row to a section
+XkbAddGeomSection(3)     - Add one section to an existing keyboard geometry
+XkbAddGeomShape(3)       - Add a shape to a keyboard geometry
+XkbAddSymInterpret(3)    - Add a symbol interpretation to the list of symbol interpretations in an XkbCompatRec
+XkbAllocClientMap(3)     - Allocate and initialize an empty client map description record
+XkbAllocCompatMap(3)     - Allocate a new compatibility map if you do not already have one available
+XkbAllocControls(3)      - Allocates an XkbControlsRec structure in the XkbDescRec
+XkbAllocDeviceInfo(3)    - Obtain an XkbDeviceInfoRec structure
+XkbAllocDeviceLedInfo(3) - Obtain an XkbDeviceLedInfoRec structure
+XkbAllocGeomColors(3)    - Allocate geometry colors
+XkbAllocGeomDoodads(3)   - Allocate doodads that are global to a keyboard geometry
+XkbAllocGeomKeyAliases(3) - Allocate geometry key aliases
+XkbAllocGeomKeys(3)      - Allocate space for an arbitrary number of keys to a row
+XkbAllocGeomOutlines(3)  - Allocate space for an arbitrary number of outlines to a shape
+XkbAllocGeomOverlayKeys(3) - Allocate keys in an overlay row
+XkbAllocGeomOverlayRows(3) - Allocate rows in a overlay
+XkbAllocGeomOverlays(3)  - Allocate overlays in a section
+XkbAllocGeomPoints(3)    - Allocate points in an outline
+XkbAllocGeomProps(3)     - Allocate geometry properties
+XkbAllocGeomRows(3)      - Allocate rows in a section
+XkbAllocGeomSectionDoodads(3) - Allocate doodads that are specific to a section
+XkbAllocGeomSections(3)  - Allocate geometry sections
+XkbAllocGeomShapes(3)    - Allocate space for an arbitrary number of geometry shapes
+XkbAllocGeometry(3)      - Allocate an entire geometry
+XkbAllocIndicatorMaps(3) - Allocates, directly, the indicators member of the keyboard description record
+XkbAllocKeyboard(3)      - Creates a keyboard description from scratch
+XkbAllocNames(3)         - Allocate symbolic names structures
+XkbAllocServerMap(3)     - Allocate and initialize an empty server map description record
+XkbApplyCompatMapToKey(3) - Apply the new compatibility mapping to an individual key to get its semantics updated
+XkbBell(3)               - Rings the bell on the default keyboard
+XkbBellEvent(3)          - Provides a function that initiates a bell event for the keyboard without ringing the bell
+XkbChangeControls(3)     - Provides a flexible method for updating the controls in a server to match those in the changed keyboard description
+XkbChangeDeviceInfo(3)   - Update the server's description of a device with the changes noted in an XkbDeviceChangesRec
+XkbChangeEnabledControls(3) - Manipulates the EnabledControls control
+XkbChangeIndicators(3)   - Changes indicator maps or state without passing the entire keyboard description
+XkbChangeMap(3)          - Update only partial components of a keyboard description, modify the appropriate fields in the server and map components of a local copy of the keyboard description
+XkbChangeNames(3)        - _summary-line_
+XkbChangeTypesOfKey(3)   - Change the number of groups and the types bound to a key
+XkbComputeRowBounds(3)   - Update the bounding box of a row
+XkbComputeSectionBounds(3) - Update the bounding box of a section
+XkbComputeShapeBounds(3) - Updates the bounding box of a shape
+XkbComputeShapeTop(3)    - Determines the bounding box of the top surface of a shape
+XkbCopyKeyType(3)        - Copy one XkbKeyTypeRec structures
+XkbCopyKeyTypes(3)       - Copy more than one XkbKeyTypeRec structure
+XkbDeviceBell(3)         - Rings the bell on an X input extension device or the default keyboard
+XkbDeviceBellEvent(3)    - Creates a bell event for an X input extension device or for the keyboard, without ringing the corresponding bell
+XkbFindOverlayForKey(3)  - Find the alternate name by using the primary name for a key that is part of an overlay
+XkbForceBell(3)          - Overrides user preference settings for audible bells to ring the bell on the default keyboard
+XkbForceDeviceBell(3)    - Rings the bell on any keyboard, overriding user preference settings for audible bells
+XkbFreeClientMap(3)      - Free memory used by the client map member of an XkbDescRec structure
+XkbFreeCompatMap(3)      - Free an entire compatibility map or selected portions of one
+XkbFreeComponentList(3)  - Free the structure returned by XkbListComponents
+XkbFreeControls(3)       - Frees memory used by the ctrls member of an XkbDescRec structure
+XkbFreeDeviceInfo(3)     - Free an XkbDeviceInfoRec structure
+XkbFreeGeomColors(3)     - Free geometry colors
+XkbFreeGeomDoodads(3)    - Free geometry doodads
+XkbFreeGeomKeyAliases(3) - Free geometry key aliases
+XkbFreeGeomKeys(3)       - Free geometry keys
+XkbFreeGeomOutlines(3)   - Free geometry outlines
+XkbFreeGeomOverlayKeys(3) - Free keys in an overlay row
+XkbFreeGeomOverlayRows(3) - Free rows in an overlay
+XkbFreeGeomOverlays(3)   - Free rows in a section
+XkbFreeGeomPoints(3)     - Free points in a outline
+XkbFreeGeomProperties(3) - Free geometry properties
+XkbFreeGeomRows(3)       - Free rows in a section
+XkbFreeGeomSections(3)   - Free geometry sections
+XkbFreeGeomShapes(3)     - Free geometry shapes
+XkbFreeGeometry(3)       - Free an entire geometry
+XkbFreeIndicatorMaps(3)  - Frees memory used by the indicators member of an XkbDescRec structure
+XkbFreeKeyboard(3)       - Destroys either an entire XkbDescRec or just some of its members
+XkbFreeNames(3)          - Free symbolic names structures
+XkbFreeServerMap(3)      - Free memory used by the server member of an XkbDescRec structure
+XkbGetAccessXTimeout(3)  - Queries the current AccessXTimeout options for a keyboard device
+XkbGetAutoRepeatRate(3)  - Gets the current attributes of the RepeatKeys control for a keyboard device
+XkbGetAutoResetControls(3) - Gets the current values of the auto-reset controls
+XkbGetBounceKeysDelay(3) - Queries the current BounceKeys delay for a keyboard device
+XkbGetCompatMap(3)       - Fetch any combination of the current compatibility map components from the server
+XkbGetControls(3)        - Finds the current state of Xkb server controls
+XkbGetControlsChanges(3) - Updates a local copy of a keyboard description with the changes previously noted by one or more calls to XkbNoteControlsChanges
+XkbGetDetectableAutoRepeat(3) - Determines whether or not the server supports DetectableAutoRepeat
+XkbGetDeviceButtonActions(3) - Query the button actions associated with an X Input Extension device
+XkbGetDeviceInfo(3)      - Determine whether the X server allows Xkb access to particular capabilities of input devices other than the core X keyboard, or to determine the status of indicator maps, indicator names or button actions on a non-KeyClass extension device
+XkbGetDeviceInfoChanges(3) - Query the changes that have occurred in the button actions or indicator names and indicator maps associated with an input extension device
+XkbGetDeviceLedInfo(3)   - Query the indicator names, maps, and state associated with an LED feedback of an input extension device
+XkbGetGeometry(3)        - Loads a keyboard geometry if you already have the keyboard description
+XkbGetIndicatorChanges(3) - Updates a local copy of the keyboard description with the actual values of one or more calls to XkbNoteIndicatorChanges
+XkbGetIndicatorMap(3)    - Gets the map for one or more indicators, using a mask to specify the indicators
+XkbGetIndicatorState(3)  - Obtains the current state of the keyboard indicators
+XkbGetKeyActions(3)      - Update the actions (the key_acts array) for a subset of the keys in a keyboard description
+XkbGetKeyBehaviors(3)    - Obtain the behaviors (the behaviors array) for a subset of the keys in a keyboard description from the server
+XkbGetKeyExplicitComponents(3) - Obtain the explicit components (the explicit array) for a subset of the keys in a keyboard description
+XkbGetKeyModifierMap(3)  - Update the modifier map for one or more of the keys in a keyboard description
+XkbGetKeySyms(3)         - Obtain the symbols for a subset of the keys in a keyboard description
+XkbGetKeyTypes(3)        - Obtain the list of available key types in the server's keyboard mapping
+XkbGetKeyVirtualModMap(3) - Obtain the virtual modifier map (the vmodmap array) for a subset of the keys in a keyboard description
+XkbGetKeyboard(3)        - Retrieves one or more components of a keyboard device description
+XkbGetKeyboardByName(3)  - Build a new keyboard description from a set of named components, and to optionally have the server use the resulting description to replace an active one
+XkbGetMap(3)             - Allocate an XkbDescRec structure and populate it with the server's keyboard client map and server map
+XkbGetNameChanges(3)     - Update the local copy of the keyboard description with the actual values of the results of one or more calls to XkbNoteNameChanges
+XkbGetNamedGeometry(3)   - Loads a keyboard geometry description from this database by name
+XkbGetNamedIndicator(3)  - Look up the indicator map and other information for an indicator by name
+XkbGetNames(3)           - Obtain symbolic names from the server
+XkbGetSlowKeysDelay(3)   - Gets the SlowKeys acceptance delay for a keyboard device
+XkbGetState(3)           - Obtains the keyboard state
+XkbGetStickyKeysOptions(3) - Queries the current StickyKeys attributes for a keyboard device
+XkbGetUpdatedMap(3)      - Update the client or server map information in an existing keyboard description
+XkbGetVirtualMods(3)     - Obtain a subset of the virtual modifier bindings (the vmods array) in a keyboard description
+XkbGetXlibControls(3)    - Determines the current state of the Library Controls
+XkbIgnoreExtension(3)    - Prevents core X library keyboard functions from using the X Keyboard Extension
+XkbInitCanonicalKeyTypes(3) - Set the definitions of the canonical key types in a client map to their default values
+XkbKeyAction(3)          - Returns the key action
+XkbKeyActionEntry(3)     - Returns a pointer to the key action corresponding to group grp and shift level lvl from the two-dimensional table of key actions associated with the key corresponding to keycode
+XkbKeyActionsPtr(3)      - Returns a pointer to the two-dimensional array of key actions associated with the key corresponding to keycode
+XkbKeyGroupInfo(3)       - Returns the number of groups of symbols bound to the key corresponding to keycode
+XkbKeyGroupWidth(3)      - Computes the width of the type associated with the group grp for the key corresponding to keycode
+XkbKeyGroupsWidth(3)     - Computes the maximum width associated with the key corresponding to keycode
+XkbKeyHasActions(3)      - Determines if the key corresponding to keycode has any actions associated with it
+XkbKeyNumActions(3)      - Computes the number of actions associated with the key corresponding to keycode
+XkbKeyNumGroups(3)       - Returns the number of groups of symbols bound to the key corresponding to keycode
+XkbKeyNumSyms(3)         - Returns the total number of keysyms for the key corresponding to keycode
+XkbKeySymEntry(3)        - Returns the keysym corresponding to shift level shift and group grp from the two-dimensional array of keysyms for the key corresponding to keycode
+XkbKeySymsOffset(3)      - Returns the offset of the two-dimensional array of keysyms for the key corresponding to keycode
+XkbKeySymsPtr(3)         - Returns the pointer to the two-dimensional array of keysyms for the key corresponding to keycode
+XkbKeyType(3)            - Obtain the index of a key type or the pointer to a key type
+XkbKeyTypeIndex(3)       - Obtain the index of a key type or the pointer to a key type
+XkbKeyTypesForCoreSymbols(3) - Determine the Xkb key types appropriate for the symbols bound to a key in a core keyboard mapping
+XkbKeycodeToKeysym(3)    - Finds the keysym bound to a particular key at a specified group and shift level
+XkbKeysymToModifiers(3)  - Finds the set of modifiers bound to a particular keysym on the core keyboard
+XkbLatchGroup(3)         - Latches the keysym group
+XkbLatchModifiers(3)     - Latches and unlatches any of the eight real keyboard modifiers
+XkbLibraryVersion(3)     - Determines the compatibility of a library at runtime
+XkbListComponents(3)     - List of components for one or more component types
+XkbLockGroup(3)          - Locks the keysym group
+XkbLockModifiers(3)      - Locks and unlocks any of the eight real keyboard modifiers
+XkbLookupKeyBinding(3)   - Find the string bound to a key by XRebindKeySym
+XkbLookupKeySym(3)       - Find the symbol associated with a key for a particular state
+XkbModActionVMods(3)     - Returns the vmods1 and vmods2 fields of act converted to the vmods format of an Xkb modifier description
+XkbNoteControlsChanges(3) - Notes the changes in a changes structure when a client receives an XkbControlsNotify event
+XkbNoteDeviceChanges(3)  - Note device changes reported in an XkbExtensionDeviceNotify event
+XkbNoteIndicatorChanges(3) - Notes the changes in a changes structure
+XkbNoteNameChanges(3)    - Note the changed names in a changes structure
+XkbOpenDisplay(3)        - Checks for a compatible version of the Xkb extension in both the library and the server, and initializes the extension for use
+XkbOutOfRangeGroupInfo(3) - Returns only the out-of-range processing information from the group_info field of an XkbSymMapRec structure
+XkbOutOfRangeGroupNumber(3) - Returns the out-of-range group number, represented as a group index, from the group_info field of an XkbSymMapRec structure
+XkbPtrActionX(3)         - Returns the high_XXX and low_XXX fields of act converted to a signed int
+XkbPtrActionY(3)         - Returns the high_YYY and low_YYY fields of act converted to a signed int
+XkbQueryExtension(3)     - Determines the compatibility of a library at runtime
+XkbRefreshKeyboardMapping(3) - Update the keyboard description that is internal to the X library
+XkbResizeDeviceButtonActions(3) - Allocate additional space for button actions in an XkbDeviceInfoRec structure
+XkbResizeKeyActions(3)   - Change the number of actions bound to a key
+XkbResizeKeySyms(3)      - Change the number of symbols bound to a key
+XkbResizeKeyType(3)      - Change the number of levels in a key type
+XkbSAActionSetCtrls(3)   - Sets the ctrls0 through ctrls3 fields of act from ctrls
+XkbSAGroup(3)            - Returns the group_XXX field of act converted to a signed int
+XkbSAPtrDfltValue(3)     - Returns the valueXXX field of act converted to a signed int
+XkbSARedirectSetVMods(3) - Sets the vmods0 and vmods1 of act from v
+XkbSARedirectSetVModsMask(3) - Sets the vmods_mask0 and vmods_mask1 fields of act from vm
+XkbSARedirectVMods(3)    - Returns the vmods0 and vmods1 fields of act converted to an unsigned int
+XkbSARedirectVModsMask(3) - Returns the vmods_mask0 and vmods_mask1 fields of act converted to an unsigned int
+XkbSAScreen(3)           - Returns the screenXXX field of act converted to a signed int
+XkbSASetGroup(3)         - Sets the group_XXX field of act from the group index grp
+XkbSASetPtrDfltValue(3)  - Sets the valueXXX field of act from val
+XkbSASetScreen(3)        - Sets the screenXXX field of act from s
+XkbSelectEventDetails(3) - Selects or deselects for a specific Xkb event and optionally places conditions on when events of that type are reported to your client
+XkbSelectEvents(3)       - Selects and / or deselects for delivery of one or more Xkb events and has them delivered under all conditions
+XkbSetAccessXTimeout(3)  - Configures the AccessXTimeout options for a keyboard device
+XkbSetAutoRepeatRate(3)  - Sets the attributes of the RepeatKeys control for a keyboard device
+XkbSetAutoResetControls(3) - Changes the current values of the AutoReset control attributes
+XkbSetBounceKeysDelay(3) - Sets the BounceKeys delay for a keyboard device
+XkbSetCompatMap(3)       - Modify the server's compatibility map
+XkbSetControls(3)        - Copies changes to the X server based on a modified ctrls structure in a local copy of the keyboard description
+XkbSetDebuggingFlags(3)  - Change the values of any of the debug controls
+XkbSetDetectableAutoRepeat(3) - Sets DetectableAutoRepeat
+XkbSetDeviceButtonActions(3) - Change only the button actions for an input extension device
+XkbSetDeviceInfo(3)      - Modify some or all of the characteristics of an X Input Extension device
+XkbSetIgnoreLockMods(3)  - Sets the modifiers that, if locked, are not to be reported in matching events to passive grabs
+XkbSetIndicatorMap(3)    - Downloads the changes to the server based on modifications to a local copy of the keyboard description which will update the maps for one or more indicators
+XkbSetMap(3)             - Send a complete new set of values for entire components to the server
+XkbSetModActionVMods(3)  - Sets the vmods1 and vmods2 fields of act using the vmods format of an Xkb modifier description
+XkbSetNamedIndicator(3)  - Names an indicator if it is not already named; toggles the state of the indicator; sets the indicator to a specified state and sets the indicator map for the indicator
+XkbSetNames(3)           - Change the symbolic names in the server
+XkbSetPtrActionX(3)      - Sets the high_XXX and low_XXX fields of act from the signed integer value x
+XkbSetPtrActionY(3)      - Sets the high_YYY and low_YYY fields of act from the signed integer value y
+XkbSetServerInternalMods(3) - Sets the modifiers that are consumed by the server before events are delivered to the client
+XkbSetXlibControls(3)    - Changes the state of the Library Controls
+XkbTranslateKeyCode(3)   - Translate a keycode to a key symbol and modifiers
+XkbTranslateKeySym(3)    - Find the string and symbol associated with a keysym for a given keyboard state
+XkbUpdateMapFromCore(3)  - Update a local Xkb keyboard map to reflect the mapping expressed by a core format mapping
+XkbVirtualModsToReal(3)  - Determines the mapping of virtual modifiers to core X protocol modifiers
+XmbDrawImageString(3), XwcDrawImageString(3), Xutf8DrawImageString(3) - draw image text using a single font set
+XmbDrawString(3), XwcDrawString(3), Xutf8DrawString(3) - draw text using a single font set
+XmbDrawText(3), XwcDrawText(3), Xutf8DrawText(3) - draw text using multiple font sets
+XmbLookupString(3), XwcLookupString(3), Xutf8LookupString(3) - obtain composed input from an input method
+XmbResetIC(3), XwcResetIC(3), Xutf8ResetIC(3) - reset the state of an input context
+XmbTextEscapement(3), XwcTextEscapement(3), Xutf8TextEscapement(3) - obtain the escapement of text
+XmbTextExtents(3), XwcTextExtents(3), Xutf8TextExtents(3) - compute text extents
+XmbTextListToTextProperty(3), XwcTextListToTextProperty(3), Xutf8TextListToTextProperty(3), XmbTextPropertyToTextList(3), XwcTextPropertyToTextList(3), Xutf8TextPropertyToTextList(3), XwcFreeStringList(3), XDefaultString(3) - convert text lists and text property structures
+XmbTextPerCharExtents(3), XwcTextPerCharExtents(3), Xutf8TextPerCharExtents(3) - obtain per-character information for a text string
+XmbufQueryExtension(3), XmbufGetVersion(3), XmbufCreateBuffers(3), XmbufDestroyBuffers(3), XmbufDisplayBuffers(3), XmbufGetWindowAttributes(3), XmbufChangeWindowAttributes(3), XmbufGetBufferAttributes(3), XmbufChangeBufferAttributes(3), XmbufGetScreenInfo(3), XmbufCreateStereoWindow(3) - X multibuffering functions
+XrmEnumerateDatabase(3)  - enumerate resource database entries
+XrmGetFileDatabase(3), XrmPutFileDatabase(3), XrmGetStringDatabase(3), XrmLocaleOfDatabase(3), XrmGetDatabase(3), XrmSetDatabase(3), XrmDestroyDatabase(3) - retrieve and store resource databases
+XrmGetResource(3), XrmQGetResource(3), XrmQGetSearchList(3), XrmQGetSearchResource(3) - retrieve database resources and search lists
+XrmInitialize(3), XrmParseCommand(3), XrmValue(3), XrmOptionKind(3), XrmOptionDescRec(3) - initialize the Resource Manager, Resource Manager structures, and parse the command line
+XrmMergeDatabases(3), XrmCombineDatabase(3), XrmCombineFileDatabase(3) - merge resource databases
+XrmPutResource(3), XrmQPutResource(3), XrmPutStringResource(3), XrmQPutStringResource(3), XrmPutLineResource(3) - store database resources
+XrmUniqueQuark(3), XrmStringToQuark(3), XrmPermStringToQuark(3), XrmQuarkToString(3), XrmStringToQuarkList(3), XrmStringToBindingQuarkList(3) - manipulate resource quarks
+YAML(3pm)                - YAML Ain't Markup Language™
+YAML::Any(3pm)           - Pick a YAML implementation and use it
+YAML::Dumper(3pm)        - YAML class for dumping Perl objects to YAML
+YAML::Dumper::Base(3pm)  - Base class for YAML Dumper classes
+YAML::Error(3pm)         - Error formatting class for YAML modules
+YAML::LibYAML(3pm)       - Perl YAML Serialization using XS and libyaml
+YAML::Loader(3pm)        - YAML class for loading Perl objects to YAML
+YAML::Loader::Base(3pm)  - Base class for YAML Loader classes
+YAML::Marshall(3pm)      - YAML marshalling class you can mixin to your classes
+YAML::Node(3pm)          - A generic data node that encapsulates YAML information
+YAML::PP(3pm)            - YAML 1.2 processor
+YAML::PP::Common(3pm)    - Constants and common functions
+YAML::PP::Constructor(3pm) - Constructing data structure from parsing events
+YAML::PP::Emitter(3pm)   - Emitting events
+YAML::PP::Grammar(3pm)   - YAML grammar
+YAML::PP::Highlight(3pm) - Syntax highlighting utilities
+YAML::PP::Perl(3pm)      - Convenience module for loading and dumping Perl objects
+YAML::PP::Schema(3pm)    - Schema for YAML::PP
+YAML::PP::Schema::Binary(3pm) - Schema for loading and binary data
+YAML::PP::Schema::Core(3pm) - YAML 1.2 Core Schema
+YAML::PP::Schema::Failsafe(3pm) - YAML 1.2 Failsafe Schema
+YAML::PP::Schema::Include(3pm) - Include YAML files
+YAML::PP::Schema::JSON(3pm) - YAML 1.2 JSON Schema
+YAML::PP::Schema::Merge(3pm) - Enabling YAML merge keys for mappings
+YAML::PP::Schema::Perl(3pm) - Schema for serializing perl objects and special types
+YAML::PP::Schema::Tie::IxHash(3pm) - (Deprecated) Schema for serializing ordered hashes
+YAML::PP::Schema::YAML1_1(3pm) - YAML 1.1 Schema for YAML::PP
+YAML::PP::Type::MergeKey(3pm) - A special node type for merge keys
+YAML::PP::Writer(3pm)    - Write YAML output
+YAML::PP::Writer::File(3pm) - Write YAML output to file or file handle
 YAML::Syck(3pm)          - Fast, lightweight YAML loader and dumper
+YAML::Tag(3pm)           - Tag URI object class for YAML
 YAML::Tiny(3pm)          - Read/Write YAML files with as little code as possible
+YAML::Types(3pm)         - Marshall Perl internal data types to/from YAML
+YAML::XS(3pm)            - Perl YAML Serialization using XS and libyaml
+YAML::XS::LibYAML(3pm)   - An XS Wrapper Module of libyaml
 _(1)                     - call fish's translations rst2man-indent-level 0 1 rstReportMargin \$1 \n[an-margin] level \n[rst2man-indent-level] level margin: \n[rst2man-indent\n[rst2man-indent-level]] - \n[rst2man-indent0] \n[rst2man-indent1] \n[rst2man-indent2] . 1 INDENT RS \$1 nr rst2man-indent\n[rst2man-indent-level] \n[an-margin] nr rst2man-indent-level +1 . UNINDENT RE rst2man-indent-level -1 \n[rst2man-indent\n[rst2man-indent-level]]u
 __cospi(3)               - cosine-pi function
 __sincos(3)              - sine-cosine function
@@ -3722,6 +4688,7 @@ acl_to_text(3)           - convert an ACL to text
 acl_valid(3), acl_valid_fd_np(3), acl_valid_file_np(3), acl_valid_link_np(3) - validate an ACL
 acos(3)                  - arc cosine function
 acosh(3)                 - inverse hyperbolic cosine function
+actool(1)                - compiles, prints, updates, and verifies asset catalogs
 add_mibdir(3), netsnmp_init_mib(3), shutdown_mib(3), netsnmp_read_module(3), read_mib(3), read_all_mibs(3), add_module_replacement(3), snmp_set_mib_errors(3), snmp_set_mib_warnings(3), snmp_set_save_descriptions(3), read_objid(3), snmp_parse_oid(3), get_module_node(3), print_mib(3), print_objid(3), fprint_objid(3), snprint_objid(3), print_description(3), fprint_description(3), snprint_description(3) - netsnmp_mib_api functions
 add_wch(3x), wadd_wch(3x), mvadd_wch(3x), mvwadd_wch(3x), echo_wchar(3x), wecho_wchar(3x) - add a complex character and rendition to a curses window, then advance the cursor
 add_wchstr(3x), add_wchnstr(3x), wadd_wchstr(3x), wadd_wchnstr(3x), mvadd_wchstr(3x), mvadd_wchnstr(3x), mvwadd_wchstr(3x), mvwadd_wchnstr(3x) - add an array of complex characters (and attributes) to a curses window
@@ -3742,6 +4709,7 @@ afmtodit(1)              - create font files for use with groff -Tps
 afscexpand(1)            - decompress files compressed with HFS+ compression
 after(ntcl)              - Execute a command after a time delay
 agentxtrap(1)            - send an AgentX NotifyPDU to an AgentX master agent
+agvtool(1)               - Apple-generic versioning tool for Xcode projects
 aio(4)                   - asynchronous I/O
 aio_cancel(2)            - cancel an outstanding asynchronous I/O operation (REALTIME)
 aio_error(2)             - retrieve error status of asynchronous I/O operation (REALTIME)
@@ -3758,6 +4726,7 @@ aliases(5)               - Postfix local alias database format
 alloca(3)                - memory allocator
 alloca(3), calloc(3), free(3), malloc(3), mmap(3), realloc(3) - general memory allocation operations
 amfid(8)                 - The mobile file integrity daemon
+amlint(1)                - check Automator actions for problems
 amt(8)                   - Abstract Machine Test Utility
 analyticsd(1)            - Diagnostics and Usage
 and(1)                   - conditionally execute a command rst2man-indent-level 0 1 rstReportMargin \$1 \n[an-margin] level \n[rst2man-indent-level] level margin: \n[rst2man-indent\n[rst2man-indent-level]] - \n[rst2man-indent0] \n[rst2man-indent1] \n[rst2man-indent2] . 1 INDENT RS \$1 nr rst2man-indent\n[rst2man-indent-level] \n[an-margin] nr rst2man-indent-level +1 . UNINDENT RE rst2man-indent-level -1 \n[rst2man-indent\n[rst2man-indent-level]]u
@@ -3790,6 +4759,7 @@ ar(1)                    - create and maintain library archives
 ar(5)                    - archive (library) file format
 arc4random(3), arc4random_buf(3), arc4random_uniform(3) - random number generator
 arch(1)                  - print architecture type or run selected architecture of a universal binary
+arch(3), NXGetAllArchInfos(3), NXGetLocalArchInfo(3), NXGetArchInfoFromName(3), NXGetArchInfoFromCpuType(3), NXFreeArchInfo(3), NXFindBestFatArch(3), NXCombineCpuSubtypes(3) - get architecture information
 argparse(1)              - parse options passed to a fish script or function rst2man-indent-level 0 1 rstReportMargin \$1 \n[an-margin] level \n[rst2man-indent-level] level margin: \n[rst2man-indent\n[rst2man-indent-level]] - \n[rst2man-indent0] \n[rst2man-indent1] \n[rst2man-indent2] . 1 INDENT RS \$1 nr rst2man-indent\n[rst2man-indent-level] \n[an-margin] nr rst2man-indent-level +1 . UNINDENT RE rst2man-indent-level -1 \n[rst2man-indent\n[rst2man-indent-level]]u
 arp(4)                   - Address Resolution Protocol
 arp(8)                   - address resolution display and control
@@ -3857,6 +4827,7 @@ authorizationhost(8)     - Authorization Services component
 auto_execok(ntcl), auto_import(ntcl), auto_load(ntcl), auto_mkindex(ntcl), auto_mkindex_old(ntcl), auto_qualify(ntcl), auto_reset(ntcl), tcl_findLibrary(ntcl), parray(ntcl), tcl_endOfWord(ntcl), tcl_startOfNextWord(ntcl), tcl_startOfPreviousWord(ntcl), tcl_wordBreakAfter(ntcl), tcl_wordBreakBefore(ntcl) - standard library of Tcl procedures
 auto_master(5)           - automounter master map
 autobox(3pm)             - call methods on native types
+autoconf(1)              - Generate configuration scripts
 autodie(3pm)             - Replace functions with ones that succeed or die with lexical scope
 autodie::Scope::Guard(3pm) - Wrapper class for calling subs at end of scope
 autodie::Scope::GuardStack(3pm) - Hook stack for managing scopes via %^H
@@ -3867,13 +4838,18 @@ autodie::hints(3pm)      - Provide hints about user subroutines to autodie
 autodie::skip(3pm)       - Skip a package when throwing autodie exceptions
 autofs.conf(5)           - automount(8) and automountd(8) configuration file
 autofsd(8)               - daemon to update autofs mounts on network changes
+autoheader(1)            - Create a template header for configure
+autom4te(1)              - Generate files and scripts thanks to M4
 automation_trampoline(8), -(8) - ."====================== automation_trampoline runs automation on boot ." ." ." ."
 automator(1)             - Runs Automator workflow
 automount(8)             - mount autofs on the appropriate mount points
 automountd(8)            - automatic mount / unmount daemon for autofs
 autopoint(1)             - copies standard gettext infrastructure
 autoproxy(n)             - Automatic HTTP proxy usage and authentication
+autoreconf(1)            - Update generated configuration files
+autoscan(1)              - Generate a preliminary configure.in
 autoscroll(n)            - Provides for a scrollbar to automatically mapped and unmapped as needed
+autoupdate(1)            - Update a configure.in to a newer Autoconf
 autouse(3pm)             - postpone load of modules until a function is used
 avbdeviced(1)            - peristent entity management for AVB
 avbutil(1)               - manage AVB features and settings
@@ -4139,6 +5115,8 @@ compress(1), uncompress(1) - compress and expand data
 compression_tool(1)      - encode/decode files using the Compression library
 comsat(8)                - biff server
 concat(ntcl)             - Join lists together
+config.guess(1)          - guess the build system triplet
+config.sub(1)            - validate and canonicalize a configuration triplet
 config_data(1)           - Query or change configuration of Perl modules
 configbody(n)            - change the "config" code for a public variable
 configd(8)               - System Configuration Daemon
@@ -4327,6 +5305,7 @@ demandoc(1)              - emit only text of UNIX manuals
 deprecate(3pm)           - Perl pragma for deprecating the core version of a module
 deprecate(3pm)           - Perl pragma for deprecating the inclusion of a module in core
 des(n)                   - Implementation of the DES and triple-DES ciphers
+desdp(1)                 - scripting definition generator
 destroy(ntcl)            - Destroy one or more windows
 dev_mkdb(8)              - create /dev database
 devname(3), devname_r(3) - get device name
@@ -4518,6 +5497,15 @@ false(1)                 - Return false value
 false(1)                 - return an unsuccessful result rst2man-indent-level 0 1 rstReportMargin \$1 \n[an-margin] level \n[rst2man-indent-level] level margin: \n[rst2man-indent\n[rst2man-indent-level]] - \n[rst2man-indent0] \n[rst2man-indent1] \n[rst2man-indent2] . 1 INDENT RS \$1 nr rst2man-indent\n[rst2man-indent-level] \n[an-margin] nr rst2man-indent-level +1 . UNINDENT RE rst2man-indent-level -1 \n[rst2man-indent\n[rst2man-indent-level]]u
 faop(n), grammar::fa::op(n) - Operations on finite automatons
 fblocked(ntcl)           - Test whether the last input operation exhausted all available input
+fc-cache(1)              - build font information cache files
+fc-cat(1)                - read font information cache files
+fc-conflist(1)           - Show the ruleset files information on the system
+fc-list(1)               - list available fonts
+fc-match(1)              - match available fonts
+fc-pattern(1)            - parse and show pattern
+fc-query(1)              - query font files
+fc-scan(1)               - scan font files or directories
+fc-validate(1)           - validate font files
 fcgistarter(8)           - Start a FastCGI program
 fclose(3), fcloseall(3)  - close a stream
 fcntl(2)                 - file control
@@ -4628,6 +5616,7 @@ font(ntcl)               - Create and inspect fonts
 fontd(8)                 - Mac OS X system font registration manager
 fontmover(8)             - Mac OS X system font mover
 fontrestore(8)           - Restore the available system fonts to a pristine state, if possible
+fonts-conf(5), fonts.conf(5) - Font configuration files
 fontworker(8)            - Mac OS X system font registration and validation daemon
 footprint(1)             - gathers memory information about one or more processes
 fopen(3), fdopen(3), freopen(3), fmemopen(3) - stream open functions
@@ -4673,6 +5662,7 @@ fread(3), fwrite(3)      - binary stream input/output
 free_au_event_ent(3), setauevent(3), endauevent(3), getauevent(3), getauevent_r(3), getauevnam(3), getauevnam_r(3), getauevnum(3), getauevnum_r(3), getauevnonam(3), getauevnonam_r(3) - look up information from the audit_event database
 free_printf_comp(3), new_printf_comp(3) - extensible printf compilation
 freelocale(3)            - Frees an allocated locale
+freetype-config(1)       - Get information about a libfreetype installation
 frexp(3)                 - break floating-point number into normalized fraction and power of 2
 from(1)                  - print names of those who have sent mail
 fs_snapshot_create(2)    - create read only snapshot of a mounted filesystem
@@ -4720,6 +5710,9 @@ fwkdp(1)                 - FireWire KDP Tool
 fwkpfv(1)                - FireWire kprintf viewer
 fwscanf(3), swscanf(3), vfwscanf(3), vswscanf(3), vwscanf(3), wscanf(3) - wide character input format conversion
 fwscanf_l(3), swscanf_l(3), vfwscanf_l(3), vswscanf_l(3), vwscanf_l(3), wscanf_l(3) - wide character input format conversion
+g-ir-compiler(1)         - Typelib compiler rst2man-indent-level 0 1 rstReportMargin \$1 \n[an-margin] level \n[rst2man-indent-level] level margin: \n[rst2man-indent\n[rst2man-indent-level]] - \n[rst2man-indent0] \n[rst2man-indent1] \n[rst2man-indent2] . 1 INDENT RS \$1 nr rst2man-indent\n[rst2man-indent-level] \n[an-margin] nr rst2man-indent-level +1 . UNINDENT RE rst2man-indent-level -1 \n[rst2man-indent\n[rst2man-indent-level]]u
+g-ir-generate(1)         - Typelib generator rst2man-indent-level 0 1 rstReportMargin \$1 \n[an-margin] level \n[rst2man-indent-level] level margin: \n[rst2man-indent\n[rst2man-indent-level]] - \n[rst2man-indent0] \n[rst2man-indent1] \n[rst2man-indent2] . 1 INDENT RS \$1 nr rst2man-indent\n[rst2man-indent-level] \n[an-margin] nr rst2man-indent-level +1 . UNINDENT RE rst2man-indent-level -1 \n[rst2man-indent\n[rst2man-indent-level]]u
+g-ir-scanner(1)          - Extracting C metadata from sources and headers rst2man-indent-level 0 1 rstReportMargin \$1 \n[an-margin] level \n[rst2man-indent-level] level margin: \n[rst2man-indent\n[rst2man-indent-level]] - \n[rst2man-indent0] \n[rst2man-indent1] \n[rst2man-indent2] . 1 INDENT RS \$1 nr rst2man-indent\n[rst2man-indent-level] \n[an-margin] nr rst2man-indent-level +1 . UNINDENT RE rst2man-indent-level -1 \n[rst2man-indent\n[rst2man-indent-level]]u
 gai_strerror(3)          - get error message string from EAI_xxx error code
 gasm(n), grammar::me::cpu::gasm(n) - ME assembler
 gatherheaderdoc(1)       - header documentation processor
@@ -4735,7 +5728,9 @@ gem(1)                   - RubyGems program
 gen_bridge_metadata(1)   - Objective-C Bridges Metadata Generator
 gencat(1)                - NLS catalog compiler
 generic(5)               - Postfix generic table format
+genstrings(1)            - generate string tables from source code
 geometry(n), math::geometry(n) - Geometrical computations
+get_end(3), get_etext(3), get_edata(3) - get values of UNIX link editor defined symbols
 get_wch(3x), wget_wch(3x), mvget_wch(3x), mvwget_wch(3x), unget_wch(3x) - get (or push back) a wide character from curses terminal keyboard
 get_wstr(3x), getn_wstr(3x), wget_wstr(3x), wgetn_wstr(3x), mvget_wstr(3x), mvgetn_wstr(3x), mvwget_wstr(3x), mvwgetn_wstr(3x) - get an array of wide characters from a curses terminal keyboard
 getaddrinfo(3), freeaddrinfo(3) - socket address structure to host and service name
@@ -4804,6 +5799,8 @@ getrpcent(3), getrpcbyname(3), getrpcbynumber(3), endrpcent(3), setrpcent(3) - g
 getrpcport(3)            - get RPC port number
 getrusage(2)             - get information about resource utilization
 gets(ntcl)               - Read a line from a channel
+getsectbyname(3), getsectdata(3) - get the section information for the named section
+getsegbyname(3)          - get the segment command for the named segment
 getservent(3), getservbyport(3), getservbyname(3), setservent(3), endservent(3) - get service entry
 getsid(2)                - get process session
 getsockname(2)           - get socket name
@@ -4907,7 +5904,6 @@ git-merge-one-file(1)    - The standard helper program to use with git-merge-ind
 git-merge-tree(1)        - Show three-way merge without touching index
 git-mergetool(1)         - Run merge conflict resolution tools to resolve merge conflicts
 git-mergetool--lib(1)    - Common Git merge tool shell scriptlets
-git-mktag(1)             - Creates a tag object
 git-mktag(1)             - Creates a tag object with extra validation
 git-mktree(1)            - Build a tree-object from ls-tree formatted text
 git-multi-pack-index(1)  - Write and verify multi-pack-indexes
@@ -4918,7 +5914,6 @@ git-p4(1)                - Import from and submit to Perforce repositories
 git-pack-objects(1)      - Create a packed archive of objects
 git-pack-redundant(1)    - Find redundant pack files
 git-pack-refs(1)         - Pack heads and tags for efficient repository access
-git-parse-remote(1)      - Routines to help parsing remote repository access parameters
 git-patch-id(1)          - Compute unique ID for a patch
 git-prune(1)             - Prune all unreachable objects from the object database
 git-prune-packed(1)      - Remove extra objects that are already in pack files
@@ -4987,7 +5982,6 @@ gitattributes(5)         - Defining attributes per path
 gitcli(7)                - Git command-line interface and conventions
 gitcore-tutorial(7)      - A Git core tutorial for developers
 gitcredentials(7)        - Providing usernames and passwords to Git
-gitcredentials(7)        - providing usernames and passwords to Git
 gitcvs-migration(7)      - Git for CVS users
 gitdiffcore(7)           - Tweaking diff output
 giteveryday(7)           - A useful minimum set of commands for Everyday Git
@@ -5003,7 +5997,6 @@ gitremote-helpers(7)     - Helper programs to interact with remote repositories
 gitrepository-layout(5)  - Git Repository Layout
 gitrevisions(7)          - Specifying revisions and ranges for Git
 gitsubmodules(7)         - Mounting one repository inside another
-gitsubmodules(7)         - mounting one repository inside another
 gittutorial(7)           - A tutorial introduction to Git
 gittutorial-2(7)         - A tutorial introduction to Git: part two
 gitweb(1)                - Git web interface (web frontend to Git repositories)
@@ -5605,6 +6598,7 @@ huddle(n)                - Create and manipulate huddle object
 hypot(3)                 - euclidean distance function
 i386_get_ldt(2), i386_set_ldt(2) - manage i386 per-process Local Descriptor Table entries
 iOSScreenCaptureAssistant(8) - CoreMediaIO DAL Assistant Process
+ibtool(1)                - compiles, prints, updates, and verifies Interface Builder documents
 icdd(8)                  - ImageCapture Discovery Daemon
 icmp(4)                  - Internet Control Message Protocol
 icmp6(4)                 - Internet Control Message Protocol for IPv6
@@ -5625,6 +6619,7 @@ if_nametoindex(3), if_indextoname(3), if_nameindex(3), if_freenameindex(3) - pro
 ifconfig(8)              - configure network interface parameters
 ifcstart(8)              - rebuilds international data caches
 ifmib(4)                 - Management Information Base for network interfaces
+ifnames(1)               - Extract CPP conditionals from a set of files
 ilogb(3)                 - return exponent as an integer value
 image(ntcl)              - Create and manipulate images
 imap4(n)                 - imap client-side tcl implementation of imap protocol
@@ -5641,6 +6636,7 @@ in_wchstr(3x), in_wchnstr(3x), win_wchstr(3x), win_wchnstr(3x), mvin_wchstr(3x),
 inc::Module::Install(3pm) - Module::Install configuration system
 inc::Module::Install::DSL(3pm) - Domain Specific Language for Module::Install
 inc::latest(3pm)         - use modules bundled in inc/ if they are newer than installed ones
+inc::latest::private(3pm) - private implementation for inc::latest
 inch(3x), winch(3x), mvinch(3x), mvwinch(3x) - get a character and attributes from a curses window
 inchstr(3x), inchnstr(3x), winchstr(3x), winchnstr(3x), mvinchstr(3x), mvinchnstr(3x), mvwinchstr(3x), mvwinchnstr(3x) - get a string of characters (and attributes) from a curses window
 incr(ntcl)               - Increment the value of a variable
@@ -5723,6 +6719,7 @@ ippusbd(8)               - ipp to usb bridging daemon
 ipsec(4)                 - IP security protocol
 ipsec_dump_policy(3), ipsec_get_policylen(3), ipsec_set_policy(3) - manipulate IPsec policy specification structure from human-readable policy string
 ipsec_strerror(3)        - error messages for the IPsec policy manipulation library
+ipython(1)               - Tools for Interactive Computing in Python
 irb(1)                   - Interactive Ruby Shell
 irc(n)                   - Create IRC connection and interface
 is(n)                    - test argument to see if it is a class or an object
@@ -5851,6 +6848,7 @@ kill.d(1m)               - snoop process signals as they occur. Uses DTrace
 killall(1)               - kill processes by name
 killpg(2)                - send signal to a process group
 kinit(1)                 - acquire initial tickets
+kld(3), kld_load(3), kld_load_from_memory(3), kld_lookup(3), kld_forget_symbol(3), kld_unload_all(3), kld_load_basefile(3), kld_load_basefile_from_memory(3), kld_address_func(3), kld_set_link_options(3) - programmatically link edit and load driver object files
 klist(1)                 - list Kerberos credentials
 klist_cdhashes(8)        - reports information about kexts that have been approved via SKEL
 kpasswd(1)               - Kerberos 5 password changing program
@@ -5862,6 +6860,7 @@ krb5_appdefault(3), krb5_appdefault_boolean(3), krb5_appdefault_string(3), krb5_
 ksh(1), nZ=0(1)          - {
 kswitch(1)               - switch between default credential caches
 ktrace(1)                - configure, record, and print events from kernel trace
+ktrace(5)                - Darwin kernel trace file format
 ktutil(8)                - manage Kerberos keytabs
 kuncd(8)                 - The Kernel User Notification Center daemon
 label(ntcl)              - Create and manipulate label widgets
@@ -5874,8 +6873,6 @@ last(1)                  - indicate last logins of users and ttys
 lastcomm(1)              - show last commands executed in reverse order
 lastwords(1m)            - print syscalls before exit. Uses DTrace
 latency(1)               - monitors scheduling and interrupt latency
-launch(3), launchd APIs(3) - interfaces for interacting with a launchd job
-launch_activate_socket(3), launchd APIs(3) - interfaces for interacting with a launchd job
 launchctl(1)             - Interfaces with launchd
 launchd(8)               - System wide and per-user daemon/agent manager
 launchd.plist(5)         - System wide and per-user daemon/agent configuration files
@@ -5956,6 +6953,8 @@ libcurl-tutorial(3)      - libcurl programming tutorial
 libexslt(3)              - extension library for XSLT
 libgmalloc(3)            - (Guard Malloc), an aggressive debugging malloc library
 libnetcfg(1)             - configure libnet
+libpng(3)                - Portable Network Graphics (PNG) Reference Library 1.6.37
+libpng(3)                - Portable Network Graphics (PNG) Reference Library 1.6.37 (private functions)
 libtool(1)               - create libraries ranlib - add or update the table of contents of archive libraries
 libuv(1)                 - libuv documentation rst2man-indent-level 0 1 rstReportMargin \$1 \n[an-margin] level \n[rst2man-indent-level] level margin: \n[rst2man-indent\n[rst2man-indent-level]] - \n[rst2man-indent0] \n[rst2man-indent1] \n[rst2man-indent2] . 1 INDENT RS \$1 nr rst2man-indent\n[rst2man-indent-level] \n[an-margin] nr rst2man-indent-level +1 . UNINDENT RE rst2man-indent-level -1 \n[rst2man-indent\n[rst2man-indent-level]]u
 libxml(3)                - library used to parse XML files
@@ -6581,11 +7580,13 @@ pcap_strerror(3pcap)     - convert an errno value to a string
 pcap_tstamp_type_name_to_val(3pcap) - get the time stamp type value corresponding to a time stamp type name
 pcap_tstamp_type_val_to_name(3pcap), pcap_tstamp_type_val_to_description(3pcap) - get a name or description for a time stamp type value
 pclose(3), popen(3)      - process I/O
+pcre-config(1)           - program to return PCRE configuration
 pcre2-config(1)          - program to return PCRE2 configuration
 pcre2grep(1)             - a grep with Perl-compatible regular expressions
 pcre2test(1)             - a program for testing Perl-compatible regular expressions
-pcre2unicode(3), PCRE(3) - Perl-compatible regular expressions (revised API)
 pcre_table(5)            - format of Postfix PCRE tables
+pcregrep(1)              - a grep with Perl-compatible regular expressions
+pcretest(1)              - a program for testing Perl-compatible regular expressions
 pcsstatus(1)             - print current status of PCS credentials
 pdisk(8)                 - Apple partition table editor
 peg(n), grammar::peg(n)  - Create and manipulate parsing expression grammars
@@ -6848,6 +7849,7 @@ ping(8)                  - send ICMP ECHO_REQUEST packets to network hosts
 ping6(8)                 - send ICMPv6 ECHO_REQUEST packets to network hosts
 pipe(2)                  - create descriptor pair for interprocess communication
 pipe(8)                  - Postfix delivery to external command
+pkg-config(1)            - Return metainformation about installed libraries
 pkg::create(ntcl)        - Construct an appropriate 'package ifneeded' command for a given package specification
 pkg_mkIndex(ntcl)        - Build an index for automatic loading of packages
 pkgbuild(1)              - Build an OS X Installer component package from on-disk files
@@ -6862,6 +7864,7 @@ plockstat(1)             - front-end to DTrace to print statistics about POSIX m
 pluginmgr(n)             - Manage a plugin
 plutil(1)                - property list utility
 pmset(1)                 - manipulate power management settings
+png(5)                   - Portable Network Graphics (PNG) format
 png(n)                   - PNG querying and manipulation of meta data
 pod2html(1)              - convert .pod files to .html files
 pod2latex(1)             - convert pod documentation to latex format
@@ -6883,11 +7886,6 @@ popd(1)                  - move through directory stack rst2man-indent-level 0 1
 posix_memalign(3)        - aligned memory allocation
 posix_spawn(2), posix_spawn posix_spawnp(2) - spawn a process
 posix_spawn_file_actions_addchdir_np(3), posix_spawn_file_actions_addclose posix_spawn_file_actions_addopen(3) - add open or close actions to a posix_spawn_file_actions_t
-posix_spawn_file_actions_addclose(3), posix_spawn_file_actions_addclose posix_spawn_file_actions_addopen(3) - add open or close actions to a posix_spawn_file_actions_t
-posix_spawn_file_actions_adddup2(3), posix_spawn_file_actions_addclose posix_spawn_file_actions_addopen(3) - add open or close actions to a posix_spawn_file_actions_t
-posix_spawn_file_actions_addfchdir_np(3), posix_spawn_file_actions_addclose posix_spawn_file_actions_addopen(3) - add open or close actions to a posix_spawn_file_actions_t
-posix_spawn_file_actions_addinherit_np(3), posix_spawn_file_actions_addclose posix_spawn_file_actions_addopen(3) - add open or close actions to a posix_spawn_file_actions_t
-posix_spawn_file_actions_addopen(3), posix_spawn_file_actions_addclose posix_spawn_file_actions_addopen(3) - add open or close actions to a posix_spawn_file_actions_t
 posix_spawn_file_actions_destroy(3), posix_spawn_file_actions_init posix_spawn_file_actions_destroy(3) - initialize or destroy spawn file actions objects
 posix_spawn_file_actions_init(3), posix_spawn_file_actions_init posix_spawn_file_actions_destroy(3) - initialize or destroy spawn file actions objects
 posix_spawnattr_destroy(3), posix_spawnattr_init posix_spawnattr_destroy(3) - initialize or destroy a spawn attributes object
@@ -6898,15 +7896,11 @@ posix_spawnattr_getpgroup(3), posix_spawnattr_setpgroup posix_spawnattr_getpgrou
 posix_spawnattr_getsigdefault(3), posix_spawnattr_setsigdefault posix_spawnattr_getsigdefault(3) - set or get the spawn-sigdefault attribute on a posix_spawnattr_t
 posix_spawnattr_getsigmask(3), posix_spawnattr_setsigmask posix_spawnattr_getsigmask(3) - set or get the spawn-sigmask attribute on a posix_spawnattr_t
 posix_spawnattr_init(3), posix_spawnattr_init posix_spawnattr_destroy(3) - initialize or destroy a spawn attributes object
-posix_spawnattr_setarchpref_np(3), posix_spawnattr_setarchpref_np posix_spawnattr_getarchpref_np(3) - set or get the cpu/subcpu preference attribute on a posix_spawnattr_t
-posix_spawnattr_setbinpref_np(3), posix_spawnattr_setbinpref_np posix_spawnattr_getbinpref_np(3) - set or get the spawn-binpref attribute on a posix_spawnattr_t
 posix_spawnattr_setexceptionports_np(3), posix_spawnattr_setspecialport_np posix_spawnattr_setexceptionports_np(3) - set special ports on a posix_spawnattr_t
-posix_spawnattr_setflags(3), posix_spawnattr_setflags posix_spawnattr_getflags(3) - get or set flags on a posix_spawnattr_t
 posix_spawnattr_setpgroup(3), posix_spawnattr_setpgroup posix_spawnattr_getpgroup(3) - set or get the spawn-pgroup attribute on a posix_spawnattr_t
 posix_spawnattr_setsigdefault(3), posix_spawnattr_setsigdefault posix_spawnattr_getsigdefault(3) - set or get the spawn-sigdefault attribute on a posix_spawnattr_t
 posix_spawnattr_setsigmask(3), posix_spawnattr_setsigmask posix_spawnattr_getsigmask(3) - set or get the spawn-sigmask attribute on a posix_spawnattr_t
 posix_spawnattr_setspecialport_np(3), posix_spawnattr_setspecialport_np posix_spawnattr_setexceptionports_np(3) - set special ports on a posix_spawnattr_t
-posix_spawnp(2), posix_spawn posix_spawnp(2) - spawn a process
 postalias(1)             - Postfix alias database maintenance
 postcat(1)               - show Postfix queue file contents
 postconf(1)              - Postfix configuration utility
@@ -7271,7 +8265,10 @@ scrollbar(ntcl)          - Create and manipulate scrollbar widgets
 scselect(8)              - Select system configuration location
 scsid(8)                 - SCSI subsystem daemon
 scutil(8)                - Manage system configuration parameters
+sdef(1)                  - scripting definition extractor
+sdef(5)                  - scripting definition file
 sdiff(1)                 - side-by-side merge of file differences
+sdp(1)                   - scripting definition (sdef) processor
 sdx(1)                   - Starkit Developer eXtension
 searchfs(2)              - search a volume quickly
 searchpartyd(8)          - searchparty daemon
@@ -7699,7 +8696,6 @@ term(7)                  - conventions for naming terminal types
 term(n)                  - General terminal control
 term_bind(n), term::receive::bind(n) - Keyboard dispatch from terminals
 term_send(n), term::send(n) - General output to terminals
-termcap(3), tgetent(3), tgetflag(3), tgetnum(3), tgetstr(3), tgoto(3), tputs(3) - direct curses interface to the terminfo capability database
 terminfo(5)              - terminal capability data base
 termios(4)               - general terminal line discipline
 termkey(7)               - terminal keypress reading library
@@ -8071,8 +9067,84 @@ xar(1)                   - eXtensible ARchiver
 xargs(1)                 - construct argument list(s) and execute utility
 xattr(1)                 - display and manipulate extended attributes
 xattr_preserve_for_intent(3), xattr_name_with_flags(3), xattr_name_without_flags(3), xattr_flags_from_name(3), xattr_intent_with_flags(3) - obtain properties related to extended attributes, for use in copying
+xcb-examples(3)          - manpage examples
+xcb-requests(3)          - about request manpages
+xcb_alloc_color(3)       - Allocate a color
+xcb_allow_events(3)      - release queued events
+xcb_button_press_event_t(3) - a mouse button was pressed/released
+xcb_change_gc(3)         - change graphics context components
+xcb_change_property(3)   - Changes a window property
+xcb_change_save_set(3)   - Changes a client's save set
+xcb_change_window_attributes(3) - change window attributes
+xcb_circulate_notify_event_t(3) - NOT YET DOCUMENTED
+xcb_circulate_window(3)  - Change window stacking order
+xcb_client_message_event_t(3) - NOT YET DOCUMENTED
+xcb_colormap_notify_event_t(3) - the colormap for some window changed
+xcb_configure_notify_event_t(3) - NOT YET DOCUMENTED
+xcb_configure_window(3)  - Configures window attributes
+xcb_copy_area(3)         - copy areas
+xcb_create_gc(3)         - Creates a graphics context
+xcb_create_glyph_cursor(3) - create cursor
+xcb_create_pixmap(3)     - Creates a pixmap
+xcb_create_window(3)     - Creates a window
+xcb_destroy_notify_event_t(3) - a window is destroyed
+xcb_destroy_window(3)    - Destroys a window
+xcb_enter_notify_event_t(3) - the pointer is in a different window
+xcb_expose_event_t(3)    - NOT YET DOCUMENTED
+xcb_focus_in_event_t(3)  - NOT YET DOCUMENTED
+xcb_free_cursor(3)       - Deletes a cursor
+xcb_free_gc(3)           - Destroys a graphics context
+xcb_free_pixmap(3)       - Destroys a pixmap
+xcb_ge_generic_event_t(3) - generic event (with length)
+xcb_get_geometry(3)      - Get current window geometry
+xcb_get_property(3)      - Gets a window property
+xcb_get_selection_owner(3) - Gets the owner of a selection
+xcb_get_window_attributes(3) - Gets window attributes
+xcb_grab_button(3)       - Grab pointer button(s)
+xcb_grab_key(3)          - Grab keyboard key(s)
+xcb_grab_keyboard(3)     - Grab the keyboard
+xcb_grab_pointer(3)      - Grab the pointer
+xcb_image_text_16(3)     - Draws text
+xcb_image_text_8(3)      - Draws text
+xcb_intern_atom(3)       - Get atom identifier by name
+xcb_key_press_event_t(3) - a key was pressed/released
+xcb_kill_client(3)       - kills a client
+xcb_list_fonts(3)        - get matching font names
+xcb_list_fonts_with_info(3) - get matching font names and information
+xcb_map_notify_event_t(3) - a window was mapped
+xcb_map_request_event_t(3) - window wants to be mapped
+xcb_map_window(3)        - Makes a window visible
+xcb_mapping_notify_event_t(3) - keyboard mapping changed
+xcb_motion_notify_event_t(3) - a key was pressed
+xcb_open_font(3)         - opens a font
+xcb_poly_fill_rectangle(3) - Fills rectangles
+xcb_poly_line(3)         - draw lines
+xcb_poly_segment(3)      - draw lines
+xcb_property_notify_event_t(3) - a window property changed
+xcb_query_extension(3)   - check if extension is present
+xcb_query_font(3)        - query font metrics
+xcb_query_pointer(3)     - get pointer coordinates
+xcb_query_text_extents(3) - get text extents
+xcb_query_tree(3)        - query the window tree
+xcb_reparent_window(3)   - Reparents a window
+xcb_send_event(3)        - send an event
+xcb_set_input_focus(3)   - Sets input focus
+xcb_set_selection_owner(3) - Sets the owner of a selection
+xcb_ungrab_key(3)        - release a key combination
+xcb_ungrab_pointer(3)    - release the pointer
+xcb_unmap_notify_event_t(3) - a window is unmapped
+xcb_unmap_window(3)      - Makes a window invisible
+xcb_warp_pointer(3)      - move mouse pointer
+xccov(1)                 - view Xcode coverage data in human-readable or machine-parseable format
 xcode-select(1)          - Manages the active developer directory for Xcode and BSD tools. rst2man-indent-level 0 1 rstReportMargin \$1 \n[an-margin] level \n[rst2man-indent-level] level margin: \n[rst2man-indent\n[rst2man-indent-level]] - \n[rst2man-indent0] \n[rst2man-indent1] \n[rst2man-indent2] . 1 INDENT RS \$1 nr rst2man-indent\n[rst2man-indent-level] \n[an-margin] nr rst2man-indent-level +1 . UNINDENT RE rst2man-indent-level -1 \n[rst2man-indent\n[rst2man-indent-level]]u
+xcodebuild.xctestrun(5)  - Test run parameters files for xcodebuild
+xcresulttool(1)          - view Xcode result bundle data in a human-readable or machine-parseable format
 xcrun(1)                 - Run or locate development tools and properties. rst2man-indent-level 0 1 rstReportMargin \$1 \n[an-margin] level \n[rst2man-indent-level] level margin: \n[rst2man-indent\n[rst2man-indent-level]] - \n[rst2man-indent0] \n[rst2man-indent1] \n[rst2man-indent2] . 1 INDENT RS \$1 nr rst2man-indent\n[rst2man-indent-level] \n[an-margin] nr rst2man-indent-level +1 . UNINDENT RE rst2man-indent-level -1 \n[rst2man-indent\n[rst2man-indent-level]]u
+xcrun(1)                 - altool" " -- Validate and Upload apps for the App Store, or Notarize apps for distribution outside of the Mac App Store."
+xcsbridge(1)             - command-line tool for using Xcode Server frameworks
+xcscontrol(1)            - utility for managing Xcode Server
+xcssecurity(1)           - command-line tool for performing Xcode Server security operations
+xctrace(1)               - Record, import and export Instruments.trace files
 xdr(3), xdr_array(3), xdr_bool(3), xdr_bytes(3), xdr_char(3), xdr_destroy(3), xdr_double(3), xdr_enum(3), xdr_float(3), xdr_free(3), xdr_getpos(3), xdr_hyper(3), xdr_inline(3), xdr_int(3), xdr_long(3), xdr_longlong_t(3), xdrmem_create(3), xdr_opaque(3), xdr_pointer(3), xdrrec_create(3), xdrrec_endofrecord(3), xdrrec_eof(3), xdrrec_skiprecord(3), xdr_reference(3), xdr_setpos(3), xdr_short(3), xdrstdio_create(3), xdr_string(3), xdr_u_char(3), xdr_u_hyper(3), xdr_u_int(3), xdr_u_long(3), xdr_u_longlong_t(3), xdr_u_short(3), xdr_union(3), xdr_vector(3), xdr_void(3), xdr_wrapstring(3) - library routines for external data representation
 xgettext(1)              - extract gettext strings from source
 xgettext.pl(1)           - Extract translatable strings from source
