@@ -13,7 +13,7 @@ SETUVAR Z_DATA_DIR:/Users/ryosuke/\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/Users/ryosuke\x24
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_ga:git\x20add
-SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm\x20
+SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm\x20\x27\x27
 SETUVAR _fish_abbr_gp:git\x20push
 SETUVAR _fish_abbr_jl:jupyter\x2dlab
 SETUVAR _fish_abbr_vi:nvim

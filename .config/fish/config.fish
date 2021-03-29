@@ -20,7 +20,7 @@ alias lt='exa --tree --level=2'                                         # tree
 
 # git
 abbr ga 'git add'
-abbr gc 'git commit -m '
+abbr gc "git commit -m ''"
 abbr gp 'git push'
 
 # neovim
