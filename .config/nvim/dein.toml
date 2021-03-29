@@ -2,13 +2,6 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-lsp-settings.vim'
-
-[[plugins]]
 repo = 'rust-lang/rust.vim'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim'
 
@@ -56,19 +49,14 @@ rev = 'release'
 build = '''
   git checkout release
 '''
-hook_add = '''
-  inoremap <silent><expr> <TAB>
-        \ pumvisible() ? "\<C-n>" :
-        \ <SID>check_back_space() ? "\<TAB>" :
-        \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> gy <Plug>(coc-type-definition)
-  nmap <silent> gi <Plug>(coc-implementation)
-  nmap <silent> gr <Plug>(coc-references)
-'''
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/cocnvim.vim'
+
+[[plugins]]
+repo = 'nvie/vim-flake8'
+on_ft = ['python']
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/flake8.vim'
+
+[[plugins]]
+repo = 'tell-k/vim-autopep8'
+on_ft = ['python']
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/autopepe8.vim'
