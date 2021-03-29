@@ -8,17 +8,7 @@ let g:dein#_runtime_path = '/Users/ryosuke/dotfiles/.cache/dein/.cache/init.vim/
 let g:dein#_cache_path = '/Users/ryosuke/dotfiles/.cache/dein/.cache/init.vim'
 let &runtimepath = '/Users/ryosuke/.config/nvim,/etc/xdg/nvim,/Users/ryosuke/.local/share/nvim/site,/usr/local/share/nvim/site,/usr/share/nvim/site,/Users/ryosuke/dotfiles/.cache/dein/repos/github.com/neoclide/coc.nvim_release,/Users/ryosuke/dotfiles/.cache/dein/repos/github.com/Shougo/dein.vim,/Users/ryosuke/dotfiles/.cache/dein/.cache/init.vim/.dein,/usr/local/Cellar/neovim/0.4.4_2/share/nvim/runtime,/Users/ryosuke/dotfiles/.cache/dein/.cache/init.vim/.dein/after,/usr/share/nvim/site/after,/usr/local/share/nvim/site/after,/Users/ryosuke/.local/share/nvim/site/after,/etc/xdg/nvim/after,/Users/ryosuke/.config/nvim/after'
 filetype off
-source ~/dotfiles/.config/nvim/plugins/vim-lsp-settings.vim
+source ~/dotfiles/.config/nvim/plugins/pep8.vim
 source ~/dotfiles/.config/nvim/plugins/rust.vim
 source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim
-  inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-  function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
-  endfunction
-  nmap <silent> gd <Plug>(coc-definition)
-  nmap <silent> gy <Plug>(coc-type-definition)
-  nmap <silent> gi <Plug>(coc-implementation)
-  nmap <silent> gr <Plug>(coc-references)
+source ~/dotfiles/.config/nvim/plugins/cocnvim.vim

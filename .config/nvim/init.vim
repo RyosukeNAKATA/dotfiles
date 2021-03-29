@@ -70,6 +70,9 @@ if has('mouse')
   set mouse=a
 endif
 
+" python
+let g:python_host_prog = expand('~/nvim-python2/bin/python2')
+let g:python3_host_prog = expand('~/nvim-python3/bin/python3')
 " rust
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
