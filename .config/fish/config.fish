@@ -18,6 +18,11 @@ alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + e
 alias lS='exa -1'                                                              # one column, just names
 alias lt='exa --tree --level=2'                                         # tree
 
+# git
+abbr ga 'git add'
+abbr gc 'git commit -m '
+abbr gp 'git push'
+
 # neovim
 abbr vim 'nvim'
 abbr vi 'nvim'

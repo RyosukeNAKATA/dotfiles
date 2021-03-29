@@ -285,25 +285,25 @@
     "INTERPRETERS_CACHE_v3_CurrentPathService": [
       {
         "architecture": 3,
-        "path": "/usr/local/opt/python@3.9/bin/python3.9",
+        "path": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8/bin/python3",
         "version": {
           "options": {
             "loose": false,
             "includePrerelease": false
           },
           "loose": false,
-          "raw": "3.9.2-final",
+          "raw": "3.8.7-final",
           "major": 3,
-          "minor": 9,
-          "patch": 2,
+          "minor": 8,
+          "patch": 7,
           "prerelease": [
             "final"
           ],
           "build": [],
-          "version": "3.9.2-final"
+          "version": "3.8.7-final"
         },
-        "sysPrefix": "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
-        "fileHash": "1d10ee0c2aa87a00fcca271d99c088fb50d41272004f0ab31041544b25170db0128e9ac0e0b4cc114c0fa42dba79279d9f1011d4c951240e90c4fab7ab0669ae",
+        "sysPrefix": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8",
+        "fileHash": "4c55af35715ab6c91c9e30eeccd2b335de82be69ed8d628b40fefefb922350e2e1e16189e412b25503674bf6a5d41a237a7ff338e3f23e0e5dc4c822a47311fd",
         "type": "Unknown"
       },
       {
@@ -331,7 +331,7 @@
       },
       {
         "architecture": 3,
-        "path": "/Users/ryosuke/.pyenv/versions/3.8.7/bin/python",
+        "path": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8/bin/python",
         "version": {
           "options": {
             "loose": false,
@@ -348,13 +348,13 @@
           "build": [],
           "version": "3.8.7-final"
         },
-        "sysPrefix": "/Users/ryosuke/.pyenv/versions/3.8.7",
-        "fileHash": "68ec660272f54f27c452bebc190552adfd8ac5e11a988b693bd6132e22f933c46b1da87eded47f9c301d8c9759b5551b2b82721fcabc6aaa50e912b37972472f",
+        "sysPrefix": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8",
+        "fileHash": "319257c48516b8caacb48abcdb3153e1c739636d5ba53e1e0cf7782de4de122ba2f620fa130126b03d82b4d2b900821f325f6dcccab808ea3337609669999eb1",
         "type": "Unknown"
       },
       {
         "architecture": 3,
-        "path": "/Users/ryosuke/.pyenv/versions/3.8.7/bin/python",
+        "path": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8/bin/python",
         "version": {
           "options": {
             "loose": false,
@@ -371,8 +371,8 @@
           "build": [],
           "version": "3.8.7-final"
         },
-        "sysPrefix": "/Users/ryosuke/.pyenv/versions/3.8.7",
-        "fileHash": "68ec660272f54f27c452bebc190552adfd8ac5e11a988b693bd6132e22f933c46b1da87eded47f9c301d8c9759b5551b2b82721fcabc6aaa50e912b37972472f",
+        "sysPrefix": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8",
+        "fileHash": "319257c48516b8caacb48abcdb3153e1c739636d5ba53e1e0cf7782de4de122ba2f620fa130126b03d82b4d2b900821f325f6dcccab808ea3337609669999eb1",
         "type": "Unknown"
       }
     ],
@@ -700,6 +700,75 @@
     "INTERPRETERS_CACHE_v3_KnownPathsService": [
       {
         "architecture": 3,
+        "path": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.7-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.7-final"
+        },
+        "sysPrefix": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8",
+        "fileHash": "319257c48516b8caacb48abcdb3153e1c739636d5ba53e1e0cf7782de4de122ba2f620fa130126b03d82b4d2b900821f325f6dcccab808ea3337609669999eb1",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.7-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.7-final"
+        },
+        "sysPrefix": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8",
+        "fileHash": "4c55af35715ab6c91c9e30eeccd2b335de82be69ed8d628b40fefefb922350e2e1e16189e412b25503674bf6a5d41a237a7ff338e3f23e0e5dc4c822a47311fd",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8/bin/python3.8",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.7-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.7-final"
+        },
+        "sysPrefix": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8",
+        "fileHash": "198f25cae32b6de853003187eec6d836f8b96841c4d9ef735fff51f36d8f33597418ae9bf068f00522862ef95f244ff4c6551fbbe8dbadc0de8b95c8222a6951",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
         "path": "/usr/local/bin/python3",
         "version": {
           "options": {
@@ -742,6 +811,144 @@
         },
         "sysPrefix": "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
         "fileHash": "589c33118b9f7bb9371b93135a6a00bc705cddf0baf7b0ee4508405e858fc9795ad08420bda1e5ab9c1fcd659ad2f74e4d73a440dab0f25349aef1ed1c6a4a82",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/ryosuke/.pyenv/shims/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.7-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.7-final"
+        },
+        "sysPrefix": "/Users/ryosuke/.pyenv/versions/3.8.7",
+        "fileHash": "00b7fcefc55396c77a56a6cac198cb17e80ceba5e091dee7905bd90628dd8007e422a3b021933d459a6e62e92826e2c0a8625a206a6658526a8c1b73f59cf813",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/ryosuke/.pyenv/shims/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.7-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.7-final"
+        },
+        "sysPrefix": "/Users/ryosuke/.pyenv/versions/3.8.7",
+        "fileHash": "92a09980e3333302ac7dd48553083f8bf9a0896312945361370018b3ecd5216e2d2bf9fc37c73d6d12477c41906f10bbe5320161a1f83295ddf1150abd2f1954",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/ryosuke/.pyenv/shims/python3.8",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.7-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.7-final"
+        },
+        "sysPrefix": "/Users/ryosuke/.pyenv/versions/3.8.7",
+        "fileHash": "f437151a051a2d7444fa2fbf4db2d9ccf11dc5a8d2e5dda6de3486f259957804d5f489ee409e8652f57fec5ab3975b08a278df6afd346f19adac1b42670bea28",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/ryosuke/.pyenv/versions/3.8.7/bin/python",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.7-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.7-final"
+        },
+        "sysPrefix": "/Users/ryosuke/.pyenv/versions/3.8.7",
+        "fileHash": "68ec660272f54f27c452bebc190552adfd8ac5e11a988b693bd6132e22f933c46b1da87eded47f9c301d8c9759b5551b2b82721fcabc6aaa50e912b37972472f",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/ryosuke/.pyenv/versions/3.8.7/bin/python3",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.7-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.7-final"
+        },
+        "sysPrefix": "/Users/ryosuke/.pyenv/versions/3.8.7",
+        "fileHash": "33582f84fdbe70717aea8da8cd9943db7cee173fb5929576fb99e93979ba90b4d85c8498c883ba02a4b57e828b7af8a22bc208f23ab7bd6d06ba0430ffe2620b",
+        "type": "Unknown"
+      },
+      {
+        "architecture": 3,
+        "path": "/Users/ryosuke/.pyenv/versions/3.8.7/bin/python3.8",
+        "version": {
+          "options": {
+            "loose": false,
+            "includePrerelease": false
+          },
+          "loose": false,
+          "raw": "3.8.7-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 7,
+          "prerelease": [
+            "final"
+          ],
+          "build": [],
+          "version": "3.8.7-final"
+        },
+        "sysPrefix": "/Users/ryosuke/.pyenv/versions/3.8.7",
+        "fileHash": "9f44dea1fea0c1983f1b86f0cab40f2b6412b4614c9458d46a64645b5c0ce22bb8c6d7ae31bd9912d97543d1f2ba0448ca3d1a706a4292458d76ffbf34aedbca",
         "type": "Unknown"
       },
       {
@@ -1103,25 +1310,25 @@
     },
     "InterpreterAutoSeletionRule-currentPath": {
       "architecture": 3,
-      "path": "/usr/local/opt/python@3.9/bin/python3.9",
+      "path": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8/bin/python",
       "version": {
         "options": {
           "loose": false,
           "includePrerelease": false
         },
         "loose": false,
-        "raw": "3.9.2-final",
+        "raw": "3.8.7-final",
         "major": 3,
-        "minor": 9,
-        "patch": 2,
+        "minor": 8,
+        "patch": 7,
         "prerelease": [
           "final"
         ],
         "build": [],
-        "version": "3.9.2-final"
+        "version": "3.8.7-final"
       },
-      "sysPrefix": "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
-      "fileHash": "1d10ee0c2aa87a00fcca271d99c088fb50d41272004f0ab31041544b25170db0128e9ac0e0b4cc114c0fa42dba79279d9f1011d4c951240e90c4fab7ab0669ae",
+      "sysPrefix": "/Users/ryosuke/Library/Caches/pypoetry/virtualenvs/machine-learning-with-rust-L-oCx3-g-py3.8",
+      "fileHash": "319257c48516b8caacb48abcdb3153e1c739636d5ba53e1e0cf7782de4de122ba2f620fa130126b03d82b4d2b900821f325f6dcccab808ea3337609669999eb1",
       "type": "Unknown"
     },
     "preferredGlobalPyInterpreter": {
@@ -1149,7 +1356,7 @@
     },
     "InterpreterAutoSeletionRule-system": {
       "architecture": 3,
-      "path": "/usr/local/opt/python@3.9/bin/python3.9",
+      "path": "/usr/local/bin/python3",
       "version": {
         "options": {
           "loose": false,
@@ -1167,13 +1374,13 @@
         "version": "3.9.2-final"
       },
       "sysPrefix": "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
-      "fileHash": "1d10ee0c2aa87a00fcca271d99c088fb50d41272004f0ab31041544b25170db0128e9ac0e0b4cc114c0fa42dba79279d9f1011d4c951240e90c4fab7ab0669ae",
+      "fileHash": "2edcd383174f1206548ca67fc234f4caaaad042c451d96f87f6532f89fa3f863c25d4bb972ca42bedfb88571fd7daf109f19faa46985f73735c4abe6ef9e22a2",
       "type": "Unknown",
       "displayName": "Python 3.9.2 64-bit"
     },
     "InterpreterAutoSeletionRule-cachedInterpreters": {
       "architecture": 3,
-      "path": "/usr/local/opt/python@3.9/bin/python3.9",
+      "path": "/usr/local/bin/python3",
       "version": {
         "options": {
           "loose": false,
@@ -1191,8 +1398,9 @@
         "version": "3.9.2-final"
       },
       "sysPrefix": "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
-      "fileHash": "1d10ee0c2aa87a00fcca271d99c088fb50d41272004f0ab31041544b25170db0128e9ac0e0b4cc114c0fa42dba79279d9f1011d4c951240e90c4fab7ab0669ae",
+      "fileHash": "2edcd383174f1206548ca67fc234f4caaaad042c451d96f87f6532f89fa3f863c25d4bb972ca42bedfb88571fd7daf109f19faa46985f73735c4abe6ef9e22a2",
       "type": "Unknown",
+      "cachedEntry": true,
       "displayName": "Python 3.9.2 64-bit"
     },
     "/Users/ryosuke/.pyenv/versions/3.8.7/bin/python.interpreter.Details.v7": {
