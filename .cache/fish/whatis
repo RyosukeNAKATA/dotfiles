@@ -4847,9 +4847,9 @@ automountd(8)            - automatic mount / unmount daemon for autofs
 autopoint(1)             - copies standard gettext infrastructure
 autoproxy(n)             - Automatic HTTP proxy usage and authentication
 autoreconf(1)            - Update generated configuration files
-autoscan(1)              - Generate a preliminary configure.in
+autoscan(1)              - Generate a preliminary configure.ac
 autoscroll(n)            - Provides for a scrollbar to automatically mapped and unmapped as needed
-autoupdate(1)            - Update a configure.in to a newer Autoconf
+autoupdate(1)            - Update a configure.ac to a newer Autoconf
 autouse(3pm)             - postpone load of modules until a function is used
 avbdeviced(1)            - peristent entity management for AVB
 avbutil(1)               - manage AVB features and settings
@@ -5115,8 +5115,6 @@ compress(1), uncompress(1) - compress and expand data
 compression_tool(1)      - encode/decode files using the Compression library
 comsat(8)                - biff server
 concat(ntcl)             - Join lists together
-config.guess(1)          - guess the build system triplet
-config.sub(1)            - validate and canonicalize a configuration triplet
 config_data(1)           - Query or change configuration of Perl modules
 configbody(n)            - change the "config" code for a public variable
 configd(8)               - System Configuration Daemon
@@ -6719,7 +6717,6 @@ ippusbd(8)               - ipp to usb bridging daemon
 ipsec(4)                 - IP security protocol
 ipsec_dump_policy(3), ipsec_get_policylen(3), ipsec_set_policy(3) - manipulate IPsec policy specification structure from human-readable policy string
 ipsec_strerror(3)        - error messages for the IPsec policy manipulation library
-ipython(1)               - Tools for Interactive Computing in Python
 irb(1)                   - Interactive Ruby Shell
 irc(n)                   - Create IRC connection and interface
 is(n)                    - test argument to see if it is a class or an object

@@ -18,6 +18,15 @@ alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + e
 alias lS='exa -1'                                                              # one column, just names
 alias lt='exa --tree --level=2'                                         # tree
 
+alias cat='bat'
+alias cat='bat'
+alias catall='bat -A'
+
+alias find='fd'
+alias finde='fd -e'
+alias findh='fd -H'
+alias findi='fd -I'
+
 # git
 abbr ga 'git add'
 abbr gc "git commit -m ''"
