@@ -50,13 +50,3 @@ build = '''
   git checkout release
 '''
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/cocnvim.vim'
-
-[[plugins]]
-repo = 'vim-syntastic/syntastic'
-if = "!has('nvim')"
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/syntastic.vim'
-
-[[plugins]]
-repo = 'tell-k/vim-autopep8'
-on_ft = ['python']
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/pep8.vim'
