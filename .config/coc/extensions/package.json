@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "coc-python": ">=1.2.13",
+    "coc-pyright": ">=1.1.128",
     "coc-rls": ">=1.1.6"
   }
 }
