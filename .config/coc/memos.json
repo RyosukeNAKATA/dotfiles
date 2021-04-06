@@ -1240,8 +1240,7 @@
       },
       "sysPrefix": "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
       "fileHash": "1d10ee0c2aa87a00fcca271d99c088fb50d41272004f0ab31041544b25170db0128e9ac0e0b4cc114c0fa42dba79279d9f1011d4c951240e90c4fab7ab0669ae",
-      "type": "Unknown",
-      "cachedEntry": true
+      "type": "Unknown"
     },
     "preferredGlobalPyInterpreter": {
       "architecture": 3,
@@ -1288,7 +1287,6 @@
       "sysPrefix": "/usr/local/opt/python@3.9/Frameworks/Python.framework/Versions/3.9",
       "fileHash": "1d10ee0c2aa87a00fcca271d99c088fb50d41272004f0ab31041544b25170db0128e9ac0e0b4cc114c0fa42dba79279d9f1011d4c951240e90c4fab7ab0669ae",
       "type": "Unknown",
-      "cachedEntry": true,
       "displayName": "Python 3.9.2 64-bit"
     },
     "InterpreterAutoSeletionRule-cachedInterpreters": {
