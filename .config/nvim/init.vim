@@ -4,25 +4,20 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/ryosuke/dotfiles/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/Users/ryosuke/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('/Users/ryosuke/dotfiles/.cache/dein')
-  call dein#begin('/Users/ryosuke/dotfiles/.cache/dein')
+call dein#begin('/Users/ryosuke/.cache/dein')
+call dein#load_toml('/Users/ryosuke/dotfiles/.config/nvim/dein.toml')
+" Let dein manage dein
+" Required:
 
-  " Let dein manage dein
-  " Required:
-  call dein#load_toml('/Users/ryosuke/dotfiles/.config/nvim/dein.toml')
-  " call dein#add('/Users/ryosuke/dotfiles/.cache/dein/repos/github.com/Shougo/dein.vim')
+" Add or remove your plugins here like this:
+"call dein#add('Shougo/neosnippet.vim')
+"call dein#add('Shougo/neosnippet-snippets')
 
-  " Add or remove your plugins here like this:
-  "call dein#add('Shougo/neosnippet.vim')
-  "call dein#add('Shougo/neosnippet-snippets')
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
+" Required:
+call dein#end()
 
 " Required:
 filetype plugin indent on
@@ -36,6 +31,7 @@ syntax enable
 "End dein Scripts-------------------------
 
 syntax on
+set termguicolors
 set t_Co=256
 
 set background=dark
