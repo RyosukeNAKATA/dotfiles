@@ -8,9 +8,11 @@ set runtimepath+=/Users/ryosuke/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
 call dein#begin('/Users/ryosuke/.cache/dein')
-call dein#load_toml('/Users/ryosuke/dotfiles/.config/nvim/dein.toml')
+
 " Let dein manage dein
 " Required:
+" call dein#add('/Users/ryosuke/.cache/dein/repos/github.com/Shougo/dein.vim')
+call dein#load_toml('/Users/ryosuke/dotfiles/.config/nvim/dein.toml')
 
 " Add or remove your plugins here like this:
 "call dein#add('Shougo/neosnippet.vim')
@@ -24,9 +26,9 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
 "End dein Scripts-------------------------
 
