@@ -16,6 +16,8 @@ SETUVAR _fish_abbr_ga:git\x20add
 SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm\x20\x27\x27
 SETUVAR _fish_abbr_gp:git\x20push
 SETUVAR _fish_abbr_jl:jupyter\x2dlab
+SETUVAR _fish_abbr_take:https\x3a//neuro\x2edob\x2ejp/\x7etakefuji
+SETUVAR _fish_abbr_tk:https\x3a//neuro\x2edob\x2ejp/\x7etakefuji
 SETUVAR _fish_abbr_vi:nvim
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR _fisher_jethrokuan_2F_fzf_files:/Users/ryosuke/\x2econfig/fish/functions/__fzf_cd\x2efish\x1e/Users/ryosuke/\x2econfig/fish/functions/__fzf_complete\x2efish\x1e/Users/ryosuke/\x2econfig/fish/functions/__fzf_complete_preview\x2efish\x1e/Users/ryosuke/\x2econfig/fish/functions/__fzf_find_file\x2efish\x1e/Users/ryosuke/\x2econfig/fish/functions/__fzf_get_dir\x2efish\x1e/Users/ryosuke/\x2econfig/fish/functions/__fzf_open\x2efish\x1e/Users/ryosuke/\x2econfig/fish/functions/__fzf_parse_commandline\x2efish\x1e/Users/ryosuke/\x2econfig/fish/functions/__fzf_reverse_isearch\x2efish\x1e/Users/ryosuke/\x2econfig/fish/functions/__fzfcmd\x2efish\x1e/Users/ryosuke/\x2econfig/fish/conf\x2ed/fzf\x2efish

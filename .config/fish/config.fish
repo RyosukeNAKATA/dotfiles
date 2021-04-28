@@ -8,8 +8,8 @@ eval (nodenv init - | source)
 set -x PGDATA /usr/local/var/postgres/
 
 # general use
-alias ls='exa'                                                          # ls
-alias lla='exa -la'
+alias ls='exa -F'                                                          # ls
+alias lla='exa -laF'
 alias l='exa -lbF --git'                                                # list, size, type, git
 alias ll='exa -lbGF --git'                                             # long list
 alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
@@ -46,3 +46,4 @@ set PATH $PATH /Users/ryosuke/.local/bin
 
 set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)
 
+set -g take 'https://neuro.dob.jp/~takefuji'
