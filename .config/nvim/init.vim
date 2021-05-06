@@ -4,22 +4,25 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/ryosuke/.cache/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=/home/narchan/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-call dein#begin('/Users/ryosuke/.cache/dein')
+if dein#load_state('/home/narchan/.cache/dein')
+  call dein#begin('/home/narchan/.cache/dein')
 
-" Let dein manage dein
-" Required:
-" call dein#add('/Users/ryosuke/.cache/dein/repos/github.com/Shougo/dein.vim')
-call dein#load_toml('/Users/ryosuke/dotfiles/.config/nvim/dein.toml')
+  " Let dein manage dein
+  " Required:
+  " call dein#add('/home/narchan/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#load_toml('/home/narchan/.config/nvim/dein.toml')
 
-" Add or remove your plugins here like this:
-"call dein#add('Shougo/neosnippet.vim')
-"call dein#add('Shougo/neosnippet-snippets')
+  " Add or remove your plugins here like this:
+  "call dein#add('Shougo/neosnippet.vim')
+  "call dein#add('Shougo/neosnippet-snippets')
 
-" Required:
-call dein#end()
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
 
 " Required:
 filetype plugin indent on
@@ -32,15 +35,14 @@ endif
 
 "End dein Scripts-------------------------
 
+filetype plugin indent on
 syntax on
-set termguicolors
 set t_Co=256
 
 set background=dark
-colorscheme iceberg
+:colorscheme iceberg
 
 set autoindent
-set clipboard=unnamed,unnamedplus
 set smartindent
 set expandtab
 set encoding=utf-8
@@ -60,17 +62,13 @@ set hidden
 set nobackup
 set nowritebackup
 set conceallevel=0
-
-" htmlのマッチするタグに%でジャンプ
-source $VIMRUNTIME/macros/matchit.vim
+set clipboard=unnamed
 
 if has('mouse')
   set mouse=a
 endif
 
-" python
-let g:python_host_prog = expand('~/nvim-python2/bin/python2')
-let g:python3_host_prog = expand('~/nvim-python3/bin/python3')
+
 " rust
 let g:rustfmt_autosave = 1
 let g:rustfmt_emit_files = 1
@@ -91,6 +89,8 @@ set autoindent
 set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
 set encoding=utf-8
 set scrolloff=2
+" set noshowmode
+" set hidden
 set nowrap
 set nojoinspaces
 let g:sneak#s_next = 1
@@ -100,6 +100,7 @@ let g:vim_markdown_frontmatter = 1
 set printfont=:h10
 set printencoding=utf-8
 set printoptions=paper:letter
+
 " Always draw sign column. Prevent buffer moving when adding/deleting sign.
 set signcolumn=yes
 
@@ -108,6 +109,7 @@ set exrc
 set secure
 
 " Sane splits
+
 set splitright
 set splitbelow
 
@@ -122,11 +124,13 @@ set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp
 
 " Use wide tabs
 set shiftwidth=8
+
 set softtabstop=8
 set tabstop=8
 set noexpandtab
 
 " Wrapping options
+
 set formatoptions=tc " wrap text and comments using textwidth
 set formatoptions+=r " continue comments when pressing ENTER in I mode
 set formatoptions+=q " enable formatting of comments with gq
@@ -138,6 +142,7 @@ set incsearch
 set ignorecase
 set smartcase
 set gdefault
+
 
 " Search results centered please
 nnoremap <silent> n nzz
@@ -157,6 +162,7 @@ cnoremap %s/ %sm/
 " set guioptions-=T " Remove toolbar
 set vb t_vb= " No more beeps
 set backspace=2 " Backspace over newlines
+
 set nofoldenable
 set ttyfast
 " https://github.com/vim/vim/issues/1735#issuecomment-383353563
@@ -169,15 +175,19 @@ set diffopt+=iwhite " No whitespace in vimdiff
 " Make diffing better: https://vimways.org/2018/the-power-of-diff/
 set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
+
 " set colorcolumn=80 " and give me a colored column
-:set cc=100                                                                                    
+
+:set cc=100
 :hi ColorColumn gui=reverse cterm=reverse
 set showcmd " Show (partial) command in status line.
 set mouse=a " Enable mouse usage (all modes) in terminals
 set shortmess+=c " don't give |ins-completion-menu| messages.
 
+
 " Show those damn hidden characters
 " Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
+
 set listchars=nbsp:¬,extends:»,precedes:«,trail:•
 
 inoremap <silent> jj <ESC>
@@ -186,14 +196,23 @@ inoremap <silent> っｊ <ESC>
 let $LANG='en_US.UTF-8'
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
 set encoding=UTF-8
+
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
 
-nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <C-b> :NERDTreeToggle<CR>`
 
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
+
+" nerd-tree用の設定Ctrl+h, lで左右のタブへ移動
+ map <C-l> gt
+ map <C-h> gT
+ "インサートモードのままカーソル移動
+inoremap <C-f> <C-g>U<Right>
+inoremap <C-f><C-f> <C-g>U<ESC><S-a>
 
 if has('vim_starting')
     " 挿入モード時に非点滅の縦棒タイプのカーソル
@@ -204,31 +223,52 @@ if has('vim_starting')
     let &t_SR .= "\e[4 q"
 endif
 
-set rtp+=/usr/local/opt/fzf
+if &encoding !=# 'utf-8'
+  set encoding=japan
+  set fileencoding=japan
+endif
+if has('iconv')
+  let s:enc_euc = 'euc-jp'
+  let s:enc_jis = 'iso-2022-jp'
 
-" nerd-tree用設定
-map <C-l> gt
-map <C-h> gT
+  if iconv("\x87\x64\x87\x6a", 'cp932', 'eucjp-ms') ==# "\xad\xc5\xad\xcb"
+    let s:enc_euc = 'eucjp-ms'
+    let s:enc_jis = 'iso-2022-jp-3'
+  elseif iconv("\x87\x64\x87\x6a", 'cp932', 'euc-jisx0213') ==# "\xad\xc5\xad\xcb"
+    let s:enc_euc = 'euc-jisx0213'
+    let s:enc_jis = 'iso-2022-jp-3'
+  endif
+  if &encoding ==# 'utf-8'
+    let s:fileencodings_default = &fileencodings
+    let &fileencodings = s:enc_jis .','. s:enc_euc .',cp932'
+    let &fileencodings = &fileencodings .','. s:fileencodings_default
+    unlet s:fileencodings_default
+  else
 
-"カッコ補完: { ( [
-inoremap { {}<Left>
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap () ()
-inoremap ( ()<ESC>i
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-inoremap [ []<ESC>i
-inoremap [<Enter> []<Left><CR><ESC><S-o>
+    let &fileencodings = &fileencodings .','. s:enc_jis
+    set fileencodings+=utf-8,ucs-2le,ucs-2
+    if &encoding =~# '^\(euc-jp\|euc-jisx0213\|eucjp-ms\)$'
+      set fileencodings+=cp932
+      set fileencodings-=euc-jp
+      set fileencodings-=euc-jisx0213
+      set fileencodings-=eucjp-ms
+      let &encoding = s:enc_euc
 
-"補完: ' " <
-inoremap '' ''
-inoremap ' ''<ESC>i
-inoremap "" ""
-inoremap " ""<ESC>i
-inoremap < <><ESC>i
+      let &fileencoding = s:enc_euc
+    else
+      let &fileencodings = &fileencodings .','. s:enc_euc
+    endif
 
-"インサートモードのままカーソル移動
-inoremap <C-f> <C-g>U<Right>
-inoremap <C-f><C-f> <C-g>U<ESC><S-a>
-"Ctrl+h/lで行頭/末に移動
-noremap H ^ 
-noremap L $
+  endif
+  unlet s:enc_euc
+
+  unlet s:enc_jis
+endif
+if has('autocmd')
+  function! AU_ReCheck_FENC()
+    if &fileencoding =~# 'iso-2022-jp' && search("[^\x01-\x7e]", 'n') == 0
+      let &fileencoding=&encoding
+    endif
+  endfunction
+  autocmd BufReadPost * call AU_ReCheck_FENC()
+endif

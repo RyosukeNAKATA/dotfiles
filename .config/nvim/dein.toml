@@ -1,13 +1,17 @@
 [[plugins]]
-repo = 'Shougo/dein.vim'
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+hook_add = 'source ~/.config/nvim/plugins/vim-lsp-settings.vim'
 
 [[plugins]]
 repo = 'rust-lang/rust.vim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim'
+hook_add = 'source ~/.config/nvim/plugins/rust.vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim'
+hook_add = 'source ~/.config/nvim/plugins/vim-quickrun.vim'
 
 [[plugins]]
 repo = 'racer-rust/vim-racer'
@@ -20,6 +24,7 @@ repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+hook_add = 'source ~/.config/nvim/plugins/lightline.vim'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
@@ -32,7 +37,9 @@ repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
 repo = 'junegunn/fzf'
-build_on = './install -all'
+build_on = '''
+./install -all
+'''
 
 [[plugins]]
 repo = 'junegunn/fzf.vim'
@@ -44,9 +51,16 @@ repo = 'vim-scripts/vim-auto-save'
 repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
+repo = 'Shougo/vimfiler'
+hook_add = 'source ~/.config/nvim/plugins/vimfilter.vim'
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 build = '''
   git checkout release
 '''
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/cocnvim.vim'
+hook_add = 'source ~/.config/nvim/plugins/coc.vim'
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
