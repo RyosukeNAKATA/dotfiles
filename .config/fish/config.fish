@@ -6,6 +6,7 @@ abbr vi 'nvim'
 
 # general use
 alias ls='exa -F'                                                          # ls
+alias lls='exa -Fl'
 alias lla='exa -laF'
 alias l='exa -lbF --git'                                                # list, size, type, git
 alias ll='exa -lbGF --git'                                             # long list
@@ -27,7 +28,6 @@ abbr gp 'git push'
 
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"alias ls='exa --time-style=long-iso -g'
-
 export XDG_BASE_HOME='~/.config'
 export TERM=xterm-256color
 
