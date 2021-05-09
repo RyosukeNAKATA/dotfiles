@@ -8,7 +8,8 @@ eval (nodenv init - | source)
 set -x PGDATA /usr/local/var/postgres/
 
 # general use
-alias ls='exa -F'                                                          # ls
+alias ls='exa -F'   
+alias lls='exa -lF'                                                       # ls
 alias lla='exa -laF'
 alias l='exa -lbF --git'                                                # list, size, type, git
 alias ll='exa -lbGF --git'                                             # long list
