@@ -3,7 +3,6 @@ starship init fish | source
 set -U FZF_LEGACY_KEYBINDINGS 0
 
 set -x PATH $HOME/.pyenv/bin $PATH
-. (pyenv init - | psub)
 eval (nodenv init - | source)
 set -x PGDATA /usr/local/var/postgres/
 

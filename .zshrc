@@ -25,7 +25,7 @@ setopt nolistbeep
 # pyenv環境変数設定
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+
 
 # poetry環境変数設定
 export PATH=$PATH:$HOME/.poetry/bin
@@ -78,32 +78,5 @@ alias lt='exa --tree --level=2'                                         # tree
 # pip-upgrade-allで更新可能なパッケージを一括アップデート
 alias pip-upgrade-all="pip list -o | tail -n +3 | awk '{ print \$1 }' | xargs pip install -U"
 
-fpath+=${ZDOTDIR:-~}/.zsh_functions
-
-# 端末起動時にtmuxを起動するためのもの
-if [[ ! -n $TMUX ]]; then
-  # get the IDs
-  ID="`tmux list-sessions`"
-  if [[ -z "$ID" ]]; then
-    tmux new-session
-  fi
-  create_new_session="Create New Session"
-  ID="$ID\n${create_new_session}:"
-  ID="`echo $ID | $PERCOL | cut -d: -f1`"
-  if [[ "$ID" = "${create_new_session}" ]]; then
-    tmux new-session
-  elif [[ -n "$ID" ]]; then
-    tmux attach-session -t "$ID"
-  else
-    :  # Start terminal normally
-  fi
-fi
-
-
 # starshipのPATH
 eval "$(starship init zsh)"
-
-# zsh-autosuggest用
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-export PATH=/Applications/Julia-1.5.3-1.app/Contents/Resources/julia/bin:$PATH
