@@ -26,7 +26,6 @@ setopt nolistbeep
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 
-
 # poetry環境変数設定
 export PATH=$PATH:$HOME/.poetry/bin
 
