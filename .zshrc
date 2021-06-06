@@ -63,16 +63,18 @@ alias vim='nvim'
 alias vi='nvim'
 
 # general use
-alias ls='exa'                                                          # ls
+alias ls='exa -F'   
+alias lls='exa -lF'                                                       # ls
+alias lla='exa -laF'
 alias l='exa -lbF --git'                                                # list, size, type, git
 alias ll='exa -lbGF --git'                                             # long list
 alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
 alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
 alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
-
 # specialty views
 alias lS='exa -1'                                                              # one column, just names
 alias lt='exa --tree --level=2'                                         # tree
+abbr tree 'exa -T'
 
 # pip-upgrade-allで更新可能なパッケージを一括アップデート
 alias pip-upgrade-all="pip list -o | tail -n +3 | awk '{ print \$1 }' | xargs pip install -U"
