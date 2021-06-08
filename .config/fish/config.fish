@@ -41,6 +41,7 @@ set -x PATH $HOME/.pyenv/bin $PATH
 eval (nodenv init - | source)
 set -x PGDATA /usr/local/var/postgres/
 set PATH $PATH /Users/ryosuke/.local/bin
+zoxide init fish | source
 set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)
 
 set -g take 'https://neuro.dob.jp/~takefuji'
