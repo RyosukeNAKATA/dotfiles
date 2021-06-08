@@ -24,7 +24,6 @@ alias lt='exa --tree --level=2'                                         # tree
 abbr tree 'exa -T'
 
 alias cat='bat'
-alias cat='bat'
 alias catall='bat -A'
 
 alias find='fd'
@@ -32,6 +31,7 @@ alias finde='fd -e'
 alias findh='fd -H'
 alias findi='fd -I'
 
+alias cp='xcp'
 # git
 abbr ga 'git add'
 abbr gc "git commit -m ''"
