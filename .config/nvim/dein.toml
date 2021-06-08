@@ -31,13 +31,6 @@ repo = 'nathanaelkane/vim-indent-guides'
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
-repo = 'junegunn/fzf'
-build_on = './install -all'
-
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-
-[[plugins]]
 repo = 'vim-scripts/vim-auto-save'
 
 [[plugins]]
