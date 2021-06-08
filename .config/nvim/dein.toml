@@ -2,24 +2,16 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'preservim/nerdtree'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
+
+[[plugins]]
 repo = 'rust-lang/rust.vim'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim'
-
-[[plugins]]
-repo = 'racer-rust/vim-racer'
-
-[[plugins]]
-repo = 'preservim/nerdtree'
-
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
-
-[[plugins]]
-repo = 'itchyny/lightline.vim'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
@@ -37,9 +29,21 @@ repo = 'vim-scripts/vim-auto-save'
 repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
+repo = 'cohama/lexima.vim'
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 build = '''
   git checkout release
 '''
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/cocnvim.vim'
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'

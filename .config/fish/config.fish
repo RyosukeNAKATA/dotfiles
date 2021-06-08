@@ -1,12 +1,4 @@
-starship init fish | source
-
-status is-login; and pyenv init --path | source
-pyenv init - | source
-set -x PATH $HOME/.pyenv/bin $PATH
-eval (nodenv init - | source)
-set -x PGDATA /usr/local/var/postgres/
-
-# general use
+# general use for rewrite in rust
 alias ls='exa -F'   
 alias lls='exa -lF'                                                       # ls
 alias lla='exa -laF'
@@ -39,12 +31,16 @@ abbr vim 'nvim'
 abbr vi 'nvim'
 # jupyter lab
 abbr jl 'jupyter-lab'
-# pipx-upgrade-all
-alias pip-upgrade-all="pip list -o | tail -n +3 | awk '{ print \$1 }' | xargs pip install -U"
 
-# Created by `userpath` on 2021-02-15 13:14:49
+# PATH
+starship init fish | source
+
+status is-login; and pyenv init --path | source
+pyenv init - | source
+set -x PATH $HOME/.pyenv/bin $PATH
+eval (nodenv init - | source)
+set -x PGDATA /usr/local/var/postgres/
 set PATH $PATH /Users/ryosuke/.local/bin
-
 set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)
 
 set -g take 'https://neuro.dob.jp/~takefuji'

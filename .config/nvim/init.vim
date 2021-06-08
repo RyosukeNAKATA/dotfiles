@@ -35,21 +35,17 @@ endif
 syntax on
 set termguicolors
 set t_Co=256
-
 set background=dark
 colorscheme iceberg
 
 set autoindent
-set clipboard=unnamed,unnamedplus
 set smartindent
+set clipboard=unnamed,unnamedplus
 set expandtab
 set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=iso-2022-jp,euc-jp,utf-8,ucs-2,cp932,sjis
-set tabstop=4
-set shiftwidth=2
 set cursorline
-set number
 set showmode
 set showmatch
 set title
@@ -121,9 +117,7 @@ set wildmode=list:longest
 set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
 
 " Use wide tabs
-set shiftwidth=8
-set softtabstop=8
-set tabstop=8
+set tabstop=4
 set noexpandtab
 
 " Wrapping options
@@ -184,13 +178,9 @@ inoremap <silent> jj <ESC>
 inoremap <silent> っｊ <ESC>
 
 let $LANG='en_US.UTF-8'
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
 set encoding=UTF-8
 set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 set fileformats=unix,dos,mac
-
-nnoremap <C-b> :NERDTreeToggle<CR>
 
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
@@ -203,12 +193,6 @@ if has('vim_starting')
     " 置換モード時に非点滅の下線タイプのカーソル
     let &t_SR .= "\e[4 q"
 endif
-
-set rtp+=/usr/local/opt/fzf
-
-" nerd-tree用設定
-map <C-l> gt
-map <C-h> gT
 
 "カッコ補完: { ( [
 inoremap { {}<Left>
