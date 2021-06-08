@@ -178,7 +178,7 @@ set shortmess+=c " don't give |ins-completion-menu| messages.
 
 " Show those damn hidden characters
 " Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
-set listchars=nbsp:¬,extends:»,precedes:«,trail:•
+set listchars=tab:»-,nbsp:¬,extends:»,precedes:«,trail:•,eol:↲
 
 inoremap <silent> jj <ESC>
 inoremap <silent> っｊ <ESC>
