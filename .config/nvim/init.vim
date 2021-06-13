@@ -32,6 +32,11 @@ endif
 
 "End dein Scripts-------------------------
 
+let $LANG='en_US.UTF-8'
+set encoding=UTF-8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 syntax on
 set termguicolors
 set t_Co=256
@@ -41,10 +46,6 @@ colorscheme iceberg
 set autoindent
 set smartindent
 set clipboard=unnamed,unnamedplus
-set expandtab
-set encoding=utf-8
-set fileencoding=utf-8
-set fileencodings=iso-2022-jp,euc-jp,utf-8,ucs-2,cp932,sjis
 set cursorline
 set showmode
 set showmatch
@@ -85,7 +86,6 @@ set updatetime=300
 filetype plugin indent on
 set autoindent
 set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
-set encoding=utf-8
 set scrolloff=2
 set nowrap
 set nojoinspaces
@@ -177,11 +177,6 @@ set listchars=tab:»-,nbsp:¬,extends:»,precedes:«,trail:•,eol:↲
 inoremap <silent> jj <ESC>
 inoremap <silent> っｊ <ESC>
 
-let $LANG='en_US.UTF-8'
-set encoding=UTF-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileformats=unix,dos,mac
-
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 
@@ -200,3 +195,15 @@ inoremap <C-f><C-f> <C-g>U<ESC><S-a>
 "Ctrl+h/lで行頭/末に移動
 noremap H ^ 
 noremap L $
+
+if has("autocmd")
+  augroup redhat
+    " In text files, always limit the width of text to 78 characters
+    autocmd BufRead *.txt set tw=78
+    " When editing a file, always jump to the last cursor position
+    autocmd BufReadPost *
+    \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+    \   exe "normal! g'\"" |
+    \ endif
+  augroup END
+endif
