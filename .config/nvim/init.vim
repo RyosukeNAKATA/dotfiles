@@ -194,22 +194,6 @@ if has('vim_starting')
     let &t_SR .= "\e[4 q"
 endif
 
-"カッコ補完: { ( [
-inoremap { {}<Left>
-inoremap {<Enter> {}<Left><CR><ESC><S-o>
-inoremap () ()
-inoremap ( ()<ESC>i
-inoremap (<Enter> ()<Left><CR><ESC><S-o>
-inoremap [ []<ESC>i
-inoremap [<Enter> []<Left><CR><ESC><S-o>
-
-"補完: ' " <
-inoremap '' ''
-inoremap ' ''<ESC>i
-inoremap "" ""
-inoremap " ""<ESC>i
-inoremap < <><ESC>i
-
 "インサートモードのままカーソル移動
 inoremap <C-f> <C-g>U<Right>
 inoremap <C-f><C-f> <C-g>U<ESC><S-a>
