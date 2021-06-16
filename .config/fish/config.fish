@@ -34,3 +34,9 @@ export TERM=xterm-256color
 # anyenv
 set -x PATH $HOME/.anyenv/bin $PATH
 eval (anyenv init - | source)
+# pyenv
+status is-login; and pyenv init --path | source
+pyenv init - | source
+set -x PATH $HOME/.pyenv/bin $PATH
+
+set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)

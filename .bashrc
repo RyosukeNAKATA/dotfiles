@@ -6,6 +6,10 @@ eval "$(starship init bash)"
 [[ $- != *i* ]] && return
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
