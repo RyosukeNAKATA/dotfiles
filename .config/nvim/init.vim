@@ -15,8 +15,8 @@ call dein#begin('/Users/ryosuke/.cache/dein')
 call dein#load_toml('/Users/ryosuke/dotfiles/.config/nvim/dein.toml')
 
 " Add or remove your plugins here like this:
-"call dein#add('Shougo/neosnippet.vim')
-"call dein#add('Shougo/neosnippet-snippets')
+call dein#add('Shougo/neosnippet.vim')
+call dein#add('Shougo/neosnippet-snippets')
 
 " Required:
 call dein#end()

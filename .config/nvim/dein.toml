@@ -6,6 +6,17 @@ repo = 'preservim/nerdtree'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
 
 [[plugins]]
+repo = 'cocopon/iceberg.vim'
+
+# [[plugins]]
+# repo = 'itchyny/lightline.vim'
+# hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
+
+[[plugins]]
+repo = 'popkirby/lightline-iceberg'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
+
+[[plugins]]
 repo = 'thinca/vim-quickrun'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim'
 
@@ -13,16 +24,10 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim'
 repo = 'Yggdroot/indentLine'
 
 [[plugins]]
-repo = 'nathanaelkane/vim-indent-guides'
-
-[[plugins]]
 repo = 'tomtom/tcomment_vim'
 
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
-
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
@@ -37,9 +42,6 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/cocnvim.vim'
 
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
-
-[[plugins]]
-repo = 'itchyny/lightline.vim'
 
 # Language settings
 [[plugins]]
