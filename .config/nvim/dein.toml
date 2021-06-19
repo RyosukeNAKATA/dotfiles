@@ -6,10 +6,6 @@ repo = 'preservim/nerdtree'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
 
 [[plugins]]
-repo = 'rust-lang/rust.vim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim'
-
-[[plugins]]
 repo = 'thinca/vim-quickrun'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim'
 
@@ -40,10 +36,15 @@ build = '''
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/cocnvim.vim'
 
 [[plugins]]
-repo = 'racer-rust/vim-racer'
-
-[[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+
+# Language settings
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim'
+
+[[plugins]]
+repo = 'racer-rust/vim-racer'
