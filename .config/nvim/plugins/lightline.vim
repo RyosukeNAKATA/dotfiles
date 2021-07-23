@@ -1,8 +1,3 @@
-let g:lightline = {
-      \ 'component_function': {
-      \   'filename': 'LightlineFilename'
-      \ }
-      \ }
-function! LightlineFilename()
-  return expand('%:p')
-endfunction
+" let g:lightline = {'colorscheme': 'nord',}
+let g:lightline = {}
+let g:lightline.colorscheme = 'iceberg'
