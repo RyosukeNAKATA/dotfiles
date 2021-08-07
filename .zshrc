@@ -81,3 +81,5 @@ alias pip-upgrade-all="pip list -o | tail -n +3 | awk '{ print \$1 }' | xargs pi
 
 # starshipのPATH
 eval "$(starship init zsh)"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

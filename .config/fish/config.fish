@@ -34,14 +34,14 @@ abbr jl 'jupyter-lab'
 
 # PATH
 starship init fish | source
-
 status is-login; and pyenv init --path | source
 pyenv init - | source
 set -x PATH $HOME/.pyenv/bin $PATH
-eval (nodenv init - | source)
 set -x PGDATA /usr/local/var/postgres/
 set PATH $PATH /Users/ryosuke/.local/bin
 zoxide init fish | source
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
 set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)
 
 set -g take 'https://neuro.dob.jp/~takefuji'
