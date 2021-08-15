@@ -10,10 +10,6 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
 repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
-repo = 'itchyny/lightline.vim'
-# hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
-
-[[plugins]]
 repo = 'popkirby/lightline-iceberg'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
 
@@ -51,6 +47,3 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim'
 
 [[plugins]]
 repo = 'racer-rust/vim-racer'
-
-[[plugins]]
-repo = 'cohama/lexima.vim'
