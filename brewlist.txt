@@ -1,0 +1,8 @@
+fish
+mecab
+mecab-ipadic
+pyenv
+poetry
+starship
+neovim
+veofetch
