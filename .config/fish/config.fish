@@ -5,6 +5,8 @@ starship init fish | source
 status is-login; and pyenv init --path | source
 pyenv init - | source
 set -x PATH $HOME/.pyenv/bin $PATH
+# poetry
+# set PATH=$PATH:$HOME/.poetry/bin
 # postgresql
 set -x PGDATA /usr/local/var/postgres/
 # userpath

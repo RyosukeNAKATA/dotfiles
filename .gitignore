@@ -4,7 +4,7 @@
 */colors
 */configstore
 */fontforge
-./.config/*
+.config/.config
 ./.config/fish/completions
 ./.config/fish/fish_variables
 ./.config/nvim/fish
