@@ -5,3 +5,4 @@ exa
 cargo-update
 viu
 zoxide
+tokei
