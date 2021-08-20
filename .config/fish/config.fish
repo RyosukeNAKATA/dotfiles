@@ -1,3 +1,24 @@
+# PATH
+# starship
+starship init fish | source
+# pyenv
+status is-login; and pyenv init --path | source
+pyenv init - | source
+set -x PATH $HOME/.pyenv/bin $PATH
+# postgresql
+set -x PGDATA /usr/local/var/postgres/
+# userpath
+set PATH $PATH /Users/ryosuke/.local/bin
+# Rust
+set -U fish_user_paths $fish_user_paths $HOME/.cargo/bin
+# zoxide
+zoxide init fish | source
+# volta
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
+# for fish
+set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)
+
 # general use for rewrite in rust
 alias ls='exa -F'   
 alias lls='exa -lF'                                                       # ls
@@ -11,15 +32,15 @@ alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + e
 alias lS='exa -1'                                                              # one column, just names
 alias lt='exa --tree --level=2'                                         # tree
 abbr tree 'exa -T'
-
+# cat
 alias cat='bat'
 alias catall='bat -A'
-
+# find
 alias find='fd'
 alias finde='fd -e'
 alias findh='fd -H'
 alias findi='fd -I'
-
+# copy
 alias cp='xcp'
 # git
 abbr ga 'git add'
@@ -31,17 +52,5 @@ abbr vim 'nvim'
 abbr vi 'nvim'
 # jupyter lab
 abbr jl 'jupyter-lab'
-
-# PATH
-starship init fish | source
-status is-login; and pyenv init --path | source
-pyenv init - | source
-set -x PATH $HOME/.pyenv/bin $PATH
-set -x PGDATA /usr/local/var/postgres/
-set PATH $PATH /Users/ryosuke/.local/bin
-zoxide init fish | source
-set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
-set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)
 
 set -g take 'https://neuro.dob.jp/~takefuji'
