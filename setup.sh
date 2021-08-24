@@ -24,4 +24,6 @@ done
 
 pyenv install 3.8.7
 
+pyenv global 3.8.7
+
 volta install node
