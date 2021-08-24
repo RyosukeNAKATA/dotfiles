@@ -5,4 +5,5 @@ pyenv
 poetry
 starship
 neovim
-veofetch
+neofetch
+zola
