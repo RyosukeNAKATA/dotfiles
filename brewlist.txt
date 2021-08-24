@@ -2,8 +2,9 @@ fish
 mecab
 mecab-ipadic
 pyenv
-poetry
 starship
 neovim
 neofetch
+postgresql
+tmux
 zola
