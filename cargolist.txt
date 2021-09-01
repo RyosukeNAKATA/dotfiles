@@ -1,3 +1,4 @@
+alacritty
 bat
 xcp
 fd-find
