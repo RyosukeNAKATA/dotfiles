@@ -8,7 +8,7 @@ SETUVAR _fish_abbr_gp:git\x20push
 SETUVAR _fish_abbr_jl:jupyter\x2dlab
 SETUVAR _fish_abbr_take:https\x3a//neuro\x2edob\x2ejp/\x7etakefuji
 SETUVAR _fish_abbr_tk:https\x3a//neuro\x2edob\x2ejp/\x7etakefuji
-SETUVAR _fish_abbr_tree:exa\x20\x2dT
+SETUVAR _fish_abbr_tree:exa\x20\x2dT\x20\x2d\x2dicons
 SETUVAR _fish_abbr_vi:nvim
 SETUVAR _fish_abbr_vim:nvim
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
