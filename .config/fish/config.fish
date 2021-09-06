@@ -48,11 +48,12 @@ alias cp='xcp'
 abbr ga 'git add'
 abbr gc "git commit -m ''"
 abbr gp 'git push'
-
 # neovim
 abbr vim 'nvim'
 abbr vi 'nvim'
 # jupyter lab
 abbr jl 'jupyter-lab'
+# git rm cache
+abbr grm 'git rm -r --cached .'
 
 set -g take 'https://neuro.dob.jp/~takefuji'

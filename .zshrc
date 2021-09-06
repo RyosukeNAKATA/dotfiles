@@ -68,3 +68,4 @@ alias cp='xcp'
 alias ga='git add'
 alias gc="git commit -m ''"
 alias gp='git push'
+alias grm='git rm -r --cached .'
