@@ -13,22 +13,21 @@ eval "$(pyenv init -)"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # general use for rewrite in rust
-alias ls='exa -F'   
-alias lls='exa -lF'                                                       # ls
-alias lla='exa -laF'
-alias l='exa -lbF --git'                                                # list, size, type, git
-alias ll='exa -lbGF --git'                                             # long list
-alias llm='exa -lbGd --git --sort=modified'                            # long list, modified date sort
-alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale'  # all list
-alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale' # all + extended list
+alias ls='exa -F --icons'   
+alias lls='exa -lF --icons'                                                       # ls
+alias lla='exa -laF --icons'
+alias l='exa -lbF --git --icons'                                                # list, size, type, git
+alias ll='exa -lbGF --git --icons'                                             # long list
+alias llm='exa -lbGd --git --sort=modified --icons'                            # long list, modified date sort
+alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'  # all list
+alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' # all + extended list
 # specialty views
-alias lS='exa -1'                                                              # one column, just names
-alias lt='exa --tree --level=2'                                         # tree
-alias tree='exa -T'
+alias lS='exa -1 --icons'                                                              # one column, just names
+alias lt='exa --tree --level=2 --icons'                                         # tree
+alias tree='exa -T --icons'
 # cat
 alias cat='bat'
 alias catall='bat -A'
