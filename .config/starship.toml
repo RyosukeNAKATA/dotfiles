@@ -14,9 +14,6 @@ symbol = " "
 [directory]
 read_only = " "
 
-[docker]
-symbol = " "
-
 [elixir]
 symbol = " "
 
@@ -26,11 +23,22 @@ symbol = " "
 [git_branch]
 symbol = " "
 
+[git_status]
+conflicted = "⚔️ "
+ahead = "🏎️ 💨 ×${count}"
+behind = "🐢 ×${count}"
+diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
+untracked = "🛤️  ×${count}"
+stashed = "📦 "
+modified = "📝 ×${count}"
+staged = "🗃️  ×${count}"
+renamed = "📛 ×${count}"
+deleted = "🗑️  ×${count}"
+style = "bright-white"
+format = "$all_status$ahead_behind"
+
 [golang]
 symbol = " "
-
-[haskell]
-symbol = " "
 
 [hg_branch]
 symbol = " "
@@ -43,6 +51,10 @@ symbol = " "
 
 [memory_usage]
 symbol = " "
+format = "$symbol[${ram}( | ${swap})]($style) "
+threshold = 70
+style = "bold dimmed white"
+disabled = false
 
 [nim]
 symbol = " "
@@ -55,6 +67,7 @@ symbol = " "
 
 [package]
 symbol = " "
+disabled = true
 
 [perl]
 symbol = " "
@@ -72,8 +85,8 @@ python_binary = "python3"
 symbol = " "
 
 [rust]
-symbol = "🦀 "
-format = "via [🦀 $version](red bold)"
+symbol = "♋ "
+# format = "via [🦀 $version](red bold)"
 
 [swift]
 symbol = "ﯣ "
