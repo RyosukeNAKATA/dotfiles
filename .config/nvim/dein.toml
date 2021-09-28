@@ -3,6 +3,9 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
 repo = 'preservim/nerdtree'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
 

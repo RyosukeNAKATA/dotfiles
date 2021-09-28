@@ -56,4 +56,4 @@ abbr jl 'jupyter-lab'
 # git rm cache
 abbr grm 'git rm -r --cached .'
 
-set -g take 'https://neuro.dob.jp/~takefuji'
+set -g take 'https://neuro.dob.jp/~takefuji'fish_add_path /usr/local/opt/curl/bin
