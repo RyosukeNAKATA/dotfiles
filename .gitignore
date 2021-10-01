@@ -11,4 +11,5 @@
 ./.config/nvim/pack
 ./.config/nvim/
 ./.config/TabNine
+TabNine/
 \\wsl.localhost\Arch\home\narchan\dotfiles\.config\configstore
