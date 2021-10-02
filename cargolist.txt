@@ -7,4 +7,5 @@ cargo-update
 viu
 zoxide
 tokei
-zelliji
+zellij
+bottom
