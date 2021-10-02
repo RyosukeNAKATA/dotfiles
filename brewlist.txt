@@ -6,6 +6,5 @@ starship
 neovim
 neofetch
 postgresql
-tmux
 zola
 font-hackgen-nerd
