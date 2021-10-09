@@ -169,6 +169,9 @@ set diffopt+=indent-heuristic
 set showcmd " Show (partial) command in status line.
 set mouse=a " Enable mouse usage (all modes) in terminals
 set shortmess+=c " don't give |ins-completion-menu| messages.
+" 日本語文字化け対策
+set ttimeout
+set ttimeoutlen=50
 
 " Show those damn hidden characters
 " Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
