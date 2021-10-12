@@ -10,7 +10,7 @@ set -x PATH $HOME/.pyenv/bin $PATH
 # volta
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
-
+# for fish
 set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)
 
 # general use for rewrite in rust
@@ -39,8 +39,10 @@ alias cp='xcp'
 # git
 abbr ga 'git add'
 abbr gc "git commit -m ''"
-abbr gp 'git push'
+abbr gps 'git push origin '
+abbr gpl 'git pull origin '
 # neovim
 abbr vim 'nvim'
 abbr vi 'nvim'
 
+abbr grm 'git rm -r --cached .'
