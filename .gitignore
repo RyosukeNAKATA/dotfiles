@@ -10,3 +10,6 @@
 ./.config/nvim/fish
 ./.config/nvim/pack
 fish_variables
+xbuild/
+stetic/
+NuGet
