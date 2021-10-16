@@ -4,24 +4,16 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 set completion-ignore-case on
-TAB: menu-complete
 
-autoload -Uz compinit
-compinit -u
 # カラーを追加
 set colored-stats on
 set colored-completion-prefix on
 set visible-stats on
-# プロンプト設定
-PROMPT='%F{2}%~%f %F{6}$%f '
-# ビープ音を消す
-setopt nolistbeep
 
 # Created by `userpath` on 2020-04-01 08:17:31
 export PATH="$PATH:/Users/ryosuke/.local/bin"
 # homebrew
-alias brew="env PATH=${PATH/\/Users\/ryosuke\/\.pyenv\/shims:/} brew"
-export PATH="/usr/local/sbin:$PATH"
+export PATH="$PATH:/opt/homebrew/bin/"
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 # volta
