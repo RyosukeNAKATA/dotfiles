@@ -71,3 +71,5 @@ alias gp='git push'
 alias grm='git rm -r --cached .'
 # ps
 alias ps='procs'
+
+alias memo='nvim memo.md'

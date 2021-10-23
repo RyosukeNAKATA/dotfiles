@@ -58,4 +58,6 @@ abbr jl 'jupyter-lab'
 # git rm cache
 abbr grm 'git rm -r --cached .'
 
+abbr memo 'nvim memo.md'
+
 set -g take 'https://neuro.dob.jp/~takefuji'fish_add_path /usr/local/opt/curl/bin
