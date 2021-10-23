@@ -22,28 +22,30 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 set -U fish_user_paths (echo $fish_user_paths | tr ' ' '\n' | sort -u)
 
 # general use for rewrite in rust
-alias ls='exa -F --icons'   
-alias lls='exa -lF --icons'                                                       # ls
-alias lla='exa -laF --icons'
-alias l='exa -lbF --git --icons'                                                # list, size, type, git
-alias ll='exa -lbGF --git --icons'                                             # long list
-alias llm='exa -lbGd --git --sort=modified --icons'                            # long list, modified date sort
-alias la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'  # all list
-alias lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons' # all + extended list
+abbr ls 'exa -F --icons'
+abbr lls 'exa -lF --icons'
+abbr lla 'exa -laF --icons'
+abbr l 'exa -lbF --git --icons'
+abbr ll 'exa -lbGF --git --icons'
+abbr llm 'exa -lbGd --git --sort=modified --icons'
+abbr la 'exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'
+abbr lx 'exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons'
 # specialty views
-alias lS='exa -1 --icons'                                                              # one column, just names
-alias lt='exa --tree --level=2 --icons'                                         # tree
+abbr lS 'exa -1 --icons'                                                              # one column, just names
+abbr lt 'exa --tree --level=2 --icons'                                         # tree
 abbr tree 'exa -T --icons'
 # cat
-alias cat='bat'
-alias catall='bat -A'
+abbr cat 'bat'
+abbr catall 'bat -A'
 # find
-alias find='fd'
-alias finde='fd -e'
-alias findh='fd -H'
-alias findi='fd -I'
+abbr = find 'fd'
+abbr = finde 'fd -e'
+abbr = findh 'fd -H'
+abbr = findi 'fd -I'
 # copy
-alias cp='xcp'
+abbr cp 'xcp'
+# ps
+abbr ps 'procs'
 # git
 abbr ga 'git add'
 abbr gc "git commit -m ''"
