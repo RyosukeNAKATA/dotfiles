@@ -137,6 +137,8 @@ set ignorecase
 set smartcase
 set gdefault
 
+
+nnoremap <C-q> <C-v>
 " Search results centered please
 nnoremap <silent> n nzz
 nnoremap <silent> N Nzz
