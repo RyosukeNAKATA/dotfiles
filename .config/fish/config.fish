@@ -46,17 +46,19 @@ abbr = findi 'fd -I'
 abbr cp 'xcp'
 # ps
 abbr ps 'procs'
+# z
+abbr z 'zoxide'
 # git
-abbr ga 'git add'
+abbr ga 'git add -A'
 abbr gc "git commit -m ''"
-abbr gp 'git push'
+abbr gps 'git push'
+abbr gpl 'git pull'
+abbr grm 'git rm -r --cached .'
 # neovim
 abbr vim 'nvim'
 abbr vi 'nvim'
 # jupyter lab
 abbr jl 'jupyter-lab'
-# git rm cache
-abbr grm 'git rm -r --cached .'
 
 abbr memo 'nvim memo.md'
 
