@@ -48,6 +48,8 @@ abbr cp 'xcp'
 abbr ps 'procs'
 # z
 abbr z 'zoxide'
+# diff
+abbr diff 'difftastic'
 # git
 abbr ga 'git add -A'
 abbr gc "git commit -m ''"
