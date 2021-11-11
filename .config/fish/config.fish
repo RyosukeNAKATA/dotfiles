@@ -22,6 +22,7 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 # for fish
 set -U fish_user_paths (echo $fish_user_paths | tr '  ' '\n' | sort -u)
 
+abbr brew 'arch -arm64 brew'
 # general use for rewrite in rust
 abbr ls 'exa -F --icons'
 abbr lls 'exa -lF --icons'
@@ -62,6 +63,7 @@ abbr vim 'nvim'
 abbr vi 'nvim'
 # jupyter lab
 abbr jl 'jupyter-lab'
+
 
 abbr memo 'nvim memo.md'
 

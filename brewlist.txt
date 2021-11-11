@@ -8,3 +8,4 @@ neofetch
 postgresql
 zola
 font-hackgen-nerd
+cbc
