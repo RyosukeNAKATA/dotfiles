@@ -22,8 +22,6 @@ export PATH="/usr/local/sbin:$PATH"
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 # volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -73,3 +71,5 @@ alias grm='git rm -r --cached .'
 alias ps='procs'
 
 alias memo='nvim memo.md'
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

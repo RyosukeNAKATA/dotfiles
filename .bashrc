@@ -17,8 +17,6 @@ export PATH="$PATH:/opt/homebrew/bin/"
 # Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 # volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 # pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -65,3 +63,6 @@ alias ga='git add'
 alias gc="git commit -m ''"
 alias gp='git push'
 alias grm='git rm -r --cached .'
+. "$HOME/.cargo/env"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

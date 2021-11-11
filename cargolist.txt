@@ -1,6 +1,4 @@
 alacritty
-bat
-xcp
 fd-find
 exa
 cargo-update

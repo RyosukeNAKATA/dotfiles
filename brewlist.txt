@@ -1,7 +1,6 @@
 alacritty
 fish
-mecab
-mecab-ipadic
+deno
 pyenv
 starship
 neovim
