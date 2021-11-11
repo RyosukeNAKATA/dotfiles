@@ -2,16 +2,8 @@
 set PATH "/opt/homebrew/bin:/usr/local/bin:$PATH"
 # starship
 starship init fish | source
-# pyenv
-# status is-login; and pyenv init --path | source
-# pyenv init - | source
-set -x PATH $HOME/.pyenv/bin $PATH
-# poetry
-# set PATH=$PATH:$HOME/.poetry/bin
 # postgresql
 set -x PGDATA /usr/local/var/postgres/
-# userpath
-# set PATH $PATH /Users/ryosuke/.local/bin
 # Rust
 set -U fish_user_paths $fish_user_paths $HOME/.cargo/bin
 # zoxide
@@ -22,7 +14,6 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 # for fish
 set -U fish_user_paths (echo $fish_user_paths | tr '  ' '\n' | sort -u)
 
-abbr brew 'arch -arm64 brew'
 # general use for rewrite in rust
 abbr ls 'exa -F --icons'
 abbr lls 'exa -lF --icons'
@@ -64,7 +55,7 @@ abbr vi 'nvim'
 # jupyter lab
 abbr jl 'jupyter-lab'
 
-
+# memo
 abbr memo 'nvim memo.md'
 
 set -g take 'https://neuro.dob.jp/~takefuji'fish_add_path /usr/local/opt/curl/bin
