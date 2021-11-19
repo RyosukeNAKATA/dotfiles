@@ -12,9 +12,9 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
 
-# [[plugins]]
-# repo = 'itchyny/lightline.vim'
-# hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
 
 [[plugins]]
 repo = 'popkirby/lightline-iceberg'
@@ -49,8 +49,10 @@ repo = 'ryanoasis/vim-devicons'
 
 # Language settings ================================================================================
 [[plugins]]
-repo = 'rust-lang/rust.vim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim'
+repo = 'nvie/vim-flake8'
+on_ft = ['python']
 
 [[plugins]]
-repo = 'racer-rust/vim-racer'
+repo = 'tell-k/vim-autopep8'
+on_ft = ['python']
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/python.vim'
