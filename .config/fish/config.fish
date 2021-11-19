@@ -11,6 +11,9 @@ zoxide init fish | source
 # volta
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
+# pyenv
+status is-login; and pyenv init --path | source
+status is-interactive; and pyenv init - | source
 # for fish
 set -U fish_user_paths (echo $fish_user_paths | tr '  ' '\n' | sort -u)
 
