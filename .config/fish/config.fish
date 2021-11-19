@@ -29,15 +29,15 @@ abbr lx 'exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons'
 # specialty views
 abbr lS 'exa -1 --icons'                                                              # one column, just names
 abbr lt 'exa --tree --level=2 --icons'                                         # tree
-abbr tree 'exa -T --icons'
+abbr tree 'exa -aT --icons'
 # cat
 abbr cat 'bat'
 abbr catall 'bat -A'
 # find
-abbr = find 'fd'
-abbr = finde 'fd -e'
-abbr = findh 'fd -H'
-abbr = findi 'fd -I'
+abbr find 'fd'
+abbr finde 'fd -e'
+abbr findh 'fd -H'
+abbr findi 'fd -I'
 # copy
 abbr cp 'xcp'
 # ps
