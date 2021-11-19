@@ -29,7 +29,7 @@ abbr lx 'exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons'
 # specialty views
 abbr lS 'exa -1 --icons'                                                              # one column, just names
 abbr lt 'exa --tree --level=2 --icons'                                         # tree
-abbr tree 'exa -aT --icons'
+abbr tree 'exa -T --icons'
 # cat
 abbr cat 'bat'
 abbr catall 'bat -A'
