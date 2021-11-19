@@ -65,15 +65,6 @@ if has('mouse')
   set mouse=a
 endif
 
-" python
-let g:python_host_prog = expand('~/nvim-python2/bin/python2')
-let g:python3_host_prog = expand('~/nvim-python3/bin/python3')
-" rust
-let g:rustfmt_autosave = 1
-let g:rustfmt_emit_files = 1
-let g:rustfmt_fail_silently = 0
-let g:rust_clip_command = 'xclip -selection clipboard'
-
 " Completion
 " Better display for messages
 set cmdheight=2
@@ -202,7 +193,7 @@ noremap L $
 if has("autocmd")
   augroup redhat
     " In text files, always limit the width of text to 78 characters
-    autocmd BufRead *.txt set tw=78
+    autocmd BufRead *.txt set tw=79
     " When editing a file, always jump to the last cursor position
     autocmd BufReadPost *
     \ if line("'\"") > 0 && line ("'\"") <= line("$") |
