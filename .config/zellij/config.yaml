@@ -256,6 +256,22 @@ plugins:
     - path: strider
       tag: strider
 
+themes:
+  default:
+    fg: [198, 200, 209]
+    bg: [22, 24, 33]
+    black: [22, 24, 33]
+    red: [226, 120, 120]
+    green: [180, 190, 130]
+    yellow: [233, 177, 137]
+    blue: [132, 160, 198]
+    magenta: [160, 147, 199]
+    # cyan: [137, 184, 194]
+    cyan: [132, 160, 198]
+    white: [198, 200, 209]
+    orange: [226, 164, 120]
+
+
 # Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
 # eg. when terminal window with an active zellij session is closed
 # Options:
