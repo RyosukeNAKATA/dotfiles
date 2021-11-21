@@ -48,3 +48,6 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/cocnvim.vim'
 repo = 'ryanoasis/vim-devicons'
 
 # Language settings ================================================================================
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim'
