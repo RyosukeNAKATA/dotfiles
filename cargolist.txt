@@ -1,4 +1,4 @@
-alacritty
+cargo-edit
 fd-find
 exa
 cargo-update
