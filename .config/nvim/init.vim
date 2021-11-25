@@ -58,8 +58,6 @@ set nobackup
 set nowritebackup
 set conceallevel=0
 
-" htmlのマッチするタグに%でジャンプ
-source $VIMRUNTIME/macros/matchit.vim
 
 if has('mouse')
   set mouse=a
@@ -201,3 +199,12 @@ if has("autocmd")
     \ endif
   augroup END
 endif
+
+" For HTML, CSS, SCSS, SASS
+runtime plugins/html.vim
+autocmd FileType html        setlocal sw=2 sts=2 ts=2 et
+autocmd FileType css         setlocal sw=2 sts=2 ts=2 et
+autocmd FileType scss        setlocal sw=2 sts=2 ts=2 et
+autocmd FileType sass        setlocal sw=2 sts=2 ts=2 et
+" htmlのマッチするタグに%でジャンプ
+source $VIMRUNTIME/macros/matchit.vim
