@@ -58,7 +58,7 @@ abbr vi nvim
 # jupyter lab
 abbr jl jupyter-lab
 # cargo-compete
-abbr compete cargo-compete
+abbr compete 'cargo compete'
 
 # memo
 abbr memo 'nvim memo.md'
