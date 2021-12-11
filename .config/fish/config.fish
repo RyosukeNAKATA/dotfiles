@@ -27,25 +27,25 @@ abbr llm 'exa -lbGd --git --sort=modified --icons'
 abbr la 'exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'
 abbr lx 'exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons'
 # specialty views
-abbr lS 'exa -1 --icons'                                                              # one column, just names
-abbr lt 'exa --tree --level=2 --icons'                                         # tree
+abbr lS 'exa -1 --icons' # one column, just names
+abbr lt 'exa --tree --level=2 --icons' # tree
 abbr tree 'exa -T --icons'
 # cat
-abbr cat 'bat'
+abbr cat bat
 abbr catall 'bat -A'
 # find
-abbr find 'fd'
+abbr find fd
 abbr finde 'fd -e'
 abbr findh 'fd -H'
 abbr findi 'fd -I'
 # copy
-abbr cp 'xcp'
+abbr cp xcp
 # ps
-abbr ps 'procs'
+abbr ps procs
 # z
-abbr z 'zoxide'
+abbr z zoxide
 # diff
-abbr diff 'difftastic'
+abbr diff difftastic
 # git
 abbr ga 'git add -A'
 abbr gc "git commit -m ''"
@@ -53,10 +53,12 @@ abbr gps 'git push'
 abbr gpl 'git pull'
 abbr grm 'git rm -r --cached .'
 # neovim
-abbr vim 'nvim'
-abbr vi 'nvim'
+abbr vim nvim
+abbr vi nvim
 # jupyter lab
-abbr jl 'jupyter-lab'
+abbr jl jupyter-lab
+# cargo-compete
+abbr compete cargo-compete
 
 # memo
 abbr memo 'nvim memo.md'
