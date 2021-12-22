@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm';
 return {
-  font = wezterm.font("HackGenNerd"),
+  font = wezterm.font("HackGen35Nerd Console"),
   font_size = 15.0,
   color_scheme = "iceberg-dark",
   window_background_opacity = 0.9,
