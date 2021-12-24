@@ -1,7 +1,7 @@
 bat
+exa
 xcp
 fd-find
-exa
 cargo-update
 viu
 zoxide

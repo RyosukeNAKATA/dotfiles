@@ -1,20 +1,12 @@
 # PATH
 # starship
 starship init fish | source
-# pyenv
-status is-login; and pyenv init --path | source
-pyenv init - | source
-set -x PATH $HOME/.pyenv/bin $PATH
-# poetry
-# set PATH=$PATH:$HOME/.poetry/bin
-# postgresql
-set -x PGDATA /usr/local/var/postgres/
 # userpath
-set PATH $PATH /Users/ryosuke/.local/bin
+set PATH $PATH /Users/acrab/.local/bin
 # Rust
 set -U fish_user_paths $fish_user_paths $HOME/.cargo/bin
 # zoxide
-zoxide init fish | source
+# zoxide init fish | source
 # volta
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH

@@ -3,4 +3,6 @@ starship
 neovim
 neofetch
 zola
+
+# tap必須
 font-hackgen-nerd
