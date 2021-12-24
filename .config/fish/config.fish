@@ -6,7 +6,7 @@ set PATH $PATH /Users/acrab/.local/bin
 # Rust
 set -U fish_user_paths $fish_user_paths $HOME/.cargo/bin
 # zoxide
-# zoxide init fish | source
+zoxide init fish | source
 # volta
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
@@ -44,7 +44,7 @@ abbr z 'zoxide'
 abbr diff 'difftastic'
 # git
 abbr ga 'git add -A'
-abbr gc "git commit -m ''"
+abbr gc "git commit -m"
 abbr gps 'git push'
 abbr gpl 'git pull'
 abbr grm 'git rm -r --cached .'
