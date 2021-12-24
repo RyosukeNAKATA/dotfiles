@@ -1,11 +1,6 @@
-alacritty
 fish
-mecab
-mecab-ipadic
-pyenv
 starship
 neovim
 neofetch
-postgresql
 zola
 font-hackgen-nerd
