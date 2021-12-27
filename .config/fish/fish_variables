@@ -21,7 +21,7 @@ SETUVAR _fish_abbr_finde:fd\x20\x2de
 SETUVAR _fish_abbr_findh:fd\x20\x2dH
 SETUVAR _fish_abbr_findi:fd\x20\x2dI
 SETUVAR _fish_abbr_ga:git\x20add\x20\x2dA
-SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm\x20\x27\x27
+SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm
 SETUVAR _fish_abbr_gp:git\x20push
 SETUVAR _fish_abbr_gpl:git\x20pull\x20origin\x20
 SETUVAR _fish_abbr_gps:git\x20push\x20origin\x20

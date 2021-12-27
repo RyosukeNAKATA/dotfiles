@@ -24,6 +24,7 @@ abbr la 'exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'
 abbr lx 'exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons'
 # specialty views
 abbr lS 'exa -1 --icons'
+abbr lt 'exa -T --icons --level=2'
 abbr tree 'exa -T --icons'
 # cat
 abbr cat 'bat'
@@ -40,8 +41,8 @@ abbr z 'zoxide'
 # git
 abbr ga 'git add -A'
 abbr gc "git commit -m"
-abbr gps 'git push origin '
-abbr gpl 'git pull origin '
+abbr gps 'git push'
+abbr gpl 'git pull'
 # neovim
 abbr vim 'nvim'
 abbr vi 'nvim'
