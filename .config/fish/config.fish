@@ -39,7 +39,7 @@ abbr cp 'xcp'
 abbr z 'zoxide'
 # git
 abbr ga 'git add -A'
-abbr gc "git commit -m ''"
+abbr gc "git commit -m"
 abbr gps 'git push origin '
 abbr gpl 'git pull origin '
 # neovim

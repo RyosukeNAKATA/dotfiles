@@ -15,11 +15,12 @@ SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_catall:bat\x20\x2dA
 SETUVAR _fish_abbr_cp:xcp
+SETUVAR _fish_abbr_emacs:nvim
 SETUVAR _fish_abbr_find:fd
 SETUVAR _fish_abbr_finde:fd\x20\x2de
 SETUVAR _fish_abbr_findh:fd\x20\x2dH
 SETUVAR _fish_abbr_findi:fd\x20\x2dI
-SETUVAR _fish_abbr_ga:git\x20add
+SETUVAR _fish_abbr_ga:git\x20add\x20\x2dA
 SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm\x20\x27\x27
 SETUVAR _fish_abbr_gp:git\x20push
 SETUVAR _fish_abbr_gpl:git\x20pull\x20origin\x20
@@ -38,6 +39,7 @@ SETUVAR _fish_abbr_lx:exa\x20\x2dlbhHigUmuSa\x40\x20\x2d\x2dtime\x2dstyle\x3dlon
 SETUVAR _fish_abbr_tree:exa\x20\x2dT\x20\x2d\x2dicons
 SETUVAR _fish_abbr_vi:nvim
 SETUVAR _fish_abbr_vim:nvim
+SETUVAR _fish_abbr_z:zoxide
 SETUVAR _fisher_jethrokuan_2F_fzf_files:/home/narchan//\x2econfig/fish/functions/__fzf_cd\x2efish\x1e/home/narchan//\x2econfig/fish/functions/__fzf_complete\x2efish\x1e/home/narchan//\x2econfig/fish/functions/__fzf_complete_preview\x2efish\x1e/home/narchan//\x2econfig/fish/functions/__fzf_find_file\x2efish\x1e/home/narchan//\x2econfig/fish/functions/__fzf_get_dir\x2efish\x1e/home/narchan//\x2econfig/fish/functions/__fzf_open\x2efish\x1e/home/narchan//\x2econfig/fish/functions/__fzf_parse_commandline\x2efish\x1e/home/narchan//\x2econfig/fish/functions/__fzf_reverse_isearch\x2efish\x1e/home/narchan//\x2econfig/fish/functions/__fzfcmd\x2efish\x1e/home/narchan//\x2econfig/fish/conf\x2ed/fzf\x2efish
 SETUVAR _fisher_jethrokuan_2F_z_files:/home/narchan//\x2econfig/fish/functions/__z\x2efish\x1e/home/narchan//\x2econfig/fish/functions/__z_add\x2efish\x1e/home/narchan//\x2econfig/fish/functions/__z_clean\x2efish\x1e/home/narchan//\x2econfig/fish/functions/__z_complete\x2efish\x1e/home/narchan//\x2econfig/fish/conf\x2ed/z\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/narchan//\x2econfig/fish/functions/fisher\x2efish\x1e/home/narchan//\x2econfig/fish/completions/fisher\x2efish
@@ -71,4 +73,4 @@ SETUVAR fish_pager_color_completion:\x1d
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:white\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR --export fish_user_paths:/home/narchan//\x2eanyenv/bin
+SETUVAR --export fish_user_paths:/home/narchan//\x2eanyenv/bin\x1e/home/narchan/\x2epoetry/bin
