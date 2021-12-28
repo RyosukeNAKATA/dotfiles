@@ -43,9 +43,10 @@ abbr ga 'git add -A'
 abbr gc "git commit -m"
 abbr gps 'git push'
 abbr gpl 'git pull'
+abbr grm 'git rm -r --cached .'
+# gitui
+abbr tig 'gitui'
 # neovim
 abbr vim 'nvim'
 abbr vi 'nvim'
 abbr emacs 'nvim'
-
-abbr grm 'git rm -r --cached .'
