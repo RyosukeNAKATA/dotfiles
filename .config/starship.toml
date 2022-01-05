@@ -74,7 +74,7 @@ python_binary = "python3"
 symbol = " "
 
 [rust]
-symbol = "♋ "
+symbol = "🦀 "
 # format = "via [🦀 $version](red bold)"
 
 [swift]
