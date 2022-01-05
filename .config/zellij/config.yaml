@@ -1,7 +1,6 @@
 ---
 keybinds:
     unbind: true
-
     normal:
         - action: [SwitchToMode: Locked,]
           key: [Ctrl: 'g',]
@@ -12,14 +11,12 @@ keybinds:
         - action: [SwitchToMode: Tab,]
           key: [Ctrl: 't',]
         - action: [SwitchToMode: Scroll,]
-
           key: [Ctrl: 's',]
         - action: [SwitchToMode: Session,]
           key: [Ctrl: 'o',]
         - action: [Quit,]
           key: [Ctrl: 'q',]
         - action: [NewPane: ]
-
           key: [ Alt: 'n',]
         - action: [MoveFocusOrTab: Left,]
           key: [ Alt: 'h',]
@@ -44,12 +41,9 @@ keybinds:
         - action: [SwitchToMode: Tab,]
           key: [Ctrl: 't',]
         - action: [SwitchToMode: Normal,]
-
           key: [Ctrl: 'r', Char: "\n", Char: ' ',]
         - action: [SwitchToMode: Scroll,]
-
           key: [Ctrl: 's']
-
         - action: [SwitchToMode: Session,]
           key: [Ctrl: 'o',]
         - action: [Quit]
@@ -62,29 +56,23 @@ keybinds:
           key: [Char: 'k', Up, ]
         - action: [Resize: Right,]
           key: [Char: 'l', Right,]
-
         - action: [NewPane: ,]
           key: [ Alt: 'n',]
         - action: [MoveFocus: Left,]
           key: [ Alt: 'h',]
         - action: [MoveFocus: Right,]
-
           key: [ Alt: 'l',]
         - action: [MoveFocus: Down,]
           key: [ Alt: 'j',]
         - action: [MoveFocus: Up,]
-
           key: [ Alt: 'k',]
         - action: [FocusPreviousPane,]
           key: [ Alt: '[',]
         - action: [FocusNextPane,]
-
           key: [ Alt: ']',]
     pane:
         - action: [SwitchToMode: Locked,]
-
           key: [Ctrl: 'g']
-
         - action: [SwitchToMode: Resize,]
           key: [Ctrl: 'n',]
         - action: [SwitchToMode: Tab,]
@@ -94,35 +82,28 @@ keybinds:
         - action: [SwitchToMode: Scroll,]
           key: [Ctrl: 's']
         - action: [SwitchToMode: Session,]
-
           key: [Ctrl: 'o',]
         - action: [Quit,]
           key: [Ctrl: 'q',]
-
         - action: [MoveFocus: Left,]
           key: [ Char: 'h', Left,]
         - action: [MoveFocus: Right,]
           key: [ Char: 'l', Right,]
         - action: [MoveFocus: Down,]
-
           key: [ Char: 'j', Down,]
         - action: [MoveFocus: Up,]
           key: [ Char: 'k', Up,]
         - action: [SwitchFocus,]
-
           key: [Char: 'p']
-
         - action: [NewPane: ,]
           key: [Char: 'n', Alt: 'n',]
         - action: [NewPane: Down,]
           key: [Char: 'd',]
         - action: [NewPane: Right,]
-
           key: [Char: 'r',]
         - action: [CloseFocus,]
           key: [Char: 'x',]
         - action: [ToggleFocusFullscreen,]
-
           key: [Char: 'f',]
         - action: [TogglePaneFrames,]
           key: [Char: 'z',]
@@ -137,10 +118,8 @@ keybinds:
           key: [Ctrl: 'p',]
         - action: [SwitchToMode: Resize,]
           key: [Ctrl: 'n',]
-
         - action: [SwitchToMode: Normal,]
           key: [Ctrl: 't', Char: "\n", Char: ' ',]
-
         - action: [SwitchToMode: Scroll,]
           key: [Ctrl: 's']
         - action: [SwitchToMode: Session,]
@@ -151,7 +130,6 @@ keybinds:
           key: [Ctrl: 'q',]
         - action: [FocusPreviousPane,]
           key: [ Alt: '[',]
-
         - action: [FocusNextPane,]
           key: [ Alt: ']',]
         - action: [GoToPreviousTab,]
@@ -162,7 +140,6 @@ keybinds:
           key: [ Char: 'n',]
         - action: [CloseTab,]
           key: [ Char: 'x',]
-
         - action: [ToggleActiveSyncTab]
           key: [Char: 's']
         - action: [MoveFocus: Left,]
@@ -185,11 +162,9 @@ keybinds:
           key: [ Char: '5',]
         - action: [GoToTab: 6,]
           key: [ Char: '6',]
-
         - action: [GoToTab: 7,]
           key: [ Char: '7',]
         - action: [GoToTab: 8,]
-
           key: [ Char: '8',]
         - action: [GoToTab: 9,]
           key: [ Char: '9',]
@@ -214,9 +189,7 @@ keybinds:
         - action: [Quit,]
           key: [Ctrl: 'q',]
         - action: [ScrollDown,]
-
           key: [Char: 'j', Down,]
-
         - action: [ScrollUp,]
           key: [Char: 'k', Up,]
         - action: [PageScrollDown,]
@@ -256,7 +229,6 @@ keybinds:
           key: [ Alt: 'k',]
         - action: [FocusPreviousPane,]
           key: [ Alt: '[',]
-
         - action: [FocusNextPane,]
           key: [ Alt: ']',]
     session:
@@ -266,17 +238,13 @@ keybinds:
           key: [Ctrl: 'n',]
         - action: [SwitchToMode: Pane,]
           key: [Ctrl: 'p',]
-
         - action: [SwitchToMode: Tab,]
           key: [Ctrl: 't',]
-
         - action: [SwitchToMode: Normal,]
           key: [Ctrl: 'o', Char: "\n", Char: ' ',]
-
         - action: [SwitchToMode: Scroll,]
           key: [Ctrl: 's']
         - action: [Quit,]
-
           key: [Ctrl: 'q',]
         - action: [Detach,]
           key: [Char: 'd',]
@@ -288,8 +256,23 @@ plugins:
     - path: strider
       tag: strider
 
-# Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
+themes:
+  default:
+    fg: [198, 200, 209]
+    bg: [22, 24, 33]
+    black: [22, 24, 33]
+    red: [226, 120, 120]
+    green: [180, 190, 130]
+    yellow: [226, 164, 120]
+    blue: [132, 160, 198]
+    magenta: [226, 120, 120]
+    cyan: [132, 160, 198]
+    white: [198, 200, 209]
+    orange: [226, 164, 120]
+    gray: [129, 133, 150]
 
+
+# Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
 # eg. when terminal window with an active zellij session is closed
 # Options:
 #   - detach (Default)

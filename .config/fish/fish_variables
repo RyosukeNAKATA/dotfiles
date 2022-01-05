@@ -15,6 +15,7 @@ SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_catall:bat\x20\x2dA
 SETUVAR _fish_abbr_cp:xcp
+SETUVAR _fish_abbr_diff:difftastic
 SETUVAR _fish_abbr_emacs:nvim
 SETUVAR _fish_abbr_find:fd
 SETUVAR _fish_abbr_finde:fd\x20\x2de
@@ -22,6 +23,7 @@ SETUVAR _fish_abbr_findh:fd\x20\x2dH
 SETUVAR _fish_abbr_findi:fd\x20\x2dI
 SETUVAR _fish_abbr_ga:git\x20add\x20\x2dA
 SETUVAR _fish_abbr_gc:git\x20commit\x20\x2dm
+SETUVAR _fish_abbr_gf:git\x20fetch
 SETUVAR _fish_abbr_gp:git\x20push
 SETUVAR _fish_abbr_gpl:git\x20pull
 SETUVAR _fish_abbr_gps:git\x20push
@@ -36,6 +38,7 @@ SETUVAR _fish_abbr_lls:exa\x20\x2dlF\x20\x2d\x2dicons
 SETUVAR _fish_abbr_ls:exa\x20\x2dF\x20\x2d\x2dicons
 SETUVAR _fish_abbr_lt:exa\x20\x2dT\x20\x2d\x2dicons\x20\x2d\x2dlevel\x3d2
 SETUVAR _fish_abbr_lx:exa\x20\x2dlbhHigUmuSa\x40\x20\x2d\x2dtime\x2dstyle\x3dlong\x2diso\x20\x2d\x2dgit\x20\x2d\x2dcolor\x2dscale\x20\x2d\x2dicons
+SETUVAR _fish_abbr_ps:procs
 SETUVAR _fish_abbr_tig:gitui
 SETUVAR _fish_abbr_tree:exa\x20\x2dT\x20\x2d\x2dicons
 SETUVAR _fish_abbr_vi:nvim
