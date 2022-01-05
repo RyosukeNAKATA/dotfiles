@@ -36,14 +36,19 @@ abbr findh 'fd -H'
 abbr findi 'fd -I'
 # copy
 abbr cp 'xcp'
+# ps
+abbr ps procs
 # z
 abbr z 'zoxide'
+# diff
+abbr diff difftastic
 # git
 abbr ga 'git add -A'
 abbr gc "git commit -m"
 abbr gps 'git push'
 abbr gpl 'git pull'
 abbr grm 'git rm -r --cached .'
+abbr gf 'git fetch'
 # gitui
 abbr tig 'gitui'
 # neovim
