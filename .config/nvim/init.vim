@@ -153,7 +153,7 @@ set diffopt+=iwhite " No whitespace in vimdiff
 set diffopt+=algorithm:patience
 set diffopt+=indent-heuristic
 " set colorcolumn=80 " and give me a colored column
-:set cc=100                                                                                    
+:set cc=101
 :hi ColorColumn gui=reverse cterm=reverse
 set showcmd " Show (partial) command in status line.
 set mouse=a " Enable mouse usage (all modes) in terminals
