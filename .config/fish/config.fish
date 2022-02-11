@@ -55,3 +55,7 @@ abbr tig 'gitui'
 abbr vim 'nvim'
 abbr vi 'nvim'
 abbr emacs 'nvim'
+# cargo-compete
+abbr compete 'cargo compete'
+
+abbr alupdate 'sudo pacman -Syyu'

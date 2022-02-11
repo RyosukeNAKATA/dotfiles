@@ -12,8 +12,10 @@ SETUVAR Z_DATA:/home/narchan//\x2elocal/share/z/data
 SETUVAR Z_DATA_DIR:/home/narchan//\x2elocal/share/z
 SETUVAR Z_EXCLUDE:\x5e/home/narchan/\x24
 SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr_alupdate:sudo\x20pacman\x20\x2dSyyu
 SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_catall:bat\x20\x2dA
+SETUVAR _fish_abbr_compete:cargo\x20compete
 SETUVAR _fish_abbr_cp:xcp
 SETUVAR _fish_abbr_diff:difftastic
 SETUVAR _fish_abbr_emacs:nvim
