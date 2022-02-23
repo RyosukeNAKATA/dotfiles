@@ -3,11 +3,18 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
+repo = 'vim-denops/denops.vim'
+
+[[plugins]]
 repo = 'preservim/nerdtree'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
 
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
 
 [[plugins]]
 repo = 'popkirby/lightline-iceberg'
