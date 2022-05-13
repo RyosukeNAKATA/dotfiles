@@ -208,3 +208,5 @@ autocmd FileType scss        setlocal sw=2 sts=2 ts=2 et
 autocmd FileType sass        setlocal sw=2 sts=2 ts=2 et
 " htmlのマッチするタグに%でジャンプ
 source $VIMRUNTIME/macros/matchit.vim
+
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
