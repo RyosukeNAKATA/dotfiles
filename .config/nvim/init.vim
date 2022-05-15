@@ -50,7 +50,6 @@ set cursorline
 set showmode
 set showmatch
 set title
-set backspace=indent,eol,start
 set inccommand=split
 set imdisable
 set hidden
@@ -139,7 +138,7 @@ cnoremap %s/ %sm/
 " =============================================================================
 " set guioptions-=T " Remove toolbar
 set vb t_vb= " No more beeps
-set backspace=2 " Backspace over newlines
+set backspace=indent,eol,start" Backspace over newlines
 set nofoldenable
 set ttyfast
 " https://github.com/vim/vim/issues/1735#issuecomment-383353563
