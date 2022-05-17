@@ -47,6 +47,9 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/cocnvim.vim'
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
 
+[[plugins]]
+repo = 'alvan/vim-closetag'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/'
 # Language settings ================================================================================
 [[plugins]]
 repo = 'rust-lang/rust.vim'
