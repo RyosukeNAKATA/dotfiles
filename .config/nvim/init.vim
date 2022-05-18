@@ -32,11 +32,6 @@ endif
 
 "End dein Scripts-------------------------
 
-let $LANG='en_US.UTF-8'
-set encoding=UTF-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileformats=unix,dos,mac
-
 syntax on
 set termguicolors
 set t_Co=256
@@ -83,6 +78,9 @@ let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_frontmatter = 1
 set printfont=:h10
 set printencoding=utf-8
+let $LANG='en_US.UTF-8'
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
 set printoptions=paper:letter
 " Always draw sign column. Prevent buffer moving when adding/deleting sign.
 set signcolumn=yes
