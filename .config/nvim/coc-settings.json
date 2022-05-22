@@ -9,6 +9,7 @@
     "javascriptreact",
     "javascript",
     "json",
-    "graphql"
+    "graphql",
+    "stpl"
   ]
 }
