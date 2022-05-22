@@ -35,11 +35,8 @@ endif
 
 "End dein Scripts-------------------------
 
-let $LANG='en_US.UTF-8'
+
 set guifont=HackGenNerd
-set encoding=UTF-8
-set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
-set fileformats=unix,dos,mac
 
 syntax on
 set termguicolors
@@ -54,7 +51,6 @@ set cursorline
 set showmode
 set showmatch
 set title
-set backspace=indent,eol,start
 set inccommand=split
 set imdisable
 set hidden
@@ -98,7 +94,9 @@ let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_auto_insert_bullets = 0
 let g:vim_markdown_frontmatter = 1
 set printfont=:h10
-set printencoding=utf-8
+let $LANG='en_US.UTF-8'
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
 set printoptions=paper:letter
 " Always draw sign column. Prevent buffer moving when adding/deleting sign.
 set signcolumn=yes
@@ -156,7 +154,7 @@ cnoremap %s/ %sm/
 " =============================================================================
 " set guioptions-=T " Remove toolbar
 set vb t_vb= " No more beeps
-set backspace=2 " Backspace over newlines
+set backspace=indent,eol,start " Backspace over newlines
 set nofoldenable
 set ttyfast
 " https://github.com/vim/vim/issues/1735#issuecomment-383353563
