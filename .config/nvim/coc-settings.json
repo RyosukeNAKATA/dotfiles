@@ -10,6 +10,8 @@
     "javascript",
     "json",
     "graphql",
-    "stpl"
+    "stpl",
+    "go"
   ]
 }
+
