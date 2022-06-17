@@ -14,6 +14,9 @@ set -gx PATH "$VOLTA_HOME/bin" $PATH
 # pyenv
 status is-login; and pyenv init --path | source
 status is-interactive; and pyenv init - | source
+# go
+set -x GOPATH $HOME/.go
+set -x PATH $GOPATH/bin $PATH
 # for fish
 set -U fish_user_paths (echo $fish_user_paths | tr '  ' '\n' | sort -u)
 
@@ -53,7 +56,7 @@ abbr gps 'git push'
 abbr gpl 'git pull'
 abbr grm 'git rm -r --cached .'
 # gitui
-abbr tig 'gitui'
+abbr tig gitui
 # neovim
 abbr vim nvim
 abbr vi nvim
@@ -64,5 +67,3 @@ abbr compete 'cargo compete'
 
 # memo
 abbr memo 'nvim memo.md'
-
-set -g take 'https://neuro.dob.jp/~takefuji'fish_add_path /usr/local/opt/curl/bin
