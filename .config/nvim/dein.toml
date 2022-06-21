@@ -12,10 +12,6 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
 
-# [[plugins]]
-# repo = 'itchyny/lightline.vim'
-# hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
-
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/lualine.vim'
