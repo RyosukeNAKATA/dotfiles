@@ -166,8 +166,6 @@ set listchars=tab:»-,nbsp:¬,extends:»,precedes:«,trail:•,eol:↲
 inoremap <silent> jj <ESC>
 inoremap <silent> っｊ <ESC>
 
-let g:auto_save = 1
-let g:auto_save_in_insert_mode = 0
 
 if has('vim_starting')
     " 挿入モード時に非点滅の縦棒タイプのカーソル

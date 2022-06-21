@@ -4,7 +4,7 @@ endif
 
 let g:quickrun_config = {
   \  "_" : {
-  \    "outputter": "popup",
+  \    "split": "popup",
   \  }
   \}
 
