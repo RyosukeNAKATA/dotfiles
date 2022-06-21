@@ -31,17 +31,9 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
-
-syntax on
-set termguicolors
-set t_Co=256
-set background=dark
-colorscheme iceberg
-
-set autoindent
-set smartindent
-set clipboard=unnamed,unnamedplus
-set cursorline
+" ==============================================================================
+" # Editor settings
+" ==============================================================================
 set showmode
 set showmatch
 set title
@@ -51,21 +43,19 @@ set hidden
 set nobackup
 set nowritebackup
 set conceallevel=0
-
-
-if has('mouse')
-  set mouse=a
-endif
-
+set cursorline
+set clipboard=unnamed,unnamedplus
+set smartindent
 " Completion
 " Better display for messages
 set cmdheight=2
 " You will have bad experience for diagnostic messages when it's default 4000.
 set updatetime=300
-
-" =============================================================================
-" # Editor settings
-" =============================================================================
+syntax on
+set termguicolors
+set t_Co=256
+set background=dark
+colorscheme iceberg
 filetype plugin indent on
 set autoindent
 set timeoutlen=300 " http://stackoverflow.com/questions/2158516/delay-before-o-opens-a-new-line
@@ -84,28 +74,22 @@ set fileformats=unix,dos,mac
 set printoptions=paper:letter
 " Always draw sign column. Prevent buffer moving when adding/deleting sign.
 set signcolumn=yes
-
 " Settings needed for .lvimrc
 set exrc
 set secure
-
 " Sane splits
 set splitright
 set splitbelow
-
 " Permanent undo
 set undodir=~/.vimdid
 set undofile
-
 " Decent wildmenu
 set wildmenu
 set wildmode=list:longest
 set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
-
 " Use wide tabs
 set tabstop=4
 set noexpandtab
-
 " Wrapping options
 set formatoptions=tc " wrap text and comments using textwidth
 set formatoptions+=r " continue comments when pressing ENTER in I mode
@@ -131,9 +115,9 @@ nnoremap ? ?\v
 nnoremap / /\v
 cnoremap %s/ %sm/
 
-" =============================================================================
+" ==============================================================================
 " # GUI settings
-" =============================================================================
+" ==============================================================================
 " set guioptions-=T " Remove toolbar
 set vb t_vb= " No more beeps
 set backspace=indent,eol,start" Backspace over newlines
@@ -153,20 +137,21 @@ set diffopt+=indent-heuristic
 :set cc=101
 :hi ColorColumn gui=reverse cterm=reverse
 set showcmd " Show (partial) command in status line.
-set mouse=a " Enable mouse usage (all modes) in terminals
+" Enable mouse usage (all modes) in terminals
+if has('mouse')
+  set mouse=a
+endif
 set shortmess+=c " don't give |ins-completion-menu| messages.
 " 日本語文字化け対策
 set ttimeout
 set ttimeoutlen=50
-
 " Show those damn hidden characters
 " Verbose: set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
 set listchars=tab:»-,nbsp:¬,extends:»,precedes:«,trail:•,eol:↲
-
+" insert mode to noemal mode on jj
 inoremap <silent> jj <ESC>
 inoremap <silent> っｊ <ESC>
-
-
+" cursor line view
 if has('vim_starting')
     " 挿入モード時に非点滅の縦棒タイプのカーソル
     let &t_SI .= "\e[6 q"
@@ -175,14 +160,12 @@ if has('vim_starting')
     " 置換モード時に非点滅の下線タイプのカーソル
     let &t_SR .= "\e[4 q"
 endif
-
 "インサートモードのままカーソル移動
 inoremap <C-f> <C-g>U<Right>
 inoremap <C-f><C-f> <C-g>U<ESC><S-a>
 "Ctrl+h/lで行頭/末に移動
 noremap H ^ 
 noremap L $
-
 if has("autocmd")
   augroup redhat
     " In text files, always limit the width of text to 78 characters
@@ -194,7 +177,9 @@ if has("autocmd")
     \ endif
   augroup END
 endif
-
+" ==============================================================================
+" # such langeage settings
+" ==============================================================================
 " For HTML, CSS, SCSS, SASS
 runtime plugins/html.vim
 autocmd FileType html        setlocal sw=2 sts=2 ts=2 et
@@ -203,5 +188,4 @@ autocmd FileType scss        setlocal sw=2 sts=2 ts=2 et
 autocmd FileType sass        setlocal sw=2 sts=2 ts=2 et
 " htmlのマッチするタグに%でジャンプ
 source $VIMRUNTIME/macros/matchit.vim
-
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
