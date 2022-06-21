@@ -1,4 +1,4 @@
-# General ==========================================================================================
+# General ======================================================================
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -12,13 +12,15 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
 
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
+# [[plugins]]
+# repo = 'itchyny/lightline.vim'
+# hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
 
 [[plugins]]
-repo = 'popkirby/lightline-iceberg'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
+repo = 'nvim-lualine/lualine.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/lualine.vim'
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
 
 [[plugins]]
 repo = 'thinca/vim-quickrun'
@@ -37,6 +39,19 @@ repo = 'vim-scripts/vim-auto-save'
 repo = 'cohama/lexima.vim'
 
 [[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
+repo = 'alvan/vim-closetag'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/closetag.vim'
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+
+# Language settings ============================================================
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 build = '''
@@ -44,13 +59,6 @@ build = '''
 '''
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/cocnvim.vim'
 
-[[plugins]]
-repo = 'ryanoasis/vim-devicons'
-
-[[plugins]]
-repo = 'alvan/vim-closetag'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/closetag.vim'
-# Language settings ================================================================================
 [[plugins]]
 repo = 'rust-lang/rust.vim'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim'
