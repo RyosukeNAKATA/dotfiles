@@ -1,41 +1,47 @@
-# General ==========================================================================================
+# ==============================================================================
+# General settings
+# ==============================================================================
+# plugin manager
 [[plugins]]
 repo = 'Shougo/dein.vim'
-
-[[plugins]]
-repo = 'vim-denops/denops.vim'
-
+# show directory structure
 [[plugins]]
 repo = 'preservim/nerdtree'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
-
+# iceberg theme for vim
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
-
+# decorate status line
 [[plugins]]
-repo = 'itchyny/lightline.vim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
-
+repo = 'nvim-lualine/lualine.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/lualine.vim'
+# Graphical icons for nvim in lua
 [[plugins]]
-repo = 'popkirby/lightline-iceberg'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/lightline.vim'
-
+repo = 'kyazdani42/nvim-web-devicons'
+# run commands in nvim
 [[plugins]]
 repo = 'thinca/vim-quickrun'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim'
-
+# show indent levels
 [[plugins]]
 repo = 'Yggdroot/indentLine'
-
+# switch between commmentout and uncomment
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
-
+# auto save on normal mode
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
-
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-auto-save.vim'
+# auto close parentheses
 [[plugins]]
 repo = 'cohama/lexima.vim'
-
+# fzf like plugin for nvim in llua
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+# ==============================================================================
+# Language settings
+# ==============================================================================
+# lsp manager
 [[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
@@ -43,14 +49,14 @@ build = '''
   git checkout release
 '''
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/cocnvim.vim'
-
+# auto close tags in html, xml...
 [[plugins]]
-repo = 'ryanoasis/vim-devicons'
-
-# Language settings ================================================================================
+repo = 'alvan/vim-closetag'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/closetag.vim'
+# supoprt for rust
 [[plugins]]
 repo = 'rust-lang/rust.vim'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim'
-
+# plugin for lua
 [[plugins]]
-repo = 'racer-rust/vim-racer'
+repo = 'nvim-lua/plenary.nvim'
