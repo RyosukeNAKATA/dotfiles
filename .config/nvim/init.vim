@@ -118,6 +118,8 @@ cnoremap %s/ %sm/
 " ==============================================================================
 " # GUI settings
 " ==============================================================================
+set guifont=HackGen35Nerd\ Console:h15
+let g:neovide_refresh_rate=60
 " set guioptions-=T " Remove toolbar
 set vb t_vb= " No more beeps
 set backspace=indent,eol,start" Backspace over newlines
