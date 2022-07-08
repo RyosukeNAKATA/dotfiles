@@ -1,7 +1,6 @@
 # How to use
 
-```Bash: Terminal
+```zsh: Terminal
 $ cd dotfiles
 $ sh setup.sh
 ```
-
