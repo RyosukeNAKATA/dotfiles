@@ -56,7 +56,7 @@ abbr gps 'git push'
 abbr gpl 'git pull'
 abbr grm 'git rm -r --cached .'
 # gitui
-abbr tig gitui
+abbr gu gitui
 # neovim
 abbr vim nvim
 abbr vi nvim
