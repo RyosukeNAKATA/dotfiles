@@ -10,7 +10,7 @@ repo = 'vim-denops/denops.vim'
 # Dark deno-powered UI framework for neovim/Vim8
 [[plugins]]
 repo = 'Shougo/ddu.vim'
-source = 'source ~/dotfiles/.config/nvim/plugins/ddu.vim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu.vim'
 # File source for ddu.vim ------------------------------------------------------
 # source
 [[plugins]]
@@ -25,10 +25,11 @@ repo = 'Shougo/ddu-column-filename'
 # File listing UI for ddu.vim
 [[plugins]]
 repo = 'Shougo/ddu-ui-filer'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu-ui-filer.vim'
 # show directory structure
-[[plugins]]
-repo = 'preservim/nerdtree'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
+# [[plugins]]
+# repo = 'preservim/nerdtree'
+# hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
 # iceberg theme for vim
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
