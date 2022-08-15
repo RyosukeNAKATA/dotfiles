@@ -74,7 +74,7 @@ function! s:ddu_filer_my_settings() abort
     \ <Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'yank'})<CR>
 endfunction
 
-nmap <silent> ;d <Cmd>call ddu#start({
+nmap <silent> <C-b> <Cmd>call ddu#start({
 \   'name': 'filer',
 \   'uiParams': {'filer': {'search': expand('%:p')}},
 \ })<CR>
