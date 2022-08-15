@@ -11,7 +11,7 @@ repo = 'vim-denops/denops.vim'
 [[plugins]]
 repo = 'Shougo/ddu.vim'
 source = 'source ~/dotfiles/.config/nvim/plugins/ddu.vim'
-# File source for ddu.vim =================
+# File source for ddu.vim ------------------------------------------------------
 # source
 [[plugins]]
 repo = 'Shougo/ddu-source-file'
@@ -21,7 +21,7 @@ repo = 'Shougo/ddu-kind-file'
 # colmn
 [[plugins]]
 repo = 'Shougo/ddu-column-filename'
-# =========================================
+# ------------------------------------------------------------------------------
 # File listing UI for ddu.vim
 [[plugins]]
 repo = 'Shougo/ddu-ui-filer'
@@ -36,6 +36,13 @@ repo = 'cocopon/iceberg.vim'
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/lualine.vim'
+# colorize color code
+[[plugins]]
+repo = 'norcalli/nvim-colorizer.lua'
+on_event = 'BufEnter'
+hook_source = '''
+  lua require'colorizer'.setup()
+'''
 # Graphical icons for nvim in lua
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
