@@ -4,6 +4,27 @@
 # plugin manager
 [[plugins]]
 repo = 'Shougo/dein.vim'
+# An ecosystem of Vim/Neovim which allows developers to write plugins in Deno
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+# Dark deno-powered UI framework for neovim/Vim8
+[[plugins]]
+repo = 'Shougo/ddu.vim'
+source = 'source ~/dotfiles/.config/nvim/plugins/ddu.vim'
+# File source for ddu.vim =================
+# source
+[[plugins]]
+repo = 'Shougo/ddu-source-file'
+# kind
+[[plugins]]
+repo = 'Shougo/ddu-kind-file'
+# colmn
+[[plugins]]
+repo = 'Shougo/ddu-column-filename'
+# =========================================
+# File listing UI for ddu.vim
+[[plugins]]
+repo = 'Shougo/ddu-ui-filer'
 # show directory structure
 [[plugins]]
 repo = 'preservim/nerdtree'
@@ -38,26 +59,6 @@ repo = 'cohama/lexima.vim'
 # fzf like plugin for nvim in llua
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
-# An ecosystem of Vim/Neovim which allows developers to write plugins in Deno
-[[plugins]]
-repo = 'vim-denops/denops.vim'
-# Dark deno-powered UI framework for neovim/Vim8
-[[plugins]]
-repo = 'Shougo/ddu.vim'
-# File source for ddu.vim =================
-# source
-[[plugins]]
-repo = 'Shougo/ddu-source-file'
-# kind
-[[plugins]]
-repo = 'Shougo/ddu-kind-file'
-# colmn
-[[plugins]]
-repo = 'Shougo/ddu-column-filename'
-# =========================================
-# File listing UI for ddu.vim
-[[plugins]]
-repo = 'Shougo/ddu-ui-filer'
 # ==============================================================================
 # Language settings
 # ==============================================================================
