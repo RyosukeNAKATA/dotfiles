@@ -26,10 +26,6 @@ repo = 'Shougo/ddu-column-filename'
 [[plugins]]
 repo = 'Shougo/ddu-ui-filer'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu-ui-filer.vim'
-# show directory structure
-# [[plugins]]
-# repo = 'preservim/nerdtree'
-# hook_add = 'source ~/dotfiles/.config/nvim/plugins/nerdtree.vim'
 # iceberg theme for vim
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
