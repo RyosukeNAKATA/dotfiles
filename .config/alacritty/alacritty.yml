@@ -438,10 +438,13 @@ live_config_reload: true
 # Default:
 #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
 #   - (Windows) powershell
-#shell:
+shell:
 #  program: /bin/bash
-#  args:
-#    - --login
+  program: /opt/homebrew/bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
 
 # Startup directory
 #
