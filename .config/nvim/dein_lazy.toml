@@ -1,0 +1,5 @@
+# colorize color code
+[[plugins]]
+repo = 'norcalli/nvim-colorizer.lua'
+on_event = 'BufEnter'
+hook_source = 'source ~/dotfiles/.config/nvim/plugins/nvim-colorizer.nvim.lua'

@@ -12,7 +12,12 @@ call dein#begin('/Users/ryosuke/.cache/dein')
 " Let dein manage dein
 " Required:
 " call dein#add('/Users/ryosuke/.cache/dein/repos/github.com/Shougo/dein.vim')
-call dein#load_toml('/Users/ryosuke/dotfiles/.config/nvim/dein.toml')
+" call dein#load_toml('/Users/ryosuke/dotfiles/.config/nvim/dein.toml')
+let s:toml_dir  = $HOME . '/dotfiles/.config/nvim' 
+let s:toml      = s:toml_dir . '/dein.toml'
+let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
+call dein#load_toml(s:toml,      {'lazy': 0})
+call dein#load_toml(s:lazy_toml, {'lazy': 1})
 
 " Add or remove your plugins here like this:
 call dein#add('Shougo/neosnippet.vim')

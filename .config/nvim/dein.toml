@@ -7,11 +7,11 @@ repo = 'Shougo/dein.vim'
 # An ecosystem of Vim/Neovim which allows developers to write plugins in Deno
 [[plugins]]
 repo = 'vim-denops/denops.vim'
+# File source for ddu.vim ------------------------------------------------------
 # Dark deno-powered UI framework for neovim/Vim8
 [[plugins]]
 repo = 'Shougo/ddu.vim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu.vim'
-# File source for ddu.vim ------------------------------------------------------
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu.vim.lua'
 # source
 [[plugins]]
 repo = 'Shougo/ddu-source-file'
@@ -22,66 +22,95 @@ repo = 'Shougo/ddu-kind-file'
 [[plugins]]
 repo = 'Shougo/ddu-column-filename'
 # ------------------------------------------------------------------------------
-# File listing UI for ddu.vim
-[[plugins]]
-repo = 'Shougo/ddu-ui-filer'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu-ui-filer.vim'
-# iceberg theme for vim
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
-# decorate status line
-[[plugins]]
-repo = 'nvim-lualine/lualine.nvim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/lualine.vim'
-# colorize color code
-[[plugins]]
-repo = 'norcalli/nvim-colorizer.lua'
-on_event = 'BufEnter'
-hook_source = '''
-  lua require'colorizer'.setup()
-'''
-# Graphical icons for nvim in lua
-[[plugins]]
-repo = 'kyazdani42/nvim-web-devicons'
-# run commands in nvim
+# run commands on neovim
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim'
-# show indent levels
-[[plugins]]
-repo = 'Yggdroot/indentLine'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim.lua'
 # switch between commmentout and uncomment
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 # auto save on normal mode
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-auto-save.vim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-auto-save.vim.lua'
 # auto close parentheses
 [[plugins]]
 repo = 'cohama/lexima.vim'
 # fzf like plugin for nvim in llua
 [[plugins]]
 repo = 'nvim-telescope/telescope.nvim'
+# Restore cursor position
+[[plugins]]
+repo = 'ethanholz/nvim-lastplace'
+# jump anywhere in a document with as few keystrokes as possible.
+[[plugins]]
+repo = 'phaazon/hop.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/hop.nvim.lua'
+# ==============================================================================
+# GUI settings
+# ==============================================================================
+# File listing UI for ddu.vim
+[[plugins]]
+repo = 'Shougo/ddu-ui-filer'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu-ui-filer.vim.lua'
+# Graphical icons for nvim in lua
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
+# decorate status line
+[[plugins]]
+repo = 'nvim-lualine/lualine.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/lualine.lua'
+# iceberg theme for vim
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+# show and colorize indent levels
+[[plugins]]
+repo = 'lukas-reineke/indent-blankline.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/indent-blankline.nvim.lua'
 # ==============================================================================
 # Language settings
 # ==============================================================================
-# lsp manager
+# Completion framework:
 [[plugins]]
-repo = 'neoclide/coc.nvim'
-rev = 'release'
-build = '''
-  git checkout release
-'''
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/cocnvim.vim'
+repo = 'hrsh7th/nvim-cmp' 
+# LSP completion source:
+[[plugins]]
+repo = 'hrsh7th/cmp-nvim-lsp'
+# Useful completion sources:
+[[plugins]]
+repo = 'hrsh7th/cmp-nvim-lua'
+[[plugins]]
+repo = 'hrsh7th/cmp-nvim-lsp-signature-help'
+[[plugins]]
+repo = 'hrsh7th/cmp-vsnip'                             
+[[plugins]]
+repo = 'hrsh7th/cmp-path'                              
+[[plugins]]
+repo = 'hrsh7th/cmp-buffer'                            
+[[plugins]]
+repo = 'hrsh7th/vim-vsnip'
+# Portable package manager for Neovim
+[[plugins]]
+repo = 'williamboman/mason.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/mason.nvim.lua'
+# mason-lspconfig bridges mason.nvim with the lspconfig plugin
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/mason-lspconfig.nvim.lua'
+# Configs for the Nvim LSP client 
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+# support for Rust
+[[plugins]]
+repo = 'simrat39/rust-tools.nvim'
+# support for Lua
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+# Preview markdown code directly in your neovim terminal
+[[plugins]]
+repo = 'ellisonleao/glow.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/glow.nvim.lua'
 # auto close tags in html, xml...
 [[plugins]]
 repo = 'alvan/vim-closetag'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/closetag.vim'
-# supoprt for rust
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim'
-# plugin for lua
-[[plugins]]
-repo = 'nvim-lua/plenary.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/closetag.vim.lua'
