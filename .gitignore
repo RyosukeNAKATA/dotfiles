@@ -1,15 +1,9 @@
 .DS_Store
-*/.DS_Store
 */coc/
-*/colors
-*/configstore
-*/fontforge
 .config/.config
 ./.config/fish/completions
 ./.config/fish/fish_variables
 ./.config/nvim/fish
 ./.config/nvim/pack
 fish_variables
-xbuild/
-stetic/
-NuGet
+*/.vimdid/
