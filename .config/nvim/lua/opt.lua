@@ -56,7 +56,7 @@ vim.opt.wildignorecase = true
 -- set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
 vim.opt.wildignore = {'.DS_Store','*.obj','.svn','*~','*.png','*.jpg','*.gif','*.min.js','*.swp','*.o'}
 -- -- Permanent undo
-vim.opt.undodir = '~/.vimdid'
+vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
 vim.opt.undofile = true
 -- Wrapping options
 -- t: Auto wrap text using 'textwidth'.
