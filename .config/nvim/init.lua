@@ -1,28 +1,4 @@
--- load dein.vim
---vim.cmd([[
---  if &compatible
---    set nocompatible
---  endif
---  set runtimepath+=/Users/ryosuke/.cache/dein/repos/github.com/Shougo/dein.vim
---  call dein#begin('/Users/ryosuke/.cache/dein')
---  let s:toml_dir  = $HOME . '/dotfiles/.config/nvim' 
---  let s:toml      = s:toml_dir . '/dein.toml'
---  let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
---  call dein#load_toml(s:toml,      {'lazy': 0})
---  call dein#load_toml(s:lazy_toml, {'lazy': 1})s/.config/nvim/dein.toml')
---  call dein#add('Shougo/neosnippet.vim')
---  call dein#add('Shougo/neosnippet-snippets')
---  call dein#end()
---  filetype plugin indent on
---  syntax enable
---  if dein#check_install()
---    call dein#install()
---  endif
---]])
-
--- 自動で dein#recache_runtimepath() する
 vim.api.nvim_set_var('dein#auto_recache', 1)
--- neovimのリモートプラグインを遅延読み込み
 vim.api.nvim_set_var('dein#lazy_rplugins', 1)
 vim.api.nvim_set_var('dein#enable_notification', 1)
 vim.api.nvim_set_var('dein#install_max_processes', 16)
