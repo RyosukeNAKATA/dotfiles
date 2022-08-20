@@ -120,17 +120,8 @@ vim.opt.number = true
 -- diff options
 -- set diffopt+=iwhite: No whitespace in vimdiff
 vim.opt.diffopt:append({ 'iwhite' })
--- Make diffing better: https://vimways.org/2018/the-power-of-diff/
--- vim.opt.diffopt:append({ 'algorithm,patience' })
--- vim.opt.diffopt:append({ 'indent-heuristic' })
 -- set cc=101
 vim.wo.colorcolumn = "101"
--- set shortmess+=c: don't give |ins-completion-menu| messages.
--- vim.opt.shortmess:append({ 'c' })
--- set listchars=nbsp:¬,eol:¶,extends:»,precedes:«,trail:•
--- vim.opt.listchars = {'tab:»-,nbsp:¬,extends:»,precedes:«,trail:•,eol:↲,space:⋅'}
--- set guicursor: cursor line view
--- vim.o.guicursor = {'i:ver100','n:block','r:hor100'}
 -- menuone: popup even when there's only one match
 -- noinsert: Do not insert text until a selection is made
 -- noselect: Do not select, force to select one from the menu
