@@ -30,7 +30,7 @@ vim.cmd([[
       nnoremap <buffer><silent><expr> <CR>
         \ ddu#ui#filer#is_directory() ?
         \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'narrow'})<CR>" :
-        \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'command': 'vsplit'}})<CR>"
+        \ "<Cmd>call ddu#ui#filer#do_action('itemAction', {'name': 'open', 'params': {'split': 'no'}})<CR>"
 
       nnoremap <buffer><silent><expr> <Space>
         \ ddu#ui#filer#is_directory() ?
