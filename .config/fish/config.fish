@@ -1,9 +1,5 @@
-# PATH
-set PATH "/opt/homebrew/bin:/usr/local/bin:$PATH"
 # starship
 starship init fish | source
-# postgresql
-set -x PGDATA /usr/local/var/postgres/
 # Rust
 set -U fish_user_paths $fish_user_paths $HOME/.cargo/bin
 # zoxide
@@ -11,59 +7,54 @@ zoxide init fish | source
 # volta
 set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
-# pyenv
-status is-login; and pyenv init --path | source
-status is-interactive; and pyenv init - | source
 # go
 set -x GOPATH $HOME/.go
 set -x PATH $GOPATH/bin $PATH
 # for fish
-set -U fish_user_paths (echo $fish_user_paths | tr '  ' '\n' | sort -u)
+# set -U fish_user_paths (echo $fish_user_paths | tr '  ' '\n' | sort -u)
 
 # general use for rewrite in rust
-abbr ls 'exa -F --icons'
-abbr lls 'exa -lF --icons'
-abbr lla 'exa -laF --icons'
-abbr l 'exa -lbF --git --icons'
-abbr ll 'exa -lbGF --git --icons'
-abbr llm 'exa -lbGd --git --sort=modified --icons'
-abbr la 'exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'
-abbr lx 'exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons'
+# abbr ls 'exa -F --icons'
+# abbr lls 'exa -lF --icons'
+# abbr lla 'exa -laF --icons'
+# abbr l 'exa -lbF --git --icons'
+# abbr ll 'exa -lbGF --git --icons'
+# abbr llm 'exa -lbGd --git --sort=modified --icons'
+# abbr la 'exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'
+# abbr lx 'exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons'
 # specialty views
-abbr lS 'exa -1 --icons' # one column, just names
-abbr lt 'exa --tree --level=2 --icons' # tree
-abbr tree 'exa -T --icons'
+# abbr lS 'exa -1 --icons' # one column, just names
+# abbr lt 'exa --tree --level=2 --icons' # tree
+# abbr tree 'exa -T --icons'
 # cat
-abbr cat bat
-abbr catall 'bat -A'
+# abbr cat bat
+# abbr catall 'bat -A'
 # find
-abbr find fd
-abbr finde 'fd -e'
-abbr findh 'fd -H'
-abbr findi 'fd -I'
+# abbr find fd
+# abbr finde 'fd -e'
+# abbr findh 'fd -H'
+# abbr findi 'fd -I'
 # copy
-abbr cp xcp
+# abbr cp xcp
 # ps
-abbr ps procs
+# abbr ps procs
 # z
-abbr z zoxide
+# abbr z zoxide
 # diff
-abbr diff difftastic
+# abbr diff difftastic
 # git
-abbr ga 'git add -A'
-abbr gc "git commit -m"
-abbr gps 'git push'
-abbr gpl 'git pull'
-abbr grm 'git rm -r --cached .'
+# abbr ga 'git add -A'
+# abbr gc "git commit -m"
+# abbr gps 'git push'
+# abbr gpl 'git pull'
+# abbr grm 'git rm -r --cached .'
 # gitui
-abbr gu gitui
+# abbr gu gitui
 # neovim
-abbr vim nvim
-abbr vi nvim
-# jupyter lab
-abbr jl jupyter-lab
+# abbr vim nvim
+# abbr vi nvim
 # cargo-compete
-abbr compete 'cargo compete'
+# abbr compete 'cargo compete'
 
 # memo
-abbr memo 'nvim memo.md'
+# abbr memo 'nvim memo.md'

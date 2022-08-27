@@ -68,7 +68,7 @@ window:
   #
   # Window opacity as a floating point number from `0.0` to `1.0`.
   # The value `0.0` is completely transparent and `1.0` is opaque.
-  opacity: 0.9
+  opacity: 0.5
 
   # Startup Mode (changes require restart)
   #
@@ -119,46 +119,46 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: HackGen35 Console NFJ
+    family: PlemolJP35 Console NF
 
     # The `style` can be specified to pick a specific face.
     style: Regular
 
   # Bold font face
-  bold:
+  # bold:
     # Font family
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: HackGen35 Console NFJ
+    # family: HackGen35 Console NFJ
 
     # The `style` can be specified to pick a specific face.
-    style: Bold
+    # style: Bold
 
   # Italic font face
-  italic:
+  # italic:
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: HackGen35 Console NFJ
+    # family: HackGen35 Console NFJ
 
     # The `style` can be specified to pick a specific face.
     #style: Italic
 
   # Bold italic font face
-  bold_italic:
+  # bold_italic:
     # Font family
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: HackGen35 Console NFJ
+    # family: HackGen35 Console NFJ
 
     # The `style` can be specified to pick a specific face.
     #style: Bold Italic
 
   # Point size
-  size: 14.0
+  size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -439,12 +439,12 @@ live_config_reload: true
 #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
 #   - (Windows) powershell
 shell:
-#  program: /bin/bash
-  program: /opt/homebrew/bin/fish
-  args:
-    - -l
-    - -c
-    - "tmux attach || tmux"
+  program: /usr/bin/fish
+#program: /opt/homebrew/bin/fish
+#  args:
+#    - -l
+#    - -c
+#    - "tmux attach || tmux"
 
 # Startup directory
 #
