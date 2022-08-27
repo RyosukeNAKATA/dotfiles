@@ -56,9 +56,6 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu-ui-filer.vim.lua'
 # Graphical icons for nvim in lua
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
-# Graphical nerdtree for nvim in lua
-[[plugins]]
-repo = 'kyazdani42/nvim-tree.lua'
 # decorate status line
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
@@ -85,11 +82,11 @@ repo = 'hrsh7th/cmp-nvim-lua'
 [[plugins]]
 repo = 'hrsh7th/cmp-nvim-lsp-signature-help'
 [[plugins]]
-repo = 'hrsh7th/cmp-vsnip'                             
+repo = 'hrsh7th/cmp-vsnip'
 [[plugins]]
-repo = 'hrsh7th/cmp-path'                              
+repo = 'hrsh7th/cmp-path'
 [[plugins]]
-repo = 'hrsh7th/cmp-buffer'                            
+repo = 'hrsh7th/cmp-buffer'
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
 # Portable package manager for Neovim
