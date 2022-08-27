@@ -1,19 +1,17 @@
 local wezterm = require 'wezterm';
 return {
-  use_ime=true,
-  font = wezterm.font("Fira Code"),
-  font_size = 15.0,
+  use_ime = true,
+  font = wezterm.font("PlemolJP35 Console NF"),
+  font_size = 10.0,
   color_scheme = "iceberg-dark",
-  window_background_opacity = 0.9,
+  window_background_image = "~/Pictures/mamimi.jpg",
+  window_background_opacity = 0.7,
   enable_tab_bar = true,
   window_padding = {
     left = 15,
     right = 15,
     top = 5,
-    bottom = 15,
+    bottom = 5,
   },
-  initial_cols = 190,
-  initial_rows = 70,
   adjust_window_size_when_changing_font_size = true,
-  native_macos_fullscreen_mode = true,
 }

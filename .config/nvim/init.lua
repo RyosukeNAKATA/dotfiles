@@ -27,16 +27,17 @@ if vim.call('dein#load_state', dein_dir) == 1 then
 	vim.call('dein#save_state')
 end
 
--- load other settings
-require('keymap')
-require('lsp')
-require('opt')
 
 vim.api.nvim_command [[colorscheme iceberg]]
 vim.api.nvim_create_autocmd(
 	"ColorScheme",
 	{ pattern = "*", command = "hi ColorColumn gui=reverse cterm=italic" }
 )
+
+-- load other settings
+require('keymap')
+require('lsp')
+require('opt')
 -- cofign for nvim-lastplace
 require'nvim-lastplace'.setup {
     lastplace_ignore_buftype = {"quickfix", "nofile", "help"},
