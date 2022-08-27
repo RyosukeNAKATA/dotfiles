@@ -56,6 +56,9 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu-ui-filer.vim.lua'
 # Graphical icons for nvim in lua
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
+# Graphical nerdtree for nvim in lua
+[[plugins]]
+repo = 'kyazdani42/nvim-tree.lua'
 # decorate status line
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
