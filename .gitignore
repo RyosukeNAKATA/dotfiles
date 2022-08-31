@@ -5,6 +5,10 @@
 ./.config/fish/fish_variables
 ./.config/nvim/fish
 ./.config/nvim/pack
+*/fish/completions
+*/fish/conf.d
+*/fish/functions
+*/fish/fish_plugins
 */BraveSoftware
 */fcitx
 */fcitx5
