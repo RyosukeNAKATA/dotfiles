@@ -1,4 +1,4 @@
-# How to use on Arch Linux
+# For on Arch Linux
 
 ```zsh: Terminal
 $ cd dotfiles
