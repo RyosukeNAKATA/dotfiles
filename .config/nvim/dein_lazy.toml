@@ -4,6 +4,6 @@ repo = 'norcalli/nvim-colorizer.lua'
 hook_source = 'source ~/dotfiles/.config/nvim/plugins/nvim-colorizer.nvim.lua'
 # remove all background for making nvin transparent
 [[plugins]]
-repo = 'xiyaowong/nvim-transparent'
 on_event = 'BufEnter'
+repo = 'xiyaowong/nvim-transparent'
 hook_source = 'source ~/dotfiles/.config/nvim/plugins/nvim-transparent.lua'

@@ -30,6 +30,7 @@ exec --no-startup-id dex --autostart --environment i3
 # cursor acceleration
 exec --no-startup-id xset m 1000 1
 # background
+exec --no-startup-id picom -b
 exec --no-startup-id ~/.fehbg
 # Screen brightness
 exec --no-startup-id fcitx5
@@ -193,5 +194,11 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+	font pango:PlemolJP35 Console NF 10
+	position top
+	status_command /usr/bin/bumblebee-status \
+		-m nic disk:root cpu memory battery date time pasink \
+		-p nic.format="{ssid}" root.path=/ memory.format="{used}/{total}({percent:.01f}%)" date.format="%a, %d %b %Y" time.format="%H:%M" \
+		-t iceberg-rainbow 
 }
+
