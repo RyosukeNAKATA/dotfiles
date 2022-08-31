@@ -53,3 +53,5 @@ abbr gu gitui
 # neovim
 abbr vim nvim
 abbr vi nvim
+# pbcopy
+abbr pbcopy 'xclip -selection c'
