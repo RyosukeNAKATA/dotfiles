@@ -7,3 +7,6 @@
 ./.config/nvim/pack
 fish_variables
 */.vimdid/
+*/fish/conf.d
+*/fish/completions
+*/fish/functions
