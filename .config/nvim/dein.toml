@@ -82,11 +82,11 @@ repo = 'hrsh7th/cmp-nvim-lua'
 [[plugins]]
 repo = 'hrsh7th/cmp-nvim-lsp-signature-help'
 [[plugins]]
-repo = 'hrsh7th/cmp-vsnip'                             
+repo = 'hrsh7th/cmp-vsnip'
 [[plugins]]
-repo = 'hrsh7th/cmp-path'                              
+repo = 'hrsh7th/cmp-path'
 [[plugins]]
-repo = 'hrsh7th/cmp-buffer'                            
+repo = 'hrsh7th/cmp-buffer'
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
 # Portable package manager for Neovim
@@ -100,6 +100,13 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/mason-lspconfig.nvim.lua'
 # Configs for the Nvim LSP client 
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
+# DAP(Debug Adapter Protocol)
+[[plugins]]
+repo = 'mfussenegger/nvim-dap'
+# Linter & Formatter
+[[plugins]]
+repo = 'jose-elias-alvarez/null-ls.nviz'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/null-ls.lua'
 # support for Rust
 [[plugins]]
 repo = 'simrat39/rust-tools.nvim'
