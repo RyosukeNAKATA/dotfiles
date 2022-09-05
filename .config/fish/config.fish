@@ -4,6 +4,9 @@ set PATH "/opt/homebrew/bin:/usr/local/bin:$PATH"
 starship init fish | source
 # postgresql
 # set -x PGDATA /usr/local/var/postgres/
+# rbenv
+set -x PATH $HOME/.rbenv/bin $PATH
+status --is-interactive; and source (rbenv init -|psub)
 # Rust
 set -U fish_user_paths $fish_user_paths $HOME/.cargo/bin
 # zoxide
