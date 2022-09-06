@@ -21,6 +21,9 @@ repo = 'Shougo/ddu-kind-file'
 # colmn
 [[plugins]]
 repo = 'Shougo/ddu-column-filename'
+# Icon and filename column for ddu.vim
+[[plugins]]
+repo = 'ryota2357/ddu-column-icon_filename'
 # ------------------------------------------------------------------------------
 # run commands on neovim
 [[plugins]]
