@@ -1,6 +1,6 @@
 vim.cmd ([[
     call ddu#custom#patch_global({
-		\	'columns': ['icon_filename'],
+		\   'columns': ['icon_filename'],
         \   'ui': 'filer',
         \   'sources': [{'name': 'file', 'params': {}}],
         \   'sourceOptions': {
