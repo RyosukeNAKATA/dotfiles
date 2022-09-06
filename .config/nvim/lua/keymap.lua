@@ -9,9 +9,9 @@ vim.keymap.set('n', '?', '?\v')
 vim.keymap.set('n', '/', '/\v')
 -- insert mode to noemal mode on jj
 vim.keymap.set('i', 'jj', '<ESC>', {silent = true})
---インサートモードのままカーソル移動
 vim.keymap.set('i', '<C-f>', '<C-g>U<Right>')
 vim.keymap.set('i', '<C-f><C-f>', '<C-g>U<ESC><S-a>')
--- H/Lで行頭/末に移動
 vim.keymap.set('n', 'H', '^')
 vim.keymap.set('n', 'L', '$')
+vim.keymap.set('v', 'H', '^')
+vim.keymap.set('v', 'L', '$')
