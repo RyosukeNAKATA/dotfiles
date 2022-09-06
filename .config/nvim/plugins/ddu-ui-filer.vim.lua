@@ -9,7 +9,7 @@ vim.cmd([[
     \   ],
     \   'sourceOptions': {
     \     '_': {
-    \       'columns': ['filename'],
+    \       'columns': ['icon_filename'],
     \     },
     \   },
     \   'kindOptions': {
