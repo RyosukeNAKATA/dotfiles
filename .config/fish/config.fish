@@ -64,6 +64,10 @@ abbr vi nvim
 abbr jl jupyter-lab
 # cargo-compete
 abbr compete 'cargo compete'
+# docker
+abbr di 'docker image'
+abbr dct 'docker container'
+abbr dcm 'docker compose'
 
 # memo
 abbr memo 'nvim memo.md'
