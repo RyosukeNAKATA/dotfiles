@@ -7,11 +7,13 @@ vim.keymap.set('n', 'g*', 'g*zz', {silent = true})
 -- Very magic by default
 vim.keymap.set('n', '?', '?\v')
 vim.keymap.set('n', '/', '/\v')
--- insert mode to noemal mode on jj
+-- insert mode to normal mode on jj
 vim.keymap.set('i', 'jj', '<ESC>', {silent = true})
---インサートモードのままカーソル移動
+-- Move curosr when C-f on Insert Mode
 vim.keymap.set('i', '<C-f>', '<C-g>U<Right>')
 vim.keymap.set('i', '<C-f><C-f>', '<C-g>U<ESC><S-a>')
--- H/Lで行頭/末に移動
+-- Move to head/last of line on H/L
 vim.keymap.set('n', 'H', '^')
 vim.keymap.set('n', 'L', '$')
+vim.keymap.set('v', 'H', '^')
+vim.keymap.set('v', 'L', '$')

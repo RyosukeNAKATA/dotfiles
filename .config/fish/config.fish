@@ -19,6 +19,9 @@ set -x GOPATH $HOME/.go
 set -x PATH $GOPATH/bin $PATH
 # for fish
 set -U fish_user_paths (echo $fish_user_paths | tr '  ' '\n' | sort -u)
+# For (https://github.com/high-moctane/mocword-data)
+set -x MOCWORD_DATA "~/.cache/mocword.sqlite"
+
 
 # general use for rewrite in rust
 abbr ls 'exa -F --icons'
