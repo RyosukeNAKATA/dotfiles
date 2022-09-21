@@ -1,5 +1,4 @@
 vim.cmd([[
-
 inoremap <silent><expr> <TAB>
       \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
       \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
@@ -9,6 +8,16 @@ inoremap <C-n>   <Cmd>call pum#map#select_relative(+1)<CR>
 inoremap <C-p>   <Cmd>call pum#map#select_relative(-1)<CR>
 inoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
 inoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+
+imap <silent><expr> <Down>
+      \ pum#visible() ? '<Cmd>call pum#map#select_relative(+1)<CR>' :
+      \ '<Down>'
+imap <silent><expr> <Up>
+      \ pum#visible() ? '<Cmd>call pum#map#select_relative(-1)<CR>' :
+      \ '<Up>'
+imap <silent><expr> <CR>
+      \ pum#visible() ? '<Cmd>call pum#map#confirm()<CR>' :
+      \ '<CR>'
 
 call ddc#custom#patch_global('autoCompleteEvents', [
     \ 'InsertEnter', 'TextChangedI', 'TextChangedP',
@@ -38,6 +47,7 @@ function! CommandlinePre() abort
   " Enable command line completion
   call ddc#enable_cmdline_completion()
 endfunction
+
 function! CommandlinePost() abort
   cunmap <Tab>
   cunmap <S-Tab>

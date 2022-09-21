@@ -24,8 +24,6 @@ xmap        S   <Plug>(vsnip-cut-text)
 
 " If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
 let g:vsnip_filetypes = {}
-let g:vsnip_filetypes.javascriptreact = ['javascript']
-let g:vsnip_filetypes.typescriptreact = ['typescript']
 
 " For pum.vim
 autocmd User PumCompleteDone call vsnip_integ#on_complete_done(g:pum#completed_item)
