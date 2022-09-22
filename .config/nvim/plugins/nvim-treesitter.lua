@@ -3,7 +3,7 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = { "python", "lua", "rust" },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
-  sync_install = false,
+  -- sync_install = false,
 
   -- Automatically install missing parsers when entering buffer
   auto_install = true,
@@ -28,7 +28,7 @@ require'nvim-treesitter.configs'.setup {
     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
+    -- additional_vim_regex_highlighting = false,
   },
   rainbow = {
     enable = true,
@@ -40,10 +40,22 @@ require'nvim-treesitter.configs'.setup {
 	-- Setting colors
     colors = {
       -- Colors here
+      "#e27878",
+      "#e2a478",
+      "#b4be82",
+      "#89b8c2",
+      "#84a0c6",
+      "#a093c7",
     },
     -- Term colors
     termcolors = {
       -- Term colors here
+      "red",
+      "yellow",
+      "green",
+      "cyan",
+      "blue",
+      "magenta",
     }
   }
 }
