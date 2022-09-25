@@ -3,7 +3,7 @@ local act = wezterm.action
 
 return {
   use_ime=true,
-  font = wezterm.font("Fira Code"),
+  font = wezterm.font("UDEV Gothic 35NFLG"),
   font_size = 15.0,
   color_scheme = "iceberg-dark",
   window_background_opacity = 0.9,
