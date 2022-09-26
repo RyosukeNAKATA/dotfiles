@@ -21,7 +21,8 @@ set -x PATH $GOPATH/bin $PATH
 set -U fish_user_paths (echo $fish_user_paths | tr '  ' '\n' | sort -u)
 # For (https://github.com/high-moctane/mocword-data)
 set -x MOCWORD_DATA "~/.cache/mocword.sqlite"
-
+# search dot files/dirs for fzf.fish
+set fzf_fd_opts --hidden --exclude=.git
 
 # general use for rewrite in rust
 abbr ls 'exa -F --icons'
