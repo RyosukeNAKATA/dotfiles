@@ -1,7 +1,3 @@
-[[plugins]]
-repo = 'Djancyp/better-comments.nvim'
-on_event = 'BufEnter'
-hook_source = 'source ~/dotfiles/.config/nvim/plugins/better-comments.nvim.lua'
 # colorize color code
 [[plugins]]
 repo = 'norcalli/nvim-colorizer.lua'
