@@ -73,7 +73,7 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/indent-blankline.nvim.lua'
 # highlights code using tree-sitter
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
-# highlights  using tree-sitter
+# highlights using tree-sitter
 [[plugins]]
 repo = 'p00f/nvim-ts-rainbow'
 on_source = ['nvim-treesitter']
