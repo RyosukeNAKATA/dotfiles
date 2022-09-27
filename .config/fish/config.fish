@@ -16,6 +16,8 @@ set -gx VOLTA_HOME "$HOME/.volta"
 set -gx PATH "$VOLTA_HOME/bin" $PATH
 # for fish
 set -U fish_user_paths (echo $fish_user_paths | tr '  ' '\n' | sort -u)
+# search dot files/dirs for fzf.fish
+set fzf_fd_opts --hidden --exclude=.git
 
 # general use for rewrite in rust
 abbr ls 'exa -F --icons'
