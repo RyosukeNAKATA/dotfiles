@@ -141,6 +141,8 @@ repo = 'rafamadriz/friendly-snippets'
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Linter & Formatter
 [[plugins]]
+repo = 'simrat39/rust-tools.nvim'
+[[plugins]]
 repo = 'jose-elias-alvarez/null-ls.nvim'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/null-ls.lua'
 # Preview markdown code directly in your neovim terminal
