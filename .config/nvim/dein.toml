@@ -143,10 +143,6 @@ repo = 'rafamadriz/friendly-snippets'
 [[plugins]]
 repo = 'jose-elias-alvarez/null-ls.nvim'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/null-ls.lua'
-# Rust Auto do rustfmt
-[[plugins]]
-reop = 'rust-lang/rust.vim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/rust.vim.lua'
 # Preview markdown code directly in your neovim terminal
 [[plugins]]
 repo = 'ellisonleao/glow.nvim'
