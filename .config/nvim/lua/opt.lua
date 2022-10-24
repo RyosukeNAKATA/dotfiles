@@ -21,7 +21,7 @@ vim.opt.writebackup = false
 vim.opt.backup = false
 -- set noswapfile: disable to make swp files
 vim.opt.swapfile = false
--- set conceallevel=0: 
+-- set conceallevel=0:
 vim.opt.conceallevel = 0
 -- set cursorline
 vim.opt.cursorline = true
@@ -38,15 +38,18 @@ vim.opt.wrap = false
 -- set nojoinspaces: Insert a single space when J or gJ and concatenating lines
 vim.opt.joinspaces = false
 -- set fileencodings=utf-8,iso-2022-jp,euc-jp,sjis
-vim.opt.fileencodings = {'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis'}
+vim.opt.fileencodings = { 'utf-8', 'iso-2022-jp', 'euc-jp', 'sjis' }
 -- set fileencoding=utf-8
 vim.opt.fileencoding = 'utf-8'
 -- set fileformats=unix,dos,mac
-vim.opt.fileformats = {'unix', 'dos', 'mac'}
+vim.opt.fileformats = { 'unix', 'dos', 'mac' }
 -- set tabstop=4
 vim.opt.tabstop = 4
--- set noexpandtab
-vim.opt.expandtab = false
+vim.opt.shiftwidth = 4
+-- set expandtab
+vim.opt.expandtab = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
 -- set wildmenu
 vim.opt.wildmenu = true
 -- set wildmode=list:longest
@@ -54,7 +57,7 @@ vim.opt.wildmode = 'longest,full'
 -- set wildignorecase
 vim.opt.wildignorecase = true
 -- set wildignore=.hg,.svn,*~,*.png,*.jpg,*.gif,*.settings,Thumbs.db,*.min.js,*.swp,publish/*,intermediate/*,*.o,*.hi,Zend,vendor
-vim.opt.wildignore = {'.DS_Store','*.obj','.svn','*~','*.png','*.jpg','*.gif','*.min.js','*.swp','*.o'}
+vim.opt.wildignore = { '.DS_Store', '*.obj', '.svn', '*~', '*.png', '*.jpg', '*.gif', '*.min.js', '*.swp', '*.o' }
 -- -- Permanent undo
 vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
 vim.opt.undofile = true
@@ -85,7 +88,7 @@ vim.opt.background = 'dark'
 vim.opt.smartindent = true
 -- set breakindent
 vim.opt.breakindent = true
--- set cmdheight=2: Better display for messages 
+-- set cmdheight=2: Better display for messages
 vim.opt.cmdheight = 2
 -- set printencoding=utf-8
 vim.opt.printencoding = 'utf-8'
@@ -127,8 +130,8 @@ vim.wo.colorcolumn = "101"
 -- noselect: Do not select, force to select one from the menu
 -- shortness: avoid showing extra messages when using completion
 -- updatetime: set updatetime for CursorHold
-vim.opt.completeopt = {'menuone', 'noselect', 'noinsert'}
-vim.opt.shortmess = vim.opt.shortmess + { c = true}
+vim.opt.completeopt = { 'menuone', 'noselect', 'noinsert' }
+vim.opt.shortmess = vim.opt.shortmess + { c = true }
 vim.api.nvim_set_option('updatetime', 300)
 vim.cmd([[
     set signcolumn=yes
