@@ -100,7 +100,7 @@ depends = ['denops.vim']
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddc.vim.lua'
 # ui settings for ddc
 [[plugins]]
-repo = 'Shougo/ddc-ui-native'
+repo = 'Shougo/ddc-ui-pum'
 # nvim-lsp completion for ddc.vim
 [[plugins]]
 repo = 'Shougo/ddc-nvim-lsp'
