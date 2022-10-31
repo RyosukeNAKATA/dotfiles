@@ -1,7 +1,7 @@
 vim.cmd([[
 call ddc#custom#patch_global(
-      \  'completionMenu',
-      \  'pum.vim'
+      \  'ui',
+      \  'pum'
       \  )
 call ddc#custom#patch_global('sources', [
       \  'nvim-lsp',      
