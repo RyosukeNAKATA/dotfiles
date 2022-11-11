@@ -21,9 +21,6 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-auto-save.vim.lua'
 # auto close parentheses
 [[plugins]]
 repo = 'cohama/lexima.vim'
-# fzf like plugin for nvim in llua
-[[plugins]]
-repo = 'nvim-telescope/telescope.nvim'
 # Restore cursor position
 [[plugins]]
 repo = 'ethanholz/nvim-lastplace'
