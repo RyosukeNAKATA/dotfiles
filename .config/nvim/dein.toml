@@ -131,13 +131,6 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/denops-popup-preview.vim.lua'
 [[plugins]]
 repo = 'matsui54/denops-signature_help'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/denops-signature_help.lua'
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip'
-[[plugins]]
-repo = 'hrsh7th/vim-vsnip-integ'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-vsnip-integ.lua'
-[[plugins]]
-repo = 'rafamadriz/friendly-snippets'
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Linter & Formatter
 [[plugins]]

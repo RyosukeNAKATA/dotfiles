@@ -8,7 +8,6 @@ call ddc#custom#patch_global('sources', [
       \  'nvim-lsp',      
       \  'around', 
       \  'file',      
-      \  'vsnip'
       \  ])
 
 call ddc#custom#patch_global('sourceOptions', {
