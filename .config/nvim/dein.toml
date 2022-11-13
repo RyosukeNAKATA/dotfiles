@@ -28,9 +28,6 @@ repo = 'ethanholz/nvim-lastplace'
 [[plugins]]
 repo = 'phaazon/hop.nvim'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/hop.nvim.lua'
-[[plugins]]
-repo = 'gelguy/wilder.nvim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/wilder.nvim.lua'
 # ==============================================================================
 # GUI settings
 # ==============================================================================
