@@ -104,7 +104,7 @@ repo = 'Shougo/pum.vim'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/pum.vim'
 # Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 [[plugins]]
-repo = 'olke/noice.nvim'
+repo = 'folke/noice.nvim'
 # ui settings for ddc
 [[plugins]]
 repo = 'Shougo/ddc-ui-pum'
