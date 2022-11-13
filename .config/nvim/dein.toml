@@ -74,7 +74,7 @@ repo = 'nvim-treesitter/nvim-treesitter'
 [[plugins]]
 repo = 'p00f/nvim-ts-rainbow'
 on_source = ['nvim-treesitter']
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/nvim-treesitter.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/nvim-treesitter.nvim.lua'
 # ==============================================================================
 # Language settings
 # ==============================================================================
