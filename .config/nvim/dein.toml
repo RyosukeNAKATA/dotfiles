@@ -92,6 +92,9 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/mason-lspconfig.nvim.lua'
 repo = 'Shougo/ddc.vim'
 depends = ['denops.vim']
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddc.vim'
+# im completion source for neocomplete/deoplete/ddc.
+[[plugins]]
+repo = 'Shougo/neco-vim'
 # nvim-lsp completion for ddc.vim
 [[plugins]]
 repo = 'Shougo/ddc-nvim-lsp'
