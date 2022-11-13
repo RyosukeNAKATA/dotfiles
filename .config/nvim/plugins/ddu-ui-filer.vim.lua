@@ -23,6 +23,7 @@ vim.cmd([[
     \       'split': 'vertical',
     \       'splitDirection': 'topleft',
     \       'sort': 'filename',
+    \       'sortTreesFirst': 'true',
     \     }
     \   },
     \ })
