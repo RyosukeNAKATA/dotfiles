@@ -1,4 +1,3 @@
-vim.cmd([[
 call ddc#custom#patch_global(
       \  'ui',
       \  'pum'
@@ -44,4 +43,3 @@ inoremap <silent><expr> <TAB>
 inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 
 call ddc#enable()
-]])

@@ -1,4 +1,3 @@
-vim.cmd([[
 inoremap <silent><expr> <TAB>
       \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
       \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
@@ -62,4 +61,3 @@ function! CommandlinePost() abort
     call ddc#custom#set_buffer({})
   endif
 endfunction
-]])

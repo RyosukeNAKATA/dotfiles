@@ -10,14 +10,14 @@ repo = 'vim-denops/denops.vim'
 # run commands on neovim
 [[plugins]]
 repo = 'thinca/vim-quickrun'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim'
 # switch between commmentout and uncomment
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 # auto save on normal mode
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-auto-save.vim.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-auto-save.vim'
 # auto close parentheses
 [[plugins]]
 repo = 'cohama/lexima.vim'
@@ -38,7 +38,7 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/wilder.nvim.lua'
 # Dark deno-powered UI framework for neovim/Vim8
 [[plugins]]
 repo = 'Shougo/ddu.vim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu.vim.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu.vim'
 # source
 [[plugins]]
 repo = 'Shougo/ddu-source-file'
@@ -51,7 +51,7 @@ repo = 'ryota2357/ddu-column-icon_filename'
 # File listing UI for ddu.vim
 [[plugins]]
 repo = 'Shougo/ddu-ui-filer'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu-ui-filer.vim.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu-ui-filer.vim'
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Graphical icons for nvim in lua
 [[plugins]]
@@ -59,7 +59,7 @@ repo = 'kyazdani42/nvim-web-devicons'
 # decorate status line
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/lualine.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/lualine.nvim.lua'
 # iceberg theme for vim
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
@@ -81,7 +81,7 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/nvim-treesitter.lua'
 # built in LSP on NeoVim
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/nvim-lspconfig.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/nvim-lspconfig.nvim.lua'
 # Portable package manager for Neovim
 [[plugins]]
 repo = 'williamboman/mason.nvim'
@@ -94,7 +94,7 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/mason-lspconfig.nvim.lua'
 [[plugins]]
 repo = 'Shougo/ddc.vim'
 depends = ['denops.vim']
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddc.vim.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddc.vim'
 # ui settings for ddc
 [[plugins]]
 repo = 'Shougo/ddc-ui-pum'
@@ -104,7 +104,7 @@ repo = 'Shougo/ddc-nvim-lsp'
 # Framework library to implement original popup menu completion.
 [[plugins]]
 repo = 'Shougo/pum.vim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/pum.vim.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/pum.vim'
 # Source for completion existing words around the cursor. 
 [[plugins]]
 repo = 'Shougo/ddc-around'
@@ -126,18 +126,18 @@ repo = 'Shougo/ddc-converter_remove_overlap'
 # Show completion documentation
 [[plugins]]
 repo = 'matsui54/denops-popup-preview.vim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/denops-popup-preview.vim.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/denops-popup-preview.vim'
 # Shows signature help from lsp server.
 [[plugins]]
 repo = 'matsui54/denops-signature_help'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/denops-signature_help.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/denops-signature_help.vim'
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Linter & Formatter
 [[plugins]]
 repo = 'simrat39/rust-tools.nvim'
 [[plugins]]
 repo = 'jose-elias-alvarez/null-ls.nvim'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/null-ls.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/null-ls.nvim.lua'
 # Preview markdown code directly in your neovim terminal
 [[plugins]]
 repo = 'ellisonleao/glow.nvim'
@@ -145,4 +145,4 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/glow.nvim.lua'
 # auto close tags in html, xml...
 [[plugins]]
 repo = 'alvan/vim-closetag'
-hook_add = 'source ~/dotfiles/.config/nvim/plugins/closetag.vim.lua'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/closetag.vim'
