@@ -92,9 +92,6 @@ hook_add = 'source ~/dotfiles/.config/nvim/plugins/mason-lspconfig.nvim.lua'
 repo = 'Shougo/ddc.vim'
 depends = ['denops.vim']
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddc.vim'
-# ui settings for ddc
-[[plugins]]
-repo = 'Shougo/ddc-ui-pum'
 # nvim-lsp completion for ddc.vim
 [[plugins]]
 repo = 'Shougo/ddc-nvim-lsp'
@@ -102,6 +99,12 @@ repo = 'Shougo/ddc-nvim-lsp'
 [[plugins]]
 repo = 'Shougo/pum.vim'
 hook_add = 'source ~/dotfiles/.config/nvim/plugins/pum.vim'
+# Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+[[plugins]]
+repo = 'olke/noice.nvim'
+# ui settings for ddc
+[[plugins]]
+repo = 'Shougo/ddc-ui-pum'
 # Source for completion existing words around the cursor. 
 [[plugins]]
 repo = 'Shougo/ddc-around'

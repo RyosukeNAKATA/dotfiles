@@ -4,9 +4,9 @@ call ddc#custom#patch_global(
       \  )
 
 call ddc#custom#patch_global('sources', [
-      \  'nvim-lsp',      
+      \  'nvim-lsp',
       \  'around', 
-      \  'file',      
+      \  'file',
       \  ])
 
 call ddc#custom#patch_global('sourceOptions', {
@@ -32,9 +32,9 @@ call ddc#custom#patch_filetype('markdown', 'sourceParams', {
       \ })
 
 call ddc#custom#patch_global('autoCompleteEvents', [
-	\ 'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
-	nnoremap :       <Cmd>call CommandlinePre()<CR>:
-	
+\ 'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
+nnoremap :       <Cmd>call CommandlinePre()<CR>:
+
 function! CommandlinePre() abort
   cnoremap <Tab>   <Cmd>call pum#map#insert_relative(+1)<CR>
   cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
