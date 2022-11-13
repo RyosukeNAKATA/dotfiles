@@ -31,6 +31,8 @@ call ddc#custom#patch_global('autoCompleteEvents', [
 	\ 'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
 nnoremap :       <Cmd>call CommandlinePre()<CR>:
 
+call ddc#enable()
+
 function! CommandlinePre() abort
   cnoremap <Tab>   <Cmd>call pum#map#insert_relative(+1)<CR>
   cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
@@ -68,5 +70,3 @@ function! CommandlinePost() abort
     call ddc#custom#set_buffer({})
   endif
 endfunction
-
-call ddc#enable()
