@@ -32,7 +32,11 @@ call ddc#custom#patch_filetype('markdown', 'sourceParams', {
       \ })
 
 call ddc#custom#patch_global('autoCompleteEvents', [
-\ 'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
+      \ 'InsertEnter',
+      \ 'TextChangedI',
+      \ 'TextChangedP',
+      \ 'CmdlineChanged'
+      \ ])
 nnoremap :       <Cmd>call CommandlinePre()<CR>:
 
 function! CommandlinePre() abort
@@ -72,8 +76,5 @@ function! CommandlinePost() abort
     call ddc#custom#set_buffer({})
   endif
 endfunction
-
-" <S-TAB>: completion back.
-inoremap <expr><S-TAB>  pumvisible() ? '<C-p>' : '<C-h>'
 
 call ddc#enable()
