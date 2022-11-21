@@ -22,6 +22,8 @@ vim.cmd([[
     \       'winWidth': 30,
     \       'split': 'vertical',
     \       'splitDirection': 'topleft',
+    \       'sort': 'filename',
+    \      'sortTreesFirst': 'true',
     \     }
     \   },
     \ })
