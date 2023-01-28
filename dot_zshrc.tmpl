@@ -10,6 +10,7 @@ if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
     source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     autoload -Uz compinit
+    zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
     compinit
 fi
 # fzf completions ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
