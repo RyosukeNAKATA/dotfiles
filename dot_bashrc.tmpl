@@ -1,0 +1,31 @@
+set completion-ignore-case on
+
+# カラーを追加
+set colored-stats on
+set colored-completion-prefix on
+set visible-stats on
+
+# Created by `userpath` on 2020-04-01 08:17:31
+export PATH="$PATH:/Users/ryosuke/.local/bin"
+# homebrew
+export PATH="$PATH:/opt/homebrew/bin/"
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+# volta
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+# poetry
+$HOME/.poetry/bin:$PATH
+export PATH=$PATH:$HOME/.poetry/bin
+# postgresql
+export PATH=$PATH:/Library/PostgreSQL/11/bin
+# starship
+eval "$(starship init bash)"
+
+export XDG_BASE_HOME='~/.config'
+export TERM=xterm-256color
+
+. "$HOME/.cargo/env"
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

@@ -1,0 +1,151 @@
+# ==============================================================================
+# General settings
+# ==============================================================================
+# plugin manager
+[[plugins]]
+repo = 'Shougo/dein.vim'
+# An ecosystem of Vim/Neovim which allows developers to write plugins in Deno
+[[plugins]]
+repo = 'vim-denops/denops.vim'
+# run commands on neovim
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-quickrun.vim'
+# switch between commmentout and uncomment
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+# auto save on normal mode
+[[plugins]]
+repo = 'vim-scripts/vim-auto-save'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/vim-auto-save.vim'
+# auto close parentheses
+[[plugins]]
+repo = 'cohama/lexima.vim'
+# Restore cursor position
+[[plugins]]
+repo = 'ethanholz/nvim-lastplace'
+# jump anywhere in a document with as few keystrokes as possible.
+[[plugins]]
+repo = 'phaazon/hop.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/hop.nvim.lua'
+# ==============================================================================
+# GUI settings
+# ==============================================================================
+# File source for ddu.vim ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Dark deno-powered UI framework for neovim/Vim8
+[[plugins]]
+repo = 'Shougo/ddu.vim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu.vim'
+# source
+[[plugins]]
+repo = 'Shougo/ddu-source-file'
+# kind
+[[plugins]]
+repo = 'Shougo/ddu-kind-file'
+# Icon and filename column for ddu.vim
+[[plugins]]
+repo = 'ryota2357/ddu-column-icon_filename'
+# File listing UI for ddu.vim
+[[plugins]]
+repo = 'Shougo/ddu-ui-filer'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddu-ui-filer.vim'
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Graphical icons for nvim in lua
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
+# decorate status line
+[[plugins]]
+repo = 'nvim-lualine/lualine.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/lualine.nvim.lua'
+# iceberg theme for vim
+[[plugins]]
+repo = 'cocopon/iceberg.vim'
+# show and colorize indent levels
+[[plugins]]
+repo = 'lukas-reineke/indent-blankline.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/indent-blankline.nvim.lua'
+# highlights code using tree-sitter
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+# highlights  using tree-sitter
+[[plugins]]
+repo = 'mrjones2014/nvim-ts-rainbow'
+on_source = ['nvim-treesitter']
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/nvim-treesitter.nvim.lua'
+# ==============================================================================
+# Language settings
+# ==============================================================================
+# built in LSP on NeoVim
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/nvim-lspconfig.nvim.lua'
+# Portable package manager for Neovim
+[[plugins]]
+repo = 'williamboman/mason.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/mason.nvim.lua'
+# mason-lspconfig bridges mason.nvim with the lspconfig plugin
+[[plugins]]
+repo = 'williamboman/mason-lspconfig.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/mason-lspconfig.nvim.lua'
+# File source for ddc.vim ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+[[plugins]]
+repo = 'Shougo/ddc.vim'
+depends = ['denops.vim']
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/ddc.vim'
+# im completion source for neocomplete/deoplete/ddc.
+[[plugins]]
+repo = 'Shougo/neco-vim'
+# nvim-lsp completion for ddc.vim
+[[plugins]]
+repo = 'Shougo/ddc-nvim-lsp'
+# Framework library to implement original popup menu completion.
+[[plugins]]
+repo = 'Shougo/pum.vim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/pum.vim'
+# Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+[[plugins]]
+repo = 'folke/noice.nvim'
+# ui settings for ddc
+[[plugins]]
+repo = 'Shougo/ddc-ui-pum'
+# Source for completion existing words around the cursor. 
+[[plugins]]
+repo = 'Shougo/ddc-around'
+# Filter for completion of words as they are being typed.
+[[plugins]]
+repo = 'Shougo/ddc-matcher_head'
+# Filter to properly sort candidate completions.
+[[plugins]]
+repo = 'Shougo/ddc-sorter_rank'
+# file completions for ddc.vim
+[[plugins]]
+repo = 'LumaKernel/ddc-file'
+# mocword completion for ddc.vim: requirement(https://github.com/high-moctane/mocword)
+[[plugins]]
+repo = 'Shougo/ddc-mocword'
+# Filter to prevent duplication of candidate completions
+[[plugins]]
+repo = 'Shougo/ddc-converter_remove_overlap'
+# Show completion documentation
+[[plugins]]
+repo = 'matsui54/denops-popup-preview.vim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/denops-popup-preview.vim'
+# Shows signature help from lsp server.
+[[plugins]]
+repo = 'matsui54/denops-signature_help'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/denops-signature_help.vim'
+# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+# Linter & Formatter
+[[plugins]]
+repo = 'simrat39/rust-tools.nvim'
+[[plugins]]
+repo = 'jose-elias-alvarez/null-ls.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/null-ls.nvim.lua'
+# Preview markdown code directly in your neovim terminal
+[[plugins]]
+repo = 'ellisonleao/glow.nvim'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/glow.nvim.lua'
+# auto close tags in html, xml...
+[[plugins]]
+repo = 'alvan/vim-closetag'
+hook_add = 'source ~/dotfiles/.config/nvim/plugins/closetag.vim'
