@@ -7,6 +7,7 @@ call ddc#custom#patch_global('sources', [
       \  'nvim-lsp',
       \  'around', 
       \  'file',
+      \  'mocword',
       \  ])
 
 call ddc#custom#patch_global('sourceOptions', {
@@ -15,7 +16,9 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'sorters': ['sorter_rank'],
       \   'converters': ['converter_remove_overlap'],
       \ },
-      \ 'around': {'mark': 'A'},
+      \ 'around': {
+      \   'mark': 'A'
+      \ },
       \ 'nvim-lsp': {
       \   'mark': 'lsp',
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
@@ -25,7 +28,12 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'isVolatile': v:true, 
       \   'forceCompletionPattern': '\S/\S*'
       \ },
-      \ })
+      \ 'mocword': {
+      \   'mark': 'mocword',
+      \   'minAutoCompleteLength': 3,
+      \   'isVolatile': v:true,
+      \ }
+      \})
 
 call ddc#custom#patch_global('autoCompleteEvents', [
 	\ 'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
