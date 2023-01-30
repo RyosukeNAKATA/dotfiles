@@ -5,6 +5,7 @@ setopt no_beep
 # ==============================================================================
 # zsh general add-on
 # ==============================================================================
+{{ if (eq .chezmoi.os "darwin") }}
 # zsh-completions
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
@@ -13,6 +14,7 @@ if type brew &>/dev/null; then
     zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
     compinit
 fi
+{{ end }}
 # fzf completions ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
@@ -26,6 +28,7 @@ function fzf-history-widget() {
 zle     -N   fzf-history-widget
 bindkey '^r' fzf-history-widget
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{{ if (eq .chezmoi.os "darwin") }}
 # autopair.zsh
 source /opt/homebrew/share/zsh-autopair/autopair.zsh
 # fast-syntax-highlighting
@@ -35,6 +38,7 @@ source /opt/homebrew/share/zsh-abbr/zsh-abbr.zsh
 typeset -gi ABBR_QUIET=1
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
+{{ end }}
 # ==============================================================================
 # commandline utilities
 # ==============================================================================
