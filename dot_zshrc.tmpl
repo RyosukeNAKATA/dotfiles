@@ -27,6 +27,14 @@ function fzf-history-widget() {
 }
 zle     -N   fzf-history-widget
 bindkey '^r' fzf-history-widget
+export FZF_CTRL_T_COMMAND="fd --type f "
+export FZF_CTRL_T_OPTS="
+    --select-1 --exit-0
+    --bind 'ctrl-l:execute(tmux splitw -h -- nvim {})'
+    --bind '>:reload($FZF_ALT_C_COMMAND -H -E .git )'
+    --bind '<:reload($FZF_ALT_C_COMMAND)'
+    --preview 'bat -r :100 --color=always --style=header,grid {}'"
+bindkey '^t' fzf-history-widget
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 {{ if (eq .chezmoi.os "darwin") }}
 # autopair.zsh
