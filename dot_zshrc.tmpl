@@ -18,7 +18,7 @@ fi
 # fzf completions ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
-export FZF_DEFAULT_OPTS='--height 60% --reverse --border'
+export FZF_DEFAULT_OPTS='--height 80% --reverse --border'
 function fzf-history-widget() {
     local tac=${commands[tac]:-"tail -r"}
     BUFFER=$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | sed 's/ *[0-9]* *//' | eval $tac | awk '!a[$0]++' | fzf +s)
