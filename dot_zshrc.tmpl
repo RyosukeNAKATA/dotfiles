@@ -29,16 +29,14 @@ function fzf-history-widget() {
 zle     -N   fzf-history-widget
 bindkey '^R' fzf-history-widget
 # ctrl+T to search files
+# fzf file search widget
 file-search-widget() {
-  local selected_file
-  selected_file=$(fd --type f | fzf --preview 'bat --color "always" --style "grid" {}')
-  if [ -n "$selected_file" ]; then
-    BUFFER="cd $(dirname $selected_file) && $selected_file"
-    zle accept-line
-  fi
+  fd . -t f -E ".git" | fzf --preview "bat --style=numbers --color=always {}"
 }
+
+# bind the widget to ctrl-t
 zle -N file-search-widget
-bindkey '^T' file-search-widget
+bindkey '^t' file-search-widget
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 {{ if (eq .chezmoi.os "darwin") }}
 # autopair.zsh
