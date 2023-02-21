@@ -12,28 +12,31 @@ call ddc#custom#patch_global('sources', [
       \  ])
 
 call ddc#custom#patch_global('sourceOptions', {
-      \ _: #{
+      \ '_': {
       \   'matchers': ['matcher_head'],
       \   'sorters': ['sorter_rank'],
       \   'converters': ['converter_remove_overlap'],
       \ },
-      \ around: #{
+      \ 'around': {
       \   'mark': 'A'
       \ },
-      \ nvim-lsp: #{
+      \ 'nvim-lsp': {
       \   'mark': 'lsp',
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
       \ },
-      \ file: #{
+      \ 'file': {
       \   'mark': 'file',
       \   'isVolatile': v:true, 
       \   'forceCompletionPattern': '\S/\S*'
       \ },
-      \ mocword: #{
+      \ 'mocword': {
       \   'mark': 'mocword',
       \   'minAutoCompleteLength': 3,
       \   'isVolatile': v:true,
-      \ }
+      \ },
+      \ 'cmdline-history': {
+      \   'mark': 'history',
+      \ },
       \})
 
 call ddc#custom#patch_global('autoCompleteEvents', [
