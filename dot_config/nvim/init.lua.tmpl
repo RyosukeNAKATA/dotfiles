@@ -1,3 +1,6 @@
+-- #############################################################################
+-- dein.vim setup
+-- #############################################################################
 vim.api.nvim_set_var('dein#auto_recache', 1)
 vim.api.nvim_set_var('dein#lazy_rplugins', 1)
 vim.api.nvim_set_var('dein#enable_notification', 1)
@@ -26,8 +29,9 @@ if vim.call('dein#load_state', dein_dir) == 1 then
     vim.call('dein#end')
     vim.call('dein#save_state')
 end
-
+-- #############################################################################
 -- load other settings
+-- #############################################################################
 require('keymap')
 require('lsp')
 require('opt')
