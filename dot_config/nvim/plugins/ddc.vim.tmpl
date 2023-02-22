@@ -11,6 +11,10 @@ call ddc#custom#patch_global('sources', [
       \  'cmdline-history',
       \  ])
 
+call ddc#custom#patch_filetype(['vim', 'toml'], 'sources', [
+      \  'necovim'
+      \  ])
+
 call ddc#custom#patch_global('sourceOptions', {
       \ '_': {
       \   'matchers': ['matcher_head'],
