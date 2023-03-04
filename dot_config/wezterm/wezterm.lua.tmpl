@@ -3,7 +3,10 @@ local act = wezterm.action
 
 return {
   use_ime=true,
-  font = wezterm.font("UDEV Gothic 35NFLG"),
+  font = wezterm.font_with_fallback({
+      { family = "UDEV Gothic 35NFLG"},
+      { family = "UDEV Gothic 35NFLG", assume_emoji_presentation = true},
+    }),
   font_size = 15.0,
   color_scheme = "iceberg-dark",
   window_background_opacity = 0.9,
