@@ -16,27 +16,16 @@ if type brew &>/dev/null; then
 fi
 {{ end }}
 # fzf completions ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
-export FZF_DEFAULT_OPTS='--height 70% --reverse --border'
-# ctrl+R to search command history
-function fzf-history-widget() {
-    local tac=${commands[tac]:-"tail -r"}
-    BUFFER=$( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | sed 's/ *[0-9]* *//' | eval $tac | awk '!a[$0]++' | fzf +s)
-    CURSOR=$#BUFFER
-    zle clear-screen
+fzf-file-widget () {
+    local selected_file=$(fd --hidden --exclude .git --type f . "$1" | fzf --ansi --preview 'bat --style=numbers --color=always {}' --preview-window=':wrap' --reverse --query "$2" --select-1 --exit-0)
+    if [ -n "$selected_file" ]; then
+        READLINE_LINE="${READLINE_LINE:0:${#READLINE_LINE}-(${#2})}$selected_file"
+        READLINE_POINT=$(( ${#READLINE_LINE} ))
+    fi
 }
-zle     -N   fzf-history-widget
-bindkey '^R' fzf-history-widget
-# ctrl+T to search files
-fzf-file-widget() {
-  local selected_file=$(fd -t file | fzf --preview "bat --style=numbers --color=always {}")
-  BUFFER="${BUFFER:0:$CURSOR}$selected_file${BUFFER:$CURSOR}"
-  CURSOR=$((CURSOR + ${#selected_file}))
-  zle redisplay
-}
-zle -N fzf-file-widget
-bindkey '^T' fzf-file-widget
+
+# Bind fzf-file-widget to ctrl+t
+bind -x '"\C-t": "fzf-file-widget '' \"\C-p\""'
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 {{ if (eq .chezmoi.os "darwin") }}
 # autopair.zsh
@@ -53,15 +42,11 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # commandline utilities
 # ==============================================================================
 # starship
-eval "$(starship init zsh)"
+eval "$(starship init bash)"
 # zoxied
-eval "$(zoxide init zsh)"
-# zsh-abbr
-for substitution in ${(f)"$(defaults read ~/Library/Preferences/.GlobalPreferences.plist NSUserDictionaryReplacementItems | plutil -convert json -o - - | jq -r 'to_entries[] | "\(.value.replace)=\(.value.with)"')"}; do
-  abbr add [options] "$substitution"
-done
+eval "$(zoxide init bash)"
 # mocword
-export MOCWORD_DATA=~/.cache/mocword.sqlite
+# export MOCWORD_DATA=~/.cache/mocword.sqlite
 # ==============================================================================
 # language settings
 # ==============================================================================
@@ -88,31 +73,31 @@ eval "$(rbenv init - zsh)"
 # aliases
 # ==============================================================================
 # general use for rewrite in rust
-abbr -S lls='exa -lF --icons'
-abbr -S lla='exa -laF --icons'
-abbr -S l='exa -lbF --git --icons'
-abbr -S ll='exa -lbGF --git --icons'
-abbr -S llm='exa -lbGd --git --sort=modified --icons'
-abbr -S la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'
-abbr -S lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons'
-# specialty views
-abbr -S lt='exa --tree --level=2 --icons' # tree
-abbr -S tree='exa -T --icons'
-# cat
-abbr -S catall='bat -A'
-# find
-abbr -S finde='fd -e'
-abbr -S findh='fd -H'
-abbr -S findi='fd -I'
-# git
-abbr -S ga='git add -A'
-abbr -S gc='git commit -m'
-abbr -S gps='git push'
-abbr -S gpl='git pull'
-abbr -S grm='git rm -r --cached .'
-# gitui
-abbr -S gu='gitui'
-# neovim
-abbr -S nv='nvim'
-# cargo-compete
-abbr -S compete='cargo compete'
+# abbr -S lls='exa -lF --icons'
+# abbr -S lla='exa -laF --icons'
+# abbr -S l='exa -lbF --git --icons'
+# abbr -S ll='exa -lbGF --git --icons'
+# abbr -S llm='exa -lbGd --git --sort=modified --icons'
+# abbr -S la='exa -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'
+# abbr -S lx='exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons'
+# # specialty views
+# abbr -S lt='exa --tree --level=2 --icons' # tree
+# abbr -S tree='exa -T --icons'
+# # cat
+# abbr -S catall='bat -A'
+# # find
+# abbr -S finde='fd -e'
+# abbr -S findh='fd -H'
+# abbr -S findi='fd -I'
+# # git
+# abbr -S ga='git add -A'
+# abbr -S gc='git commit -m'
+# abbr -S gps='git push'
+# abbr -S gpl='git pull'
+# abbr -S grm='git rm -r --cached .'
+# # gitui
+# abbr -S gu='gitui'
+# # neovim
+# abbr -S nv='nvim'
+# # cargo-compete
+# abbr -S compete='cargo compete'
