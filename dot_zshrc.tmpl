@@ -71,8 +71,13 @@ source $HOME/.cargo/env
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 # Python +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+{{ if (eq .chezmoi.username "ryosuke.nakata") }}
+# rye
+source "$HOME/.rye/env"
+{{ else }}
 # pyenv
 eval "$(pyenv init --path)"
+{{ end }}
 # poetry completion
 export PATH="$HOME/.poetry/bin:$PATH"
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
