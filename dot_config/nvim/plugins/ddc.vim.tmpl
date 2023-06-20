@@ -50,7 +50,6 @@ call ddc#custom#patch_global('autoCompleteEvents', [
 	\ 'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
 nnoremap :       <Cmd>call CommandlinePre()<CR>:
 
-call ddc#enable()
 
 function! CommandlinePre() abort
   cnoremap <Tab>   <Cmd>call pum#map#insert_relative(+1)<CR>
@@ -73,6 +72,7 @@ function! CommandlinePre() abort
   " Enable command line completion
   call ddc#enable_cmdline_completion()
 endfunction
+
 function! CommandlinePost() abort
   silent! cunmap <Tab>
   silent! cunmap <S-Tab>
@@ -109,3 +109,4 @@ imap <silent><expr> <CR>
 inoremap <Tab> <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
 
+call ddc#enable()
