@@ -25,7 +25,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'mark': 'A'
       \ },
       \ 'nvim-lsp': {
-      \   'mark': 'lsp',
+      \   'mark': 'LSP',
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
       \ },
       \ 'file': {
@@ -90,5 +90,22 @@ function! CommandlinePost() abort
   endif
 endfunction
 
+" <TAB>: completion.
+inoremap <silent><expr> <TAB>
+      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+      \ '<TAB>' : ddc#manual_complete()
+inoremap <S-Tab>  <Cmd>call pum#map#insert_relative(-1)<CR>
+imap <silent><expr> <Down>
+      \ pum#visible() ? '<Cmd>call pum#map#select_relative(+1)<CR>' :
+      \ '<Down>'
+imap <silent><expr><Up>
+      \ pum#visible() ? '<Cmd>call pum#map#select_relative(-1)<CR>' :
+      \ '<Up>'
+imap <silent><expr> <CR>
+      \ pum#visible() ? '<Cmd>call pum#map#confirm()<CR>' :
+      \ '<CR>'
+
 inoremap <Tab> <Cmd>call pum#map#insert_relative(+1)<CR>
 inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+
