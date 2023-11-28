@@ -15,36 +15,46 @@ call ddc#custom#patch_filetype(['vim', 'toml'], 'sources', [
       \  'necovim'
       \  ])
 
-call ddc#custom#patch_global('sourceOptions', {
-      \ '_': {
-      \   'matchers': ['matcher_head'],
-      \   'sorters': ['sorter_rank'],
-      \   'converters': ['converter_remove_overlap'],
+call ddc#custom#patch_global('sourceOptions', #{
+      \ _: #{
+      \   matchers: ['matcher_head'],
+      \   sorters: ['sorter_rank'],
+      \   converters: ['converter_remove_overlap'],
       \ },
-      \ 'around': {
+      \ around: #{
       \   'mark': 'A'
       \ },
-      \ 'nvim-lsp': {
-      \   'mark': 'LSP',
-      \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
+      \ nvim-lsp: #{
+      \   mark: 'LSP',
+      \   forceCompletionPattern: '\.\w*|:\w*|->\w*',
       \ },
-      \ 'file': {
-      \   'mark': 'file',
-      \   'isVolatile': v:true, 
-      \   'forceCompletionPattern': '\S/\S*'
+      \ file: {
+      \   mark: 'file',
+      \   isVolatile: v:true, 
+      \   forceCompletionPattern: '\S/\S*'
       \ },
-      \ 'mocword': {
+      \ mocword: #{
       \   'mark': 'mocword',
       \   'minAutoCompleteLength': 3,
       \   'isVolatile': v:true,
       \ },
-      \ 'cmdline-history': {
-      \   'mark': 'history',
+      \ cmdline-history: #{
+      \   mark: 'history',
       \ },
-      \ 'necovim': {
-      \   'mark': 'necovim'
+      \ necovim: #{
+      \   mark: 'necovim'
       \ },
       \})
+
+call ddc#custom#patch_global('sourceParams', #{
+      \   nvim-lsp: #{
+      \     snippetEngine: denops#callback#register({
+      \           body -> vsnip#anonymous(body)
+      \     }),
+      \     enableResolveItem: v:true,
+      \     enableAdditionalTextEdit: v:true,
+      \   }
+      \ })
 
 call ddc#custom#patch_global('autoCompleteEvents', [
 	\ 'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
