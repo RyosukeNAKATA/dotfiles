@@ -4,7 +4,7 @@ call ddc#custom#patch_global(
       \  )
 
 call ddc#custom#patch_global('sources', [
-      \  'nvim-lsp',
+      \  'lsp',
       \  'around', 
       \  'file',
       \  'mocword',
@@ -24,7 +24,7 @@ call ddc#custom#patch_global('sourceOptions', {
       \ 'around': {
       \   'mark': 'A'
       \ },
-      \ 'nvim-lsp': {
+      \ 'lsp': {
       \   'mark': 'LSP',
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
       \ },
