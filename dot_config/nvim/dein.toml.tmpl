@@ -113,9 +113,10 @@ repo = 'Shougo/neco-vim'
 # nvim-lsp completion for ddc.vim
 [[plugins]]
 repo = 'Shougo/ddc-source-lsp'
-# Framework library to implement original popup menu completion.
 [[plugins]]
-repo = 'uga-rosa/ddc-nvim-lsp-setup'
+repo = 'uga-rosa/ddc-source-lsp-setup'
+hook_add = 'source ~/.config/nvim/plugins/ddc-nvim-lsp-setup.lua'
+# Framework library to implement original popup menu completion.
 [[plugins]]
 repo = 'Shougo/pum.vim'
 hook_add = 'source ~/.config/nvim/plugins/pum.vim'
