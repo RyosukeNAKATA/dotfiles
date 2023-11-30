@@ -1,5 +1,9 @@
 local lspconfig = require('lspconfig')
 
+require'lspconfig'.jedi_language_server.setup{}
+require'lspconfig'.rubocop.setup{}
+require'lspconfig'.tailwindcss.setup{}
+
 local servers = { 'rust_analyzer' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup{

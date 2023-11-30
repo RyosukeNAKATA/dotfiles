@@ -25,24 +25,36 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'mark': 'A'
       \ },
       \ 'lsp': {
-      \   'mark': 'LSP',
+      \   'mark': '[LSP]',
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
       \ },
       \ 'file': {
-      \   'mark': 'file',
+      \   'mark': '[file]',
       \   'isVolatile': v:true, 
       \   'forceCompletionPattern': '\S/\S*'
       \ },
       \ 'mocword': {
-      \   'mark': 'mocword',
+      \   'mark': '[mocword]',
       \   'minAutoCompleteLength': 3,
       \   'isVolatile': v:true,
       \ },
       \ 'cmdline-history': {
-      \   'mark': 'history',
+      \   'mark': '[history]',
       \ },
       \ 'necovim': {
-      \   'mark': 'necovim'
+      \   'mark': '[necovim]'
+      \ },
+      \})
+
+call ddc#custom#patch_global(#{
+      \ sourceParams: #{
+      \   lsp: #{
+      \     snippetEngine: denops#callback#register({
+      \           body -> vsnip#anonymous(body) }),
+      \     enableResolveItem: v:true,
+      \     enableAdditionalTextEdit: v:true,
+      \     confirmBehavior: 'replace',
+      \   },
       \ },
       \})
 
