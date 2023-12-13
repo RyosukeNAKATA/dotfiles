@@ -1,12 +1,29 @@
 local lspconfig = require('lspconfig')
 
-require'lspconfig'.jedi_language_server.setup{}
-require'lspconfig'.rubocop.setup{}
-require'lspconfig'.tailwindcss.setup{}
+lspconfig.rust_analyzer.setup {
+  -- Server-specific settings. See `:help lspconfig-setup`
+  settings = {
+    ['rust-analyzer'] = {},
+  },
+}
 
-local servers = { 'rust_analyzer' }
-for _, lsp in ipairs(servers) do
-    lspconfig[lsp].setup{
-      -- on_attach = my_custom_on_attach,
-    }
-end
+lspconfig.jedi_language_server.setup {
+  -- Server-specific settings. See `:help lspconfig-setup`
+  settings = {
+    ['jedi_language_server'] = {},
+  },
+}
+
+lspconfig.rubocop.setup {
+  -- Server-specific settings. See `:help lspconfig-setup`
+  settings = {
+    ['rubocop'] = {},
+  },
+}
+
+lspconfig.tailwindcss.setup {
+  -- Server-specific settings. See `:help lspconfig-setup`
+  settings = {
+    ['tailwindcss'] = {},
+  },
+}

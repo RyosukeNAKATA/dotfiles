@@ -1,6 +1,6 @@
 call ddc#custom#patch_global(
       \  'ui',
-      \  'pum',
+      \  'native',
       \  )
 
 call ddc#custom#patch_global('sources', [
@@ -64,12 +64,12 @@ nnoremap :       <Cmd>call CommandlinePre()<CR>:
 
 
 function! CommandlinePre() abort
-  cnoremap <Tab>   <Cmd>call pum#map#insert_relative(+1)<CR>
-  cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
-  cnoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
-  cnoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
-  cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
-  cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
+  cnoremap <Tab>   <Cmd>call native#map#insert_relative(+1)<CR>
+  cnoremap <S-Tab> <Cmd>call native#map#insert_relative(-1)<CR>
+  cnoremap <C-n>   <Cmd>call native#map#insert_relative(+1)<CR>
+  cnoremap <C-p>   <Cmd>call native#map#insert_relative(-1)<CR>
+  cnoremap <C-y>   <Cmd>call native#map#confirm()<CR>
+  cnoremap <C-e>   <Cmd>call native#map#cancel()<CR>
 
   " Overwrite sources
   if !exists('b:prev_buffer_config')
@@ -104,21 +104,21 @@ endfunction
 
 " <TAB>: completion.
 inoremap <silent><expr> <TAB>
-      \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
+      \ native#visible() ? '<Cmd>call native#map#insert_relative(+1)<CR>' :
       \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
       \ '<TAB>' : ddc#manual_complete()
-inoremap <S-Tab>  <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <S-Tab>  <Cmd>call native#map#insert_relative(-1)<CR>
 imap <silent><expr> <Down>
-      \ pum#visible() ? '<Cmd>call pum#map#select_relative(+1)<CR>' :
+      \ native#visible() ? '<Cmd>call native#map#select_relative(+1)<CR>' :
       \ '<Down>'
 imap <silent><expr><Up>
-      \ pum#visible() ? '<Cmd>call pum#map#select_relative(-1)<CR>' :
+      \ native#visible() ? '<Cmd>call native#map#select_relative(-1)<CR>' :
       \ '<Up>'
 imap <silent><expr> <CR>
-      \ pum#visible() ? '<Cmd>call pum#map#confirm()<CR>' :
+      \ native#visible() ? '<Cmd>call native#map#confirm()<CR>' :
       \ '<CR>'
 
-inoremap <Tab> <Cmd>call pum#map#insert_relative(+1)<CR>
-inoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+inoremap <Tab> <Cmd>call native#map#insert_relative(+1)<CR>
+inoremap <S-Tab> <Cmd>call native#map#insert_relative(-1)<CR>
 
 call ddc#enable()
