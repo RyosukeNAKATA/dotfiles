@@ -58,12 +58,12 @@ nnoremap :       <Cmd>call CommandlinePre()<CR>:
 
 
 function! CommandlinePre() abort
-  cnoremap <Tab>   <Cmd>call native#map#insert_relative(+1)<CR>
-  cnoremap <S-Tab> <Cmd>call native#map#insert_relative(-1)<CR>
-  cnoremap <C-n>   <Cmd>call native#map#insert_relative(+1)<CR>
-  cnoremap <C-p>   <Cmd>call native#map#insert_relative(-1)<CR>
-  cnoremap <C-y>   <Cmd>call native#map#confirm()<CR>
-  cnoremap <C-e>   <Cmd>call native#map#cancel()<CR>
+  cnoremap <Tab>   <Cmd>call pum#map#insert_relative(+1)<CR>
+  cnoremap <S-Tab> <Cmd>call pum#map#insert_relative(-1)<CR>
+  cnoremap <C-n>   <Cmd>call pum#map#insert_relative(+1)<CR>
+  cnoremap <C-p>   <Cmd>call pum#map#insert_relative(-1)<CR>
+  cnoremap <C-y>   <Cmd>call pum#map#confirm()<CR>
+  cnoremap <C-e>   <Cmd>call pum#map#cancel()<CR>
 
   " Overwrite sources
   if !exists('b:prev_buffer_config')
@@ -92,7 +92,7 @@ function! CommandlinePost() abort
     call pum#custom#set_buffer(b:prev_buffer_config)
     unlet b:prev_buffer_config
   else
-    call pum#custom#set_buffer({})
+    call ddc#custom#set_buffer({})
   endif
 endfunction
 
