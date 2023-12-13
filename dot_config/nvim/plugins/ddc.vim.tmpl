@@ -42,17 +42,15 @@ call ddc#custom#patch_global('sourceOptions', {
       \ },
       \})
 
-call ddc#custom#patch_global(#{
-      \ sourceParams: #{
+call ddc#custom#patch_global('sourceParams', #{
       \   lsp: #{
       \     snippetEngine: denops#callback#register({
-      \           body -> vsnip#anonymous(body) }),
+      \           body -> vsnip#anonymous(body)
+      \     }),
       \     enableResolveItem: v:true,
       \     enableAdditionalTextEdit: v:true,
-      \     confirmBehavior: 'replace',
-      \   },
-      \ },
-      \})
+      \   }
+      \ })
 
 call ddc#custom#patch_global('autoCompleteEvents', [
 	\ 'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
