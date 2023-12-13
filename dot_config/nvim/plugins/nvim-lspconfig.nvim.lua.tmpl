@@ -1,5 +1,6 @@
 local lspconfig = require('lspconfig')
 
+<<<<<<< HEAD
 lspconfig.rust_analyzer.setup {
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
@@ -27,3 +28,11 @@ lspconfig.tailwindcss.setup {
     ['tailwindcss'] = {},
   },
 }
+=======
+local servers = { 'rust_analyzer', 'rubocop', 'jedi_language_server', 'tailwindcss' }
+for _, lsp in ipairs(servers) do
+    lspconfig[lsp].setup{
+      -- on_attach = my_custom_on_attach,
+    }
+end
+>>>>>>> cff791d0652795e08101439650ea1510562a81b0
