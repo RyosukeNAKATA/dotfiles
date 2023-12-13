@@ -5,7 +5,7 @@ call ddc#custom#patch_global(
 
 call ddc#custom#patch_global('sources', [
       \  'lsp',
-      \  'around', 
+      \  'around',
       \  'file',
       \  'mocword',
       \  'cmdline-history',
@@ -17,12 +17,12 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'sorters': ['sorter_rank'],
       \   'converters': ['converter_remove_overlap'],
       \ },
-      \ 'around': {
-      \   'mark': 'A'
-      \ },
       \ 'lsp': {
       \   'mark': '[LSP]',
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
+      \ },
+      \ 'around': {
+      \   'mark': 'A'
       \ },
       \ 'file': {
       \   'mark': '[file]',
