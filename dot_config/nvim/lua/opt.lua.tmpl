@@ -75,8 +75,9 @@ vim.opt.backspace = 'indent,eol,start'
 -- set ttyfast
 vim.opt.ttyfast = true
 -- set iminsert=0 imsearch=0
-vim.opt.iminsert = true
-vim.opt.imsearch = true
+vim.opt.iminsert = 0
+vim.opt.imsearch = 0
+vim.cmd([[inoremap <ESC> <ESC>:set iminsert=0<CR>]])
 -- =============================================================================
 --  GUI settings
 -- =============================================================================
