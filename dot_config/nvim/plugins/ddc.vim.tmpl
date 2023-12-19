@@ -5,14 +5,10 @@ call ddc#custom#patch_global(
 
 call ddc#custom#patch_global('sources', [
       \  'lsp',
-      \  'around', 
+      \  'around',
       \  'file',
       \  'mocword',
       \  'cmdline-history',
-      \  ])
-
-call ddc#custom#patch_filetype(['vim', 'toml'], 'sources', [
-      \  'necovim'
       \  ])
 
 call ddc#custom#patch_global('sourceOptions', {
@@ -21,12 +17,12 @@ call ddc#custom#patch_global('sourceOptions', {
       \   'sorters': ['sorter_rank'],
       \   'converters': ['converter_remove_overlap'],
       \ },
-      \ 'around': {
-      \   'mark': 'A'
-      \ },
       \ 'lsp': {
       \   'mark': '[LSP]',
       \   'forceCompletionPattern': '\.\w*|:\w*|->\w*'
+      \ },
+      \ 'around': {
+      \   'mark': 'A'
       \ },
       \ 'file': {
       \   'mark': '[file]',
@@ -46,17 +42,15 @@ call ddc#custom#patch_global('sourceOptions', {
       \ },
       \})
 
-call ddc#custom#patch_global(#{
-      \ sourceParams: #{
+call ddc#custom#patch_global('sourceParams', #{
       \   lsp: #{
       \     snippetEngine: denops#callback#register({
-      \           body -> vsnip#anonymous(body) }),
+      \           body -> vsnip#anonymous(body)
+      \     }),
       \     enableResolveItem: v:true,
       \     enableAdditionalTextEdit: v:true,
-      \     confirmBehavior: 'replace',
-      \   },
-      \ },
-      \})
+      \   }
+      \ })
 
 call ddc#custom#patch_global('autoCompleteEvents', [
 	\ 'InsertEnter', 'TextChangedI', 'TextChangedP', 'CmdlineChanged'])
@@ -106,7 +100,7 @@ endfunction
 inoremap <silent><expr> <TAB>
       \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
       \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
-      \ '<TAB>' : ddc#manual_complete()
+      \ '<TAB>' : pum#manual_complete()
 inoremap <S-Tab>  <Cmd>call pum#map#insert_relative(-1)<CR>
 imap <silent><expr> <Down>
       \ pum#visible() ? '<Cmd>call pum#map#select_relative(+1)<CR>' :

@@ -83,13 +83,22 @@ hook_source = 'source ~/.config/nvim/plugins/nvim-treesitter.nvim.lua'
 repo = 'slim-template/vim-slim'
 on_ft = ['slim']
 {{ end }}
+# colorize color code
+[[plugins]]
+repo = 'norcalli/nvim-colorizer.lua'
+hook_source = 'source ~/.config/nvim/plugins/nvim-colorizer.nvim.lua'
+# remove all background for making nvin transparent
+[[plugins]]
+repo = 'xiyaowong/nvim-transparent'
+on_event = 'BufEnter'
+hook_source = 'source ~/.config/nvim/plugins/nvim-transparent.nvim.lua'
 # ==============================================================================
 # Language settings
 # ==============================================================================
 # built in LSP on NeoVim
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
-hook_add = 'source ~/.config/nvim/plugins/nvim-lspconfig.nvim.lua'
+hook_source = 'source ~/.config/nvim/plugins/nvim-lspconfig.nvim.lua'
 # Portable package manager for Neovim
 [[plugins]]
 repo = 'williamboman/mason.nvim'
@@ -105,34 +114,34 @@ hook_add = 'source ~/.config/nvim/plugins/mason-lspconfig.nvim.lua'
 repo = 'Shougo/ddc.vim'
 depends = ['denops.vim']
 hook_add = 'source ~/.config/nvim/plugins/ddc.vim'
-# Vim completion source for neocomplete/deoplete/ddc.
-[[plugins]]
-repo = 'Shougo/neco-vim'
 # nvim-lsp completion for ddc.vim
 [[plugins]]
 repo = 'Shougo/ddc-source-lsp'
 [[plugins]]
 repo = 'uga-rosa/ddc-source-lsp-setup'
-hook_add = 'source ~/.config/nvim/plugins/ddc-source-lsp-setup.lua'
-# Framework library to implement original popup menu completion.
-[[plugins]]
-repo = 'Shougo/pum.vim'
-hook_add = 'source ~/.config/nvim/plugins/pum.vim'
-# Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+hook_add = 'source ~/.config/nvim/plugins/ddc-nvim-lsp-setup.lua'
+
 [[plugins]]
 repo = 'folke/noice.nvim'
-# ui settings for ddc
+# Framework library to implement original popup menu completion.
 [[plugins]]
 repo = 'Shougo/ddc-ui-pum'
+[[plugins]]
+repo = 'Shougo/pum.vim'
+# hook_add = 'source ~/.config/nvim/plugins/pum.vim'
+# Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+# ui settings for ddc
+[[plugins]]
+repo = 'Shougo/ddc-ui-native'
 # Source for completion existing words around the cursor. 
 [[plugins]]
-repo = 'Shougo/ddc-around'
+repo = 'Shougo/ddc-source-around'
 # Filter for completion of words as they are being typed.
 [[plugins]]
-repo = 'Shougo/ddc-matcher_head'
+repo = 'Shougo/ddc-filter-matcher_head'
 # Filter to properly sort candidate completions.
 [[plugins]]
-repo = 'Shougo/ddc-sorter_rank'
+repo = 'Shougo/ddc-filter-sorter_rank'
 # file completions for ddc.vim
 [[plugins]]
 repo = 'LumaKernel/ddc-file'
