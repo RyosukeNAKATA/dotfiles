@@ -7,10 +7,6 @@ repo = 'Shougo/dein.vim'
 # An ecosystem of Vim/Neovim which allows developers to write plugins in Deno
 [[plugins]]
 repo = 'vim-denops/denops.vim'
-# run commands on neovim
-[[plugins]]
-repo = 'thinca/vim-quickrun'
-hook_add = 'source ~/.config/nvim/plugins/vim-quickrun.vim'
 # switch between commmentout and uncomment
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -163,21 +159,3 @@ repo = 'matsui54/denops-signature_help'
 hook_add = 'source ~/.config/nvim/plugins/denops-signature_help.vim'
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Linter & Formatter
-[[plugins]] # lint tool
-repo = 'dense-analysis/ale'
-# rust
-[[plugins]]
-repo = 'simrat39/rust-tools.nvim'
-[[plugins]]
-repo = 'rust-lang/rust.vim'
-[[plugins]]
-repo = 'jose-elias-alvarez/null-ls.nvim'
-hook_add = 'source ~/.config/nvim/plugins/null-ls.nvim.lua'
-# Preview markdown code directly in your neovim terminal
-[[plugins]]
-repo = 'ellisonleao/glow.nvim'
-hook_add = 'source ~/.config/nvim/plugins/glow.nvim.lua'
-# auto close tags in html, xml...
-[[plugins]]
-repo = 'alvan/vim-closetag'
-hook_add = 'source ~/.config/nvim/plugins/closetag.vim'
