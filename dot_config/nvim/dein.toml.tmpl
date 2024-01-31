@@ -73,6 +73,9 @@ repo = 'nvim-treesitter/nvim-treesitter'
 repo = 'mrjones2014/nvim-ts-rainbow'
 on_source = ['nvim-treesitter']
 hook_source = 'source ~/.config/nvim/plugins/nvim-treesitter.nvim.lua'
+# Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+[[plugins]]
+repo = 'folke/noice.nvim'
 {{ if (eq .chezmoi.username "ryosuke.nakata") }}
 # slim syntaxhighlight
 [[plungins]]
@@ -80,7 +83,7 @@ repo = 'slim-template/vim-slim'
 on_ft = ['slim']
 {{ end }}
 # ==============================================================================
-# Language settings
+# Completion settings
 # ==============================================================================
 # built in LSP on NeoVim
 [[plugins]]
@@ -111,16 +114,11 @@ repo = 'Shougo/ddc-source-lsp'
 [[plugins]]
 repo = 'uga-rosa/ddc-source-lsp-setup'
 hook_add = 'source ~/.config/nvim/plugins/ddc-nvim-lsp-setup.lua'
-
-[[plugins]]
-repo = 'folke/noice.nvim'
 # Framework library to implement original popup menu completion.
 [[plugins]]
 repo = 'Shougo/ddc-ui-pum'
 [[plugins]]
 repo = 'Shougo/pum.vim'
-# hook_add = 'source ~/.config/nvim/plugins/pum.vim'
-# Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 # ui settings for ddc
 [[plugins]]
 repo = 'Shougo/ddc-ui-native'
