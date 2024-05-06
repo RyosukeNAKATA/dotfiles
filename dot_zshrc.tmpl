@@ -68,33 +68,19 @@ export MOCWORD_DATA=~/.cache/mocword.sqlite
 # ==============================================================================
 # language settings
 # ==============================================================================
+# General(mise)
+eval "$(~/.local/bin/mise activate zsh)"
 # Rust
 source $HOME/.cargo/env
 # Go
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-# Python +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-{{ if (eq .chezmoi.username "ryosuke") }}
-# rye
-source "$HOME/.rye/env"
-{{ else }}
-# pyenv
-eval "$(pyenv init --path)"
-{{ end }}
-# poetry completion
-export PATH="$HOME/.poetry/bin:$PATH"
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Node JS
 VOLTA_HOME=$HOME/.volta
 export PATH=$VOLTA_HOME/bin:$PATH
 {{ if (eq .chezmoi.username "ryosuke.nakata") }}
-# Ruby
-export PATH="$HOME/.rbenv/bin:$PATH" 
-eval "$(rbenv init - zsh)"
-export EDITOR=NVIM
 eval "$(direnv hook zsh)"
-# protobuf
-export PATH="/opt/homebrew/opt/protobuf@3/bin:$PATH"
 {{ end }}
 # ==============================================================================
 # aliases
