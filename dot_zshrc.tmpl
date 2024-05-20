@@ -79,9 +79,6 @@ export PATH=$PATH:$GOPATH/bin
 # Node JS
 VOLTA_HOME=$HOME/.volta
 export PATH=$VOLTA_HOME/bin:$PATH
-{{ if (eq .chezmoi.username "ryosuke.nakata") }}
-eval "$(direnv hook zsh)"
-{{ end }}
 # ==============================================================================
 # aliases
 # ==============================================================================
