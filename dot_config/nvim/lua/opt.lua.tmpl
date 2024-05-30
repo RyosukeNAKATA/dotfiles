@@ -85,6 +85,9 @@ vim.cmd([[inoremap <ESC> <ESC>:set iminsert=0<CR>]])
 -- =============================================================================
 -- 表示を英語に
 vim.cmd('language en_US')
+vim.opt.langmenu = 'en_US.UTF-8'
+vim.api.nvim_exec ('language en_US.UTF-8', true)
+vim.api.nvim_exec('language message en_US.UTF-8', true)
 -- 日本語文字化け対策
 vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 50
