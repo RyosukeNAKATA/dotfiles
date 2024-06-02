@@ -34,7 +34,7 @@ bindkey '^R' fzf-history-widget
 # ctrl+T to search files
 fzf-file-widget() {
   local selected_file=$(fd -t file | fzf --preview "bat --style=numbers --color=always {}")
-  BUFFER="${BUFFER:0:$CUeSOR}$selected_file${BUFFER:$CURSOR}"
+  BUFFER="${BUFFER:0:$CURSOR}$selected_file${BUFFER:$CURSOR}"
   CURSOR=$((CURSOR + ${#selected_file}))
   zle redisplay
 }
