@@ -40,6 +40,14 @@ fzf-file-widget() {
 }
 zle -N fzf-file-widget
 bindkey '^T' fzf-file-widget
+# ctrl+F to ripgrep
+fzf-rg-widget() {
+  BUFFER="rg \"\" --sort path -n --color always"
+  CURSOR=4
+  zle redisplay
+}
+zle -N fzf-rg-widget
+bindkey '^F' fzf-rg-widget
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 {{ if (eq .chezmoi.os "darwin") }}
 # autopair.zsh
