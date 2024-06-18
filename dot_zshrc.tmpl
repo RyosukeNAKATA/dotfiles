@@ -42,7 +42,7 @@ zle -N fzf-file-widget
 bindkey '^T' fzf-file-widget
 # ctrl+F to ripgrep
 fzf-rg-widget() {
-  BUFFER="rg \"\" --sort path -n --color always"
+  BUFFER="rg \"\" --sort path -n --color always --no-heading"
   CURSOR=4
   zle redisplay
 }
