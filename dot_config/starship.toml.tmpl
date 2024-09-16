@@ -1,73 +1,33 @@
-[cmd_duration]
-format = "underwent [$duration](bold yellow)"
+scan_timeout = 10
 
-[aws]
-symbol = " "
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
+[character]
+error_symbol = "[❯](bold red)"
+success_symbol = "[❯](bold green)"
 
 [directory]
-read_only = " "
+truncation_length = 100
+truncate_to_repo = false
+truncation_symbol = "…/"
+
+[aws]
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+style = "bold blue"
+
+[custom.arch]
+command = "uname -m"
+when = """ test $(uname -m) = "x86_64" """
+style = "bold yellow"
+format = "[$output]($style)"
 
 [docker_context]
-symbol = " "
-
-[elixir]
-symbol = " "
-
-[elm]
-symbol = " "
+format = "via [🐋 $context](blue bold)"
 
 [git_branch]
-symbol = " "
+symbol = " "
 
-[golang]
-symbol = " "
-
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-
-[julia]
-symbol = " "
-
-[memory_usage]
-symbol = " "
-
-[nim]
-symbol = " "
-
-[nix_shell]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[package]
-symbol = " "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[python]
-symbol = " "
-# Only use the `python3` binary to get the version.
-python_binary = "python3"
-
-[ruby]
-symbol = " "
-
-[rust]
-symbol = "🦀 "
-
-[swift]
-symbol = "ﯣ "
+[username]
+style_user = "white bold"
+style_root = "black bold"
+format = "($style)"
+disabled = false
+show_always = true
