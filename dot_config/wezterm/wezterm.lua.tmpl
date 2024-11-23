@@ -1,21 +1,27 @@
 local wezterm = require 'wezterm';
 local act = wezterm.action
+local mux = wezterm.mux
+
+wezterm.on("gui-startup", function(cmd)
+  local tab, pane, window = mux.spawn_window(cmd or {})
+  window:gui_window():maximize()
+end)
 
 return {
   use_ime=true,
   font = wezterm.font_with_fallback({
-      { family = "UDEV Gothic 35NFLG"},
-      { family = "UDEV Gothic 35NFLG", assume_emoji_presentation = true},
+      { family = "HackGen35 Console NF"},
+      { family = "HackGen35 Console NF", assume_emoji_presentation = true},
     }),
-  font_size = 15.0,
+  font_size = 11.0,
   color_scheme = "iceberg-dark",
   window_background_opacity = 0.9,
   enable_tab_bar = true,
   window_padding = {
-    left = 15,
-    right = 15,
+    left = 5,
+    right = 5,
     top = 5,
-    bottom = 15,
+    bottom = 5,
   },
   initial_cols = 190,
   initial_rows = 70,
