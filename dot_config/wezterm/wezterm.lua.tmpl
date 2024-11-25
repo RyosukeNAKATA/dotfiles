@@ -60,5 +60,15 @@ return {
       mods = 'LEADER',
       action = wezterm.action.ActivatePaneDirection('Right'),
     },
-  },
+    {
+      key = '{',
+      mods = 'LEADER',
+      action = act.RotatePanes 'CounterClockwise',
+    },
+    {
+      key = '}',
+      mods = 'LEADER',
+      action = act.RotatePanes 'Clockwise',
+    },
+  }
 }
