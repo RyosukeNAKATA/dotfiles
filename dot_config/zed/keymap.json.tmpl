@@ -1,12 +1,39 @@
 [
   {
-    "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+    "context": "Editor && vim_mode == insert && !menu",
     "bindings": {
-      "ctrl-j": "editor::MoveDown"
+      "j j": [
+        "vim::NormalBefore",
+        {
+          "command": "workspace::SendKeystrokes",
+          "args": "escape :w enter"
+        }
+      ]
     }
   },
   {
-    "context": "Editor && vim_mode == insert && !menu",
-    "bindings": { "j j": "vim::NormalBefore" }
+    "context": "VimControl && !menu",
+    "bindings": {
+      "shift-h": "editor::MoveToLineStart",  // 行の左端へ移動
+      "shift-l": "editor::MoveToLineEnd"     // 行の右端へ移動
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "ctrl-f": "editor::MoveRight"
+    }
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "ctrl-f ctrl-f": "editor::MoveToLineEnd"
+    }
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-y": "editor::ConfirmCompletion"
+    }
   }
 ]

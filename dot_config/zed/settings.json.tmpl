@@ -7,7 +7,9 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  // =======================================================================================
   // view
+  // =======================================================================================
   "theme": "Iceberg",
   "cursor_shape": "hollow",
   "buffer_font_size": 14,
@@ -17,18 +19,83 @@
   "terminal": {
     "font_size": 11
   },
+  "indent_guides": {
+    "enabled": true,
+    "line_width": 1,
+    "active_line_width": 1,
+    "coloring": "indent_aware",  // インデントに応じた色付け
+    "background_coloring": "indent_aware"  // インデントに応じた背景色
+  },
+  "show_completions_on_input": true,
+  // =======================================================================================
+  // Extensions
+  // =======================================================================================
+  "auto_install_extensions": {
+    "iceberg": true,
+    "dockerfile": true,
+    "docker-compose": true,
+    "rust": true,
+    "ruby": true
+  },
+  // =======================================================================================
   // editor
+  // =======================================================================================
+  "features": {
+    "inline_completion_provider": "copilot"
+  },
   "vim_mode": true,
+  "format_on_save": "on",
   "languages": {
     "Ruby": {
       "language_servers": ["ruby-lsp", "rubocop", "!solargraph"]
     }
   },
+  "enable_language_server": true,
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
         "checkOnSave": {
           "command": "clippy" // rust-analyzer.checkOnSave.command
+        },
+        "completion": {
+          "snippets": {
+            "custom": {
+              "Arc::new": {
+                "postfix": "arc",
+                "body": ["Arc::new(${receiver})"],
+                "requires": "std::sync::Arc",
+                "scope": "expr"
+              },
+              "Some": {
+                "postfix": "some",
+                "body": ["Some(${receiver})"],
+                "scope": "expr"
+              },
+              "Ok": {
+                "postfix": "ok",
+                "body": ["Ok(${receiver})"],
+                "scope": "expr"
+              },
+              "Rc::new": {
+                "postfix": "rc",
+                "body": ["Rc::new(${receiver})"],
+                "requires": "std::rc::Rc",
+                "scope": "expr"
+              },
+              "Box::pin": {
+                "postfix": "boxpin",
+                "body": ["Box::pin(${receiver})"],
+                "requires": "std::boxed::Box",
+                "scope": "expr"
+              },
+              "vec!": {
+                "postfix": "vec",
+                "body": ["vec![${receiver}]"],
+                "description": "vec![]",
+                "scope": "expr"
+              }
+            }
+          }
         }
       }
     },
