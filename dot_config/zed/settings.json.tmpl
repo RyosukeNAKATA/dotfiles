@@ -17,11 +17,30 @@
   "terminal": {
     "font_size": 11
   },
+  // editor
+  "vim_mode": true,
+  "languages": {
+    "Ruby": {
+      "language_servers": ["ruby-lsp", "rubocop", "!solargraph"]
+    }
+  },
   "lsp": {
     "rust-analyzer": {
       "initialization_options": {
         "checkOnSave": {
           "command": "clippy" // rust-analyzer.checkOnSave.command
+        }
+      }
+    },
+    "rubocop": {
+      "initialization_options": {
+        "safeAutocorrect": false
+      }
+    },
+    "ruby-lsp": {
+      "initialization_options": {
+        "enabledFeatures": {
+          "diagnostics": false
         }
       }
     }
