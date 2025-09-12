@@ -71,11 +71,6 @@ eval "$(zoxide init zsh)"
 for substitution in ${(f)"$(defaults read ~/Library/Preferences/.GlobalPreferences.plist NSUserDictionaryReplacementItems | plutil -convert json -o - - | jq -r 'to_entries[] | "\(.value.replace)=\(.value.with)"')"}; do
   abbr add [options] "$substitution"
 done
-# mocword
-export MOCWORD_DATA=~/.cache/mocword.sqlite
-{{ if (eq .chezmoi.username "ryosuke.nakata") }}
-eval "$(direnv hook zsh)"
-{{ end }}
 # ==============================================================================
 # language settings
 # ==============================================================================
