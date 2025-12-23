@@ -52,6 +52,7 @@ bindkey '^P' fzf-rg-widget
 # shledon + pure prompt ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 fpath+=($HOME//.local/share/sheldon/repos/github.com/sindresorhus/pure/)
 autoload -U promptinit; promptinit
+zstyle :prompt:pure:git:branch color yellow
 prompt pure
 typeset -gi ABBR_QUIET=1
 # homebrew
