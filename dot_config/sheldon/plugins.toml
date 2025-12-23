@@ -3,6 +3,12 @@ shell = "zsh"
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
 
+[plugins.zsh-abbr]
+github = "olets/zsh-abbr"
+
+[plugins.zsh-autopair]
+github = "hlissner/zsh-autopair"
+
 [plugins.zsh-completions]
 github = "zsh-users/zsh-completions"
 
@@ -13,5 +19,5 @@ github = "mafredri/zsh-async"
 github = "sindresorhus/pure"
 
 # syntax-highlighting は最後に読み込む
-[plugins.zsh-syntax-highlighting]
-github = "zsh-users/zsh-syntax-highlighting"
+[plugins.fast-syntax-highlighting]
+github = "zdharma-continuum/fast-syntax-highlighting"

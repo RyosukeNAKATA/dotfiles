@@ -12,7 +12,6 @@ setopt hist_ignore_dups
 # zsh-completions
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
     autoload -Uz compinit
     zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
     compinit
@@ -54,12 +53,6 @@ bindkey '^P' fzf-rg-widget
 fpath+=($HOME//.local/share/sheldon/repos/github.com/sindresorhus/pure/)
 autoload -U promptinit; promptinit
 prompt pure
-# autopair.zsh
-source /opt/homebrew/share/zsh-autopair/autopair.zsh
-# fast-syntax-highlighting
-source /opt/homebrew/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-# zsh-abbr
-source /opt/homebrew/share/zsh-abbr/zsh-abbr.zsh
 typeset -gi ABBR_QUIET=1
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
