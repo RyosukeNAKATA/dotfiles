@@ -50,6 +50,10 @@ zle -N fzf-rg-widget
 bindkey '^P' fzf-rg-widget
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 {{ if (eq .chezmoi.os "darwin") }}
+# shledon + pure prompt ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+fpath+=($HOME//.local/share/sheldon/repos/github.com/sindresorhus/pure/)
+autoload -U promptinit; promptinit
+prompt pure
 # autopair.zsh
 source /opt/homebrew/share/zsh-autopair/autopair.zsh
 # fast-syntax-highlighting
@@ -63,8 +67,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # ==============================================================================
 # commandline utilities
 # ==============================================================================
-# starship
-eval "$(starship init zsh)"
+# sheldon
+eval "$(sheldon source)"
 # zoxied
 eval "$(zoxide init zsh)"
 # zsh-abbr
@@ -118,3 +122,5 @@ abbr -S gip='curl inet-ip.info'
 abbr -S rp='rg "" --sort path -n --color always'
 # github copilot
 abbr -S cli='copilot --banner'
+# zoxide
+abbr -S zd='zoxide'
