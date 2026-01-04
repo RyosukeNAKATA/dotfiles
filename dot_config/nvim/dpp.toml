@@ -68,11 +68,6 @@ hook_add = 'source ~/.config/nvim/plugins/indent-blankline.nvim.lua'
 # highlights code using tree-sitter
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
-# highlights  using tree-sitter
-[[plugins]]
-repo = 'mrjones2014/nvim-ts-rainbow'
-on_source = ['nvim-treesitter']
-hook_source = 'source ~/.config/nvim/plugins/nvim-treesitter.nvim.lua'
 # Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 [[plugins]]
 repo = 'folke/noice.nvim'
@@ -89,6 +84,10 @@ on_ft = ['slim']
 [[plugins]]
 repo = 'williamboman/mason.nvim'
 hook_add = 'source ~/.config/nvim/plugins/mason.nvim.lua'
+# LSP configurations for Neovim
+[[plugins]]
+repo = 'neovim/nvim-lspconfig'
+hook_add = 'source ~/.config/nvim/plugins/nvim-lspconfig.nvim.lua'
 # mason-lspconfig bridges mason.nvim with the lspconfig plugin
 [[plugins]]
 repo = 'williamboman/mason-lspconfig.nvim'
