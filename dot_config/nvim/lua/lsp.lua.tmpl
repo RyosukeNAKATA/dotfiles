@@ -3,7 +3,6 @@ vim.g.rustfmt_autosave = 1
 
 -- 共通設定（nvim-cmpとの連携）
 vim.lsp.config('*', {
-
 })
 
 -- 各LSPサーバーの設定
@@ -12,8 +11,9 @@ vim.lsp.config('rust_analyzer', {
   -- Server-specific settings. See `:help lsp-quickstart`
   settings = {
     ['rust-analyzer'] = {
-        cargo = { allFeatures = true, },
-        checkOnSave = {command = 'clippy',},
+        cargo = { allFeatures = true },
+        checkOnSave = true,
+        check = { command = "clippy" },
         },
     },
 })

@@ -1,4 +1,5 @@
 # 1. 準備
+
 mkdir -p ~/.cache/dpp/repos/github.com/
 cd ~/.cache/dpp/repos/github.com/
 
@@ -17,7 +18,9 @@ cd ../vim-denops
 git clone https://github.com/vim-denops/denops.vim
 
 # インストール
+
 call dpp#async_ext_action('installer', 'install')
 
 # アップデート
+
 call dpp#async_ext_action('installer', 'update')
