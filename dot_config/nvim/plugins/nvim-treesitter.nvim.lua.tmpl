@@ -1,10 +1,6 @@
 require 'nvim-treesitter'.setup {
     -- A list of parser names, or "all"
-    {{ if (eq .chezmoi.username "ryosuke.nakata") }}
-    ensure_installed = { "rust", "markdown", "ruby", "toml", "yaml" },
-    {{ else }}
-    ensure_installed = { "rust", "markdown", "toml", "yaml" },
-    {{ end }}
+    ensure_installed = { "rust", "markdown", "ruby", "toml", "yaml", "slim" },
 
     -- install parsers synchronously (only applied to `ensure_installed`)
     sync_install = true,
