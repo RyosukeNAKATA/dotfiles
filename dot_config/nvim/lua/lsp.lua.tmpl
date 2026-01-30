@@ -29,6 +29,19 @@ vim.lsp.config('rubocop',{
 vim.lsp.enable('rubocop')
 
 
+vim.lsp.config.sqls = {
+      cmd = { 'sqls' },
+      filetypes = { 'sql', 'mysql' },
+      root_markers = { '.sqls.yaml', '.git' },
+      settings = {
+        sqls = {
+          dialect = "mysql",
+        },
+      },
+    }
+vim.lsp.enable('sqls')
+
+
 -- 有効化するLSPサーバー
 vim.lsp.enable('lua_ls')
 
