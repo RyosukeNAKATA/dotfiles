@@ -77,6 +77,10 @@ hook_source = 'source ~/.config/nvim/plugins/nvim-treesitter.lua'
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter-context'
 hook_source = 'source ~/.config/nvim/plugins/nvim-treesitter-context.lua'
+# slim template syntax highlight
+[[plugins]]
+repo = 'slim-template/vim-slim'
+on_ft = 'slim'
 # Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 [[plugins]]
 repo = 'folke/noice.nvim'
