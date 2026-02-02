@@ -1,10 +1,10 @@
 require('hlchunk').setup({
     chunk = {
-        enable = true
+        enable = true,
         -- ...
     },
     indent = {
-        enable = true
+        enable = true,
         -- ...
     }
 })
