@@ -93,6 +93,9 @@ hook_add = 'source ~/.config/nvim/plugins/render-markdown.nvim.lua'
 [[plugins]]
 repo = 'norcalli/nvim-colorizer.lua'
 hook_source = 'source ~/.config/nvim/plugins/nvim-colorizer.nvim.lua'
+[[plugins]]
+repo = 'shellRaining/hlchunk.nvim'
+hook_add = 'source ~/.config/nvim/plugins/hlchunk.nvim.lua'
 # ==============================================================================
 # Completion settings
 # ==============================================================================
