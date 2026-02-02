@@ -74,6 +74,9 @@ hook_add = 'source ~/.config/nvim/plugins/indent-blankline.nvim.lua'
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 hook_source = 'source ~/.config/nvim/plugins/nvim-treesitter.lua'
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter-context'
+hook_source = 'source ~/.config/nvim/plugins/nvim-treesitter-context.lua'
 # Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
 [[plugins]]
 repo = 'folke/noice.nvim'
