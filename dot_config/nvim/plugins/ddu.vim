@@ -125,10 +125,11 @@ function! s:ddu_filer_my_settings() abort
     \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'newDirectory'})<CR>
   nnoremap <buffer><silent> yy
     \ <Cmd>call ddu#ui#do_action('itemAction', {'name': 'yank'})<CR>
+  " Auto-refresh on buffer events
+  autocmd TabEnter,CursorHold,FocusGained <buffer>
+    \ call ddu#ui#do_action('checkItems')
 endfunction
 
-autocmd TabEnter,CursorHold,FocusGained <buffer>
-	\ call ddu#ui#do_action('checkItems')
 autocmd FileType ddu-filer call s:ddu_filer_my_settings()
 
 nmap <silent> ;f <Cmd>call ddu#start({})<CR>

@@ -91,8 +91,8 @@ endfunction
 " <TAB>: completion.
 inoremap <silent><expr> <TAB>
       \ pum#visible() ? '<Cmd>call pum#map#insert_relative(+1)<CR>' :
-      \ (col('.') <= 1 || getline('.')[col('.') - 2] =~# '\s') ?
-      \ '<TAB>' : pum#manual_complete()
+      \ (col('.') <= 1 <Bar><Bar> getline('.')[col('.') - 2] =~# '\s') ?
+      \ '<TAB>' : ddc#map#manual_complete()
 inoremap <S-Tab>  <Cmd>call pum#map#insert_relative(-1)<CR>
 imap <silent><expr> <Down>
       \ pum#visible() ? '<Cmd>call pum#map#select_relative(+1)<CR>' :

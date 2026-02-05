@@ -1,23 +1,37 @@
-vim.cmd ([[
-augroup custom_highlight
-  autocmd!
-  set termguicolors
-  set listchars=tab:»-,nbsp:¬,extends:»,precedes:«,trail:•,eol:↲
-  set list
-  au ColorScheme * highlight red guifg=#e27878 gui=nocombine
-  au ColorScheme * highlight yellow guifg=#e2a478 gui=nocombine
-  au ColorScheme * highlight green guifg=#b4be82 gui=nocombine
-  au ColorScheme * highlight cyan guifg=#89b8c2 gui=nocombine
-  au ColorScheme * highlight blue guifg=#84a0c6 gui=nocombine
-  au ColorScheme * highlight magenta guifg=#a093c7 gui=nocombine
-  augroup END
-]])
+-- Set display options
+vim.opt.termguicolors = true
+vim.opt.listchars = { tab = "»-", nbsp = "¬", extends = "»", precedes = "«", trail = "•", eol = "↲" }
+vim.opt.list = true
+
+-- Define highlight groups for indent-blankline (must be defined before ibl.setup)
+local highlight_groups = {
+    IblRed = { fg = "#e27878", nocombine = true },
+    IblYellow = { fg = "#e2a478", nocombine = true },
+    IblGreen = { fg = "#b4be82", nocombine = true },
+    IblCyan = { fg = "#89b8c2", nocombine = true },
+    IblBlue = { fg = "#84a0c6", nocombine = true },
+    IblMagenta = { fg = "#a093c7", nocombine = true },
+}
+
+for name, opts in pairs(highlight_groups) do
+    vim.api.nvim_set_hl(0, name, opts)
+end
+
+-- Re-apply highlights on ColorScheme change
+vim.api.nvim_create_autocmd("ColorScheme", {
+    pattern = "*",
+    callback = function()
+        for name, opts in pairs(highlight_groups) do
+            vim.api.nvim_set_hl(0, name, opts)
+        end
+    end,
+})
 
 -- indent-blankline.nvim v3 configuration
 require("ibl").setup({
     indent = {
         char = "│",
-        highlight = { "red", "yellow", "green", "cyan", "blue", "magenta" },
+        highlight = { "IblRed", "IblYellow", "IblGreen", "IblCyan", "IblBlue", "IblMagenta" },
     },
     scope = {
         enabled = true,
