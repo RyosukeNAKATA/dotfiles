@@ -66,10 +66,6 @@ repo = 'nvim-lualine/lualine.nvim'
 hook_add = 'source ~/.config/nvim/plugins/lualine.nvim.lua'
 [[plugins]]
 repo = 'pnx/lualine-lsp-status'
-# show and colorize indent levels
-[[plugins]]
-repo = 'lukas-reineke/indent-blankline.nvim'
-hook_add = 'source ~/.config/nvim/plugins/indent-blankline.nvim.lua'
 # highlights code using tree-sitter
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'

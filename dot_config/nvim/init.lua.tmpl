@@ -4,6 +4,9 @@
 local home = vim.fn.expand("$HOME")
 local dpp_base = home .. "/.cache/dpp"
 
+-- Required by some plugins before loading state
+vim.opt.termguicolors = true
+
 -- Set $BASE_DIR environment variable for dpp-ext-toml to expand paths
 vim.env.BASE_DIR = home .. "/.config/nvim"
 
