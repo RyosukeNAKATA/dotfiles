@@ -87,10 +87,11 @@ repo = 'MunifTanjim/nui.nvim'
 [[plugins]]
 repo = 'folke/noice.nvim'
 depends = ['nui.nvim']
+hook_add = 'source ~/.config/nvim/plugins/noice.nvim.lua'
 [[plugins]]
 repo = 'SmiteshP/nvim-navic'
 depends = 'nvim-lspconfig'
-hook_add = 'source ~/.config/nvim/plugins/noice.nvim.lua'
+hook_add = 'source ~/.config/nvim/plugins/nvim-navic.lua'
 # Highlight arguments' definitions and usages, asynchronously, using Treesitter.
 [[plugins]]
 repo = 'm-demare/hlargs.nvim'
