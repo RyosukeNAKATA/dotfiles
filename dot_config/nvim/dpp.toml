@@ -159,6 +159,9 @@ repo = 'Shougo/ddc-filter-matcher_head'
 # Filter to properly sort candidate completions.
 [[plugins]]
 repo = 'Shougo/ddc-filter-sorter_rank'
+# Vim completion source for neocomplete/deoplete/ddc.
+[[plugins]]
+repo = 'Shougo/neco-vim'
 # file completions for ddc.vim
 [[plugins]]
 repo = 'LumaKernel/ddc-file'
