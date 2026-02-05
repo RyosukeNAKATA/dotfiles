@@ -1,113 +1,134 @@
+import type {
+  ContextBuilder,
+  ExtOptions,
+  Plugin,
+  ProtocolName,
+} from "jsr:@shougo/dpp-vim@~3.0.0/types";
 import {
   BaseConfig,
-  ContextBuilder,
-  Dpp,
-  Plugin,
-} from "https://deno.land/x/dpp_vim@v1.0.0/types.ts";
-import { Denops, fn } from "https://deno.land/x/dpp_vim@v1.0.0/deps.ts";
+  type ConfigReturn,
+} from "jsr:@shougo/dpp-vim@~3.0.0/config";
+import { Protocol } from "jsr:@shougo/dpp-vim@~3.0.0/protocol";
+
+import type {
+  Ext as TomlExt,
+  Params as TomlParams,
+} from "jsr:@shougo/dpp-ext-toml@~1.3.0";
+import type {
+  Ext as LazyExt,
+  LazyMakeStateResult,
+  Params as LazyParams,
+} from "jsr:@shougo/dpp-ext-lazy@~1.5.0";
+
+import type { Denops } from "jsr:@denops/std@~7.4.0";
+import * as fn from "jsr:@denops/std@~7.4.0/function";
 
 export class Config extends BaseConfig {
   override async config(args: {
     denops: Denops;
     contextBuilder: ContextBuilder;
     basePath: string;
-    dpp: Dpp;
-  }): Promise<{
-    plugins: Plugin[];
-    stateLines: string[];
-  }> {
+  }): Promise<ConfigReturn> {
     args.contextBuilder.setGlobal({
       protocols: ["git"],
     });
 
-    type Toml = {
-      hooks_file?: string;
-      ftplugins?: Record<string, string>;
-      plugins?: Plugin[];
-    };
-
-    type LazyMakeStateResult = {
-      plugins: Plugin[];
-      stateLines: string[];
-    };
-
     const [context, options] = await args.contextBuilder.get(args.denops);
-    const dotfilesDir = "~/.config/nvim/";
+    const protocols = await args.denops.dispatcher.getProtocols() as Record<
+      ProtocolName,
+      Protocol
+    >;
 
-    const tomls: Toml[] = [];
-    tomls.push(
-      await args.dpp.extAction(
-        args.denops,
-        context,
-        options,
-        "toml",
-        "load",
-        {
-          path: await fn.expand(args.denops, dotfilesDir + "dpp.toml"),
-          options: {
-            lazy: false,
-          },
-        },
-      ) as Toml,
-    );
-
-    tomls.push(
-      await args.dpp.extAction(
-        args.denops,
-        context,
-        options,
-        "toml",
-        "load",
-        {
-          path: await fn.expand(args.denops, dotfilesDir + "dpp_lazy.toml"),
-          options: {
-            lazy: true,
-          },
-        },
-      ) as Toml,
-    );
+    const dotfilesDir = await fn.expand(args.denops, "~/.config/nvim/") as string;
 
     const recordPlugins: Record<string, Plugin> = {};
     const ftplugins: Record<string, string> = {};
     const hooksFiles: string[] = [];
 
-    tomls.forEach((toml) => {
+    const [tomlExt, tomlOptions, tomlParams]: [
+      TomlExt | undefined,
+      ExtOptions,
+      TomlParams,
+    ] = await args.denops.dispatcher.getExt(
+      "toml",
+    ) as [TomlExt | undefined, ExtOptions, TomlParams];
 
-      for (const plugin of toml.plugins) {
-        recordPlugins[plugin.name] = plugin;
-      }
+    if (tomlExt) {
+      const action = tomlExt.actions.load;
 
-      if (toml.ftplugins) {
-        for (const filetype of Object.keys(toml.ftplugins)) {
-          if (ftplugins[filetype]) {
-            ftplugins[filetype] += `\n${toml.ftplugins[filetype]}`;
-          } else {
-            ftplugins[filetype] = toml.ftplugins[filetype];
+      const tomlPromises = [
+        { path: dotfilesDir + "dpp.toml", lazy: false },
+        { path: dotfilesDir + "dpp_lazy.toml", lazy: true },
+      ].map((tomlFile) =>
+        action.callback({
+          denops: args.denops,
+          context,
+          options,
+          protocols,
+          extOptions: tomlOptions,
+          extParams: tomlParams,
+          actionParams: {
+            path: tomlFile.path,
+            options: {
+              lazy: tomlFile.lazy,
+            },
+          },
+        })
+      );
+
+      const tomls = await Promise.all(tomlPromises);
+
+      for (const toml of tomls) {
+        for (const plugin of toml.plugins ?? []) {
+          recordPlugins[plugin.name] = plugin;
+        }
+
+        if (toml.ftplugins) {
+          for (const filetype of Object.keys(toml.ftplugins)) {
+            if (ftplugins[filetype]) {
+              ftplugins[filetype] += `\n${toml.ftplugins[filetype]}`;
+            } else {
+              ftplugins[filetype] = toml.ftplugins[filetype];
+            }
           }
         }
-      }
 
-      if (toml.hooks_file) {
-        hooksFiles.push(toml.hooks_file);
+        if (toml.hooks_file) {
+          hooksFiles.push(toml.hooks_file);
+        }
       }
-    });
+    }
 
-    const lazyResult = await args.dpp.extAction(
-      args.denops,
-      context,
-      options,
+    const [lazyExt, lazyOptions, lazyParams]: [
+      LazyExt | undefined,
+      ExtOptions,
+      LazyParams,
+    ] = await args.denops.dispatcher.getExt(
       "lazy",
-      "makeState",
-      {
-        plugins: Object.values(recordPlugins),
-      },
-    ) as LazyMakeStateResult;
+    ) as [LazyExt | undefined, ExtOptions, LazyParams];
 
-    console.log(lazyResult);
+    let lazyResult: LazyMakeStateResult | undefined = undefined;
+    if (lazyExt) {
+      const action = lazyExt.actions.makeState;
+
+      lazyResult = await action.callback({
+        denops: args.denops,
+        context,
+        options,
+        protocols,
+        extOptions: lazyOptions,
+        extParams: lazyParams,
+        actionParams: {
+          plugins: Object.values(recordPlugins),
+        },
+      });
+    }
 
     return {
-      plugins: lazyResult.plugins,
-      stateLines: lazyResult.stateLines,
+      ftplugins,
+      hooksFiles,
+      plugins: lazyResult?.plugins ?? [],
+      stateLines: lazyResult?.stateLines ?? [],
     };
   }
 }

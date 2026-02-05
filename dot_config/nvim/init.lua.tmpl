@@ -2,20 +2,24 @@
 -- dpp.vim setup
 -- #############################################################################
 local home = vim.fn.expand("$HOME")
-local dpp_src = home .. "/.cache/dpp/repos/github.com/Shougo/dpp.vim"
+local dpp_base = home .. "/.cache/dpp"
+
+-- Set $BASE_DIR environment variable for dpp-ext-toml to expand paths
+vim.env.BASE_DIR = home .. "/.config/nvim"
+
+local dpp_src = dpp_base .. "/repos/github.com/Shougo/dpp.vim"
 -- プラグイン内のLuaモジュールを読み込むため、先にruntimepathに追加する必要があります。
 vim.opt.runtimepath:prepend(dpp_src) 
 local dpp = require("dpp")
 
-local dpp_base = "~/.cache/dpp/"
-local dpp_config = "~/.config/nvim/dpp.ts"
+local dpp_config = home .. "/.config/nvim/dpp.ts"
 
-local denops_src = home .. "/.cache/dpp/repos/github.com/vim-denops/denops.vim"
+local denops_src = dpp_base .. "/repos/github.com/vim-denops/denops.vim"
 
-local ext_toml = home .. "/.cache/dpp/repos/github.com/Shougo/dpp-ext-toml"
-local ext_lazy = home .. "/.cache/dpp/repos/github.com/Shougo/dpp-ext-lazy"
-local ext_installer = home .. "/.cache/dpp/repos/github.com/Shougo/dpp-ext-installer"
-local ext_git = home .. "/.cache/dpp/repos/github.com/Shougo/dpp-protocol-git"
+local ext_toml = dpp_base .. "/repos/github.com/Shougo/dpp-ext-toml"
+local ext_lazy = dpp_base .. "/repos/github.com/Shougo/dpp-ext-lazy"
+local ext_installer = dpp_base .. "/repos/github.com/Shougo/dpp-ext-installer"
+local ext_git = dpp_base .. "/repos/github.com/Shougo/dpp-protocol-git"
 
 vim.opt.runtimepath:append(ext_toml)
 vim.opt.runtimepath:append(ext_git)
@@ -55,17 +59,45 @@ require('keymap')
 require('lsp')
 require('opt')
 
-vim.api.nvim_command [[colorscheme iceberg]]
+-- ColorScheme setup (with fallback for async plugin loading)
 vim.api.nvim_create_autocmd(
     "ColorScheme",
     { pattern = "*", command = "hi ColorColumn gui=reverse cterm=italic" }
 )
+
+local ok = pcall(vim.cmd, "colorscheme iceberg")
+if not ok then
+    vim.api.nvim_create_autocmd("VimEnter", {
+        once = true,
+        callback = function()
+            pcall(vim.cmd, "colorscheme iceberg")
+        end,
+    })
+end
+
 -- config for nvim-lastplace
-require 'nvim-lastplace'.setup {
-    lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
-    lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
-    lastplace_open_folds = true
-}
+local lastplace_ok, lastplace = pcall(require, 'nvim-lastplace')
+if lastplace_ok then
+    lastplace.setup {
+        lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+        lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
+        lastplace_open_folds = true
+    }
+else
+    vim.api.nvim_create_autocmd("VimEnter", {
+        once = true,
+        callback = function()
+            local ok_later, lastplace_later = pcall(require, 'nvim-lastplace')
+            if ok_later then
+                lastplace_later.setup {
+                    lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+                    lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
+                    lastplace_open_folds = true
+                }
+            end
+        end,
+    })
+end
 
 {{ if (eq .chezmoi.username "ryosuke.nakata") }}
 vim.cmd('autocmd BufNewFile,BufRead *.slim set filetype=slim')
