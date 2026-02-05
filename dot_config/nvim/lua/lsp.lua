@@ -20,23 +20,23 @@ vim.lsp.config('*', {
 -- 各LSPサーバーの設定
 
 vim.lsp.config('rust_analyzer', {
-  -- Server-specific settings. See `:help lsp-quickstart`
-  settings = {
-    ['rust-analyzer'] = {
-        cargo = { allFeatures = true },
-        checkOnSave = true,
-        check = { command = "clippy" },
+    -- Server-specific settings. See `:help lsp-quickstart`
+    settings = {
+        ['rust-analyzer'] = {
+            cargo = { allFeatures = true },
+            checkOnSave = true,
+            check = { command = "clippy" },
         },
     },
 })
 vim.lsp.enable('rust_analyzer')
 
-vim.lsp.config('rubocop',{
-  settings = {
-    rubocop = {
-      onSave = true,
+vim.lsp.config('rubocop', {
+    settings = {
+        rubocop = {
+            onSave = true,
+        },
     },
-  },
 })
 vim.lsp.enable('rubocop')
 
