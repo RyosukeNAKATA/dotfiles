@@ -73,10 +73,11 @@ hook_add = 'source ~/.config/nvim/plugins/indent-blankline.nvim.lua'
 # highlights code using tree-sitter
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
-hook_source = 'source ~/.config/nvim/plugins/nvim-treesitter.lua'
+hook_post_source = 'source ~/.config/nvim/plugins/nvim-treesitter.lua'
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter-context'
-hook_source = 'source ~/.config/nvim/plugins/nvim-treesitter-context.lua'
+depends = ['nvim-treesitter']
+hook_post_source = 'source ~/.config/nvim/plugins/nvim-treesitter-context.lua'
 # slim template syntax highlight
 [[plugins]]
 repo = 'slim-template/vim-slim'
