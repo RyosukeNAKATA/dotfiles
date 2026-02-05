@@ -1,4 +1,7 @@
-# remove all background for making nvim transparent
+# ==============================================================================
+# 遅延読み込みプラグイン
+# ==============================================================================
+# nvim-transparent: 背景を透過させてNeovimを透明にするプラグイン
 [[plugins]]
 repo = 'xiyaowong/nvim-transparent'
 on_event = 'BufEnter'

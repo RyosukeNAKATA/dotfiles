@@ -1,187 +1,261 @@
 # ==============================================================================
-# General settings
+# 基本設定
 # ==============================================================================
-# plugin manager
+# dpp.vim: Deno製のプラグインマネージャー
 [[plugins]]
 repo = 'Shougo/dpp.vim'
 depends = ['denops.vim']
-# An ecosystem of Vim/Neovim which allows developers to write plugins in Deno
+
+# denops.vim: DenoでVim/Neovimプラグインを開発するためのエコシステム
 [[plugins]]
 repo = 'vim-denops/denops.vim'
-# switch between commmentout and uncomment
+
+# tcomment_vim: コメントアウト/アンコメントをトグルするプラグイン
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
-# auto save on normal mode
+
+# vim-auto-save: ノーマルモード時に自動保存するプラグイン
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
 hook_add = 'source ~/.config/nvim/plugins/vim-auto-save.vim'
-# auto close parentheses
+
+# lexima.vim: 括弧やクォートを自動で閉じるプラグイン
 [[plugins]]
 repo = 'cohama/lexima.vim'
-# Restore cursor position
+
+# nvim-lastplace: 前回のカーソル位置を復元するプラグイン
 [[plugins]]
 repo = 'ethanholz/nvim-lastplace'
-# All-in-one plugin
+
+# mini.nvim: 多機能なオールインワンプラグイン（サブモジュール集）
 [[plugins]]
 repo = 'echasnovski/mini.nvim'
+
 # ==============================================================================
-# GUI settings
+# UI設定
 # ==============================================================================
-# File source for ddu.vim ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# Dark deno-powered UI framework for neovim/Vim8
+# ------------------------------------------------------------------------------
+# ddu.vim: Deno製のUIフレームワーク（ファイラー/ファジーファインダー）
+# ------------------------------------------------------------------------------
 [[plugins]]
 repo = 'Shougo/ddu.vim'
 hook_add = 'source ~/.config/nvim/plugins/ddu.vim'
-# source
+
+# ddu-source-file: ddu.vim用のファイルソース
 [[plugins]]
 repo = 'Shougo/ddu-source-file'
+
+# ddu-source-file_rec: ddu.vim用の再帰的ファイル検索ソース
 [[plugins]]
 repo = 'Shougo/ddu-source-file_rec'
-# kind
+
+# ddu-kind-file: ddu.vim用のファイル操作（開く、削除等）を提供
 [[plugins]]
 repo = 'Shougo/ddu-kind-file'
-# Icon and filename column for ddu.vim
+
+# ddu-column-icon_filename: ddu.vim用のアイコン付きファイル名表示カラム
 [[plugins]]
 repo = 'ryota2357/ddu-column-icon_filename'
-# File listing UI for ddu.vim
+
+# ddu-ui-filer: ddu.vim用のファイラーUI
 [[plugins]]
 repo = 'Shougo/ddu-ui-filer'
-# fzf for ddu
+
+# ddu-ui-ff: ddu.vim用のファジーファインダーUI
 [[plugins]]
 repo = 'Shougo/ddu-ui-ff'
+
+# ddu-filter-matcher_substring: ddu.vim用の部分文字列マッチフィルター
 [[plugins]]
 repo = 'Shougo/ddu-filter-matcher_substring'
+
+# ddu-source-rg: ddu.vim用のripgrep検索ソース
 [[plugins]]
 repo = 'shun/ddu-source-rg'
-# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# iceberg theme for vim
+
+# ------------------------------------------------------------------------------
+# 外観・テーマ
+# ------------------------------------------------------------------------------
+# iceberg.vim: 青を基調としたダークカラースキーム
 [[plugins]]
 repo = 'cocopon/iceberg.vim'
-# Graphical icons for nvim in lua
+
+# nvim-web-devicons: ファイルタイプに応じたアイコンを提供
 [[plugins]]
 repo = 'nvim-tree/nvim-web-devicons'
-# decorate status line
+
+# lualine.nvim: 高速でカスタマイズ可能なステータスライン
 [[plugins]]
 repo = 'nvim-lualine/lualine.nvim'
 hook_add = 'source ~/.config/nvim/plugins/lualine.nvim.lua'
+
+# lualine-lsp-status: lualine用のLSPステータス表示コンポーネント
 [[plugins]]
 repo = 'pnx/lualine-lsp-status'
-# highlights code using tree-sitter
+
+# ------------------------------------------------------------------------------
+# シンタックスハイライト・TreeSitter
+# ------------------------------------------------------------------------------
+# nvim-treesitter: TreeSitterによる高精度なシンタックスハイライト
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter'
 hook_post_source = 'source ~/.config/nvim/plugins/nvim-treesitter.lua'
+
+# nvim-treesitter-context: 現在のコンテキスト（関数名等）を画面上部に表示
 [[plugins]]
 repo = 'nvim-treesitter/nvim-treesitter-context'
 depends = ['nvim-treesitter']
 hook_post_source = 'source ~/.config/nvim/plugins/nvim-treesitter-context.lua'
-# slim template syntax highlight
+
+# vim-slim: Slimテンプレートのシンタックスハイライト
 [[plugins]]
 repo = 'slim-template/vim-slim'
 on_ft = 'slim'
-# LSP progress notifications
+
+# ------------------------------------------------------------------------------
+# 通知・ナビゲーション
+# ------------------------------------------------------------------------------
+# fidget.nvim: LSPの進捗状況を右下に通知表示
 [[plugins]]
 repo = 'j-hui/fidget.nvim'
 hook_add = 'source ~/.config/nvim/plugins/fidget.nvim.lua'
+
+# nvim-navic: 現在のコード位置（クラス > 関数 > 変数等）をパンくずリスト表示
 [[plugins]]
 repo = 'SmiteshP/nvim-navic'
 depends = 'nvim-lspconfig'
 hook_add = 'source ~/.config/nvim/plugins/nvim-navic.lua'
-# Highlight arguments' definitions and usages, asynchronously, using Treesitter.
+
+# hlargs.nvim: 関数の引数定義と使用箇所をTreeSitterでハイライト
 [[plugins]]
 repo = 'm-demare/hlargs.nvim'
 hook_add = 'source ~/.config/nvim/plugins/hlargs.nvim.lua'
-# Plugin to improve viewing Markdown files in Neovim
+
+# render-markdown.nvim: MarkdownファイルをNeovim内でリッチに表示
 [[plugins]]
 repo = 'MeanderingProgrammer/render-markdown.nvim'
 depends = ['nvim-treesitter', 'mini.nvim']
 hook_add = 'source ~/.config/nvim/plugins/render-markdown.nvim.lua'
-# colorize color code
+
+# nvim-colorizer.lua: カラーコード（#FF0000等）を実際の色でハイライト
 [[plugins]]
 repo = 'norcalli/nvim-colorizer.lua'
 hook_source = 'source ~/.config/nvim/plugins/nvim-colorizer.nvim.lua'
+
+# hlchunk.nvim: インデントガイドと現在のコードブロックをハイライト
 [[plugins]]
 repo = 'shellRaining/hlchunk.nvim'
 hook_source = 'source ~/.config/nvim/plugins/hlchunk.nvim.lua'
+
 # ==============================================================================
-# Completion settings
+# 補完・LSP設定
 # ==============================================================================
-# Portable package manager for Neovim
+# ------------------------------------------------------------------------------
+# パッケージ管理・LSP基盤
+# ------------------------------------------------------------------------------
+# mason.nvim: LSPサーバー、フォーマッター、リンターのパッケージマネージャー
 [[plugins]]
 repo = 'williamboman/mason.nvim'
 hook_add = 'source ~/.config/nvim/plugins/mason.nvim.lua'
-# LSP configurations for Neovim
+
+# nvim-lspconfig: NeovimのLSPクライアント設定を簡素化
 [[plugins]]
 repo = 'neovim/nvim-lspconfig'
 hook_add = 'source ~/.config/nvim/plugins/nvim-lspconfig.nvim.lua'
-# mason-lspconfig bridges mason.nvim with the lspconfig plugin
+
+# mason-lspconfig.nvim: masonとlspconfigを連携させるブリッジ
 [[plugins]]
 repo = 'williamboman/mason-lspconfig.nvim'
 hook_add = 'source ~/.config/nvim/plugins/mason-lspconfig.nvim.lua'
-# Lightweight yet powerful formatter plugin for Neovim
+
+# conform.nvim: 軽量で強力なコードフォーマッター
 [[plugins]]
 repo = 'stevearc/conform.nvim'
 hook_add = 'source ~/.config/nvim/plugins/conform.nvim.lua'
-# github copilot
+
+# copilot.vim: GitHub CopilotのVim統合
 [[plugins]]
 repo = 'github/copilot.vim'
 hook_add = 'source ~/.config/nvim/plugins/copilot.lua'
-# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# File source for ddc.vim
-# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-# Snippet plugin for ddc.vim
+
+# ------------------------------------------------------------------------------
+# ddc.vim: Deno製の補完フレームワーク
+# ------------------------------------------------------------------------------
+# vim-vsnip: スニペットエンジン
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip'
+
+# vim-vsnip-integ: vim-vsnipと他プラグインとの統合
 [[plugins]]
 repo = 'hrsh7th/vim-vsnip-integ'
+
+# ddc.vim: Deno製の自動補完フレームワーク
 [[plugins]]
 repo = 'Shougo/ddc.vim'
 depends = ['denops.vim']
 hook_add = 'source ~/.config/nvim/plugins/ddc.vim'
-# nvim-lsp completion for ddc.vim
+
+# ddc-source-lsp: ddc.vim用のLSP補完ソース
 [[plugins]]
 repo = 'Shougo/ddc-source-lsp'
 hook_add = 'source ~/.config/nvim/plugins/ddc-nvim-lsp-setup.lua'
-# Framework library to implement original popup menu completion.
+
+# ddc-ui-pum: ddc.vim用のpum.vim UIアダプター
 [[plugins]]
 repo = 'Shougo/ddc-ui-pum'
+
+# pum.vim: ポップアップメニュー補完を実装するフレームワーク
 [[plugins]]
 repo = 'Shougo/pum.vim'
-# github copilot for ddc
+
+# ddc-source-copilot: ddc.vim用のGitHub Copilot補完ソース
 [[plugins]]
 repo = 'Shougo/ddc-source-copilot'
 hook_source = 'source ~/.config/nvim/plugins/ddc-source-copilot.lua'
-# ui settings for ddc
+
+# ddc-ui-native: ddc.vim用のネイティブUI
 [[plugins]]
 repo = 'Shougo/ddc-ui-native'
-# Source for completion existing words around the cursor. 
+
+# ddc-source-around: カーソル周辺の単語から補完候補を生成
 [[plugins]]
 repo = 'Shougo/ddc-source-around'
-# Filter for completion of words as they are being typed.
+
+# ddc-filter-matcher_head: 入力文字列の先頭一致でフィルタリング
 [[plugins]]
 repo = 'Shougo/ddc-filter-matcher_head'
-# Filter to properly sort candidate completions.
+
+# ddc-filter-sorter_rank: 補完候補を適切にソート
 [[plugins]]
 repo = 'Shougo/ddc-filter-sorter_rank'
-# Vim completion source for neocomplete/deoplete/ddc.
+
+# neco-vim: Vimスクリプト用の補完ソース
 [[plugins]]
 repo = 'Shougo/neco-vim'
-# file completions for ddc.vim
+
+# ddc-file: ddc.vim用のファイルパス補完ソース
 [[plugins]]
 repo = 'LumaKernel/ddc-file'
-# mocword completion for ddc.vim: requirement(https://github.com/high-moctane/mocword)
+
+# ddc-mocword: mocword（英単語辞書）による補完ソース
+# 要件: https://github.com/high-moctane/mocword
 [[plugins]]
 repo = 'Shougo/ddc-mocword'
-# Filter to prevent duplication of candidate completions
+
+# ddc-source-cmdline_history: コマンドライン履歴からの補完ソース
 [[plugins]]
 repo = 'Shougo/ddc-source-cmdline_history'
+
+# ddc-converter_remove_overlap: 重複する補完候補を除去
 [[plugins]]
 repo = 'Shougo/ddc-converter_remove_overlap'
-# Show completion documentation
+
+# denops-popup-preview.vim: 補完候補のドキュメントをポップアップ表示
 [[plugins]]
 repo = 'matsui54/denops-popup-preview.vim'
 hook_add = 'source ~/.config/nvim/plugins/denops-popup-preview.vim'
-# Shows signature help from lsp server.
+
+# denops-signature_help: LSPのシグネチャヘルプ（関数引数情報）を表示
 [[plugins]]
 repo = 'matsui54/denops-signature_help'
 hook_add = 'source ~/.config/nvim/plugins/denops-signature_help.vim'
-# ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
