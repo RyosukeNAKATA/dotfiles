@@ -1,15 +1,50 @@
+-- ==============================================================================
+-- nvim-treesitter-context 設定
+-- 現在のコンテキスト（関数名やクラス名）を画面上部に固定表示
+-- ==============================================================================
+
 require 'treesitter-context'.setup {
-    enable = true,            -- Enable this plugin (Can be enabled/disabled later via commands)
-    multiwindow = false,      -- Enable multiwindow support.
-    max_lines = 0,            -- How many lines the window should span. Values <= 0 mean no limit.
-    min_window_height = 0,    -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+    -- プラグインを有効化
+    -- :TSContextToggle コマンドで切り替え可能
+    enable = true,
+
+    -- マルチウィンドウサポート
+    -- falseの場合、アクティブウィンドウのみでコンテキストを表示
+    multiwindow = false,
+
+    -- コンテキストウィンドウの最大行数
+    -- 0以下は無制限（ネストが深くても全て表示）
+    max_lines = 0,
+
+    -- コンテキストを表示するための最小ウィンドウ高さ
+    -- 0以下は制限なし
+    min_window_height = 0,
+
+    -- 行番号を表示
     line_numbers = true,
-    multiline_threshold = 20, -- Maximum number of lines to show for a single context
-    trim_scope = 'outer',     -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-    mode = 'cursor',          -- Line used to calculate context. Choices: 'cursor', 'topline'
-    -- Separator between context and content. Should be a single character string, like '-'.
-    -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+
+    -- 1つのコンテキストに表示する最大行数
+    -- 長い関数シグネチャなどを制限
+    multiline_threshold = 20,
+
+    -- max_linesを超えた場合にどちらを削除するか
+    -- 'outer': 外側（親）から削除
+    -- 'inner': 内側から削除
+    trim_scope = 'outer',
+
+    -- コンテキストを計算する基準
+    -- 'cursor': カーソル位置
+    -- 'topline': 画面の最上行
+    mode = 'cursor',
+
+    -- コンテキストとコンテンツの間の区切り線
+    -- nilの場合は区切り線なし
     separator = nil,
-    zindex = 20,     -- The Z-index of the context window
-    on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+
+    -- コンテキストウィンドウのZ-index
+    zindex = 20,
+
+    -- バッファにアタッチするかどうかのコールバック
+    -- nilはデフォルト動作（全バッファにアタッチ）
+    on_attach = nil,
 }

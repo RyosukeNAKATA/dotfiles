@@ -1,14 +1,23 @@
+-- ==============================================================================
+-- fidget.nvim 設定
+-- LSPの進捗状況を画面右下に通知表示するプラグイン
+-- ==============================================================================
+
 require("fidget").setup({
-    -- Options for LSP progress notifications
+    -- LSP進捗通知の設定
     progress = {
         display = {
-            done_ttl = 3, -- How long a message should persist after completion
+            -- 完了後のメッセージ表示時間（秒）
+            -- 3秒間表示してから消える
+            done_ttl = 3,
         },
     },
-    -- Options for notification subsystem
+    -- 通知ウィンドウの設定
     notification = {
         window = {
-            winblend = 0, -- Background transparency (0 = opaque)
+            -- 背景の透明度（0 = 完全に不透明）
+            -- ターミナルの背景色と合わせるため不透明に設定
+            winblend = 0,
         },
     },
 })
