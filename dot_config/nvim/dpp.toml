@@ -82,13 +82,10 @@ hook_post_source = 'source ~/.config/nvim/plugins/nvim-treesitter-context.lua'
 [[plugins]]
 repo = 'slim-template/vim-slim'
 on_ft = 'slim'
-# Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.
+# LSP progress notifications
 [[plugins]]
-repo = 'MunifTanjim/nui.nvim'
-[[plugins]]
-repo = 'folke/noice.nvim'
-depends = ['nui.nvim']
-hook_add = 'source ~/.config/nvim/plugins/noice.nvim.lua'
+repo = 'j-hui/fidget.nvim'
+hook_add = 'source ~/.config/nvim/plugins/fidget.nvim.lua'
 [[plugins]]
 repo = 'SmiteshP/nvim-navic'
 depends = 'nvim-lspconfig'
