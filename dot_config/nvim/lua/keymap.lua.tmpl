@@ -9,7 +9,7 @@ vim.keymap.set('n', '?', '?\v')
 vim.keymap.set('n', '/', '/\v')
 -- insert mode to normal mode on jj
 vim.keymap.set('i', 'jj', '<ESC>', {silent = true})
--- Move curosr when C-f on Insert Mode
+-- Move cursor when C-f on Insert Mode
 vim.keymap.set('i', '<C-f>', '<C-g>U<Right>')
 vim.keymap.set('i', '<C-f><C-f>', '<C-g>U<ESC><S-a>')
 -- Move to head/last of line on H/L

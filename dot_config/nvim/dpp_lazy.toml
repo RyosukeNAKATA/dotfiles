@@ -1,4 +1,4 @@
-# remove all background for making nvin transparent
+# remove all background for making nvim transparent
 [[plugins]]
 repo = 'xiyaowong/nvim-transparent'
 on_event = 'BufEnter'
