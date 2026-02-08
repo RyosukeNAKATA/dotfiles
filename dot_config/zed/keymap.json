@@ -15,7 +15,7 @@
     "context": "VimControl && !menu",
     "bindings": {
       "shift-h": "editor::MoveToLineStart",  // 行の左端へ移動
-      "shift-l": "editor::MoveToLineEnd"     // 行の右端へ移動
+      "shift-l": "editor::MoveToLineEnd",    // 行の右端へ移動
     }
   },
   {
