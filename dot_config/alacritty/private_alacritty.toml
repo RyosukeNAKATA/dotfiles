@@ -2,6 +2,9 @@
 live_config_reload = true
 
 [terminal]
+[terminal.shell]
+args = ["-l", "-c", "tmux attach || tmux -u"]
+program = "/bin/zsh"
 
 [colors.bright]
 black = "#6b7089"
@@ -42,10 +45,6 @@ style = "Regular"
 
 [selection]
 save_to_clipboard = true
-
-[terminal.shell]
-args = ["-l", "-c", "tmux attach || tmux -u"]
-program = "/bin/zsh"
 
 [window]
 opacity = 1
