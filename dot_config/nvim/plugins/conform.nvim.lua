@@ -6,8 +6,10 @@
 require("conform").setup({
     -- ファイルタイプごとに使用するフォーマッターを指定
     formatters_by_ft = {
-        -- Rust: rustfmtでフォーマット
-        rust = { "rustfmt" },
+        -- Rust: rast-grepでフォーマット
+        rust = { "ast-grep" },
+        -- Go:
+        go = { "ast-grep" },
         -- Ruby: rubocop（リンター兼フォーマッター）でフォーマット
         ruby = { "rubocop" },
         -- SQL: sql_formatterでフォーマット
@@ -15,6 +17,8 @@ require("conform").setup({
         mysql = { "sql_formatter" },
         -- JSON: biome（旧Rome）でフォーマット
         json = { "biome" },
+        -- TOML: tombiでフォーマット
+        toml = { "tombi" },
     },
 
     -- 保存時に自動フォーマットを実行
