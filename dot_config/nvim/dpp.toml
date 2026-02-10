@@ -173,6 +173,11 @@ hook_add = "source ~/.config/nvim/plugins/mason-lspconfig.nvim.lua"
 repo = "stevearc/conform.nvim"
 hook_add = "source ~/.config/nvim/plugins/conform.nvim.lua"
 
+# nvim-treesitter-endwise: treesitterを利用してend/endifなどを自動挿入
+[[plugins]]
+repo = "RRethy/nvim-treesitter-endwise"
+hook_add = "source ~/.config/nvim/plugins/nvim-treesitter-endwise.lua"
+
 # copilot.vim: GitHub CopilotのVim統合
 [[plugins]]
 repo = "github/copilot.vim"
