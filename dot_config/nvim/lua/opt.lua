@@ -131,7 +131,7 @@ vim.opt.number = true
 -- set diffopt+=iwhite: No whitespace in vimdiff
 vim.opt.diffopt:append({ 'iwhite' })
 -- set cc=101
-vim.wo.colorcolumn = "101"
+-- vim.wo.colorcolumn = "101"
 -- menuone: popup even when there's only one match
 -- noinsert: Do not insert text until a selection is made
 -- noselect: Do not select, force to select one from the menu
