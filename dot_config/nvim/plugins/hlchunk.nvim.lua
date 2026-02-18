@@ -12,9 +12,9 @@ require('hlchunk').setup({
     -- 関数やif文などのスコープを視覚的に把握しやすくする
     chunk = {
         enable = true,
-        -- スコープを一色で統一（icebergテーマのpurple）
+        -- スコープを一色で統一（icebergテーマのpale）
         style = {
-            { fg = "#a093c7" }, -- iceberg purple
+            { fg = "#c6c8d1" }, -- iceberg pale
         },
     },
     -- indent: インデントレベルをガイド線で表示
@@ -23,13 +23,12 @@ require('hlchunk').setup({
         enable = true,
         -- インデントの深さに応じて色を変える（icebergテーマのパレット）
         style = {
-            { fg = "#c6c8d1" }, -- レベル1: iceberg pale (最も明るい)
-            { fg = "#b4be82" }, -- レベル2: iceberg green
-            { fg = "#e2a478" }, -- レベル3: iceberg orange
-            { fg = "#89b8c2" }, -- レベル4: iceberg lblue
-            { fg = "#a093c7" }, -- レベル5: iceberg purple
-            { fg = "#84a0c6" }, -- レベル6: iceberg blue
-            { fg = "#e27878" }, -- レベル7: iceberg red
+            { fg = "#a093c7" }, -- レベル1: iceberg purple
+            { fg = "#84a0c6" }, -- レベル2: iceberg blue
+            { fg = "#89b8c2" }, -- レベル3: iceberg lblue
+            { fg = "#b4be82" }, -- レベル4: iceberg green
+            { fg = "#e2a478" }, -- レベル5: iceberg orange
+            { fg = "#e27878" }, -- レベル6: iceberg red
         },
     }
 })
