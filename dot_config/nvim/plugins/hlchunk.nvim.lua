@@ -11,7 +11,7 @@ require('hlchunk').setup({
     -- chunk: 現在のカーソルがあるコードブロック（チャンク）を線でハイライト
     -- 関数やif文などのスコープを視覚的に把握しやすくする
     chunk = {
-        enable = true,
+        enable = false,
         -- スコープを一色で統一（icebergテーマのpale）
         style = {
             { fg = "#c6c8d1" }, -- iceberg pale
