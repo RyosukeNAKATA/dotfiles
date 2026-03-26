@@ -126,6 +126,12 @@ repo = "SmiteshP/nvim-navic"
 depends = "nvim-lspconfig"
 hook_add = "source ~/.config/nvim/plugins/nvim-navic.lua"
 
+# incline.nvim: ウィンドウごとに浮遊するステータスラインを表示
+[[plugins]]
+repo = "b0o/incline.nvim"
+depends = ["nvim-web-devicons"]
+hook_add = "source ~/.config/nvim/plugins/incline.nvim.lua"
+
 # hlargs.nvim: 関数の引数定義と使用箇所をTreeSitterでハイライト
 [[plugins]]
 repo = "m-demare/hlargs.nvim"
