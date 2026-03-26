@@ -6,3 +6,9 @@
 repo = "xiyaowong/nvim-transparent"
 on_event = "BufEnter"
 # hook_source = 'source ~/.config/nvim/plugins/nvim-transparent.nvim.lua'
+
+# modes.nvim: モードに応じてカーソル行を色付けするプラグイン
+[[plugins]]
+repo = "mvllow/modes.nvim"
+on_event = ["CursorMoved", "CursorMovedI"]
+hook_add = "source ~/.config/nvim/plugins/modes.nvim.lua"

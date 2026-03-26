@@ -25,10 +25,10 @@ require('lualine').setup {
     sections = {
         -- 左端: 現在のモード（NORMAL, INSERT等）
         lualine_a = {'mode'},
-        -- 左2: Gitブランチ、差分情報、診断情報
-        lualine_b = {'branch', 'diff', 'diagnostics'},
-        -- 中央左: ファイル名
-        lualine_c = {'filename'},
+        -- 左2: Gitブランチ、差分情報
+        lualine_b = {'branch', 'diff'},
+        -- 中央左: incline.nvimでファイル情報を表示するため空
+        lualine_c = {},
         -- 中央右: エンコーディング、ファイルフォーマット、ファイルタイプ
         lualine_x = {'encoding', 'fileformat', 'filetype'},
         -- 右2: ファイル内の進捗率
@@ -41,8 +41,8 @@ require('lualine').setup {
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        -- ファイル名のみ
-        lualine_c = {'filename'},
+        -- ファイル情報はincline.nvimで表示するため空
+        lualine_c = {},
         -- カーソル位置のみ
         lualine_x = {'location'},
         lualine_y = {},
