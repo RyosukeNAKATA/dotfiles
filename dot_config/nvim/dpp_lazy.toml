@@ -11,4 +11,4 @@ on_event = "BufEnter"
 [[plugins]]
 repo = "mvllow/modes.nvim"
 on_event = ["CursorMoved", "CursorMovedI"]
-hook_source = "source ~/.config/nvim/plugins/modes.nvim.lua"
+hook_post_source = "source ~/.config/nvim/plugins/modes.nvim.lua"
