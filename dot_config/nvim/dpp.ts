@@ -7,6 +7,7 @@ import type {
 import {
   BaseConfig,
   type ConfigReturn,
+  type MultipleHook,
 } from "jsr:@shougo/dpp-vim@~3.0.0/config";
 import { Protocol } from "jsr:@shougo/dpp-vim@~3.0.0/protocol";
 
@@ -22,6 +23,13 @@ import type {
 
 import type { Denops } from "jsr:@denops/std@~7.4.0";
 import * as fn from "jsr:@denops/std@~7.4.0/function";
+
+type Toml = {
+  ftplugins?: Record<string, string>;
+  hooks_file?: string | string[];
+  multiple_hooks?: MultipleHook[];
+  plugins?: Plugin[];
+};
 
 export class Config extends BaseConfig {
   override async config(args: {
@@ -44,6 +52,7 @@ export class Config extends BaseConfig {
     const recordPlugins: Record<string, Plugin> = {};
     const ftplugins: Record<string, string> = {};
     const hooksFiles: string[] = [];
+    const multipleHooks: MultipleHook[] = [];
 
     const [tomlExt, tomlOptions, tomlParams]: [
       TomlExt | undefined,
@@ -76,7 +85,7 @@ export class Config extends BaseConfig {
         })
       );
 
-      const tomls = await Promise.all(tomlPromises);
+      const tomls = await Promise.all(tomlPromises) as Toml[];
 
       for (const toml of tomls) {
         for (const plugin of toml.plugins ?? []) {
@@ -94,7 +103,13 @@ export class Config extends BaseConfig {
         }
 
         if (toml.hooks_file) {
-          hooksFiles.push(toml.hooks_file);
+          hooksFiles.push(...(Array.isArray(toml.hooks_file)
+            ? toml.hooks_file
+            : [toml.hooks_file]));
+        }
+
+        if (toml.multiple_hooks) {
+          multipleHooks.push(...toml.multiple_hooks);
         }
       }
     }
@@ -127,6 +142,7 @@ export class Config extends BaseConfig {
     return {
       ftplugins,
       hooksFiles,
+      multipleHooks,
       plugins: lazyResult?.plugins ?? [],
       stateLines: lazyResult?.stateLines ?? [],
     };
