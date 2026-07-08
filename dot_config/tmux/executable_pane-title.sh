@@ -15,38 +15,14 @@
 pane_id="$1"
 pane_active="$2"
 pane_index="$3"
-tty_name="${4#/dev/}"
+pane_tty="$4"
 fallback="$5"
 cwd="$6"
 
 # --- コマンド名の解決 ---
-# tmux の #{pane_current_command} はカーネル上の実行ファイル名を返すため、
-# Claude Code のようにバージョン番号名のバイナリ (例: 2.1.202) で動くツールや
-# node 経由で起動する CLI では何のコマンドか分からない。
-# ここでは tty のフォアグラウンドプロセスの argv からコマンド名を求める。
-# フォアグラウンドプロセスグループ (stat に '+') の先頭行 = グループリーダー
-args=$(ps -t "$tty_name" -o stat=,args= 2>/dev/null |
-  awk '$1 ~ /^[^?]*\+/ { $1=""; sub(/^ +/, ""); print; exit }')
-
-if [ -z "$args" ]; then
-  name="$fallback"
-else
-  # shellcheck disable=SC2086 # argv を単語分割したいので意図的にクォートしない
-  set -- $args
-  # ログインシェルの argv0 は先頭に "-" が付く (-zsh) ので、
-  # basename がオプションと誤認しないよう先に除去する
-  arg0="${1#-}"
-  name=$(basename "$arg0")
-
-  # インタプリタ経由の起動ならスクリプト名の方を表示する
-  case "$name" in
-  node | bun | deno | python | python3 | ruby | perl)
-    if [ -n "$2" ]; then
-      name=$(basename "$2")
-    fi
-    ;;
-  esac
-fi
+# バージョン番号名のバイナリや node 経由の CLI でも正しい名前になるよう、
+# フォアグラウンドプロセスの argv から解決する (詳細は command-name.sh)
+name=$("$(dirname "$0")/command-name.sh" "$pane_tty" "$fallback")
 
 # --- カレントディレクトリの整形 ---
 # ホームディレクトリからの相対パス (~ 表記) にする。
