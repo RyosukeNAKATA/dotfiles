@@ -58,6 +58,14 @@
             "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" @claude_state waiting 2>/dev/null || true"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "d=\"${CLAUDE_PROJECT_DIR:-$PWD}\"; case \"$(git -C \"$d\" rev-parse --absolute-git-dir 2>/dev/null)\" in */.git/worktrees/*) main=$(git -C \"$d\" worktree list --porcelain | sed -n \"1s/^worktree //p\"); [ -f \"$main/.claude/settings.local.json\" ] && { mkdir -p \"$d/.claude\"; [ -e \"$d/.claude/settings.local.json\" ] || [ -L \"$d/.claude/settings.local.json\" ] || ln -s \"$main/.claude/settings.local.json\" \"$d/.claude/settings.local.json\"; } ;; esac 2>/dev/null || true"
+          }
+        ]
       }
     ],
     "SessionEnd": [
