@@ -62,7 +62,9 @@ if [ "$pane_active" = "1" ]; then
   case "$state" in
   busy) style="#[fg=#161825 bg=#e2a478 bold]" ;;
   waiting) style="#[fg=#161825 bg=#84a0c6 bold]" ;;
-  *) style="#[fg=#161825 bg=#b4be82 bold]" ;;
+  # 状態なし = 通常のアクティブペイン。境界線 (pane-active-border-style) と
+  # 揃えて iceberg の水色 (cyan) で塗り、枠全体を一様な水色にする
+  *) style="#[fg=#161825 bg=#89b8c2 bold]" ;;
   esac
 else
   case "$state" in
@@ -77,4 +79,10 @@ if [ -n "$dir" ]; then
   title="$title $dir"
 fi
 
-printf '%s %s #[default]' "$style" "$title"
+# アクティブペインは先頭に大きめの矢印マーカーを付け、一目でどのペインが
+# アクティブか分かるようにする (tmux 標準の pane-border-indicators の矢印は
+# グリフ 1 文字で小さいため off にし、これで代替する)
+marker=""
+[ "$pane_active" = "1" ] && marker="▶ "
+
+printf '%s %s%s #[default]' "$style" "$marker" "$title"
