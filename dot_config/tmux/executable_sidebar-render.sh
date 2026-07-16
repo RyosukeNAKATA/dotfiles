@@ -30,6 +30,7 @@ BEGIN {
   # iceberg 配色 (24bit)。RST で属性を都度リセットする
   GRN="\033[38;2;180;190;130m"; ORG="\033[38;2;226;164;120m"
   BLU="\033[38;2;132;160;198m"; PUR="\033[38;2;160;147;199m"
+  RED="\033[38;2;226;120;120m"   # 入力待ち(blocked)を目立たせる赤 (iceberg red)
   FG ="\033[38;2;198;200;209m"; DIM="\033[38;2;107;112;137m"
   BOLD="\033[1m"; RST="\033[0m"
   CURWIN="\033[48;2;180;190;130m\033[38;2;22;24;37m\033[1m"   # 現在ウィンドウ: 緑背景
@@ -42,10 +43,13 @@ BEGIN {
   PIDX[nr]=$5; PA[nr]=$7; CMD[nr]=$8
   cstate=$9; cmd=$8
   ag=""; lb=""; gl=""; co=""; sev=0
-  if (cstate == "busy")        { ag="claude";  lb="working"; gl="\xe2\x97\x8f"; co=ORG; sev=2 }  # ●
-  else if (cstate == "waiting"){ ag="claude";  lb="blocked"; gl="\xe2\x97\x8f"; co=BLU; sev=3 }  # ●
-  else if (cmd == "claude")    { ag="claude";  lb="idle";    gl="\xe2\x97\x8b"; co=GRN; sev=1 }  # ○
-  else if (cmd == "copilot")   { ag="copilot"; lb="active";  gl="\xe2\x97\x86"; co=PUR; sev=1 }  # ◆
+  if (cstate == "busy")          { ag="claude";  lb="working"; gl="\xe2\x97\x8f"; co=ORG;      sev=2 }  # ●
+  # attention = 許可要求 / 選択待ち (Notification フックが設定)。赤＋太字で最優先に目立たせる
+  else if (cstate == "attention"){ ag="claude";  lb="blocked"; gl="\xe2\x97\x8f"; co=RED BOLD; sev=4 }  # ●
+  # waiting = 応答終了後の通常の入力待ち (Stop 由来)。元の色 (青) のまま
+  else if (cstate == "waiting")  { ag="claude";  lb="waiting"; gl="\xe2\x97\x8f"; co=BLU;      sev=3 }  # ●
+  else if (cmd == "claude")      { ag="claude";  lb="idle";    gl="\xe2\x97\x8b"; co=GRN;      sev=1 }  # ○
+  else if (cmd == "copilot")     { ag="copilot"; lb="active";  gl="\xe2\x97\x86"; co=PUR;      sev=1 }  # ◆
   AG[nr]=ag; LB[nr]=lb; GL[nr]=gl; CO[nr]=co
   # セッション初出順を記録 (現在セッションは END で先頭に回す)
   if (!(S[nr] in sseen)) { sseen[S[nr]]=1; ORD[++nsess]=S[nr] }

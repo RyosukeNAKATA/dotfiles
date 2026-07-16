@@ -45,7 +45,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" @claude_state waiting 2>/dev/null || true"
+            "command": "in=$(cat); [ -z \"$TMUX_PANE\" ] && exit 0; printf '%s' \"$in\" | grep -qi permission && s=attention || s=waiting; tmux set-option -p -t \"$TMUX_PANE\" @claude_state \"$s\" 2>/dev/null || true"
           }
         ]
       }

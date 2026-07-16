@@ -10,7 +10,7 @@
 # 出力は「番号: コマンド名 ディレクトリ」に tmux のスタイル指定 (#[...]) を
 # 付けたもの。Claude Code 実行中は ~/.claude/settings.json のフックが設定する
 # ペインオプション @claude_state に応じて配色を変える:
-#   busy = 応答生成中 (橙) / waiting = ユーザーの入力待ち (青)
+#   busy = 応答生成中 (橙) / attention = 許可・選択待ち (赤) / waiting = 入力待ち (青)
 
 pane_id="$1"
 pane_active="$2"
@@ -61,6 +61,7 @@ fi
 if [ "$pane_active" = "1" ]; then
   case "$state" in
   busy) style="#[fg=#161825 bg=#e2a478 bold]" ;;
+  attention) style="#[fg=#161825 bg=#e27878 bold]" ;;   # 許可/選択待ち: 赤
   waiting) style="#[fg=#161825 bg=#84a0c6 bold]" ;;
   # 状態なし = 通常のアクティブペイン。境界線 (pane-active-border-style) と
   # 揃えて iceberg の水色 (cyan) で塗り、枠全体を一様な水色にする
@@ -69,6 +70,7 @@ if [ "$pane_active" = "1" ]; then
 else
   case "$state" in
   busy) style="#[fg=#e2a478]" ;;
+  attention) style="#[fg=#e27878 bold]" ;;              # 許可/選択待ち: 赤
   waiting) style="#[fg=#84a0c6]" ;;
   *) style="#[fg=#6b7089]" ;;
   esac
