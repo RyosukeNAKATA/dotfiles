@@ -1,0 +1,6 @@
+[ui]
+agent_panel_sort = "spaces"
+
+[keys]
+# プレフィックスをデフォルトの ctrl+b から ctrl+j に変更
+prefix = "ctrl+j"
