@@ -19,6 +19,12 @@ pane_tty="$4"
 fallback="$5"
 cwd="$6"
 
+# サイドバーペイン (sidebar.sh が @sidebar=1 を付ける) はタイトルを出さない。
+# 「番号: コマンド dir」を描くと紛らわしいので空タイトルにする
+if [ "$(tmux show -pqv -t "$pane_id" @sidebar 2>/dev/null)" = "1" ]; then
+  exit 0
+fi
+
 # --- コマンド名の解決 ---
 # バージョン番号名のバイナリや node 経由の CLI でも正しい名前になるよう、
 # フォアグラウンドプロセスの argv から解決する (詳細は command-name.sh)
