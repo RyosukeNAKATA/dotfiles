@@ -50,6 +50,34 @@ kill_all() {
     while IFS= read -r p; do tmux kill-pane -t "$p" 2>/dev/null; done
 }
 
+# 作業ペイン (サイドバー以外) を全て閉じたウィンドウを丸ごと閉じる。
+# tmux はペインが 1 枚でも残っていればウィンドウを保持するため、常駐する
+# サイドバーが最後の作業ペインを閉じた後もウィンドウを生かし続けてしまう
+# (サイドバーだけのゴーストウィンドウ)。pane-exited / window-pane-changed
+# フックからこれを呼び、サイドバーしか残っていないウィンドウだけを閉じる。
+# サイドバーが 1 枚以上 かつ 作業ペインが 0 のときだけ動く冪等処理なので、
+# 通常のウィンドウやペイン切替で誤って呼ばれても何もしない。
+prune() {
+  win="$1"
+  [ -z "$win" ] && return 0
+  # 各ペインを sb / work のどちらかへ必ず分類する。#{@sidebar} を直接使うと
+  # 作業ペインは空文字 (空行) になり、grep -c . が空行を数えないため作業ペイン数が
+  # 常に 0 と誤判定される (= 分割やペイン移動のたびにウィンドウを誤って殺す)。
+  # 条件フォーマットで全ペインに非空トークンを出させてこれを回避する。
+  panes=$(tmux list-panes -t "$win" -F '#{?@sidebar,sb,work}' 2>/dev/null)
+  [ -z "$panes" ] && return 0                                  # ウィンドウが既に無い
+  sb=$(printf '%s\n'   "$panes" | grep -c '^sb$')             # サイドバー枚数
+  work=$(printf '%s\n' "$panes" | grep -c '^work$')           # 作業ペイン枚数
+  [ "$sb" -ge 1 ] && [ "$work" -eq 0 ] && tmux kill-window -t "$win" 2>/dev/null
+  return 0
+}
+
+# 全ウィンドウを走査してゴーストウィンドウを一掃する (設定読み込み時の掃除用)
+prune_all() {
+  tmux list-windows -a -F '#{window_id}' 2>/dev/null |
+    while IFS= read -r w; do prune "$w"; done
+}
+
 # 1 ウィンドウに (条件を満たせば) サイドバーを用意する
 ensure_win() {
   enabled || return 0
@@ -140,6 +168,8 @@ case "$1" in
   create)        create "$2" ;;
   kill-window)   kill_win "$2" ;;
   kill-all)      kill_all ;;
+  prune)         prune "$2" ;;
+  prune-all)     prune_all ;;
   pin)           pin "$2" ;;
   pin-all)       pin_all ;;
   rebalance)     rebalance "$2" ;;
@@ -156,5 +186,5 @@ case "$1" in
     if [ "$(opt @sidebar_expand 0)" = "1" ]; then tmux set -g @sidebar_expand 0
     else tmux set -g @sidebar_expand 1; fi
     ;;
-  *) echo "usage: sidebar.sh {ensure-window|ensure-all|create|kill-window|kill-all|pin|pin-all|rebalance|reflow|toggle|expand-toggle} [target]" >&2; exit 2 ;;
+  *) echo "usage: sidebar.sh {ensure-window|ensure-all|create|kill-window|kill-all|prune|prune-all|pin|pin-all|rebalance|reflow|toggle|expand-toggle} [target]" >&2; exit 2 ;;
 esac
