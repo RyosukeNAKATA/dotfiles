@@ -95,6 +95,17 @@ ensure_all() {
   tmux set -g @sidebar_shown 1 2>/dev/null
 }
 
+# 全ウィンドウのサイドバーを一括で作り直す (kill-all → ensure-all)。
+# レンダラは exec で常駐し、awk スクリプトも起動時に一度組み立てたきり回り続ける
+# ため、sidebar-render.sh を編集して chezmoi apply / source-file しても既存
+# ウィンドウは古いコードのまま残る (ensure-all は既にサイドバーがあれば何もしない)。
+# 結果としてウィンドウごとに描画が食い違うので、そのリセット用。
+# @sidebar_enabled=0 のときは ensure_all が早期 return するため、消したままになる。
+restart() {
+  kill_all
+  ensure_all
+}
+
 # 幅を規定値に戻す (layout-changed で崩れた分をピン留め)。冪等化してループを防ぐ
 pin() {
   p=$(sb_pane_in "$1")
@@ -170,6 +181,7 @@ case "$1" in
   kill-all)      kill_all ;;
   prune)         prune "$2" ;;
   prune-all)     prune_all ;;
+  restart)       restart ;;
   pin)           pin "$2" ;;
   pin-all)       pin_all ;;
   rebalance)     rebalance "$2" ;;
@@ -186,5 +198,5 @@ case "$1" in
     if [ "$(opt @sidebar_expand 0)" = "1" ]; then tmux set -g @sidebar_expand 0
     else tmux set -g @sidebar_expand 1; fi
     ;;
-  *) echo "usage: sidebar.sh {ensure-window|ensure-all|create|kill-window|kill-all|prune|prune-all|pin|pin-all|rebalance|reflow|toggle|expand-toggle} [target]" >&2; exit 2 ;;
+  *) echo "usage: sidebar.sh {ensure-window|ensure-all|create|kill-window|kill-all|prune|prune-all|restart|pin|pin-all|rebalance|reflow|toggle|expand-toggle} [target]" >&2; exit 2 ;;
 esac
