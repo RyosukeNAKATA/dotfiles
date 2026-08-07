@@ -4,7 +4,7 @@
 # キーバインド (prefix+b / prefix+B) から各サブコマンドを呼ぶ。
 #
 # 状態を持つグローバルオプション:
-#   @sidebar_width    サイドバー幅 (既定 30)
+#   @sidebar_width    サイドバー幅 (既定 36)
 #   @sidebar_min_cols これ未満の端末幅では自動退避 (既定 100)
 #   @sidebar_enabled  ユーザーの意思 (1=出す / 0=消す)。prefix+b で反転
 #   @sidebar_shown    実際に表示中か (自動退避で 0 になる)。ステータスバーの分岐に使う
@@ -15,7 +15,7 @@ RENDER="$DIR/sidebar-render.sh"
 
 opt() { v=$(tmux show -gqv "$1" 2>/dev/null); [ -n "$v" ] && printf '%s' "$v" || printf '%s' "$2"; }
 
-width()    { opt @sidebar_width 30; }
+width()    { opt @sidebar_width 36; }
 min_cols() { opt @sidebar_min_cols 100; }
 enabled()  { [ "$(opt @sidebar_enabled 1)" = "1" ]; }
 
@@ -126,7 +126,7 @@ pin_all() {
 # select-layout even-* はサイドバーも巻き込むため使わず、作業ペインだけを目標
 # サイズに設定する。各ペインの現在サイズ合計 (境界線を含まない) を K 等分し、
 # 位置の先頭から K-1 個を目標値に、末尾 1 個が端数を吸収する。サイドバーは
-# 対象外なので触れず、幅は pin フックが 30 に保つ。
+# 対象外なので触れず、幅は pin フックが @sidebar_width に保つ。
 rebalance_axis() {
   dir="$1"; win="$2"
   case "$dir" in
@@ -158,7 +158,7 @@ rebalance() {
   [ -z "$win" ] && return 0
   rebalance_axis h "$win"
   rebalance_axis v "$win"
-  pin "$win"     # サイドバー幅を 30 に戻す
+  pin "$win"     # サイドバー幅を @sidebar_width に戻す
 }
 
 # 端末幅に応じた自動退避 (client-resized から)。閾値をまたいだときだけ動く
