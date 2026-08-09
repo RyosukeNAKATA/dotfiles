@@ -4,7 +4,7 @@
 # サイドバーが OFF/自動退避中でもこれ単独で切り替えに使える。
 
 US=$(printf '\037')
-FMT="#{session_name}${US}#{window_index}${US}#{window_name}${US}#{pane_index}${US}#{pane_id}${US}#{pane_current_command}${US}#{@claude_state}${US}#{@sidebar}"
+FMT="#{session_name}${US}#{window_index}${US}#{window_name}${US}#{pane_index}${US}#{pane_id}${US}#{pane_current_command}${US}#{@claude_state}${US}#{@sidebar}${US}#{@agy_state}"
 
 # 各ペインを「色付き表示<TAB>pane_id」の行にする (サイドバー自身は除外)
 list=$(tmux list-panes -a -F "$FMT" 2>/dev/null | awk -F "$US" '
@@ -16,12 +16,13 @@ BEGIN {
 }
 $8 == "1" { next }                                  # サイドバーは載せない
 {
-  sess=$1; widx=$2; wname=$3; pidx=$4; pid=$5; cmd=$6; cst=$7
+  sess=$1; widx=$2; wname=$3; pidx=$4; pid=$5; cmd=$6; cst=($7!=""?$7:$9)
   lb=""; co=""
   if (cst=="busy")          { lb="working"; co=ORG }
   else if (cst=="attention"){ lb="blocked"; co=RED BOLD }   # 許可/選択待ちは赤＋太字で強調
   else if (cst=="waiting")  { lb="waiting"; co=BLU }        # 通常の入力待ちは元の色 (青)
   else if (cmd=="claude") { lb="claude idle"; co=GRN }
+  else if (cmd=="agy" || cmd=="antigravity") { lb="agy idle"; co=GRN }
   else if (cmd=="copilot"){ lb="copilot active"; co=PUR }
   disp = DIM sess RST "  " FG widx ":" wname RST "  " DIM pidx RST " "
   disp = disp (lb!="" ? co lb RST : DIM cmd RST)

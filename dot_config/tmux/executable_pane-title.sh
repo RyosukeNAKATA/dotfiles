@@ -49,11 +49,13 @@ case "$dir" in
   ;;
 esac
 
-# --- Claude Code の状態取得 ---
-# フック (~/.claude/settings.json) がペインオプションに設定した値を読む
+# --- Claude Code / Antigravity CLI の状態取得 ---
+# フック (~/.claude/settings.json, ~/.gemini/antigravity-cli/settings.json) がペインオプションに設定した値を読む
 state=""
 if [ "$name" = "claude" ]; then
   state=$(tmux show -pqv -t "$pane_id" @claude_state 2>/dev/null)
+elif [ "$name" = "agy" ] || [ "$name" = "antigravity" ]; then
+  state=$(tmux show -pqv -t "$pane_id" @agy_state 2>/dev/null)
 fi
 
 # --- 配色の決定 (iceberg: 緑 #b4be82 / 橙 #e2a478 / 青 #84a0c6) ---

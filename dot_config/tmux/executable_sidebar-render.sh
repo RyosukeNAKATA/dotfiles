@@ -33,7 +33,7 @@ mkdir -p "$CACHE_DIR" 2>/dev/null
 
 # ---- 1 ペイン 1 行で全ペインを取得するためのフォーマット ----
 # 先頭の P はレコード種別 (git キャッシュ側は G)。awk へ 2 種類のレコードを混ぜて渡す
-FMT="P${US}#{session_name}${US}#{window_id}${US}#{window_index}${US}#{window_name}${US}#{pane_index}${US}#{pane_id}${US}#{pane_active}${US}#{pane_current_command}${US}#{@claude_state}${US}#{@sidebar}${US}#{pane_current_path}"
+FMT="P${US}#{session_name}${US}#{window_id}${US}#{window_index}${US}#{window_name}${US}#{pane_index}${US}#{pane_id}${US}#{pane_active}${US}#{pane_current_command}${US}#{@claude_state}${US}#{@sidebar}${US}#{pane_current_path}${US}#{@agy_state}"
 
 cleanup() { printf '\033[?25h\033[0m'; rm -f "$PANES"; }   # カーソル復帰・属性リセット
 trap cleanup EXIT INT TERM
@@ -83,14 +83,16 @@ $1 == "P" {
   nr++
   S[nr]=$2; WI[nr]=$3; WIDX[nr]=$4; WN[nr]=$5
   PIDX[nr]=$6; PA[nr]=$8; CMD[nr]=$9; PP[nr]=$12
-  cstate=$10; cmd=$9
+  cstate=($10!=""?$10:$13); cmd=$9
+  agent_name = (cmd=="agy"||cmd=="antigravity") ? "agy" : (cmd=="claude" ? "claude" : (cmd!=""?cmd:"ai"))
   ag=""; lb=""; gl=""; co=""; sev=0
-  if (cstate == "busy")          { ag="claude";  lb="working"; gl="\xe2\x97\x8f"; co=ORG;      sev=2 }  # ●
+  if (cstate == "busy")          { ag=agent_name; lb="working"; gl="\xe2\x97\x8f"; co=ORG;      sev=2 }  # ●
   # attention = 許可要求 / 選択待ち (Notification フックが設定)。赤＋太字で最優先に目立たせる
-  else if (cstate == "attention"){ ag="claude";  lb="blocked"; gl="\xe2\x97\x8f"; co=RED BOLD; sev=4 }  # ●
+  else if (cstate == "attention"){ ag=agent_name; lb="blocked"; gl="\xe2\x97\x8f"; co=RED BOLD; sev=4 }  # ●
   # waiting = 応答終了後の通常の入力待ち (Stop 由来)。元の色 (青) のまま
-  else if (cstate == "waiting")  { ag="claude";  lb="waiting"; gl="\xe2\x97\x8f"; co=BLU;      sev=3 }  # ●
+  else if (cstate == "waiting")  { ag=agent_name; lb="waiting"; gl="\xe2\x97\x8f"; co=BLU;      sev=3 }  # ●
   else if (cmd == "claude")      { ag="claude";  lb="idle";    gl="\xe2\x97\x8b"; co=GRN;      sev=1 }  # ○
+  else if (cmd == "agy" || cmd == "antigravity") { ag="agy"; lb="idle"; gl="\xe2\x97\x8b"; co=GRN; sev=1 }  # ○
   else if (cmd == "copilot")     { ag="copilot"; lb="active";  gl="\xe2\x97\x86"; co=PUR;      sev=1 }  # ◆
   AG[nr]=ag; LB[nr]=lb; GL[nr]=gl; CO[nr]=co
   # セッション初出順を記録 (現在セッションは END で先頭に回す)
