@@ -1,43 +1,55 @@
 ---
 name: grill-me
 description: >-
-  Conduct an interactive, deep-dive interview with the user to refine requirements,
-  architectural decisions, edge cases, and design trade-offs before implementation.
-  Use this skill when the user asks to be "grilled", wants to refine a plan, or invokes /grill-me.
+  プラン・設計・技術的意思決定について、共通の理解に達するまでユーザーに徹底的に質問する。
+  ユーザーがプランの穴を突きたいとき、設計の弱点を見つけたいとき、意思決定をストレステストしたいとき、
+  「grill して」「深掘りして」「徹底的に質問して」と言われたときや /grill-me で呼び出された際に使用する。
 ---
 
-# Grill-Me (Interactive Alignment & Interview Workflow)
+# Grill-Me (徹底ヒアリング・設計深掘りワークフロー)
 
-Use this skill to rigorously test assumptions, surface edge cases, and align on technical decisions with the user through an interactive, multi-turn interview.
-
-## Objectives
-- Uncover hidden requirements, unstated assumptions, and ambiguous specs.
-- Identify edge cases, failure modes, scalability issues, and UX nuances.
-- Force explicit choices on trade-offs (e.g., performance vs. maintainability, convenience vs. security).
-- Produce a crystal-clear, finalized specification or implementation plan upon conclusion.
+プラン・設計・意思決定のあらゆる側面について、共通の理解に達するまでユーザーに徹底的に質問します。
+甘い回答や曖昧な返答には突っ込み、設計ツリーの各分岐をたどって判断の依存関係を一つずつ解決します。
+「幅」より「深さ」を優先し、新たな洞察が得られなくなるまで1つのテーマを掘り下げてから次へ進みます。
 
 ---
 
-## Interview Execution Guidelines
+## 進行ルール
 
-### 1. Preparation & Scope Analysis
-Before starting the interview:
-- Analyze the user's initial prompt, plan, or codebase context.
-- Identify missing details across these dimensions:
-  - **Functionality**: Core behavior, expected inputs/outputs, validation.
-  - **Edge Cases**: Empty states, invalid data, boundary limits, race conditions.
-  - **Architecture & Design**: API contracts, state management, file structure, dependencies.
-  - **User Experience (UX)**: UI flow, error messaging, responsiveness.
-  - **Operations & Safety**: Backward compatibility, testing strategy, rollback plan.
+1. **質問は必ず一度に一つずつ行う**。一度に複数の質問を投げかけてユーザーに負荷をかけない。
+2. **調べればわかることは聞かない**。各質問の前に、コードベースの関連箇所や設定ファイルを調査する。
+3. **質問には選択肢と推奨回答を提示する**。
 
-### 2. Conducting the Interview
-- **Incremental Questioning**: Ask 1–3 focused questions per turn. Never overwhelm the user with a massive list of questions at once.
-- **Provide Options & Guidance**: When asking open-ended questions, offer 2–3 plausible solutions or trade-off choices to make answering easier.
-- **Challenge Assumptions**: Respectfully push back on contradictory, overly complex, or underspecified requirements.
-- **Adapt Dynamically**: Follow up on the user's answers. Adjust subsequent questions based on new information.
+---
 
-### 3. Concluding the Session
-Once all critical details are resolved:
-1. Summarize the agreed-upon requirements and decisions in a structured summary.
-2. Outline the finalized step-by-step implementation plan.
-3. Ask for final confirmation before proceeding with execution.
+## 質問フォーマット
+
+毎ターンの質問は必ず以下のフォーマットに従うこと:
+
+```markdown
+### Q[番号]: [質問文]
+
+[なぜこの質問が重要か・背景やリスク]
+
+- **A** — [選択肢A]
+- **B** — [選択肢B]
+- **C** — [選択肢C (必要に応じて)]
+
+**推奨: [A/B/...]** — [その選択肢を推奨する技術的理由]
+```
+
+---
+
+## 終了条件とまとめ
+
+論点を掘り尽くしたら終了を提案する。ユーザーから続行を求められれば質疑応答を続ける。
+
+終了時は以下のフォーマットで確定した決定事項をまとめる:
+
+```markdown
+## まとめ
+
+### 決まったこと
+- [決定事項 1]
+- [決定事項 2]
+```
