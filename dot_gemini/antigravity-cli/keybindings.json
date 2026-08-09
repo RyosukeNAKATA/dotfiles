@@ -1,0 +1,7 @@
+{
+  "select.down": ["down", "ctrl+j", "ctrl+n"],
+  "select.up": ["up", "ctrl+k", "ctrl+p"],
+  "menu.next": ["down", "ctrl+j", "ctrl+n"],
+  "menu.previous": ["up", "ctrl+k", "ctrl+p"],
+  "vim.insert.insert_newline": ["alt+enter", "shift+enter"]
+}
