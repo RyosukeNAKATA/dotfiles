@@ -148,10 +148,10 @@ hook_add = "source ~/.config/nvim/plugins/render-markdown.nvim.lua"
 repo = "norcalli/nvim-colorizer.lua"
 hook_source = "source ~/.config/nvim/plugins/nvim-colorizer.nvim.lua"
 
-# hlchunk.nvim: インデントガイドと現在のコードブロックをハイライト
+# indent-blankline.nvim: 高速・軽量なインデントガイド
 [[plugins]]
-repo = "shellRaining/hlchunk.nvim"
-hook_source = "source ~/.config/nvim/plugins/hlchunk.nvim.lua"
+repo = "lukas-reineke/indent-blankline.nvim"
+hook_source = "source ~/.config/nvim/plugins/indent-blankline.nvim.lua"
 
 # ==============================================================================
 # 補完・LSP設定
