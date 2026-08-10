@@ -44,7 +44,8 @@ let iceberg_theme = {
     shape_filepath: "#84a0c6"
     shape_flag: "#89b8c2"
     shape_float: "#a093c7"
-    shape_garbage: { fg: "#161821", bg: "#e27878" }
+    shape_garbage: { fg: "#e27878", attr: "b" }
+    shape_unknown: { fg: "#e27878", attr: "b" }
     shape_globpattern: "#89b8c2"
     shape_int: "#a093c7"
     shape_internalcall: "#89b8c2"
