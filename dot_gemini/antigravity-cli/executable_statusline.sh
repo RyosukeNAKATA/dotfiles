@@ -5,7 +5,7 @@
 #   L1 📁 owner/repo › subpath   🌿 branch ✗ +staged ~modified
 #   L2 🤖 model   in N out N cache N think N   +added/-removed
 #   L3 ctx <bar> used/limit N%   ⚡ AIC N   ⏱ Hh Mm Ss
-#   L4 🚦 status   🟢 idle / ⚡ busy / ⏸ waiting / ⚠️ attention
+#   L4 🚦 status   🟢 idle / ⚡ busy   📋 plan / 📝 edit / 🚀 yolo
 set -u
 
 input=$(cat)
@@ -40,6 +40,7 @@ if [ "$have_jq" = 1 ]; then
   removed=$(j '.cost.total_lines_removed // empty')
   allow_all=$(j '.allow_all_enabled // false')
   state=$(j '.state // .status // empty')
+  mode=$(j '(if .mode | type == "object" then .mode.name else .mode end) // .agent_mode // .permission_mode // empty')
 else
   cwd=""
   session_id=""
@@ -63,6 +64,7 @@ else
   removed=""
   allow_all=false
   state=""
+  mode=""
 fi
 [ -z "$cwd" ] && cwd="$PWD"
 
@@ -270,7 +272,7 @@ if [ -n "$duration_ms" ]; then
   [ -n "$duration" ] && line3="${line3}   ⏱ ${C_GRAY}${duration}${R}"
 fi
 
-# Line 4: current state / status
+# Line 4: current state / status & mode
 if [ -z "$state" ] && [ -n "${TMUX_PANE:-}" ]; then
   state=$(tmux show-option -pqv -t "$TMUX_PANE" @agy_state 2>/dev/null || true)
 fi
@@ -294,6 +296,35 @@ case "$state" in
     ;;
 esac
 
-line4="🚦 status   ${state_fmt}"
+if [ -z "$mode" ] && [ -n "${TMUX_PANE:-}" ]; then
+  mode=$(tmux show-option -pqv -t "$TMUX_PANE" @agy_mode 2>/dev/null || true)
+fi
+if [ -z "$mode" ]; then
+  if [ "$allow_all" = true ]; then
+    mode="yolo"
+  else
+    mode="edit"
+  fi
+fi
+
+case "$mode" in
+  plan|planning)
+    mode_fmt="📋 ${C_MAG}plan${R}"
+    ;;
+  edit|editing|default)
+    mode_fmt="📝 ${C_BLUE}edit${R}"
+    ;;
+  yolo|auto|allow-all|dont-ask)
+    mode_fmt="🚀 ${B}${C_RED}yolo${R}"
+    ;;
+  view|read|read-only)
+    mode_fmt="🔍 ${C_GRAY}read-only${R}"
+    ;;
+  *)
+    mode_fmt="🛠️ ${C_CYAN}${mode}${R}"
+    ;;
+esac
+
+line4="🚦 status   ${state_fmt}   ${mode_fmt}"
 
 printf '%s\n%s\n%s\n%s' "$line1" "$line2" "$line3" "$line4"
