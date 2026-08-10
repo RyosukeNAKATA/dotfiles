@@ -1,69 +1,50 @@
-# Nushell Config File
-# Created for chezmoi dotfiles
+# Nushell 設定ファイル
+# chezmoi によって管理されています
 
-# General configuration
+# conf.d 内の設定（theme, alias, functions など）を一括読み込み
+source conf.d/index.nu
+
+# Nushell メイン設定
 $env.config = {
     show_banner: false
-}
+    color_config: $iceberg_theme
+    
+    history: {
+        file_format: "plaintext"
+        max_size: 100000
+        sync_on_enter: true
+        isolation: false
+    }
 
-# Load zoxide integration
-if ('~/.zoxide.nu' | path exists) {
-    source ~/.zoxide.nu
+    keybindings: [
+        {
+            name: fzf_file_search
+            modifier: control
+            keycode: char_t
+            mode: [emacs, vi_normal, vi_insert]
+            event: {
+                send: executehostcommand
+                cmd: "commandline edit --insert (fd -t file | fzf --preview 'bat --style=numbers --color=always {}')"
+            }
+        }
+        {
+            name: fzf_ripgrep_search
+            modifier: control
+            keycode: char_p
+            mode: [emacs, vi_normal, vi_insert]
+            event: {
+                send: executehostcommand
+                cmd: "commandline edit --insert 'rg \"\" --sort path -n --color always '"
+            }
+        }
+    ]
 }
 
 # ==============================================================================
-# Aliases
+# 外部ツール連携の読み込み
 # ==============================================================================
-# eza
-alias lls = eza -lF --icons
-alias la = eza -laF --icons
-alias l = eza -lbF --git --icons
-alias ll = eza -lbGF --git --icons
-alias llm = eza -lbGd --git --sort=modified --icons
-alias lla = eza -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons
-alias lx = eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons
-alias lt = eza --tree --level=2 --icons
-alias tree = eza -T --icons
+# zoxide の連携設定
+source ~/.zoxide.nu
 
-# bat
-alias catall = bat -A
-
-# fd
-alias finde = fd -e
-alias findh = fd -H
-alias findi = fd -I
-
-# git
-alias ga = git add -A
-alias gc = git checkout
-alias gcm = git commit -m
-alias gps = git push
-alias gpl = git pull
-alias grm = git rm -r --cached .
-
-# gitui
-alias gu = gitui
-
-# neovim
-alias nv = nvim
-
-# cargo-compete
-alias compete = cargo compete
-
-# show global ip
-alias gip = curl inet-ip.info
-
-# ripgrep
-alias rp = rg "" --sort path -n --color always
-
-# copilot
-alias cli = copilot --banner
-
-# opencode
-alias oc = opencode
-
-# claude
-alias cl = claude
-
-# docker
-alias dr = docker compose run --rm rails bundle exec
+# carapace 補完の連携設定
+source ~/.cache/carapace/init.nu
