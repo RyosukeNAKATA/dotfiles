@@ -2,9 +2,6 @@
 # Homebrew Taps (サードパーティリポジトリ)
 # -----------------------------------------------------------------------------
 tap 'homebrew/bundle'            # Brewfile (Homebrew Bundle) 管理機能
-tap 'homebrew/cask'              # macOS GUI アプリケーション用 Cask リポジトリ
-tap 'homebrew/cask-fonts'        # 開発用フォント Cask リポジトリ
-tap 'homebrew/core'              # Homebrew 公式 CLI フォーミュラリポジトリ
 tap 'homebrew/services'          # バックグラウンドサービス管理 (brew services)
 tap 'olets/tap'                  # zsh-abbr 用サードパーティ tap
 tap 'wez/wezterm'                # WezTerm 用公式 tap
