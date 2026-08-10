@@ -2,10 +2,10 @@
 # Antigravity CLI status line — compact graphical session dashboard.
 #
 # Layout:
-#   L1 📁 owner/repo › subpath   🌿 branch ✗ +staged ~modified
-#   L2 🤖 model   in N out N cache N think N   +added/-removed
-#   L3 ctx <bar> used/limit N%   ⚡ AIC N   ⏱ Hh Mm Ss
-#   L4 🚦 status   🟢 idle / ⚡ busy   📋 plan / 📝 edit / 🚀 yolo
+#   L1 🚦 status   🟢 idle / ⚡ busy   📋 plan / 📝 edit / 🚀 yolo
+#   L2 📁 owner/repo › subpath   🌿 branch ✗ +staged ~modified
+#   L3 🤖 model   in N out N cache N think N   +added/-removed
+#   L4 ctx <bar> used/limit N%   ⚡ AIC N   ⏱ Hh Mm Ss
 set -u
 
 input=$(cat)
@@ -325,6 +325,6 @@ case "$mode" in
     ;;
 esac
 
-line4="🚦 status   ${state_fmt}   ${mode_fmt}"
+line_status="🚦 status   ${state_fmt}   ${mode_fmt}"
 
-printf '%s\n%s\n%s\n%s' "$line1" "$line2" "$line3" "$line4"
+printf '%s\n%s\n%s\n%s' "$line_status" "$line1" "$line2" "$line3"
