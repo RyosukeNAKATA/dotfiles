@@ -5,6 +5,7 @@
 #   L1 📁 owner/repo › subpath   🌿 branch ✗ +staged ~modified
 #   L2 🤖 model   in N out N cache N think N   +added/-removed
 #   L3 ctx <bar> used/limit N%   ⚡ AIC N   ⏱ Hh Mm Ss
+#   L4 🚦 status   🟢 idle / ⚡ busy / ⏸ waiting / ⚠️ attention
 set -u
 
 input=$(cat)
@@ -38,6 +39,7 @@ if [ "$have_jq" = 1 ]; then
   added=$(j '.cost.total_lines_added // empty')
   removed=$(j '.cost.total_lines_removed // empty')
   allow_all=$(j '.allow_all_enabled // false')
+  state=$(j '.state // .status // empty')
 else
   cwd=""
   session_id=""
@@ -60,6 +62,7 @@ else
   added=""
   removed=""
   allow_all=false
+  state=""
 fi
 [ -z "$cwd" ] && cwd="$PWD"
 
@@ -267,4 +270,30 @@ if [ -n "$duration_ms" ]; then
   [ -n "$duration" ] && line3="${line3}   ⏱ ${C_GRAY}${duration}${R}"
 fi
 
-printf '%s\n%s\n%s' "$line1" "$line2" "$line3"
+# Line 4: current state / status
+if [ -z "$state" ] && [ -n "${TMUX_PANE:-}" ]; then
+  state=$(tmux show-option -pqv -t "$TMUX_PANE" @agy_state 2>/dev/null || true)
+fi
+[ -z "$state" ] && state="idle"
+
+case "$state" in
+  busy|running|executing)
+    state_fmt="${C_YEL}⚡ busy${R}"
+    ;;
+  waiting|prompt)
+    state_fmt="${C_CYAN}⏸ waiting${R}"
+    ;;
+  attention|permission|error)
+    state_fmt="${B}${C_RED}⚠️ attention${R}"
+    ;;
+  idle|done)
+    state_fmt="${C_GRN}🟢 idle${R}"
+    ;;
+  *)
+    state_fmt="${C_GRAY}⚪ ${state}${R}"
+    ;;
+esac
+
+line4="🚦 status   ${state_fmt}"
+
+printf '%s\n%s\n%s\n%s' "$line1" "$line2" "$line3" "$line4"
