@@ -1,5 +1,6 @@
 #!/bin/sh
 # サイドバーペインの生成・破棄・トグル・幅ピン・自動退避を担うディスパッチャ。
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/run/current-system/sw/bin:$PATH"
 # tmux のフック (session-created / after-new-window / client-resized など) と
 # キーバインド (prefix+b / prefix+B) から各サブコマンドを呼ぶ。
 #
@@ -78,6 +79,27 @@ prune_all() {
     while IFS= read -r w; do prune "$w"; done
 }
 
+# 野良（resurrect 等で復元された @sidebar 未設定の sidebar-render）ペインや重複ペインを一掃する
+cleanup() {
+  # 1. @sidebar が 1 でないのに pane_start_command に sidebar-render.sh を含むペインを kill
+  tmux list-panes -a -F '#{pane_id} #{@sidebar} #{pane_start_command}' 2>/dev/null |
+    awk '$2!="1" && $0 ~ /sidebar-render\.sh/{print $1}' |
+    while IFS= read -r p; do
+      [ -n "$p" ] && tmux kill-pane -t "$p" 2>/dev/null
+    done
+
+  # 2. 同一ウィンドウ内で @sidebar が 1 のペインが複数あれば2つ目以降を kill
+  tmux list-windows -a -F '#{window_id}' 2>/dev/null |
+    while IFS= read -r w; do
+      tmux list-panes -t "$w" -F '#{@sidebar} #{pane_id}' 2>/dev/null |
+        awk '$1=="1"{print $2}' |
+        tail -n +2 |
+        while IFS= read -r p; do
+          [ -n "$p" ] && tmux kill-pane -t "$p" 2>/dev/null
+        done
+    done
+}
+
 # 1 ウィンドウに (条件を満たせば) サイドバーを用意する
 ensure_win() {
   enabled || return 0
@@ -90,6 +112,7 @@ ensure_win() {
 # 全ウィンドウにサイドバーを用意する
 ensure_all() {
   enabled || return 0
+  cleanup
   tmux list-windows -a -F '#{window_id}' 2>/dev/null |
     while IFS= read -r w; do ensure_win "$w"; done
   tmux set -g @sidebar_shown 1 2>/dev/null
@@ -173,19 +196,49 @@ reflow() {
   fi
 }
 
+# tmux-resurrect 保存ファイルからサイドバーペインおよび不正な野良行を除去する
+sanitize_resurrect() {
+  target=$(readlink "$HOME/.tmux/resurrect/last" 2>/dev/null)
+  [ -z "$target" ] && return 0
+  file="$HOME/.tmux/resurrect/$target"
+  [ ! -f "$file" ] && return 0
+
+  sb_panes=$(tmux list-panes -a -F '#{session_name}:#{window_index}:#{pane_index} #{@sidebar} #{pane_start_command}' 2>/dev/null |
+    awk '$2=="1" || $0 ~ /sidebar-render\.sh/{print $1}' | tr '\n' ' ')
+
+  tmpfile="${file}.tmp"
+  awk -v sb="$sb_panes" '
+    BEGIN {
+      n = split(sb, a, " ")
+      for (i = 1; i <= n; i++) if (a[i] != "") bad[a[i]] = 1
+    }
+    {
+      if ($1 == "pane") {
+        key = $2 ":" $3 ":" $6
+        if (key in bad) next
+        if ($10 == "sidebar-render.sh" || $7 ~ /sidebar/) next
+      }
+      if ($0 ~ /^sleep /) next
+      print $0
+    }
+  ' "$file" > "$tmpfile" && mv "$tmpfile" "$file"
+}
+
 case "$1" in
-  ensure-window) ensure_win "$2" ;;
-  ensure-all)    ensure_all ;;
-  create)        create "$2" ;;
-  kill-window)   kill_win "$2" ;;
-  kill-all)      kill_all ;;
-  prune)         prune "$2" ;;
-  prune-all)     prune_all ;;
-  restart)       restart ;;
-  pin)           pin "$2" ;;
-  pin-all)       pin_all ;;
-  rebalance)     rebalance "$2" ;;
-  reflow)        reflow ;;
+  ensure-window)      ensure_win "$2" ;;
+  ensure-all)         ensure_all ;;
+  create)             create "$2" ;;
+  kill-window)        kill_win "$2" ;;
+  kill-all)           kill_all ;;
+  prune)              prune "$2" ;;
+  prune-all)          prune_all ;;
+  cleanup)            cleanup ;;
+  restart)            restart ;;
+  pin)                pin "$2" ;;
+  pin-all)            pin_all ;;
+  rebalance)          rebalance "$2" ;;
+  reflow)             reflow ;;
+  sanitize-resurrect) sanitize_resurrect ;;
   toggle)
     if enabled; then
       tmux set -g @sidebar_enabled 0; kill_all; tmux set -g @sidebar_shown 0
@@ -198,5 +251,6 @@ case "$1" in
     if [ "$(opt @sidebar_expand 0)" = "1" ]; then tmux set -g @sidebar_expand 0
     else tmux set -g @sidebar_expand 1; fi
     ;;
-  *) echo "usage: sidebar.sh {ensure-window|ensure-all|create|kill-window|kill-all|prune|prune-all|restart|pin|pin-all|rebalance|reflow|toggle|expand-toggle} [target]" >&2; exit 2 ;;
+  *) echo "usage: sidebar.sh {ensure-window|ensure-all|create|kill-window|kill-all|prune|prune-all|cleanup|restart|pin|pin-all|rebalance|reflow|sanitize-resurrect|toggle|expand-toggle} [target]" >&2; exit 2 ;;
 esac
+

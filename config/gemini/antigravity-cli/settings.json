@@ -78,7 +78,9 @@
       "command(git commit)",
       "command(git log)",
       "command(ls)",
-      "command(cat)"
+      "command(cat)",
+      "command(grep)",
+      "command(find ~/.tmux ~/.config/tmux 2\u003e/dev/null)"
     ]
   },
   "statusLine": {
@@ -88,6 +90,7 @@
   "theme": "dark-ansi",
   "trustedWorkspaces": [
     "/Users/ryosuke/.local/share/chezmoi",
-    "/Users/ryosuke/dotfiles"
+    "/Users/ryosuke/dotfiles",
+    "/Users/ryosuke"
   ]
 }
