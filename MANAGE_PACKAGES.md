@@ -105,17 +105,17 @@ zsh プラグインは [`home.nix`](file:///Users/ryosuke/.local/share/chezmoi/h
 ### 🐚 zsh で実行する場合
 
 ```zsh
-cd ~/.local/share/chezmoi
+cd ~/dotfiles
 git add .
-sudo darwin-rebuild switch --flake ~/.local/share/chezmoi#RyosukenoMacBook-Pro
+sudo darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro
 ```
 
 ### 🐢 Nushell で実行する場合
 
 ```nu
-cd ~/.local/share/chezmoi
+cd ~/dotfiles
 git add .
-sudo darwin-rebuild switch --flake ~/.local/share/chezmoi#RyosukenoMacBook-Pro
+sudo darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro
 ```
 
 ---
@@ -127,7 +127,7 @@ Flake のロックファイル (`flake.lock`) を更新し、Nix / Homebrew パ�
 ### 🐚 zsh の場合
 
 ```zsh
-cd ~/.local/share/chezmoi
+cd ~/dotfiles
 nix flake update
 sudo darwin-rebuild switch --flake .#RyosukenoMacBook-Pro
 ```
@@ -135,7 +135,7 @@ sudo darwin-rebuild switch --flake .#RyosukenoMacBook-Pro
 ### 🐢 Nushell の場合
 
 ```nu
-cd ~/.local/share/chezmoi
+cd ~/dotfiles
 nix flake update
 sudo darwin-rebuild switch --flake .#RyosukenoMacBook-Pro
 ```

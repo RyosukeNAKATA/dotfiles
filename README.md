@@ -47,9 +47,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 ### Step 4: dotfiles リポジトリの取得
 
 ```zsh
-mkdir -p ~/.local/share
-git clone git@github.com:RyosukeNAKATA/dotfiles.git ~/.local/share/chezmoi
-cd ~/.local/share/chezmoi
+mkdir -p ~
+git clone git@github.com:RyosukeNAKATA/dotfiles.git ~/dotfiles
+cd ~/dotfiles
 ```
 
 ---
@@ -85,13 +85,13 @@ sudo -E NIX_CONFIG="experimental-features = nix-command flakes" /nix/var/nix/pro
 ### 設定の変更・追加を反映する (`flake.nix` / `darwin.nix` / `home.nix` 編集時)
 
 ```zsh
-sudo darwin-rebuild switch --flake ~/.local/share/chezmoi#RyosukenoMacBook-Pro
+sudo darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro
 ```
 
 ### パッケージ（Nix Inputs）のアップデート
 
 ```zsh
-cd ~/.local/share/chezmoi
+cd ~/dotfiles
 nix flake update
 sudo darwin-rebuild switch --flake .#RyosukenoMacBook-Pro
 ```

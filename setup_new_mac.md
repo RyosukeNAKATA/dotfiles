@@ -59,9 +59,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 ### 4.1 dotfiles リポジトリの取得
 
 ```bash
-mkdir -p ~/.local/share
-git clone git@github.com:RyosukeNAKATA/dotfiles.git ~/.local/share/chezmoi
-# ※ リポジトリを ~/dotfiles 等にクローンした場合は home.nix 内の dotfiles パスを合わせて修正
+git clone git@github.com:RyosukeNAKATA/dotfiles.git ~/dotfiles
 ```
 
 ### 4.2 Homebrew の初期インストール（未導入の場合）
@@ -76,7 +74,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 リポジトリディレクトリへ移動して管理者権限で構築コマンドを実行（sudo パスワードが要求されます）：
 
 ```bash
-cd ~/.local/share/chezmoi
+cd ~/dotfiles
 sudo /nix/var/nix/profiles/default/bin/nix --extra-experimental-features "nix-command flakes" run nix-darwin -- switch --flake .#RyosukenoMacBook-Pro
 ```
 
@@ -93,13 +91,13 @@ sudo /nix/var/nix/profiles/default/bin/nix --extra-experimental-features "nix-co
 ### 設定変更の反映（`flake.nix` / `darwin.nix` / `home.nix` の追加・変更時）
 
 ```bash
-sudo darwin-rebuild switch --flake ~/.local/share/chezmoi#RyosukenoMacBook-Pro
+sudo darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro
 ```
 
 ### パッケージのアップデート
 
 ```bash
-cd ~/.local/share/chezmoi
+cd ~/dotfiles
 nix flake update
 sudo darwin-rebuild switch --flake .#RyosukenoMacBook-Pro
 ```

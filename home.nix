@@ -1,7 +1,7 @@
 { config, pkgs, lib, user, ... }:
 
 let
-  dotfiles = "${config.home.homeDirectory}/.local/share/chezmoi";
+  dotfiles = "${config.home.homeDirectory}/dotfiles";
 in
 {
   home.username = user;
