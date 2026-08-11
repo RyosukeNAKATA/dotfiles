@@ -15,7 +15,7 @@
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }:
   let
-    user = "ryosuke";
+    user = let envUser = builtins.getEnv "USER"; in if envUser != "" then envUser else "ryosuke";
     hostname = "RyosukenoMacBook-Pro";
     system = "aarch64-darwin";
   in {

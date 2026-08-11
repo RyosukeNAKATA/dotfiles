@@ -14,10 +14,10 @@ Nix + nix-darwin + Home Manager 環境において、CLI パッケージ・GUI �
 
 ## 1. GUI アプリ（Cask）やフォントの追加・削除
 
-Mac の GUI アプリ（Raycast, Obsidian, WezTerm 等）やフォントは [`darwin.nix`](file:///Users/ryosuke/.local/share/chezmoi/darwin.nix) の `homebrew.casks` で管理します。
+Mac の GUI アプリ（Raycast, Obsidian, WezTerm 等）やフォントは [`darwin.nix`](darwin.nix) の `homebrew.casks` で管理します。
 
 ### 追加する手順
-[`darwin.nix`](file:///Users/ryosuke/.local/share/chezmoi/darwin.nix) の `homebrew.casks` 配下にパッケージ名を追加します：
+[`darwin.nix`](darwin.nix) の `homebrew.casks` 配下にパッケージ名を追加します：
 
 ```nix
   homebrew = {
@@ -42,10 +42,10 @@ Mac の GUI アプリ（Raycast, Obsidian, WezTerm 等）やフォントは [`da
 
 ## 2. CLI パッケージの追加・削除
 
-CLI パッケージ（`ripgrep`, `bat`, `eza`, `fzf` 等）は、[`darwin.nix`](file:///Users/ryosuke/.local/share/chezmoi/darwin.nix) の `homebrew.brews` または [`home.nix`](file:///Users/ryosuke/.local/share/chezmoi/home.nix) の `home.packages` で管理します。
+CLI パッケージ（`ripgrep`, `bat`, `eza`, `fzf` 等）は、[`darwin.nix`](darwin.nix) の `homebrew.brews` または [`home.nix`](home.nix) の `home.packages` で管理します。
 
 ### Homebrew 経由の CLI パッケージ追加・削除
-[`darwin.nix`](file:///Users/ryosuke/.local/share/chezmoi/darwin.nix) の `homebrew.brews` を編集：
+[`darwin.nix`](darwin.nix) の `homebrew.brews` を編集：
 
 ```nix
   homebrew = {
@@ -59,7 +59,7 @@ CLI パッケージ（`ripgrep`, `bat`, `eza`, `fzf` 等）は、[`darwin.nix`](
 ```
 
 ### Nixpkgs (Nix 公式) 経由の CLI パッケージ追加・削除
-[`home.nix`](file:///Users/ryosuke/.local/share/chezmoi/home.nix) の `home.packages` を編集：
+[`home.nix`](home.nix) の `home.packages` を編集：
 
 ```nix
   home.packages = with pkgs; [
@@ -74,7 +74,7 @@ CLI パッケージ（`ripgrep`, `bat`, `eza`, `fzf` 等）は、[`darwin.nix`](
 
 ## 3. zsh プラグインの追加・削除
 
-zsh プラグインは [`home.nix`](file:///Users/ryosuke/.local/share/chezmoi/home.nix) の `programs.zsh.plugins` で管理します。
+zsh プラグインは [`home.nix`](home.nix) の `programs.zsh.plugins` で管理します。
 
 ### 追加手順
 

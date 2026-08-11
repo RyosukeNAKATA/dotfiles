@@ -89,8 +89,8 @@
   },
   "theme": "dark-ansi",
   "trustedWorkspaces": [
-    "/Users/ryosuke/.local/share/chezmoi",
-    "/Users/ryosuke/dotfiles",
-    "/Users/ryosuke"
+    "~/.local/share/chezmoi",
+    "~/dotfiles",
+    "~"
   ]
 }

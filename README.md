@@ -74,7 +74,7 @@ sudo -E NIX_CONFIG="experimental-features = nix-command flakes" /nix/var/nix/pro
 
 環境構築後のアプリや CLI ツール、zsh プラグインの追加・削除（アンインストール）手順については、以下の専用手順書を参照してください：
 
-📄 [**アプリ・パッケージ管理手順書 (MANAGE_PACKAGES.md)**](file:///Users/ryosuke/.local/share/chezmoi/MANAGE_PACKAGES.md)
+📄 [**アプリ・パッケージ管理手順書 (MANAGE_PACKAGES.md)**](MANAGE_PACKAGES.md)
 
 ---
 
