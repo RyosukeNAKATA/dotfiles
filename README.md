@@ -117,7 +117,5 @@ dotfiles/
 │   ├── git/
 │   ├── gitui/
 │   ├── yazi/
-│   ├── zed/
 │   └── ...
-└── setup_new_mac.md
 ```
