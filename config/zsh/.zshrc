@@ -52,7 +52,7 @@ type zoxide &>/dev/null && eval "$(zoxide init zsh)"
 type mise &>/dev/null && eval "$(mise activate zsh)"
 
 # PATH
-export PATH="$HOME/.local/bin:$HOME/.lmstudio/bin:$HOME/.cargo/bin:$PATH"
+export PATH="/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:$HOME/.local/bin:$HOME/.lmstudio/bin:$HOME/.cargo/bin:$PATH"
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # ==============================================================================

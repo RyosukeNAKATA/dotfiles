@@ -14,6 +14,9 @@ in
     zsh-autopair
     zsh-abbr
     zsh-fast-syntax-highlighting
+    tmuxPlugins.tmux-thumbs
+    tmuxPlugins.resurrect
+    tmuxPlugins.continuum
   ];
 
   # -----------------------------------------------------------------------------
@@ -122,8 +125,9 @@ in
       eval "$(zoxide init zsh)"
       eval "$(mise activate zsh)"
 
-      # PATH
-      export PATH="$HOME/.local/bin:$HOME/.lmstudio/bin:$HOME/.cargo/bin:$PATH"
+      # Nix daemon & Nix / nix-darwin PATH
+      [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ] && source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+      export PATH="/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:$HOME/.local/bin:$HOME/.lmstudio/bin:$HOME/.cargo/bin:$PATH"
       [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
     '';
   };
@@ -133,7 +137,6 @@ in
   # -----------------------------------------------------------------------------
   xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/nvim";
   xdg.configFile."tmux".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/tmux";
-  xdg.configFile."starship.toml".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/starship.toml";
   xdg.configFile."alacritty".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/alacritty";
   xdg.configFile."wezterm".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/wezterm";
   xdg.configFile."git".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/git";
@@ -142,7 +145,10 @@ in
   xdg.configFile."zed".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/zed";
   xdg.configFile."gwq".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/gwq";
   xdg.configFile."neofetch".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/neofetch";
-  xdg.configFile."nushell".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/nushell";
+  xdg.configFile."nushell/config.nu".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/nushell/config.nu";
+  xdg.configFile."nushell/env.nu".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/nushell/env.nu";
+  xdg.configFile."nushell/conf.d".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/nushell/conf.d";
+  xdg.configFile."nushell/functions".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/nushell/functions";
 
   home.file.".claude".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/claude";
   home.file.".gemini".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/gemini";

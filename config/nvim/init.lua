@@ -102,6 +102,4 @@ else
     })
 end
 
-{{ if (eq .chezmoi.username "ryosuke.nakata") }}
 vim.cmd('autocmd BufNewFile,BufRead *.slim set filetype=slim')
-{{ end }}

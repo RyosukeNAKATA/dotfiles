@@ -21,7 +21,7 @@
   # macOS のキーボード・Finder・Dock のデフォルト設定
   system.defaults = {
     dock = {
-      autohide = true;
+      autohide = false;
       show-recents = false;
     };
     finder = {

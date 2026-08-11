@@ -7,6 +7,8 @@ $env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
 $env.PATH = (
     $env.PATH
     | split row (char esep)
+    | prepend '/run/current-system/sw/bin'
+    | prepend '/nix/var/nix/profiles/default/bin'
     | prepend '/opt/homebrew/bin'
     | prepend $'($env.HOME)/.cargo/bin'
     | prepend $'($env.HOME)/.local/bin'

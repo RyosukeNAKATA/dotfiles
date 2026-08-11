@@ -29,6 +29,7 @@
           nixpkgs.config.allowUnfree = true;
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
           home-manager.users."${user}" = import ./home.nix;
           home-manager.extraSpecialArgs = { inherit inputs user hostname; };
         }

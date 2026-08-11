@@ -3,8 +3,8 @@ live_config_reload = true
 
 [terminal]
 [terminal.shell]
-args = ["-l", "-c", "tmux attach || tmux -u"]
-program = "/bin/zsh"
+args = ["new-session", "-A"]
+program = "/opt/homebrew/bin/tmux"
 
 [colors.bright]
 black = "#6b7089"
@@ -34,6 +34,7 @@ foreground = "#d2d4de"
 style = "Block"
 
 [env]
+PATH = "/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 TERM = "alacritty"
 
 [font]

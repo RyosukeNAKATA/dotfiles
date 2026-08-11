@@ -1,18 +1,12 @@
 {
   "effortLevel": "xhigh",
-  "theme": "dark-ansi",
-  "statusLine": {
-    "type": "command",
-    "command": "bash \"$HOME/.gemini/antigravity-cli/statusline.sh\"",
-    "refreshInterval": 1
-  },
   "hooks": {
     "UserPromptSubmit": [
       {
         "hooks": [
           {
             "type": "command",
-            "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" @agy_state busy 2>/dev/null || true"
+            "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" @agy_state busy 2\u003e/dev/null || true"
           }
         ]
       }
@@ -22,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" @agy_state busy 2>/dev/null || true"
+            "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" @agy_state busy 2\u003e/dev/null || true"
           }
         ]
       }
@@ -32,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" @agy_state waiting 2>/dev/null || true"
+            "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" @agy_state waiting 2\u003e/dev/null || true"
           }
         ]
       }
@@ -42,7 +36,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "in=$(cat); [ -z \"$TMUX_PANE\" ] && exit 0; printf '%s' \"$in\" | grep -qi permission && s=attention || s=waiting; tmux set-option -p -t \"$TMUX_PANE\" @agy_state \"$s\" 2>/dev/null || true"
+            "command": "in=$(cat); [ -z \"$TMUX_PANE\" ] \u0026\u0026 exit 0; printf '%s' \"$in\" | grep -qi permission \u0026\u0026 s=attention || s=waiting; tmux set-option -p -t \"$TMUX_PANE\" @agy_state \"$s\" 2\u003e/dev/null || true"
           }
         ]
       }
@@ -52,7 +46,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" @agy_state waiting 2>/dev/null || true"
+            "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" @agy_state waiting 2\u003e/dev/null || true"
           }
         ]
       }
@@ -62,10 +56,38 @@
         "hooks": [
           {
             "type": "command",
-            "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" -u @agy_state 2>/dev/null || true"
+            "command": "[ -z \"$TMUX_PANE\" ] || tmux set-option -p -t \"$TMUX_PANE\" -u @agy_state 2\u003e/dev/null || true"
           }
         ]
       }
     ]
-  }
+  },
+  "permissions": {
+    "allow": [
+      "command(brew bundle)",
+      "command(chezmoi)",
+      "command(git status)",
+      "command(git diff)",
+      "command(hostname)",
+      "command(scutil)",
+      "command(uname)",
+      "command(mkdir)",
+      "command(cp)",
+      "command(nix)",
+      "command(git add)",
+      "command(git commit)",
+      "command(git log)",
+      "command(ls)",
+      "command(cat)"
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"$HOME/.gemini/antigravity-cli/statusline.sh\""
+  },
+  "theme": "dark-ansi",
+  "trustedWorkspaces": [
+    "/Users/ryosuke/.local/share/chezmoi",
+    "/Users/ryosuke/dotfiles"
+  ]
 }
