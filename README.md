@@ -106,10 +106,11 @@ dotfiles/
 ├── flake.lock       # パッケージバージョン固定
 ├── darwin.nix       # macOS システム設定 + Homebrew (Casks / Brews / Taps) 宣言的定義
 ├── home.nix         # Home Manager (CLI ツール / zsh 設定 & プラグイン / Out-of-Store Symlinks)
-├── config/          # ドットファイル本体 (~/.config/ 等へ直接リンク配置)
+├── config/          # ドットファイル本体 (~/.config/ や Out-of-Store リンク配置)
+│   ├── zsh/         # ~/.config/zsh/.zshrc -> dotfiles/config/zsh/.zshrc
+│   ├── bash/        # ~/.bashrc, ~/.bash_profile -> dotfiles/config/bash/.bashrc
 │   ├── nvim/        # Neovim 設定 (dpp.vim)
 │   ├── tmux/        # tmux 設定
-│   ├── zsh/         # zsh 設定
 │   ├── starship.toml
 │   ├── alacritty/
 │   ├── wezterm/

@@ -148,6 +148,17 @@ in
   home.file.".gemini".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/gemini";
   home.file.".copilot".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/copilot";
 
+  # Shell dotfiles (.zshrc / .bashrc)
+  home.file.".zshrc".text = ''
+    # Managed by Nix Home Manager
+    export ZDOTDIR="$HOME/.config/zsh"
+    [ -f "$ZDOTDIR/.zshrc" ] && source "$ZDOTDIR/.zshrc"
+  '';
+  xdg.configFile."zsh/.zshrc".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/zsh/.zshrc";
+
+  home.file.".bashrc".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/bash/.bashrc";
+  home.file.".bash_profile".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/bash/.bashrc";
+
   # -----------------------------------------------------------------------------
   # Neovim (dpp.vim) 必須プラグイン自動クローン
   # -----------------------------------------------------------------------------
