@@ -15,6 +15,9 @@
     experimental-features = [ "nix-command" "flakes" ];
   };
 
+  # システムレベルでシンリンクを作成するパス
+  environment.pathsToLink = [ "/share/tmux-plugins" ];
+
   # システム状態のバージョン
   system.stateVersion = 4;
 

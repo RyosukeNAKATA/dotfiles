@@ -7,7 +7,6 @@ in
   home.username = user;
   home.homeDirectory = "/Users/${user}";
   home.stateVersion = "24.05";
-  home.pathsToLink = [ "/share/tmux-plugins" ];
 
   # パッケージ（Home Manager 経由で管理）
   home.packages = with pkgs; [
