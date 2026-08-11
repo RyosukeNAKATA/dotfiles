@@ -224,6 +224,36 @@ sanitize_resurrect() {
   ' "$file" > "$tmpfile" && mv "$tmpfile" "$file"
 }
 
+# tmux-resurrect 復元後の仕上げ処理
+post_restore() {
+  ensure_all
+
+  target=$(readlink "$HOME/.tmux/resurrect/last" 2>/dev/null)
+  [ -z "$target" ] && return 0
+  file="$HOME/.tmux/resurrect/$target"
+  [ ! -f "$file" ] && return 0
+
+  awk -F'\t' '$1=="pane"{
+    sess=$2; win=$3; idx=$6; dir=$8; active=$9
+    sub(/^:/, "", dir)
+    if (dir ~ /^~/) sub(/^~/, "'"$HOME"'", dir)
+    print sess "\t" win "\t" idx "\t" dir "\t" active
+  }' "$file" | while IFS=$'\t' read -r sess win idx saved_dir active; do
+    [ -z "$sess" ] || [ -z "$win" ] || [ -z "$idx" ] || [ -z "$saved_dir" ] && continue
+    pane_target="${sess}:${win}.${idx}"
+
+    cur_dir=$(tmux display-message -p -t "$pane_target" '#{pane_current_path}' 2>/dev/null)
+    if [ -n "$cur_dir" ] && [ "$cur_dir" != "$saved_dir" ]; then
+      tmux send-keys -t "$pane_target" "cd \"$saved_dir\"" C-m 2>/dev/null
+    fi
+
+    if [ "$active" = "1" ]; then
+      tmux select-pane -t "$pane_target" 2>/dev/null
+    fi
+  done
+  return 0
+}
+
 case "$1" in
   ensure-window)      ensure_win "$2" ;;
   ensure-all)         ensure_all ;;
@@ -239,6 +269,7 @@ case "$1" in
   rebalance)          rebalance "$2" ;;
   reflow)             reflow ;;
   sanitize-resurrect) sanitize_resurrect ;;
+  post-restore)       post_restore ;;
   toggle)
     if enabled; then
       tmux set -g @sidebar_enabled 0; kill_all; tmux set -g @sidebar_shown 0
@@ -251,6 +282,7 @@ case "$1" in
     if [ "$(opt @sidebar_expand 0)" = "1" ]; then tmux set -g @sidebar_expand 0
     else tmux set -g @sidebar_expand 1; fi
     ;;
-  *) echo "usage: sidebar.sh {ensure-window|ensure-all|create|kill-window|kill-all|prune|prune-all|cleanup|restart|pin|pin-all|rebalance|reflow|sanitize-resurrect|toggle|expand-toggle} [target]" >&2; exit 2 ;;
+  *) echo "usage: sidebar.sh {ensure-window|ensure-all|create|kill-window|kill-all|prune|prune-all|cleanup|restart|pin|pin-all|rebalance|reflow|sanitize-resurrect|post-restore|toggle|expand-toggle} [target]" >&2; exit 2 ;;
 esac
+
 

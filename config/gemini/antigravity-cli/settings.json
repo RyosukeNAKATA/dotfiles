@@ -89,8 +89,7 @@
   },
   "theme": "dark-ansi",
   "trustedWorkspaces": [
-    "~/.local/share/chezmoi",
-    "~/dotfiles",
-    "~"
+    "~",
+    "~/dotfiles"
   ]
 }
