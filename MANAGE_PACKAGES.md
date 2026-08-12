@@ -1,6 +1,6 @@
-# パッケージ・アプリの追加と削除（管理手順書）
+# パッケージ・アプリの追加・削除・バージョンアップ（管理手順書）
 
-Nix + nix-darwin + Home Manager 環境において、CLI パッケージ・GUI アプリ（Cask）・zsh プラグインの**追加（インストール）**および**削除（アンインストール）**を行う手順を解説します。
+Nix + nix-darwin + Home Manager 環境において、CLI パッケージ・GUI アプリ（Cask）・zsh プラグイン・言語ランタイム・各種ツールの**追加（インストール）**、**削除（アンインストール）**、および**バージョンアップ（更新）**を行う手順を解説します。
 
 ---
 
@@ -120,25 +120,65 @@ sudo darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro
 
 ---
 
-## 🔄 5. パッケージの更新 (Update)
+## 🔄 5. パッケージ・各ツールの更新 (Update)
 
-Flake のロックファイル (`flake.lock`) を更新し、Nix / Homebrew パッケージ全体を最新化するコマンドです。
+本環境で管理・使用している各種ツールおよび設定のバージョンアップ手順一覧です。
 
-### 🐚 zsh の場合
+### 5.1 Nixpkgs / nix-darwin / Home Manager（システム全体 & CLIツール）
+
+[`flake.nix`](flake.nix) や [`home.nix`](home.nix) で管理しているパッケージ群（`pure-prompt`, `zsh-autopair` 等）および nix-darwin システム全体の更新手順です。
 
 ```zsh
 cd ~/dotfiles
+
+# 1. flake.lock を更新し最新のリビジョンを取得
 nix flake update
+
+# 2. 最新バージョンを反映・構築
 sudo darwin-rebuild switch --flake .#RyosukenoMacBook-Pro
 ```
 
-### 🐢 Nushell の場合
+### 5.2 Homebrew（GUI アプリ / Cask & brew 公式パッケージ）
 
-```nu
-cd ~/dotfiles
-nix flake update
-sudo darwin-rebuild switch --flake .#RyosukenoMacBook-Pro
+[`darwin.nix`](darwin.nix) の `homebrew.brews` および `homebrew.casks` で管理しているツール群です。
+`darwin.nix` で `autoUpdate = true` および `upgrade = true` が有効になっているため、上記 **5.1** の **`sudo darwin-rebuild switch` 実行時に自動的に Homebrew のアップデート＆アップグレードが同時実行**されます。
+
+即座に手動で更新したい場合：
+```zsh
+brew update && brew upgrade && brew upgrade --cask
 ```
+
+### 5.3 mise（プログラミング言語・各種ランタイム）
+
+`mise` 経由で管理している言語環境（Node.js, Python, Ruby, Go 等）の更新手順です。
+
+```zsh
+# インストール済みツールの更新状態を確認
+mise outdated
+
+# インストール済み全ツールを最新版にアップグレード
+mise upgrade
+
+# 特定ツール（例: Node.js）を最新安定版に指定して更新
+mise use --global node@latest
+```
+
+### 5.4 Neovim プラグイン（dpp.vim & Mason.nvim）
+
+[`config/nvim`](config/nvim) で管理している Neovim のプラグイン更新手順です。
+
+#### A. dpp.vim プラグイン (`dpp.toml` で管理)
+Neovim 起動中に以下を実行：
+```vim
+:call dpp#async_ext_action('installer', 'update')
+```
+
+#### B. Mason.nvim（LSP サーバー / Formatter / Linter）
+Neovim 起動中に以下を実行：
+```vim
+:Mason
+```
+UI 画面上で `U` キーを押すと、インストール済み LSP / Linter 等が一括更新されます。（または `:MasonUpdate` コマンドを実行）
 
 ---
 
@@ -154,4 +194,8 @@ nix-collect-garbage --delete-older-than 30d
 
 # すべての過去世代を即時削除
 sudo nix-collect-garbage -d
+
+# Homebrew の古いバージョンキャッシュを削除
+brew cleanup
 ```
+
