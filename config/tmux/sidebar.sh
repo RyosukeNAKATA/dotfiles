@@ -33,9 +33,15 @@ create() {
   w=$(width)
   # -f: アクティブペインではなくウィンドウ全体に対して分割する。これにより
   # 既にペイン分割済みのウィンドウでもサイドバーが左端の全高カラムになる。
-  p=$(tmux split-window -fhb -l "$w" -d -P -F '#{pane_id}' -t "$win" "exec $RENDER" 2>/dev/null) || return 0
+  # 生成コマンドで直接 sidebar-render.sh を起動すると、そのプロセスの
+  # $TMUX_PANE が (run-shell/フック経由での生成時に) 呼び出し元コンテキストの
+  # 別ペインの値を誤って引き継いでしまうことがある (tmux の環境変数継承の癖)。
+  # そのため、まずデフォルトシェルでペインを作って確実な pane_id を取得し、
+  # respawn-pane で自分の pane_id を引数として明示的に渡して起動し直す。
+  p=$(tmux split-window -fhb -l "$w" -d -P -F '#{pane_id}' -t "$win" 2>/dev/null) || return 0
   tmux set -p -t "$p" @sidebar 1 2>/dev/null
   tmux resize-pane -x "$w" -t "$p" 2>/dev/null
+  tmux respawn-pane -k -t "$p" "exec $RENDER '$p'" 2>/dev/null
 }
 
 # 指定ウィンドウのサイドバーを閉じる

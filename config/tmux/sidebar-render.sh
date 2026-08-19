@@ -18,7 +18,15 @@
 #   - 現在セッションは全展開、他セッションは折りたたみ (@sidebar_expand=1 で全展開)。
 #   - 縦が溢れたら現在セッションを最優先で残し、他セッションを下から圧縮する。
 
-SELF="$TMUX_PANE"
+# tmux が新規ペインに与えるデフォルトの $PATH には Homebrew / nix の bin が
+# 含まれず、ここで呼ぶ tmux 自体が "command not found" になり得るため補強する
+# (sidebar.sh 側の export と同じ内容。あちらは sidebar.sh 自身のプロセス内でしか
+# 効かず、split-window/respawn-pane で新しく起動されるこのプロセスには伝わらない)
+export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:/run/current-system/sw/bin:$PATH"
+
+# 自分のペイン ID: sidebar.sh が respawn-pane 時に第1引数として明示的に渡す。
+# 引数が無い手動実行時のみ $TMUX_PANE にフォールバックする
+SELF="${1:-$TMUX_PANE}"
 US=$(printf '\037')          # フィールド区切り (Unit Separator)。名前/コマンドに現れない
 
 DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
