@@ -10,10 +10,8 @@
   # Unfree パッケージ (zsh-abbr 等) の許可
   nixpkgs.config.allowUnfree = true;
 
-  # Nix の設定
-  nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
-  };
+  # Nix の設定 (Determinate Nix が Nix 本体を管理するため nix-darwin 側は無効化)
+  nix.enable = false;
 
   # システムレベルでシンリンクを作成するパス
   environment.pathsToLink = [ "/share/tmux-plugins" ];
@@ -53,8 +51,6 @@
     };
 
     taps = [
-      "homebrew/bundle"
-      "homebrew/services"
       "olets/tap"
       "wez/wezterm"
     ];
@@ -77,7 +73,6 @@
       "jql"
       "libyaml"
       "mise"
-      "neofetch"
       "neovim"
       "ripgrep"
       "starship"

@@ -144,15 +144,27 @@ in
   xdg.configFile."yazi".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/yazi";
   xdg.configFile."zed".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/zed";
   xdg.configFile."gwq".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/gwq";
-  xdg.configFile."neofetch".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/neofetch";
   xdg.configFile."nushell/config.nu".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/nushell/config.nu";
   xdg.configFile."nushell/env.nu".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/nushell/env.nu";
   xdg.configFile."nushell/conf.d".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/nushell/conf.d";
   xdg.configFile."nushell/functions".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/nushell/functions";
 
-  home.file.".claude".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/claude";
-  home.file.".gemini".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/gemini";
-  home.file.".copilot".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/copilot";
+  # 各 CLI のホームディレクトリは実行時データ (session/history/plugins 等) を
+  # 直接書き込むため、ディレクトリ全体を symlink せず Git 管理対象ファイルのみ
+  # 個別に symlink する (実行時データはローカルの実ファイルのまま残る)。
+  home.file.".claude/CLAUDE.md".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/claude/CLAUDE.md";
+  home.file.".claude/rules".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/claude/rules";
+  home.file.".claude/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/claude/settings.json";
+  home.file.".claude/statusline.sh".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/claude/statusline.sh";
+
+  home.file.".copilot/statusline.sh".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/copilot/statusline.sh";
+
+  home.file.".gemini/config/AGENTS.md".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/gemini/config/AGENTS.md";
+  home.file.".gemini/config/rules".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/gemini/config/rules";
+  home.file.".gemini/config/skills".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/gemini/config/skills";
+  home.file.".gemini/antigravity-cli/settings.json".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/gemini/antigravity-cli/settings.json";
+  home.file.".gemini/antigravity-cli/keybindings.json".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/gemini/antigravity-cli/keybindings.json";
+  home.file.".gemini/antigravity-cli/statusline.sh".source = config.lib.file.mkOutOfStoreSymlink "${dotfiles}/config/gemini/antigravity-cli/statusline.sh";
 
   # Shell dotfiles (.zshrc / .bashrc)
   home.file.".zshrc".text = ''
