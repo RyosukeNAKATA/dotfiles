@@ -63,7 +63,6 @@ CLI パッケージ（`ripgrep`, `bat`, `eza`, `fzf` 等）は、[`darwin.nix`](
 
 ```nix
   home.packages = with pkgs; [
-    pure-prompt
     zsh-autopair
     zsh-abbr
     htop # <-- Nixpkgs から導入したいパッケージを追加
@@ -82,8 +81,9 @@ zsh プラグインは [`home.nix`](home.nix) の `programs.zsh.plugins` で管�
   programs.zsh = {
     plugins = [
       {
-        name = "pure";
-        src = "${pkgs.pure-prompt}/share/zsh/site-functions";
+        name = "zsh-autopair";
+        src = "${pkgs.zsh-autopair}/share/zsh/zsh-autopair";
+        file = "zsh-autopair.plugin.zsh";
       }
       {
         name = "zsh-autosuggestions";
@@ -102,15 +102,16 @@ zsh プラグインは [`home.nix`](home.nix) の `programs.zsh.plugins` で管�
 
 > Nix Flake は Git でトラックされているファイルのみを評価するため、設定ファイル編集後・追加後は `git add` が必須です。
 
-> `flake.nix` の `user` は `$USER` を読みますが、Nix flakeのpure評価と`sudo`のUSERリセットにより
-> `--impure` と `env USER=...` の明示指定が必須です（省略すると `primary user ... does not exist` エラーになります）。
+> `flake.nix` の `user` / `hostname` はそれぞれ `$USER` / `$HOSTNAME` を読みますが、Nix flakeのpure評価と`sudo`のUSERリセットにより
+> `--impure` と `env USER=... HOSTNAME=...` の明示指定が必須です（省略するとエラーで即失敗します）。`HOSTNAME` には `scutil --get LocalHostName` の値を使います。
 
 ### 🐚 zsh で実行する場合
 
 ```zsh
 cd ~/dotfiles
 git add .
-sudo -E env USER="$USER" darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro --impure
+HOSTNAME="$(scutil --get LocalHostName)"
+sudo -E env USER="$USER" HOSTNAME="$HOSTNAME" darwin-rebuild switch --flake ".#${HOSTNAME}" --impure
 ```
 
 ### 🐢 Nushell で実行する場合
@@ -118,7 +119,8 @@ sudo -E env USER="$USER" darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBo
 ```nu
 cd ~/dotfiles
 git add .
-sudo -E env USER=(whoami) darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro --impure
+let hostname = (scutil --get LocalHostName)
+sudo -E env USER=(whoami) HOSTNAME=$hostname darwin-rebuild switch --flake $"~/dotfiles#($hostname)" --impure
 ```
 
 ---
@@ -129,7 +131,7 @@ sudo -E env USER=(whoami) darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacB
 
 ### 5.1 Nixpkgs / nix-darwin / Home Manager（システム全体 & CLIツール）
 
-[`flake.nix`](flake.nix) や [`home.nix`](home.nix) で管理しているパッケージ群（`pure-prompt`, `zsh-autopair` 等）および nix-darwin システム全体の更新手順です。
+[`flake.nix`](flake.nix) や [`home.nix`](home.nix) で管理しているパッケージ群（`zsh-autopair`, `zsh-abbr` 等）および nix-darwin システム全体の更新手順です。
 
 ```zsh
 cd ~/dotfiles
@@ -138,7 +140,8 @@ cd ~/dotfiles
 nix flake update
 
 # 2. 最新バージョンを反映・構築
-sudo -E env USER="$USER" darwin-rebuild switch --flake .#RyosukenoMacBook-Pro --impure
+HOSTNAME="$(scutil --get LocalHostName)"
+sudo -E env USER="$USER" HOSTNAME="$HOSTNAME" darwin-rebuild switch --flake ".#${HOSTNAME}" --impure
 ```
 
 ### 5.2 Homebrew（GUI アプリ / Cask & brew 公式パッケージ）

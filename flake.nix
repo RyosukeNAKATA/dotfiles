@@ -15,8 +15,12 @@
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }:
   let
-    user = let envUser = builtins.getEnv "USER"; in if envUser != "" then envUser else "ryosuke";
-    hostname = "RyosukenoMacBook-Pro";
+    user = let envUser = builtins.getEnv "USER"; in
+      if envUser != "" then envUser
+      else throw "USER environment variable is empty. Run with: sudo -E env USER=\"$USER\" HOSTNAME=\"$(scutil --get LocalHostName)\" ... --impure";
+    hostname = let envHostname = builtins.getEnv "HOSTNAME"; in
+      if envHostname != "" then envHostname
+      else throw "HOSTNAME environment variable is empty. Run with: sudo -E env USER=\"$USER\" HOSTNAME=\"$(scutil --get LocalHostName)\" ... --impure";
     system = "aarch64-darwin";
   in {
     darwinConfigurations."${hostname}" = nix-darwin.lib.darwinSystem {

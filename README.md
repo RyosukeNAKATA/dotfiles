@@ -59,10 +59,11 @@ cd ~/dotfiles
 以下のコマンドを実行してシステム設定・GUI アプリ・CLI パッケージ・ドットファイルのシンボリックリンクを一括構築します：
 
 ```zsh
-sudo -E env USER="$USER" NIX_CONFIG="experimental-features = nix-command flakes" /nix/var/nix/profiles/default/bin/nix run nix-darwin -- switch --flake .#RyosukenoMacBook-Pro --impure
+HOSTNAME="$(scutil --get LocalHostName)"
+sudo -E env USER="$USER" HOSTNAME="$HOSTNAME" NIX_CONFIG="experimental-features = nix-command flakes" /nix/var/nix/profiles/default/bin/nix run nix-darwin -- switch --flake ".#${HOSTNAME}" --impure
 ```
 
-> **Note:** `flake.nix` の `user` は `$USER` 環境変数から解決していますが、Nix flake は既定でpure評価のため `builtins.getEnv` が常に空文字になり、かつ `sudo` は `-E` を付けても `USER` をrootにリセットします。そのため `--impure` と `env USER="$USER"` の指定が必須です（省略するとフォールバック値のユーザーで評価され `primary user ... does not exist` エラーになります）。
+> **Note:** `flake.nix` の `user` / `hostname` はそれぞれ `$USER` / `$HOSTNAME` 環境変数から解決していますが、Nix flake は既定でpure評価のため `builtins.getEnv` が常に空文字になり、かつ `sudo` は `-E` を付けても `USER` をrootにリセットします。そのため `--impure` と `env USER="$USER" HOSTNAME="$HOSTNAME"` の指定が必須です（省略するとエラーで即失敗します）。`HOSTNAME` には `scutil --get LocalHostName` で取得できる値（例: `RyosukenoMacBook-Pro`）を使い、`--flake` の `#` 以降にも同じ値を指定する必要があります。
 
 > **Note (初回エラー時の対処):**  
 > 既存の `/etc/bashrc` と競合した場合は、以下を実行して退避させてから再度上記コマンドを実行してください：
@@ -87,7 +88,8 @@ sudo -E env USER="$USER" NIX_CONFIG="experimental-features = nix-command flakes"
 ### 設定の変更・追加を反映する (`flake.nix` / `darwin.nix` / `home.nix` 編集時)
 
 ```zsh
-sudo -E env USER="$USER" darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro --impure
+HOSTNAME="$(scutil --get LocalHostName)"
+sudo -E env USER="$USER" HOSTNAME="$HOSTNAME" darwin-rebuild switch --flake "$HOME/dotfiles#${HOSTNAME}" --impure
 ```
 
 ### パッケージ（Nix Inputs）のアップデート
@@ -95,7 +97,8 @@ sudo -E env USER="$USER" darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBo
 ```zsh
 cd ~/dotfiles
 nix flake update
-sudo -E env USER="$USER" darwin-rebuild switch --flake .#RyosukenoMacBook-Pro --impure
+HOSTNAME="$(scutil --get LocalHostName)"
+sudo -E env USER="$USER" HOSTNAME="$HOSTNAME" darwin-rebuild switch --flake ".#${HOSTNAME}" --impure
 ```
 
 ---
@@ -113,7 +116,6 @@ dotfiles/
 │   ├── bash/        # ~/.bashrc, ~/.bash_profile -> dotfiles/config/bash/.bashrc
 │   ├── nvim/        # Neovim 設定 (dpp.vim)
 │   ├── tmux/        # tmux 設定
-│   ├── starship.toml
 │   ├── alacritty/
 │   ├── wezterm/
 │   ├── git/
