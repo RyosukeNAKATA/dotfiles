@@ -102,12 +102,15 @@ zsh プラグインは [`home.nix`](home.nix) の `programs.zsh.plugins` で管�
 
 > Nix Flake は Git でトラックされているファイルのみを評価するため、設定ファイル編集後・追加後は `git add` が必須です。
 
+> `flake.nix` の `user` は `$USER` を読みますが、Nix flakeのpure評価と`sudo`のUSERリセットにより
+> `--impure` と `env USER=...` の明示指定が必須です（省略すると `primary user ... does not exist` エラーになります）。
+
 ### 🐚 zsh で実行する場合
 
 ```zsh
 cd ~/dotfiles
 git add .
-sudo darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro
+sudo -E env USER="$USER" darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro --impure
 ```
 
 ### 🐢 Nushell で実行する場合
@@ -115,7 +118,7 @@ sudo darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro
 ```nu
 cd ~/dotfiles
 git add .
-sudo darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro
+sudo -E env USER=(whoami) darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro --impure
 ```
 
 ---
@@ -135,7 +138,7 @@ cd ~/dotfiles
 nix flake update
 
 # 2. 最新バージョンを反映・構築
-sudo darwin-rebuild switch --flake .#RyosukenoMacBook-Pro
+sudo -E env USER="$USER" darwin-rebuild switch --flake .#RyosukenoMacBook-Pro --impure
 ```
 
 ### 5.2 Homebrew（GUI アプリ / Cask & brew 公式パッケージ）

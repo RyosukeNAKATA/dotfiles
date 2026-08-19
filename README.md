@@ -59,8 +59,10 @@ cd ~/dotfiles
 以下のコマンドを実行してシステム設定・GUI アプリ・CLI パッケージ・ドットファイルのシンボリックリンクを一括構築します：
 
 ```zsh
-sudo -E NIX_CONFIG="experimental-features = nix-command flakes" /nix/var/nix/profiles/default/bin/nix run nix-darwin -- switch --flake .#RyosukenoMacBook-Pro
+sudo -E env USER="$USER" NIX_CONFIG="experimental-features = nix-command flakes" /nix/var/nix/profiles/default/bin/nix run nix-darwin -- switch --flake .#RyosukenoMacBook-Pro --impure
 ```
+
+> **Note:** `flake.nix` の `user` は `$USER` 環境変数から解決していますが、Nix flake は既定でpure評価のため `builtins.getEnv` が常に空文字になり、かつ `sudo` は `-E` を付けても `USER` をrootにリセットします。そのため `--impure` と `env USER="$USER"` の指定が必須です（省略するとフォールバック値のユーザーで評価され `primary user ... does not exist` エラーになります）。
 
 > **Note (初回エラー時の対処):**  
 > 既存の `/etc/bashrc` と競合した場合は、以下を実行して退避させてから再度上記コマンドを実行してください：
@@ -85,7 +87,7 @@ sudo -E NIX_CONFIG="experimental-features = nix-command flakes" /nix/var/nix/pro
 ### 設定の変更・追加を反映する (`flake.nix` / `darwin.nix` / `home.nix` 編集時)
 
 ```zsh
-sudo darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro
+sudo -E env USER="$USER" darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro --impure
 ```
 
 ### パッケージ（Nix Inputs）のアップデート
@@ -93,7 +95,7 @@ sudo darwin-rebuild switch --flake ~/dotfiles#RyosukenoMacBook-Pro
 ```zsh
 cd ~/dotfiles
 nix flake update
-sudo darwin-rebuild switch --flake .#RyosukenoMacBook-Pro
+sudo -E env USER="$USER" darwin-rebuild switch --flake .#RyosukenoMacBook-Pro --impure
 ```
 
 ---

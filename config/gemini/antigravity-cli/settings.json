@@ -90,7 +90,6 @@
   "theme": "dark-ansi",
   "trustedWorkspaces": [
     "~",
-    "~/dotfiles",
-    "/Users/ryosuke/dotfiles"
+    "~/dotfiles"
   ]
 }
