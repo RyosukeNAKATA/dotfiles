@@ -75,7 +75,6 @@
       "mise"
       "neovim"
       "ripgrep"
-      "starship"
       "tmux"
       "tree-sitter"
       "wget"

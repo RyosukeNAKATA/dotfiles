@@ -10,7 +10,6 @@ in
 
   # パッケージ（Home Manager 経由で管理）
   home.packages = with pkgs; [
-    pure-prompt
     zsh-autopair
     zsh-abbr
     zsh-fast-syntax-highlighting
@@ -29,10 +28,6 @@ in
     syntaxHighlighting.enable = true;
 
     plugins = [
-      {
-        name = "pure";
-        src = "${pkgs.pure-prompt}/share/zsh/site-functions";
-      }
       {
         name = "zsh-autopair";
         src = "${pkgs.zsh-autopair}/share/zsh/zsh-autopair";
@@ -115,13 +110,7 @@ in
       zle -N fzf-rg-widget
       bindkey '^P' fzf-rg-widget
 
-      # pure prompt の初期化
-      autoload -U promptinit; promptinit
-      zstyle :prompt:pure:git:branch color green
-      prompt pure
-
       # 各種ツールの初期化フック
-      eval "$(starship init zsh)"
       eval "$(zoxide init zsh)"
       eval "$(mise activate zsh)"
 

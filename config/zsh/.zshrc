@@ -47,7 +47,6 @@ bindkey '^P' fzf-rg-widget
 # ==============================================================================
 # Shell Integrations & Environment Hooks
 # ==============================================================================
-type starship &>/dev/null && eval "$(starship init zsh)"
 type zoxide &>/dev/null && eval "$(zoxide init zsh)"
 type mise &>/dev/null && eval "$(mise activate zsh)"
 
