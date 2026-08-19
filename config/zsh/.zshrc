@@ -120,7 +120,9 @@ function prompt_git_precmd() {
                 [[ -n $behind && $behind != 0 ]] && behind_sym="%F{#89b8c2}↓${behind}%f"
             fi
 
-            print -r -- "${vcs_info_msg_0_}${staged_sym}${unstaged_sym}${untracked_sym}${ahead_sym}${behind_sym}" > "$PROMPT_GIT_TMPFILE"
+            local status_str="${staged_sym}${unstaged_sym}${untracked_sym}${ahead_sym}${behind_sym}"
+            [[ -n $status_str ]] && status_str=" ${status_str}"
+            print -r -- "${vcs_info_msg_0_}${status_str}" > "$PROMPT_GIT_TMPFILE"
         else
             : > "$PROMPT_GIT_TMPFILE"
         fi
