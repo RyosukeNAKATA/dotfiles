@@ -1,15 +1,5 @@
 {
-  "model": "claude-fable-5[1m]",
-  "enabledPlugins": {
-    "coderabbit@claude-plugins-official": true
-  },
-  "effortLevel": "xhigh",
-  "theme": "dark-ansi",
-  "statusLine": {
-    "type": "command",
-    "command": "bash \"$HOME/.claude/statusline.sh\"",
-    "refreshInterval": 1
-  },
+  "model": "claude-sonnet-5",
   "hooks": {
     "UserPromptSubmit": [
       {
@@ -79,5 +69,15 @@
         ]
       }
     ]
-  }
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"$HOME/.claude/statusline.sh\"",
+    "refreshInterval": 1
+  },
+  "enabledPlugins": {
+    "coderabbit@claude-plugins-official": true
+  },
+  "effortLevel": "xhigh",
+  "theme": "dark-ansi"
 }
