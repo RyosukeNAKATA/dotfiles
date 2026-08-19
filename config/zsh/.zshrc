@@ -147,33 +147,62 @@ export PATH="/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:$HOME/
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 # ==============================================================================
-# Aliases
+# zsh-autosuggestions (入力履歴からのゴースト補完候補表示)
 # ==============================================================================
-alias lls='eza -lF --icons'
-alias la='eza -laF --icons'
-alias l='eza -lbF --git --icons'
-alias ll='eza -lbGF --git --icons'
-alias llm='eza -lbGd --git --sort=modified --icons'
-alias lla='eza -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons'
-alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons'
-alias lt='eza --tree --level=2 --icons'
-alias tree='eza -T --icons'
-alias catall='bat -A'
-alias finde='fd -e'
-alias findh='fd -H'
-alias findi='fd -I'
-alias ga='git add -A'
-alias gc='git checkout'
-alias gcm='git commit -m'
-alias gps='git push'
-alias gpl='git pull'
-alias grm='git rm -r --cached .'
-alias gu='gitui'
-alias nv='nvim'
-alias compete='cargo compete'
-alias gip='curl inet-ip.info'
-alias rp='rg "" --sort path -n --color always'
-alias cli='copilot --banner'
-alias oc='opencode'
-alias cl='claude'
-alias dr='docker compose run --rm rails bundle exec'
+AUTOSUGGESTIONS_PLUGIN="/etc/profiles/per-user/${USER}/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh"
+[ -f "$AUTOSUGGESTIONS_PLUGIN" ] && source "$AUTOSUGGESTIONS_PLUGIN"
+
+# ==============================================================================
+# zsh-abbr (入力後に半角スペースでコマンド全体に展開される略語。alias から全面移行)
+# ==============================================================================
+ABBR_PLUGIN="/etc/profiles/per-user/${USER}/share/zsh/zsh-abbr/zsh-abbr.plugin.zsh"
+if [[ -f $ABBR_PLUGIN ]]; then
+    # `abbr add` は1回の呼び出しに数十ms かかり、毎回シェル起動時に
+    # 全件呼び出すと体感できるほど遅くなるため、永続化ファイルに
+    # 差分がある時だけ直接書き込む (内容が同じなら書き込みをスキップ)。
+    export ABBR_USER_ABBREVIATIONS_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/zsh-abbr/user-abbreviations"
+    _abbr_desired=$(cat <<'EOF'
+abbr "catall"="bat -A"
+abbr "cl"="claude"
+abbr "cli"="copilot --banner"
+abbr "compete"="cargo compete"
+abbr "dr"="docker compose run --rm rails bundle exec"
+abbr "finde"="fd -e"
+abbr "findh"="fd -H"
+abbr "findi"="fd -I"
+abbr "ga"="git add -A"
+abbr "gc"="git checkout"
+abbr "gcm"="git commit -m"
+abbr "gip"="curl inet-ip.info"
+abbr "gpl"="git pull"
+abbr "gps"="git push"
+abbr "grm"="git rm -r --cached ."
+abbr "gu"="gitui"
+abbr "l"="eza -lbF --git --icons"
+abbr "la"="eza -laF --icons"
+abbr "ll"="eza -lbGF --git --icons"
+abbr "lla"="eza -lbhHigUmuSa --time-style=long-iso --git --color-scale --icons"
+abbr "llm"="eza -lbGd --git --sort=modified --icons"
+abbr "lls"="eza -lF --icons"
+abbr "lt"="eza --tree --level=2 --icons"
+abbr "lx"="eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --icons"
+abbr "nv"="nvim"
+abbr "oc"="opencode"
+abbr "rp"="rg \"\" --sort path -n --color always"
+abbr "tree"="eza -T --icons"
+EOF
+    )
+    if [[ "$(cat "$ABBR_USER_ABBREVIATIONS_FILE" 2>/dev/null)" != "$_abbr_desired" ]]; then
+        mkdir -p "${ABBR_USER_ABBREVIATIONS_FILE:h}"
+        print -r -- "$_abbr_desired" > "$ABBR_USER_ABBREVIATIONS_FILE"
+    fi
+    unset _abbr_desired
+    source "$ABBR_PLUGIN"
+fi
+
+# ==============================================================================
+# fast-syntax-highlighting (シンタックスハイライト)
+# 他プラグインが定義した ZLE ウィジェットをラップするため、必ず最後に読み込む
+# ==============================================================================
+FAST_SYNTAX_HIGHLIGHTING_PLUGIN="/etc/profiles/per-user/${USER}/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+[ -f "$FAST_SYNTAX_HIGHLIGHTING_PLUGIN" ] && source "$FAST_SYNTAX_HIGHLIGHTING_PLUGIN"

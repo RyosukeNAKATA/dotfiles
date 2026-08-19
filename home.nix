@@ -12,6 +12,7 @@ in
   home.packages = with pkgs; [
     zsh-autopair
     zsh-abbr
+    zsh-autosuggestions
     zsh-fast-syntax-highlighting
     tmuxPlugins.tmux-thumbs
     tmuxPlugins.resurrect
@@ -20,12 +21,17 @@ in
 
   # -----------------------------------------------------------------------------
   # zsh 設定 & プラグイン定義 (sheldon 完全代替)
+  #
+  # 注意: home.file.".zshrc".text / xdg.configFile."zsh/.zshrc" で
+  # ~/.zshrc の中身を config/zsh/.zshrc に完全に差し替えているため、
+  # ここで定義する enableCompletion / plugins 等は実際には反映されない。
+  # zsh-autosuggestions・zsh-abbr・fast-syntax-highlighting 等の読み込みは
+  # config/zsh/.zshrc 側で安定パス (/etc/profiles/per-user/$USER/...) から
+  # 直接 source している。ここは home.packages 経由でのパッケージ導入のみ
+  # を目的として残している。
   # -----------------------------------------------------------------------------
   programs.zsh = {
     enable = true;
-    enableCompletion = true;
-    autosuggestion.enable = true;
-    syntaxHighlighting.enable = true;
 
     plugins = [
       {
