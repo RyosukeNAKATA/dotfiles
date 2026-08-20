@@ -41,9 +41,11 @@ mkdir -p "$CACHE_DIR" 2>/dev/null
 
 # ---- 1 ペイン 1 行で全ペインを取得するためのフォーマット ----
 # 先頭の P はレコード種別 (git キャッシュ側は G)。awk へ 2 種類のレコードを混ぜて渡す
-FMT="P${US}#{session_name}${US}#{window_id}${US}#{window_index}${US}#{window_name}${US}#{pane_index}${US}#{pane_id}${US}#{pane_active}${US}#{pane_current_command}${US}#{@claude_state}${US}#{@sidebar}${US}#{pane_current_path}${US}#{@agy_state}"
+# 末尾の #{pane_tty} はコマンド名解決 (command-name.sh)専用で、awk 側では読まない
+FMT="P${US}#{session_name}${US}#{window_id}${US}#{window_index}${US}#{window_name}${US}#{pane_index}${US}#{pane_id}${US}#{pane_active}${US}#{pane_current_command}${US}#{@claude_state}${US}#{@sidebar}${US}#{pane_current_path}${US}#{@agy_state}${US}#{pane_tty}"
+PANES_RAW="$CACHE_DIR/panes-raw.$$"
 
-cleanup() { printf '\033[?25h\033[0m'; rm -f "$PANES"; }   # カーソル復帰・属性リセット
+cleanup() { printf '\033[?25h\033[0m'; rm -f "$PANES" "$PANES_RAW"; }   # カーソル復帰・属性リセット
 trap cleanup EXIT INT TERM
 printf '\033[?25l'                          # カーソル非表示
 
@@ -314,7 +316,18 @@ while :; do
     frame=$((frame + 1))
 
     expand=$(tmux show -gqv @sidebar_expand 2>/dev/null)
-    tmux list-panes -a -F "$FMT" >"$PANES" 2>/dev/null
+    tmux list-panes -a -F "$FMT" >"$PANES_RAW" 2>/dev/null
+    # pane_current_command はカーネル上の実行ファイル名 (claude のようにバージョン
+    # 番号名のバイナリだと "2.1.237" のような表示になる) なので、pane-title.sh と
+    # 同じ command-name.sh で argv から解決した名前に差し替える (末尾の pane_tty を消費)
+    : >"$PANES"
+    while IFS="$US" read -r rtype rs rwid rwidx rwname rpidx rpid rpact rcmd rcstate rsb rpath ragst rtty; do
+      [ "$rtype" = "P" ] || continue
+      name=$("$DIR/command-name.sh" "$rtty" "$rcmd")
+      printf 'P%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s%s\n' \
+        "$US" "$rs" "$US" "$rwid" "$US" "$rwidx" "$US" "$rwname" "$US" "$rpidx" "$US" "$rpid" \
+        "$US" "$rpact" "$US" "$name" "$US" "$rcstate" "$US" "$rsb" "$US" "$rpath" "$US" "$ragst"
+    done <"$PANES_RAW" >"$PANES"
     cache="$GIT_CACHE"; [ -f "$cache" ] || cache=/dev/null
     awk -F "$US" -v W="$W" -v H="$Hgt" -v CS="$csess" -v CW="$cwin" -v EXPAND="$expand" \
       "$AWK" "$cache" "$PANES"
