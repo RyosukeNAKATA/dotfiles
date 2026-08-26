@@ -78,5 +78,10 @@
     "coderabbit@claude-plugins-official": true
   },
   "effortLevel": "xhigh",
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "medium"
+    }
+  },
   "theme": "dark-ansi"
 }
