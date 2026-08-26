@@ -196,4 +196,16 @@ in
     clone_repo "https://github.com/Shougo/dpp-ext-toml.git" "$DPP_BASE/dpp-ext-toml"
     clone_repo "https://github.com/vim-denops/denops.vim.git" "$DENOPS_BASE/denops.vim"
   '';
+
+  # -----------------------------------------------------------------------------
+  # Claude Code MCP サーバー (chrome-devtools) の自動登録
+  # -----------------------------------------------------------------------------
+  home.activation.setupClaudeMcp = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if command -v claude >/dev/null 2>&1; then
+      if ! claude mcp get chrome-devtools >/dev/null 2>&1; then
+        echo "==> Registering chrome-devtools MCP server for Claude Code..."
+        $DRY_RUN_CMD claude mcp add chrome-devtools --scope user -- npx chrome-devtools-mcp@latest --categoryExtensions --user-data-dir="$HOME/.chrome-devtools-mcp-profile"
+      fi
+    fi
+  '';
 }
