@@ -1,3 +1,19 @@
+# OS & Editor files
+.DS_Store
+*.swp
+*~
+
+# Backup files
+*.backup
+*.backup/
+*.bak
+*.old
+
+# Nix build outputs
+result
+result-*
+
+# Runtime / state files (in case any tool creates them)
 config/gemini/antigravity-cli/bin/
 config/gemini/antigravity-cli/brain/
 config/gemini/antigravity-cli/builtin/
@@ -11,15 +27,12 @@ config/gemini/antigravity-cli/presence/
 config/gemini/antigravity-cli/updater/
 config/gemini/antigravity-cli/*.log
 config/gemini/antigravity-cli/*.db
+config/gemini/antigravity-cli/*.pbtxt
 config/gemini/antigravity-cli/history.jsonl
 config/gemini/antigravity-cli/installation_id
-config/gemini/antigravity-cli/jetski_state.pbtxt
 config/gemini/antigravity-cli/last_check.timestamp
 config/gemini/config/.migrated
 config/gemini/config/config.json
 config/gemini/config/mcp_config.json
 config/gemini/config/projects/
 
-# Nix build outputs
-result
-result-*
