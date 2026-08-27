@@ -8,6 +8,11 @@ in
   home.homeDirectory = "/Users/${user}";
   home.stateVersion = "24.05";
 
+  # Nix 設定 (flakes & nix-command の常時有効化)
+  xdg.configFile."nix/nix.conf".text = ''
+    experimental-features = nix-command flakes
+  '';
+
   # パッケージ（Home Manager 経由で管理）
   home.packages = with pkgs; [
     zsh-autopair
