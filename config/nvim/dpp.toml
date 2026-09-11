@@ -196,10 +196,6 @@ hook_add = "source ~/.config/nvim/plugins/copilot.lua"
 [[plugins]]
 repo = "hrsh7th/vim-vsnip"
 
-# vim-vsnip-integ: vim-vsnipと他プラグインとの統合
-[[plugins]]
-repo = "hrsh7th/vim-vsnip-integ"
-
 # ddc.vim: Deno製の自動補完フレームワーク
 [[plugins]]
 repo = "Shougo/ddc.vim"
