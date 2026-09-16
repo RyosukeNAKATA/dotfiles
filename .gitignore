@@ -36,3 +36,5 @@ config/gemini/config/config.json
 config/gemini/config/mcp_config.json
 config/gemini/config/projects/
 
+# gwq runtime state (ローカル環境固有のためgit管理対象外)
+config/gwq/trusted_configs.json
