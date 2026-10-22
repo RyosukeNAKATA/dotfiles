@@ -13,6 +13,13 @@
   # Nix の設定 (Determinate Nix が Nix 本体を管理するため nix-darwin 側は無効化)
   nix.enable = false;
 
+  # 秘密鍵が漏洩した eMudhra 中間CAを信頼しないよう、上位ルートを Nix の CA バンドルから除外する
+  # https://emudhra.we-have-a-problem.com/
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
+  ];
+
   # システムレベルでシンリンクを作成するパス
   environment.pathsToLink = [ "/share/tmux-plugins" ];
 
