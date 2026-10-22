@@ -83,7 +83,6 @@
     ];
 
     casks = [
-      "alacritty"
       "appcleaner"
       "font-fira-code"
       "font-hackgen-nerd"

@@ -13,8 +13,13 @@ in
     experimental-features = nix-command flakes
   '';
 
+  # .app を symlink ではなく実体コピーで配置（Spotlight / Raycast から検索可能にする）
+  targets.darwin.linkApps.enable = false;
+  targets.darwin.copyApps.enable = true;
+
   # パッケージ（Home Manager 経由で管理）
   home.packages = with pkgs; [
+    alacritty # brew cask は Gatekeeper 非対応で 2026-09-01 に disabled
     zsh-autopair
     zsh-abbr
     zsh-autosuggestions
