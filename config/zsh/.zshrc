@@ -7,6 +7,11 @@ export SAVEHIST=100001
 export XDG_CONFIG_HOME="$HOME/.config"
 setopt hist_ignore_dups
 
+# macOS 標準の curl / git 等が CA ファイルでの検証失敗時にキーチェーンで再検証しないようにする
+# (/etc/ssl/cert.pem から除外した eMudhra のルートをキーチェーン経由で信頼してしまうため)
+# https://emudhra.we-have-a-problem.com/
+export OPENSSL_X509_TEA_DISABLE=1
+
 # Nix / Homebrew PATH
 [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ] && source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
 [ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
