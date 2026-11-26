@@ -38,3 +38,6 @@ config/gemini/config/projects/
 
 # gwq runtime state (ローカル環境固有のためgit管理対象外)
 config/gwq/trusted_configs.json
+
+# リポジトリに含めないローカル専用の Claude ルール
+config/claude/rules/*.local.md

@@ -1,0 +1,1 @@
+../../gemini/config/rules/10-code-style.md

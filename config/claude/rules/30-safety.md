@@ -1,0 +1,1 @@
+../../gemini/config/rules/30-safety.md

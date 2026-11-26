@@ -1,0 +1,1 @@
+../../gemini/config/rules/20-git-workflow.md

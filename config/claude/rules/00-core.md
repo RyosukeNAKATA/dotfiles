@@ -1,0 +1,1 @@
+../../gemini/config/rules/00-core.md
